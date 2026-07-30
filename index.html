@@ -100,6 +100,27 @@
   .swatch{width:22px;height:22px;border-radius:6px;border:1px solid rgba(0,0,0,.08);cursor:pointer;padding:0}
   .checkbox{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#42505f;cursor:pointer}
   .checkbox input{margin-top:3px}
+  input[type="range"]{width:100%;accent-color:var(--accent)}
+  .row-inline{display:flex;align-items:center;gap:10px}
+  .row-inline .val{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;flex:none;min-width:44px;text-align:right}
+  .gradient-preview{height:34px;border-radius:9px;border:1px solid var(--line);margin-top:8px}
+  .seg-block{width:100%}
+  .seg-block button{flex:1}
+  details.adv{border:1px solid var(--line);border-radius:10px;padding:0;background:#fbfcfe;margin-top:4px}
+  details.adv > summary{
+    list-style:none;cursor:pointer;padding:10px 12px;font-size:12.5px;font-weight:700;color:#42505f;
+    display:flex;align-items:center;gap:7px;
+  }
+  details.adv > summary::-webkit-details-marker{display:none}
+  details.adv > summary::before{content:"▸";color:var(--muted);transition:transform .15s}
+  details.adv[open] > summary::before{transform:rotate(90deg)}
+  details.adv .adv-body{padding:2px 12px 12px}
+  .part-row{display:flex;align-items:center;gap:9px;padding:7px 0;border-top:1px solid var(--line)}
+  .part-row:first-child{border-top:none}
+  .part-row .pname{flex:1;font-size:12.5px;color:#42505f}
+  .part-row .checkbox{flex:none;font-size:11.5px;white-space:nowrap}
+  .part-row input[type="color"]{width:36px;height:30px}
+  .part-row input[type="color"]:disabled{opacity:.35;cursor:not-allowed}
 
   /* ===== ボタン ===== */
   .btn{
@@ -245,7 +266,58 @@
           <input type="text" id="mainColorText" value="#e28238" spellcheck="false">
         </div>
         <div class="swatches" id="swatches"></div>
+        <div class="note">文字・枠線・バッジに使う基準色です。好きな色を自由に指定できます。</div>
       </div>
+
+      <div class="field">
+        <label>塗りのスタイル</label>
+        <div class="seg seg-block" id="fillSeg">
+          <button type="button" data-mode="solid" class="active">単色</button>
+          <button type="button" data-mode="gradient">グラデーション</button>
+        </div>
+      </div>
+
+      <div id="gradientFields" hidden>
+        <div class="field">
+          <label>グラデーションの色（開始 → 終了）</label>
+          <div class="color-row">
+            <input type="color" id="gradFrom" value="#e28238">
+            <input type="text" id="gradFromText" value="#e28238" spellcheck="false">
+          </div>
+          <div class="color-row" style="margin-top:8px">
+            <input type="color" id="gradTo" value="#d94f70">
+            <input type="text" id="gradToText" value="#d94f70" spellcheck="false">
+          </div>
+          <div class="gradient-preview" id="gradPreview"></div>
+        </div>
+        <div class="field">
+          <label for="gradAngle">グラデーションの角度</label>
+          <div class="row-inline">
+            <input type="range" id="gradAngle" min="0" max="360" step="5" value="135">
+            <span class="val" id="gradAngleVal">135°</span>
+          </div>
+          <div class="swatches" id="gradPresets"></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="onMainColor">ヘッダー・ボタン上の文字色</label>
+        <div class="color-row">
+          <input type="color" id="onMainColor" value="#ffffff">
+          <input type="text" id="onMainColorText" value="#ffffff" spellcheck="false">
+        </div>
+      </div>
+
+      <div class="field">
+        <details class="adv" id="partsDetails">
+          <summary>パーツごとに好きな色を指定する</summary>
+          <div class="adv-body">
+            <div id="partList"></div>
+            <div class="note">「メインに追従」を外すと、そのパーツだけ別の色を指定できます。追従中は上の設定（単色／グラデーション）が適用されます。</div>
+          </div>
+        </details>
+      </div>
+
       <div class="field">
         <label for="launcherText">閉じている時のボタン文言</label>
         <input type="text" id="launcherText" value="質問する">
@@ -298,6 +370,19 @@
     </section>
 
     <section class="section">
+      <h2>設定データ（JSON）</h2>
+      <div class="actions">
+        <button class="btn btn-ghost" id="btnExportJson" type="button">↓ 現在の設定をJSONで書き出し</button>
+        <button class="btn btn-ghost" id="btnExportAllJson" type="button">↓ 保存済みをすべてJSONで書き出し</button>
+        <button class="btn btn-ghost" id="btnImportJson" type="button">↑ JSONファイルを読み込み</button>
+        <input type="file" id="jsonFile" accept="application/json,.json" hidden data-no-live>
+      </div>
+      <div class="note" style="margin-top:8px;font-size:11px;color:var(--muted)">
+        書き出したJSONは別のブラウザやPCに読み込んで復元できます。1件のJSONは編集フォームに読み込まれ、複数件のJSONは保存済み一覧に取り込まれます。
+      </div>
+    </section>
+
+    <section class="section">
       <h2>保存済み設定一覧</h2>
       <div class="btn-row" style="margin-bottom:10px">
         <button class="btn btn-ghost btn-sm" id="btnNew" type="button">＋ 新規設定</button>
@@ -342,9 +427,26 @@
 
   var STORAGE_KEY = "chatbot_cms_items_v1";
   var PRESETS = ["#e28238","#2f6df6","#00b48a","#e5484d","#7b5cff","#0f1621","#f5a623","#0aa2c0"];
+  var GRAD_PRESETS = [
+    { from:"#e28238", to:"#d94f70", angle:135 },
+    { from:"#2f6df6", to:"#7b5cff", angle:135 },
+    { from:"#00b48a", to:"#0aa2c0", angle:135 },
+    { from:"#ff8a3d", to:"#f5c451", angle:120 },
+    { from:"#0f1621", to:"#3a4c66", angle:160 },
+    { from:"#e5484d", to:"#7b2ff7", angle:140 }
+  ];
+  var PARTS = [
+    { key:"header",     label:"ヘッダー・アイコン" },
+    { key:"launcher",   label:"起動ボタン" },
+    { key:"userBubble", label:"ユーザー吹き出し" },
+    { key:"send",       label:"送信ボタン" },
+    { key:"choice",     label:"選択肢（枠・文字）" }
+  ];
 
   var el = function(id){ return document.getElementById(id); };
   var scenario = [];
+  var parts = {};
+  var fillMode = "solid";
   var currentId = null;
   var timer = null;
 
@@ -364,22 +466,57 @@
       el("swatches").appendChild(b);
     });
 
+    GRAD_PRESETS.forEach(function(g){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "swatch";
+      b.style.background = "linear-gradient(" + g.angle + "deg," + g.from + "," + g.to + ")";
+      b.style.width = "34px";
+      b.title = g.from + " → " + g.to;
+      b.addEventListener("click", function(){
+        setColorPair("gradFrom", g.from);
+        setColorPair("gradTo", g.to);
+        el("gradAngle").value = String(g.angle);
+        syncGradientUi();
+        schedule();
+      });
+      el("gradPresets").appendChild(b);
+    });
+
     scenario = defaultScenario();
+    parts = defaultParts();
     renderScenario();
+    renderParts();
 
     // 入力の変更でプレビューを自動更新
     document.querySelectorAll("input, textarea").forEach(function(node){
+      if(node.hasAttribute("data-no-live")) return;
       node.addEventListener("input", schedule);
       node.addEventListener("change", schedule);
     });
 
-    el("mainColor").addEventListener("input", function(){
-      el("mainColorText").value = el("mainColor").value;
+    bindColorPair("mainColor", "mainColorText");
+    bindColorPair("gradFrom", "gradFromText");
+    bindColorPair("gradTo", "gradToText");
+    bindColorPair("onMainColor", "onMainColorText");
+
+    el("fillSeg").addEventListener("click", function(e){
+      var b = e.target.closest("button"); if(!b) return;
+      segActivate(el("fillSeg"), b);
+      fillMode = b.dataset.mode;
+      el("gradientFields").hidden = (fillMode !== "gradient");
+      renderParts();
+      render();
     });
-    el("mainColorText").addEventListener("input", function(){
-      var v = el("mainColorText").value.trim();
-      if(/^#[0-9a-fA-F]{6}$/.test(v)) el("mainColor").value = v;
-    });
+    el("gradAngle").addEventListener("input", syncGradientUi);
+    el("gradFrom").addEventListener("input", syncGradientUi);
+    el("gradTo").addEventListener("input", syncGradientUi);
+    syncGradientUi();
+
+    el("btnExportJson").addEventListener("click", exportCurrentJson);
+    el("btnExportAllJson").addEventListener("click", exportAllJson);
+    el("btnImportJson").addEventListener("click", function(){ el("jsonFile").click(); });
+    el("jsonFile").addEventListener("change", importJson);
 
     el("btnPreview").addEventListener("click", function(){ render(); toast("プレビューを更新しました"); });
     el("btnDownload").addEventListener("click", download);
@@ -413,6 +550,90 @@
   function segActivate(group, btn){
     group.querySelectorAll("button").forEach(function(x){ x.classList.remove("active"); });
     btn.classList.add("active");
+  }
+
+  /* ---------------- カラー入力のヘルパー ---------------- */
+  function bindColorPair(colorId, textId){
+    el(colorId).addEventListener("input", function(){
+      el(textId).value = el(colorId).value;
+      syncGradientUi();
+    });
+    el(textId).addEventListener("input", function(){
+      var v = el(textId).value.trim();
+      if(/^#[0-9a-fA-F]{6}$/.test(v)){
+        el(colorId).value = v;
+        syncGradientUi();
+      }
+    });
+  }
+  function setColorPair(colorId, value){
+    el(colorId).value = value;
+    var t = el(colorId + "Text");
+    if(t) t.value = value;
+  }
+  function syncGradientUi(){
+    var angle = el("gradAngle").value;
+    el("gradAngleVal").textContent = angle + "°";
+    el("gradPreview").style.background =
+      "linear-gradient(" + angle + "deg," + el("gradFrom").value + "," + el("gradTo").value + ")";
+  }
+
+  /* ---------------- パーツ別カラー ---------------- */
+  function defaultParts(){
+    var o = {};
+    PARTS.forEach(function(p){ o[p.key] = { useMain:true, color:"#e28238" }; });
+    return o;
+  }
+
+  function renderParts(){
+    var wrap = el("partList");
+    wrap.innerHTML = "";
+    PARTS.forEach(function(p){
+      var state = parts[p.key] || (parts[p.key] = { useMain:true, color:el("mainColor").value });
+
+      var row = document.createElement("div");
+      row.className = "part-row";
+
+      var name = document.createElement("span");
+      name.className = "pname";
+      name.textContent = p.label;
+      if(p.key === "choice" && fillMode === "gradient"){
+        var hint = document.createElement("span");
+        hint.style.cssText = "font-size:10.5px;color:var(--muted);margin-left:6px";
+        hint.textContent = "（枠線・文字は単色）";
+        name.appendChild(hint);
+      }
+
+      var color = document.createElement("input");
+      color.type = "color";
+      color.value = state.color;
+      color.disabled = state.useMain;
+      color.addEventListener("input", function(){
+        state.color = color.value;
+        schedule();
+      });
+
+      var lab = document.createElement("label");
+      lab.className = "checkbox";
+      var cb = document.createElement("input");
+      cb.type = "checkbox";
+      cb.checked = state.useMain;
+      cb.addEventListener("change", function(){
+        state.useMain = cb.checked;
+        color.disabled = cb.checked;
+        if(!cb.checked && state.color === "#e28238") {
+          state.color = el("mainColor").value;
+          color.value = state.color;
+        }
+        schedule();
+      });
+      var cbText = document.createElement("span");
+      cbText.textContent = "メインに追従";
+      lab.appendChild(cb); lab.appendChild(cbText);
+
+      row.appendChild(name); row.appendChild(lab); row.appendChild(color);
+      wrap.appendChild(row);
+    });
   }
 
   function defaultScenario(){
@@ -471,12 +692,23 @@
 
   /* ---------------- 設定の読み書き ---------------- */
   function readConfig(){
+    var partsOut = {};
+    PARTS.forEach(function(p){
+      var s = parts[p.key] || { useMain:true, color:"#e28238" };
+      partsOut[p.key] = { useMain: !!s.useMain, color: s.color };
+    });
     return {
       botName: el("botName").value || "サポート",
       logoText: el("logoText").value || "?",
       subtitle: el("subtitle").value,
       badgeText: el("badgeText").value,
       mainColor: el("mainColor").value || "#e28238",
+      fillMode: fillMode,
+      gradFrom: el("gradFrom").value,
+      gradTo: el("gradTo").value,
+      gradAngle: parseInt(el("gradAngle").value, 10) || 0,
+      onMainColor: el("onMainColor").value || "#ffffff",
+      parts: partsOut,
       launcherText: el("launcherText").value || "質問する",
       includeDemo: el("includeDemo").checked,
       greeting: el("greeting").value,
@@ -488,14 +720,68 @@
     };
   }
 
-  function applyConfig(c){
-    el("botName").value = c.botName || "";
-    el("logoText").value = c.logoText || "";
-    el("subtitle").value = c.subtitle || "";
-    el("badgeText").value = c.badgeText || "";
-    el("mainColor").value = c.mainColor || "#e28238";
-    el("mainColorText").value = c.mainColor || "#e28238";
-    el("launcherText").value = c.launcherText || "";
+  /* 旧バージョンや外部JSONの欠損項目を既定値で補う */
+  function normalizeConfig(raw){
+    var c = (raw && typeof raw === "object") ? raw : {};
+    var hex = function(v, fb){ return (typeof v === "string" && /^#[0-9a-fA-F]{6}$/.test(v.trim())) ? v.trim() : fb; };
+    var main = hex(c.mainColor, "#e28238");
+    var out = {
+      botName: String(c.botName == null ? "サポート" : c.botName),
+      logoText: String(c.logoText == null ? "?" : c.logoText),
+      subtitle: String(c.subtitle == null ? "" : c.subtitle),
+      badgeText: String(c.badgeText == null ? "" : c.badgeText),
+      mainColor: main,
+      fillMode: c.fillMode === "gradient" ? "gradient" : "solid",
+      gradFrom: hex(c.gradFrom, main),
+      gradTo: hex(c.gradTo, "#d94f70"),
+      gradAngle: Math.max(0, Math.min(360, parseInt(c.gradAngle, 10) || 135)),
+      onMainColor: hex(c.onMainColor, "#ffffff"),
+      parts: {},
+      launcherText: String(c.launcherText == null ? "質問する" : c.launcherText),
+      includeDemo: !!c.includeDemo,
+      greeting: String(c.greeting == null ? "" : c.greeting),
+      resetLabel: String(c.resetLabel == null ? "他の質問をする" : c.resetLabel),
+      placeholder: String(c.placeholder == null ? "" : c.placeholder),
+      noticeText: String(c.noticeText == null ? "" : c.noticeText),
+      fileName: String(c.fileName == null ? "chatbot.html" : c.fileName),
+      scenario: []
+    };
+    PARTS.forEach(function(p){
+      var s = (c.parts && c.parts[p.key]) || {};
+      out.parts[p.key] = {
+        useMain: s.useMain === undefined ? true : !!s.useMain,
+        color: hex(s.color, main)
+      };
+    });
+    if(Array.isArray(c.scenario)){
+      out.scenario = c.scenario.filter(function(s){ return s && typeof s === "object"; }).map(function(s){
+        return { label: String(s.label == null ? "" : s.label), reply: String(s.reply == null ? "" : s.reply) };
+      });
+    }
+    return out;
+  }
+
+  function applyConfig(raw){
+    var c = normalizeConfig(raw);
+    el("botName").value = c.botName;
+    el("logoText").value = c.logoText;
+    el("subtitle").value = c.subtitle;
+    el("badgeText").value = c.badgeText;
+    setColorPair("mainColor", c.mainColor);
+
+    fillMode = c.fillMode;
+    var fillBtn = el("fillSeg").querySelector('button[data-mode="' + fillMode + '"]');
+    if(fillBtn) segActivate(el("fillSeg"), fillBtn);
+    el("gradientFields").hidden = (fillMode !== "gradient");
+    setColorPair("gradFrom", c.gradFrom);
+    setColorPair("gradTo", c.gradTo);
+    el("gradAngle").value = String(c.gradAngle);
+    setColorPair("onMainColor", c.onMainColor);
+    syncGradientUi();
+
+    parts = c.parts;
+    renderParts();
+    el("launcherText").value = c.launcherText;
     el("includeDemo").checked = !!c.includeDemo;
     el("greeting").value = c.greeting || "";
     el("resetLabel").value = c.resetLabel || "他の質問をする";
@@ -577,7 +863,10 @@
 
       var dot = document.createElement("span");
       dot.className = "dot";
-      dot.style.background = (item.config && item.config.mainColor) || "#ccc";
+      var dc = item.config || {};
+      dot.style.background = (dc.fillMode === "gradient" && dc.gradFrom && dc.gradTo)
+        ? "linear-gradient(" + (dc.gradAngle || 135) + "deg," + dc.gradFrom + "," + dc.gradTo + ")"
+        : (dc.mainColor || "#ccc");
 
       var meta = document.createElement("div");
       meta.className = "meta";
@@ -675,13 +964,15 @@
   }
 
   /* ---------------- ダウンロード ---------------- */
-  function download(){
-    var cfg = readConfig();
-    var name = cfg.fileName.trim() || "chatbot.html";
-    name = name.replace(/[\\/:*?"<>|]/g, "_");
-    if(!/\.html?$/i.test(name)) name += ".html";
+  function safeName(name, ext){
+    var n = String(name || "").trim().replace(/[\\/:*?"<>|]/g, "_");
+    if(!n) n = "chatbot";
+    if(!new RegExp("\\." + ext + "$", "i").test(n)) n += "." + ext;
+    return n;
+  }
 
-    var blob = new Blob([buildHTML(cfg)], { type:"text/html;charset=utf-8" });
+  function saveBlob(text, name, mime){
+    var blob = new Blob([text], { type:mime });
     var url = URL.createObjectURL(blob);
     var a = document.createElement("a");
     a.href = url;
@@ -690,7 +981,96 @@
     a.click();
     document.body.removeChild(a);
     setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+  }
+
+  function download(){
+    var cfg = readConfig();
+    var name = safeName(cfg.fileName, "html");
+    saveBlob(buildHTML(cfg), name, "text/html;charset=utf-8");
     toast(name + " をダウンロードしました");
+  }
+
+  /* ---------------- JSON 書き出し / 読み込み ---------------- */
+  function exportCurrentJson(){
+    var cfg = readConfig();
+    var payload = { type:"chatbot-cms-config", version:1, exportedAt:new Date().toISOString(), config:cfg };
+    var name = safeName(cfg.fileName.replace(/\.html?$/i, "") + "_config", "json");
+    saveBlob(JSON.stringify(payload, null, 2), name, "application/json;charset=utf-8");
+    toast(name + " を書き出しました");
+  }
+
+  function exportAllJson(){
+    var items = loadItems();
+    if(!items.length){ toast("保存済みの設定がありません"); return; }
+    var payload = { type:"chatbot-cms-collection", version:1, exportedAt:new Date().toISOString(), items:items };
+    var name = "chatbot_cms_settings.json";
+    saveBlob(JSON.stringify(payload, null, 2), name, "application/json;charset=utf-8");
+    toast(items.length + "件を " + name + " に書き出しました");
+  }
+
+  function importJson(e){
+    var file = e.target.files && e.target.files[0];
+    e.target.value = "";
+    if(!file) return;
+
+    var reader = new FileReader();
+    reader.onerror = function(){ toast("ファイルを読み込めませんでした"); };
+    reader.onload = function(){
+      var data;
+      try{
+        data = JSON.parse(String(reader.result));
+      }catch(err){
+        toast("JSONの形式が正しくありません");
+        return;
+      }
+      applyImported(data);
+    };
+    reader.readAsText(file, "utf-8");
+  }
+
+  function applyImported(data){
+    // 複数件（保存済み一覧）の取り込み
+    var rawItems = null;
+    if(data && Array.isArray(data.items)) rawItems = data.items;
+    else if(Array.isArray(data)) rawItems = data;
+
+    if(rawItems){
+      var incoming = rawItems.filter(function(x){ return x && (x.config || x.botName); });
+      if(!incoming.length){ toast("読み込める設定が含まれていません"); return; }
+      var list = loadItems();
+      var byId = {};
+      list.forEach(function(x, i){ byId[x.id] = i; });
+      var added = 0, updated = 0;
+      incoming.forEach(function(x){
+        var cfg = normalizeConfig(x.config || x);
+        var now = new Date().toISOString();
+        var id = typeof x.id === "string" && x.id ? x.id : ("cb_" + Date.now() + "_" + Math.random().toString(36).slice(2, 7));
+        var entry = {
+          id: id,
+          name: x.name || cfg.botName,
+          createdAt: x.createdAt || now,
+          updatedAt: x.updatedAt || now,
+          config: cfg
+        };
+        if(byId[id] !== undefined){ list[byId[id]] = entry; updated++; }
+        else { list.unshift(entry); added++; }
+      });
+      saveItems(list);
+      renderSavedList();
+      updateCurrentLabel();
+      toast("一覧に取り込みました（追加 " + added + "件 / 更新 " + updated + "件）");
+      return;
+    }
+
+    // 1件（単一設定）の取り込み
+    var single = (data && data.config) ? data.config : data;
+    if(!single || typeof single !== "object"){ toast("読み込める設定が含まれていません"); return; }
+    applyConfig(single);
+    currentId = null;
+    render();
+    renderSavedList();
+    updateCurrentLabel();
+    toast("設定を読み込みました（保存するには「現在の設定を一覧に保存」）");
   }
 
   function toast(msg){
@@ -720,18 +1100,32 @@
     var c = hexToRgb(hex);
     return "rgba(" + c.r + "," + c.g + "," + c.b + "," + a + ")";
   }
-  function darken(hex, ratio){
-    var c = hexToRgb(hex);
-    var f = function(v){ return Math.max(0, Math.min(255, Math.round(v * (1 - ratio)))); };
-    var h = function(v){ return f(v).toString(16).padStart(2, "0"); };
-    return "#" + h(c.r) + h(c.g) + h(c.b);
+
+  /* 塗り（単色 or グラデーション）を解決する */
+  function gradientCss(c){
+    return "linear-gradient(" + c.gradAngle + "deg," + c.gradFrom + "," + c.gradTo + ")";
+  }
+  /* パーツの代表色（枠線・文字・影など、グラデーションを使えない箇所で利用） */
+  function partBase(c, key){
+    var p = (c.parts && c.parts[key]) || { useMain:true };
+    if(!p.useMain && p.color) return p.color;
+    return c.fillMode === "gradient" ? c.gradFrom : c.mainColor;
+  }
+  /* パーツの背景（追従かつグラデーション指定ならグラデーション） */
+  function partFill(c, key){
+    var p = (c.parts && c.parts[key]) || { useMain:true };
+    if(!p.useMain && p.color) return p.color;
+    return c.fillMode === "gradient" ? gradientCss(c) : c.mainColor;
   }
 
   function buildHTML(c){
     var main = c.mainColor;
-    var dark = darken(main, 0.14);
-    var soft = rgba(main, 0.10);
-    var glow = rgba(main, 0.35);
+    var onMain = c.onMainColor || "#ffffff";
+    var headerBase = partBase(c, "header");
+    var launcherBase = partBase(c, "launcher");
+    var choiceBase = partBase(c, "choice");
+    var soft = rgba(choiceBase, 0.10);
+    var glow = rgba(launcherBase, 0.35);
 
     var demoBlock = c.includeDemo ? [
       '  <!-- ===== デモ用ダミーページ（不要な場合はこのブロックを削除してください） ===== -->',
@@ -772,9 +1166,15 @@
     lines.push('<style>');
     lines.push('  :root{');
     lines.push('    --cbw-main:' + main + ';');
-    lines.push('    --cbw-main-dark:' + dark + ';');
+    lines.push('    --cbw-on-main:' + onMain + ';');
     lines.push('    --cbw-main-soft:' + soft + ';');
     lines.push('    --cbw-glow:' + glow + ';');
+    lines.push('    --cbw-header-base:' + headerBase + ';');
+    lines.push('    --cbw-choice:' + choiceBase + ';');
+    lines.push('    --cbw-fill-header:' + partFill(c, "header") + ';');
+    lines.push('    --cbw-fill-launcher:' + partFill(c, "launcher") + ';');
+    lines.push('    --cbw-fill-user:' + partFill(c, "userBubble") + ';');
+    lines.push('    --cbw-fill-send:' + partFill(c, "send") + ';');
     lines.push('  }');
     lines.push('  *{box-sizing:border-box}');
     lines.push('  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:#1f2733;background:#fff}');
@@ -783,30 +1183,30 @@
     lines.push('  .cbw-root{position:fixed;right:20px;bottom:20px;z-index:2147483000;font-size:14px;line-height:1.6}');
     lines.push('  .cbw-hidden{display:none !important}');
     lines.push('  /* ===== 閉じている時のランチャー ===== */');
-    lines.push('  .cbw-launcher{display:inline-flex;align-items:center;gap:9px;background:var(--cbw-main);color:#fff;border:none;border-radius:999px;padding:14px 22px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;box-shadow:0 10px 26px var(--cbw-glow);transition:transform .18s, box-shadow .18s, background .18s}');
-    lines.push('  .cbw-launcher:hover{background:var(--cbw-main-dark);transform:translateY(-2px);box-shadow:0 14px 32px var(--cbw-glow)}');
+    lines.push('  .cbw-launcher{display:inline-flex;align-items:center;gap:9px;background:var(--cbw-fill-launcher);color:var(--cbw-on-main);border:none;border-radius:999px;padding:14px 22px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;box-shadow:0 10px 26px var(--cbw-glow);transition:transform .18s, box-shadow .18s, filter .18s}');
+    lines.push('  .cbw-launcher:hover{filter:brightness(.94);transform:translateY(-2px);box-shadow:0 14px 32px var(--cbw-glow)}');
     lines.push('  .cbw-launcher:active{transform:translateY(0)}');
     lines.push('  .cbw-launcher svg{width:20px;height:20px;flex:none}');
     lines.push('  /* ===== パネル ===== */');
     lines.push('  .cbw-panel{width:370px;max-width:calc(100vw - 32px);height:min(580px, calc(100vh - 40px));background:#fff;border-radius:16px;box-shadow:0 24px 60px rgba(16,24,40,.24);display:flex;flex-direction:column;overflow:hidden;animation:cbw-in .22s ease-out}');
     lines.push('  @keyframes cbw-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}');
     lines.push('  /* ===== ヘッダー ===== */');
-    lines.push('  .cbw-header{background:var(--cbw-main);color:#fff;padding:14px 14px 13px;display:flex;align-items:flex-start;gap:11px}');
-    lines.push('  .cbw-logo{width:38px;height:38px;border-radius:50%;background:#fff;color:var(--cbw-main);display:grid;place-items:center;font-weight:700;font-size:16px;flex:none}');
+    lines.push('  .cbw-header{background:var(--cbw-fill-header);color:var(--cbw-on-main);padding:14px 14px 13px;display:flex;align-items:flex-start;gap:11px}');
+    lines.push('  .cbw-logo{width:38px;height:38px;border-radius:50%;background:var(--cbw-on-main);color:var(--cbw-header-base);display:grid;place-items:center;font-weight:700;font-size:16px;flex:none}');
     lines.push('  .cbw-htext{flex:1;min-width:0}');
     lines.push('  .cbw-title{font-size:15px;font-weight:700;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}');
     lines.push('  .cbw-subtitle{font-size:11.5px;opacity:.92;line-height:1.45;margin-top:1px}');
-    lines.push('  .cbw-badge{display:inline-block;margin-top:6px;background:#fff;color:var(--cbw-main);font-size:10.5px;font-weight:700;padding:2px 9px;border-radius:999px;letter-spacing:.02em}');
-    lines.push('  .cbw-close{background:rgba(255,255,255,.16);border:none;color:#fff;width:28px;height:28px;border-radius:50%;font-size:15px;line-height:1;cursor:pointer;flex:none;transition:background .15s}');
+    lines.push('  .cbw-badge{display:inline-block;margin-top:6px;background:var(--cbw-on-main);color:var(--cbw-header-base);font-size:10.5px;font-weight:700;padding:2px 9px;border-radius:999px;letter-spacing:.02em}');
+    lines.push('  .cbw-close{background:rgba(255,255,255,.16);border:none;color:var(--cbw-on-main);width:28px;height:28px;border-radius:50%;font-size:15px;line-height:1;cursor:pointer;flex:none;transition:background .15s}');
     lines.push('  .cbw-close:hover{background:rgba(255,255,255,.3)}');
     lines.push('  /* ===== メッセージログ ===== */');
     lines.push('  .cbw-log{flex:1;overflow-y:auto;padding:16px 14px 4px;background:#f6f8fa;display:flex;flex-direction:column;gap:12px}');
     lines.push('  .cbw-row{display:flex;gap:8px;align-items:flex-end}');
     lines.push('  .cbw-row.user{flex-direction:row-reverse}');
-    lines.push('  .cbw-avatar{width:28px;height:28px;border-radius:50%;background:var(--cbw-main);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:700;flex:none}');
+    lines.push('  .cbw-avatar{width:28px;height:28px;border-radius:50%;background:var(--cbw-fill-header);color:var(--cbw-on-main);display:grid;place-items:center;font-size:12px;font-weight:700;flex:none}');
     lines.push('  .cbw-bubble{max-width:78%;padding:10px 13px;border-radius:14px;font-size:13.5px;white-space:pre-wrap;word-break:break-word}');
     lines.push('  .cbw-row.bot .cbw-bubble{background:#fff;border:1px solid #e6eaf0;border-bottom-left-radius:4px;color:#1f2733}');
-    lines.push('  .cbw-row.user .cbw-bubble{background:var(--cbw-main);color:#fff;border-bottom-right-radius:4px}');
+    lines.push('  .cbw-row.user .cbw-bubble{background:var(--cbw-fill-user);color:var(--cbw-on-main);border-bottom-right-radius:4px}');
     lines.push('  .cbw-time{font-size:10px;color:#98a2b3;flex:none;padding-bottom:2px}');
     lines.push('  .cbw-typing{display:flex;gap:4px;padding:12px 14px}');
     lines.push('  .cbw-typing span{width:6px;height:6px;border-radius:50%;background:#c3cbd6;animation:cbw-blink 1.2s infinite}');
@@ -815,16 +1215,16 @@
     lines.push('  @keyframes cbw-blink{0%,60%,100%{opacity:.3}30%{opacity:1}}');
     lines.push('  /* ===== 選択肢エリア ===== */');
     lines.push('  .cbw-choices{padding:8px 14px 12px;background:#f6f8fa;display:flex;flex-direction:column;gap:8px}');
-    lines.push('  .cbw-choice{background:#fff;border:1.5px solid var(--cbw-main);color:var(--cbw-main);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;text-align:left;transition:background .15s,color .15s}');
+    lines.push('  .cbw-choice{background:#fff;border:1.5px solid var(--cbw-choice);color:var(--cbw-choice);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;text-align:left;transition:background .15s,color .15s}');
     lines.push('  .cbw-choice:hover{background:var(--cbw-main-soft)}');
-    lines.push('  .cbw-choice:active{background:var(--cbw-main);color:#fff}');
+    lines.push('  .cbw-choice:active{background:var(--cbw-choice);color:var(--cbw-on-main)}');
     lines.push('  /* ===== フッター ===== */');
     lines.push('  .cbw-footer{border-top:1px solid #e6eaf0;background:#fff;padding:10px 12px 11px}');
     lines.push('  .cbw-inputbar{display:flex;align-items:center;gap:8px;background:#f2f4f7;border-radius:999px;padding:7px 8px 7px 14px}');
     lines.push('  .cbw-input{flex:1;border:none;background:transparent;font-size:13px;font-family:inherit;color:#1f2733;outline:none}');
     lines.push('  .cbw-input::placeholder{color:#98a2b3}');
-    lines.push('  .cbw-send{width:32px;height:32px;border-radius:50%;border:none;background:var(--cbw-main);color:#fff;display:grid;place-items:center;cursor:pointer;flex:none;transition:background .15s}');
-    lines.push('  .cbw-send:hover{background:var(--cbw-main-dark)}');
+    lines.push('  .cbw-send{width:32px;height:32px;border-radius:50%;border:none;background:var(--cbw-fill-send);color:var(--cbw-on-main);display:grid;place-items:center;cursor:pointer;flex:none;transition:filter .15s}');
+    lines.push('  .cbw-send:hover{filter:brightness(.94)}');
     lines.push('  .cbw-send svg{width:16px;height:16px}');
     lines.push('  .cbw-notice{margin:7px 2px 0;font-size:10.5px;color:#98a2b3;line-height:1.5}');
     lines.push('  @media (max-width:420px){');
