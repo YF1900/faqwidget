@@ -27,14 +27,14 @@
     line-height:1.7;
     -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:1080px;margin:0 auto}
-  header{text-align:center;margin-bottom:36px}
+  .wrap{max-width:1140px;margin:0 auto}
+  header{text-align:center;margin-bottom:32px}
   header h1{font-size:26px;margin:0 0 8px;letter-spacing:.02em}
   header p{margin:0;color:var(--muted);font-size:13px}
 
   .cards{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(3,1fr);
     gap:16px;
     align-items:stretch;
   }
@@ -43,7 +43,7 @@
     border:1px solid var(--line);
     border-radius:var(--radius);
     box-shadow:var(--shadow);
-    padding:24px 20px;
+    padding:22px 20px;
     display:flex;
     flex-direction:column;
   }
@@ -52,31 +52,28 @@
     box-shadow:0 0 0 3px var(--accent-soft), var(--shadow);
   }
   .badge{
-    display:inline-block;
-    align-self:flex-start;
+    display:inline-block;align-self:flex-start;
     font-size:11px;font-weight:700;letter-spacing:.04em;
     color:var(--accent);background:var(--accent-soft);
     padding:2px 8px;border-radius:999px;margin-bottom:10px;
   }
   .badge.ghost{color:var(--muted);background:#f0f2f6}
   .card h2{font-size:16px;margin:0 0 2px;font-weight:700}
-  .card .who{font-size:12px;color:var(--muted);margin:0 0 16px}
-  .price{font-size:28px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+  .card .who{font-size:12px;color:var(--muted);margin:0 0 14px}
+  .price{font-size:26px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
   .price small{font-size:13px;font-weight:400;color:var(--muted)}
-  .price.est{font-size:20px}
-  .quota{
+  .price.est{font-size:19px}
+  .specs{
     margin:14px 0 0;padding:12px;
-    background:#f8fafc;border-radius:8px;
-    font-size:13px;
+    background:#f8fafc;border-radius:8px;font-size:13px;
+    display:grid;grid-template-columns:auto 1fr;gap:2px 10px;
   }
-  .quota b{font-size:16px}
-  .unit{color:var(--accent);font-weight:700}
-  ul.feat{
-    list-style:none;padding:0;margin:16px 0 0;
-    font-size:13px;flex:1;
-  }
+  .specs dt{color:var(--muted);font-size:12px}
+  .specs dd{margin:0;font-weight:700;text-align:right}
+  .specs dd.unit{color:var(--accent)}
+  ul.feat{list-style:none;padding:0;margin:14px 0 0;font-size:13px;flex:1}
   ul.feat li{
-    padding:5px 0 5px 20px;position:relative;color:var(--ink);
+    padding:5px 0 5px 20px;position:relative;
     border-top:1px solid var(--line);
   }
   ul.feat li:first-child{border-top:none}
@@ -88,21 +85,23 @@
   ul.feat li.muted::before{background:#c7ced9}
 
   section{margin-top:44px}
-  section h3{
-    font-size:15px;margin:0 0 14px;padding-bottom:8px;
-    border-bottom:2px solid var(--line);
-  }
+  section h3{font-size:15px;margin:0 0 6px}
+  section .lead{margin:0 0 14px;font-size:13px;color:var(--muted)}
+  .tablescroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
   table{
     width:100%;border-collapse:collapse;background:var(--panel);
     border:1px solid var(--line);border-radius:var(--radius);
-    overflow:hidden;font-size:13px;
+    overflow:hidden;font-size:13px;min-width:720px;
   }
-  th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line)}
+  th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line)}
   th{background:#f8fafc;font-weight:700;font-size:12px;color:var(--muted);letter-spacing:.02em}
   tbody tr:last-child td{border-bottom:none}
   td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
-  .warn{color:#b42318;font-weight:700}
-  .ok{color:#067647}
+  td.c,th.c{text-align:center}
+  tr.group td{background:#f8fafc;font-weight:700;font-size:12px;color:var(--ink)}
+  .yes{color:#067647;font-weight:700}
+  .no{color:#c7ced9}
+  .hl{background:#fffbeb}
   .note{
     margin-top:12px;font-size:12px;color:var(--muted);
     padding:12px 14px;background:#fff;border:1px solid var(--line);
@@ -110,14 +109,10 @@
   }
   footer{margin-top:48px;text-align:center;font-size:12px;color:var(--muted)}
 
-  @media (max-width:900px){
-    .cards{grid-template-columns:repeat(2,1fr)}
-  }
-  @media (max-width:560px){
+  @media (max-width:980px){ .cards{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:620px){
     .cards{grid-template-columns:1fr}
     body{padding:24px 14px 60px}
-    .tablescroll{overflow-x:auto}
-    .tablescroll table{min-width:560px}
   }
 </style>
 </head>
@@ -126,7 +121,7 @@
 
   <header>
     <h1>Syavids 価格表</h1>
-    <p>1段上がるごとに、価格10倍・提供量20倍 — 使うほど分単価は半分に。<br>表示はすべて税抜価格です。</p>
+    <p>1席 ¥30,000 / 月・200分。上位プランは「声の登録枠」と「チーム統制」で選ぶ設計です。<br>表示はすべて税抜価格です。</p>
   </header>
 
   <div class="cards">
@@ -136,14 +131,16 @@
       <h2>Starter</h2>
       <p class="who">まず試してみたい方に</p>
       <div class="price">¥3,000<small> /月</small></div>
-      <div class="quota">
-        <b>10分</b> / 月<br>
-        <span class="unit">¥300 /分</span>
-      </div>
+      <dl class="specs">
+        <dt>含有分数</dt><dd>10分 /月</dd>
+        <dt>実効単価</dt><dd class="unit">¥300 /分</dd>
+        <dt>席数</dt><dd>1</dd>
+        <dt>声の登録枠</dt><dd>1</dd>
+      </dl>
       <ul class="feat">
-        <li>1ユーザー</li>
         <li>超過分 ¥400 /分</li>
         <li>年払い ¥30,000（2ヶ月無料）</li>
+        <li class="muted">個人利用のみ</li>
         <li class="muted">サポート: ドキュメント</li>
       </ul>
     </div>
@@ -151,104 +148,226 @@
     <div class="card">
       <span class="badge ghost">個人</span>
       <h2>Standard</h2>
-      <p class="who">日常的に使う個人・専業の方に</p>
+      <p class="who">日常的に使う個人の方に</p>
       <div class="price">¥30,000<small> /月</small></div>
-      <div class="quota">
-        <b>200分</b> / 月<br>
-        <span class="unit">¥150 /分</span>
-      </div>
+      <dl class="specs">
+        <dt>含有分数</dt><dd>200分 /月</dd>
+        <dt>実効単価</dt><dd class="unit">¥150 /分</dd>
+        <dt>席数</dt><dd>1</dd>
+        <dt>声の登録枠</dt><dd>3</dd>
+      </dl>
       <ul class="feat">
-        <li>1ユーザー</li>
         <li>超過分 ¥200 /分</li>
-        <li>年払い ¥300,000（2ヶ月無料）</li>
-        <li>サポート: メール</li>
+        <li>透かしなし出力</li>
+        <li>学習利用オプトアウト</li>
+        <li class="muted">個人利用のみ</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="badge">小チーム</span>
+      <h2>Team</h2>
+      <p class="who">3名までのチーム利用に</p>
+      <div class="price">¥90,000<small> /月</small></div>
+      <dl class="specs">
+        <dt>含有分数</dt><dd>600分 /月</dd>
+        <dt>実効単価</dt><dd class="unit">¥150 /分</dd>
+        <dt>席数</dt><dd>3</dd>
+        <dt>声の登録枠</dt><dd>8</dd>
+      </dl>
+      <ul class="feat">
+        <li><b>声のチーム共有</b></li>
+        <li>ロール管理 / 共有ワークスペース</li>
+        <li>ブランドキット共有</li>
+        <li>声の権利管理（同意書の保管）</li>
+        <li>法人契約・請求書払い可</li>
       </ul>
     </div>
 
     <div class="card featured">
-      <span class="badge">10名まで</span>
+      <span class="badge">おすすめ / 部署単位</span>
       <h2>Business</h2>
-      <p class="who">チーム・部署単位での利用に</p>
+      <p class="who">部署でしっかり運用する組織に</p>
       <div class="price">¥300,000<small> /月</small></div>
-      <div class="quota">
-        <b>4,000分</b> / 月<br>
-        <span class="unit">¥75 /分</span>
-      </div>
+      <dl class="specs">
+        <dt>含有分数</dt><dd>2,000分 /月</dd>
+        <dt>実効単価</dt><dd class="unit">¥150 /分</dd>
+        <dt>席数</dt><dd>10</dd>
+        <dt>声の登録枠</dt><dd>20</dd>
+      </dl>
       <ul class="feat">
-        <li><b>10ユーザーまで</b></li>
-        <li>超過分 ¥100 /分</li>
-        <li>追加シート ¥30,000 /名（+400分・15名まで）</li>
-        <li>年払い ¥3,000,000（2ヶ月無料）</li>
-        <li>権限管理 / 使用量ダッシュボード</li>
-        <li>請求書払い対応</li>
+        <li><b>承認ワークフロー（公開前レビュー）</b></li>
+        <li><b>声の持ち出し制限・利用ログ</b></li>
+        <li>声のバージョン管理</li>
+        <li>部署別コスト配賦 / 監査ログ</li>
+        <li>API アクセス / 優先処理キュー</li>
+        <li>セキュリティ審査対応</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="badge">複数部署</span>
+      <h2>Business Plus</h2>
+      <p class="who">部署をまたいで展開する組織に</p>
+      <div class="price">¥600,000<small> /月</small></div>
+      <dl class="specs">
+        <dt>含有分数</dt><dd>4,500分 /月</dd>
+        <dt>実効単価</dt><dd class="unit">¥133 /分</dd>
+        <dt>席数</dt><dd>25</dd>
+        <dt>声の登録枠</dt><dd>50</dd>
+      </dl>
+      <ul class="feat">
+        <li>Business のすべてを含む</li>
+        <li><b>SSO（SAML / OIDC）</b></li>
+        <li>同時実行 10 並列</li>
+        <li>担当窓口つき優先サポート</li>
+        <li>契約書の一部カスタマイズ可</li>
       </ul>
     </div>
 
     <div class="card">
       <span class="badge ghost">全社導入</span>
       <h2>Enterprise</h2>
-      <p class="who">11名以上・全社展開に</p>
+      <p class="who">全社展開・26名以上に</p>
       <div class="price est">個別見積もり</div>
-      <div class="quota">
-        <b>応相談</b><br>
-        <span class="unit">¥50 /分 〜</span>
-      </div>
+      <dl class="specs">
+        <dt>含有分数</dt><dd>応相談</dd>
+        <dt>実効単価</dt><dd class="unit">¥120 /分〜</dd>
+        <dt>席数</dt><dd>無制限</dd>
+        <dt>声の登録枠</dt><dd>無制限</dd>
+      </dl>
       <ul class="feat">
-        <li>ユーザー数無制限</li>
-        <li>最低契約額 年 ¥3,600,000</li>
-        <li>SLA / 監査ログ / SSO</li>
-        <li>セキュリティ審査対応</li>
-        <li>専任サポート</li>
+        <li>最低契約額 年 ¥6,000,000</li>
+        <li>SCIM 自動プロビジョニング</li>
+        <li>SLA / 専任 CSM</li>
+        <li>保存期間 無制限</li>
+        <li>契約書カスタマイズ</li>
       </ul>
     </div>
 
   </div>
 
   <section>
-    <h3>プラン比較</h3>
+    <h3>声（音声）まわりの機能</h3>
+    <p class="lead">分数とは独立に効く、上位プラン最大の差別化軸です。</p>
     <div class="tablescroll">
     <table>
       <thead>
         <tr>
-          <th>項目</th>
-          <th class="num">Starter</th>
-          <th class="num">Standard</th>
-          <th class="num">Business</th>
-          <th class="num">Enterprise</th>
+          <th>機能</th><th class="c">Starter</th><th class="c">Standard</th><th class="c">Team</th>
+          <th class="c">Business</th><th class="c">Business Plus</th><th class="c">Enterprise</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>月額</td><td class="num">¥3,000</td><td class="num">¥30,000</td><td class="num">¥300,000</td><td class="num">個別</td></tr>
-        <tr><td>含有分数 / 月</td><td class="num">10分</td><td class="num">200分</td><td class="num">4,000分</td><td class="num">応相談</td></tr>
-        <tr><td>実効分単価</td><td class="num">¥300</td><td class="num">¥150</td><td class="num">¥75</td><td class="num">¥50〜</td></tr>
-        <tr><td>前段との比</td><td class="num">—</td><td class="num">価格×10 / 量×20</td><td class="num">価格×10 / 量×20</td><td class="num">個別</td></tr>
-        <tr><td>ユーザー数</td><td class="num">1名</td><td class="num">1名</td><td class="num">10名</td><td class="num">無制限</td></tr>
-        <tr><td>超過従量単価</td><td class="num">¥400 /分</td><td class="num">¥200 /分</td><td class="num">¥100 /分</td><td class="num">契約による</td></tr>
-        <tr><td>年払い（2ヶ月無料）</td><td class="num">¥30,000</td><td class="num">¥300,000</td><td class="num">¥3,000,000</td><td class="num">個別</td></tr>
+        <tr class="hl"><td><b>登録できる声の数</b></td><td class="c"><b>1</b></td><td class="c"><b>3</b></td><td class="c"><b>8</b></td><td class="c"><b>20</b></td><td class="c"><b>50</b></td><td class="c"><b>無制限</b></td></tr>
+        <tr><td>声のチーム共有（共有ボイスライブラリ）</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>声の権利管理（同意書・本人確認記録）</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>声のバージョン管理・差し替え</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>声の持ち出し制限</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>声ごとの利用ログ</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>話者ごとの利用可否をロールで制御</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
       </tbody>
     </table>
     </div>
-    <p class="note">無料トライアル: 14日間・5分ぶんの生成量。クレジットカード登録は不要で、期間終了後に自動課金はされません。</p>
+  </section>
+
+  <section>
+    <h3>チーム管理・ガバナンス</h3>
+    <p class="lead">合成音声を対外発信に使う組織にとって、チェックの効かない音声が世に出るリスクは分数コストより重い。承認ワークフローが Business の入口機能です。</p>
+    <div class="tablescroll">
+    <table>
+      <thead>
+        <tr>
+          <th>機能</th><th class="c">Starter</th><th class="c">Standard</th><th class="c">Team</th>
+          <th class="c">Business</th><th class="c">Business Plus</th><th class="c">Enterprise</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hl"><td><b>席数</b></td><td class="c"><b>1</b></td><td class="c"><b>1</b></td><td class="c"><b>3</b></td><td class="c"><b>10</b></td><td class="c"><b>25</b></td><td class="c"><b>無制限</b></td></tr>
+        <tr><td>ロール管理（管理者 / 編集者 / 閲覧者）</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>共有ワークスペース・フォルダ権限</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>席の付け替え（異動・退職時の引き継ぎ）</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>ブランドキット共有</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr class="hl"><td><b>承認ワークフロー（公開前レビュー）</b></td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>部署別の使用量・コスト配賦レポート</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>監査ログ</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>SSO（SAML / OIDC）</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>SCIM 自動プロビジョニング</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section>
+    <h3>制作・運用 / 契約</h3>
+    <div class="tablescroll">
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th><th class="c">Starter</th><th class="c">Standard</th><th class="c">Team</th>
+          <th class="c">Business</th><th class="c">Business Plus</th><th class="c">Enterprise</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>同時実行数</td><td class="c">1</td><td class="c">2</td><td class="c">3</td><td class="c">5</td><td class="c">10</td><td class="c">応相談</td></tr>
+        <tr><td>優先処理キュー</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>透かしなし出力</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>成果物の保存期間</td><td class="c">30日</td><td class="c">90日</td><td class="c">180日</td><td class="c">365日</td><td class="c">365日</td><td class="c">無制限</td></tr>
+        <tr><td>API アクセス</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>学習利用オプトアウト</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr class="hl"><td><b>法人名義での契約</b></td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>請求書払い</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>セキュリティ審査対応</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c yes">○</td><td class="c yes">○</td><td class="c yes">○</td></tr>
+        <tr><td>サポート</td><td class="c">ドキュメント</td><td class="c">メール</td><td class="c">メール</td><td class="c">優先メール</td><td class="c">優先＋担当窓口</td><td class="c">専任CSM + SLA</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="note">Starter / Standard は個人利用限定です。法人名義でのご契約・組織単位でのご利用は Team 以上のプランをご利用ください。</p>
+  </section>
+
+  <section>
+    <h3>アドオン</h3>
+    <div class="tablescroll">
+    <table>
+      <thead><tr><th>アドオン</th><th class="num">価格</th><th>対象</th><th>備考</th></tr></thead>
+      <tbody>
+        <tr><td>追加席</td><td class="num">¥30,000 /席/月</td><td>Team 以上</td><td>+200分 / +2声枠 が付帯</td></tr>
+        <tr class="hl"><td><b>追加の声の登録枠</b></td><td class="num">¥5,000 /枠/月</td><td>Standard 以上</td><td>分数を増やさず声だけ増やせる</td></tr>
+        <tr><td>追加同時実行</td><td class="num">¥20,000 /並列/月</td><td>Business 以上</td><td>—</td></tr>
+        <tr><td>長期保存（無制限）</td><td class="num">¥50,000 /月</td><td>Business 以上</td><td>—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="lead" style="margin-top:20px">分数パック（事前購入・当月中に消化）— 超過従量 ¥200/分 より必ずお得です。</p>
+    <div class="tablescroll">
+    <table>
+      <thead><tr><th>パック</th><th class="num">価格</th><th class="num">実効単価</th></tr></thead>
+      <tbody>
+        <tr><td>100分</td><td class="num">¥18,000</td><td class="num">¥180 /分</td></tr>
+        <tr><td>500分</td><td class="num">¥80,000</td><td class="num">¥160 /分</td></tr>
+        <tr><td>2,000分</td><td class="num">¥280,000</td><td class="num">¥140 /分</td></tr>
+        <tr><td>10,000分</td><td class="num">¥1,200,000</td><td class="num">¥120 /分</td></tr>
+      </tbody>
+    </table>
+    </div>
   </section>
 
   <section>
     <h3>どのプランがお得か（乗り換えの目安）</h3>
     <div class="tablescroll">
     <table>
-      <thead>
-        <tr><th>月の利用量</th><th>最も安いプラン</th><th class="num">月額の目安</th><th>備考</th></tr>
-      </thead>
+      <thead><tr><th>月の利用量</th><th>最も安いプラン</th><th class="num">月額の目安</th><th>備考</th></tr></thead>
       <tbody>
         <tr><td>〜10分</td><td>Starter</td><td class="num">¥3,000</td><td>—</td></tr>
-        <tr><td>10〜78分</td><td>Starter（超過あり）</td><td class="num">¥3,000〜¥30,200</td><td>78分で Standard と並ぶ</td></tr>
-        <tr><td>78〜200分</td><td class="ok">Standard</td><td class="num">¥30,000</td><td>Starter のままだと 200分で ¥79,000</td></tr>
-        <tr><td>200〜1,550分</td><td>Standard（超過あり）</td><td class="num">¥30,000〜¥300,000</td><td>1,550分で Business と並ぶ</td></tr>
-        <tr><td>1,550〜4,000分</td><td class="ok">Business</td><td class="num">¥300,000</td><td>10名まで利用可</td></tr>
-        <tr><td>4,000分超 / 11名以上</td><td class="ok">Enterprise</td><td class="num">個別</td><td>最低 年¥3,600,000</td></tr>
+        <tr><td>78分〜</td><td class="yes">Standard</td><td class="num">¥30,000</td><td>Starter のままだと 200分で ¥79,000</td></tr>
+        <tr><td>500分〜 / 2名以上</td><td class="yes">Team</td><td class="num">¥90,000</td><td>声の共有が使えるようになる</td></tr>
+        <tr><td>1,650分〜 / 4名以上</td><td class="yes">Business</td><td class="num">¥300,000</td><td>承認ワークフロー・声20枠</td></tr>
+        <tr><td>3,500分〜 / 11名以上</td><td class="yes">Business Plus</td><td class="num">¥600,000</td><td>SSO・声50枠</td></tr>
+        <tr><td>4,500分超 / 26名以上</td><td class="yes">Enterprise</td><td class="num">個別</td><td>最低 年¥6,000,000</td></tr>
       </tbody>
     </table>
     </div>
-    <p class="note">超過単価は含有単価の約1.33倍に設定しています。継続的に超過する場合は、上位プランへの変更が常にお得になります。</p>
+    <p class="note">いずれの乗り換え点も、上位プランの含有分数を下回る位置に設定しています（例: Team → Business の分岐点は月1,650分、Business の含有量は2,000分）。乗り換えた瞬間に余裕が生まれる設計です。</p>
   </section>
 
   <footer>
