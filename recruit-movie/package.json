@@ -1,0 +1,18 @@
+{
+  "name": "coretech-recruit-movie",
+  "version": "1.0.0",
+  "private": true,
+  "description": "株式会社コアテック 採用動画（HTML/CSSモーショングラフィックス → MP4書き出し）",
+  "type": "module",
+  "scripts": {
+    "setup": "node scripts/setup-fonts.mjs",
+    "preview": "npx http-server . -p 8080 -c-1",
+    "render": "node render.mjs",
+    "render:draft": "node render.mjs --fps 15 --scale 0.5 --out dist/coretech-recruit-draft.mp4"
+  },
+  "devDependencies": {
+    "@fontsource/noto-sans-jp": "^5.2.5",
+    "@fontsource/zen-kaku-gothic-new": "^5.2.5",
+    "playwright": "^1.56.1"
+  }
+}
