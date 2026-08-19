@@ -3,7 +3,7 @@
 HTML / CSS / Canvas で組んだモーショングラフィックスを、Playwright でコマ送りキャプチャして
 MP4 に書き出す構成の採用動画です。**編集ソフト不要・テキストで差分管理できる**のが狙いです。
 
-- 尺: **1分32秒** / 1920×1080 / 30fps / 音声なし
+- 尺: **1分32秒** / 1920×1080 / 30fps / BGM付き（-15 LUFS）
 - 完成データ: [`dist/coretech-recruit.mp4`](dist/coretech-recruit.mp4)（Web配信向けエンコード / 約16MB）
 - サムネイル: [`docs/poster.png`](docs/poster.png)
 - 台本・絵コンテ: [`docs/絵コンテ・台本.md`](docs/絵コンテ・台本.md)
@@ -16,8 +16,9 @@ MP4 に書き出す構成の採用動画です。**編集ソフト不要・テ�
 ```bash
 npm install          # playwright と和文Webフォントを取得
 npm run setup        # assets/fonts/ に woff2 を配置（フォントはリポジトリに含めない）
+npm run bgm          # assets/bgm.wav を合成（BGM。約92秒 / 数十秒で生成）
 npm run preview      # http://localhost:8080 でブラウザ再生（シークバー付き）
-npm run render       # dist/coretech-recruit.mp4 を書き出し（約10〜15分）
+npm run render       # dist/coretech-recruit.mp4 を書き出し（映像+BGM / 約10〜15分）
 npm run render:draft # 15fps / 960×540 の確認用（数分）
 ```
 
@@ -27,7 +28,7 @@ ffmpeg が必要です（`ffmpeg` にパスが通っていれば自動検出。�
 ### よく使うオプション
 
 ```bash
-node render.mjs --bgm bgm.mp3              # BGM を合成（映像尺に合わせてカット）
+node render.mjs --bgm 別の曲.mp3            # BGM を差し替える（映像尺に合わせてカット）
 node render.mjs --from 38000 --to 56000    # VALUE シーンだけ書き出し
 node render.mjs --fps 60 --crf 16          # 高品質版
 ```
@@ -39,6 +40,7 @@ recruit-movie/
 ├─ index.html            # 動画本体（タイムライン + 全シーン）
 ├─ render.mjs            # Playwright → ffmpeg 書き出し
 ├─ scripts/setup-fonts.mjs
+├─ scripts/make-bgm.mjs   # BGM をコードから合成
 ├─ docs/絵コンテ・台本.md  # 台本 / ナレーション案 / 尺表
 └─ dist/coretech-recruit.mp4
 ```
@@ -55,6 +57,7 @@ recruit-movie/
 | シーンの尺 | `index.html` の `SCENES` 配列（`start` / `end` ミリ秒） |
 | 各要素の登場タイミング | `updaters` 内の `seg(l, 開始ms, 終了ms)` |
 | ブランドカラー | `:root { --accent / --accent2 / --accent3 }` |
+| BGM の構成・音量 | `scripts/make-bgm.mjs`（コード進行・セクション・各音色の音量） |
 | 書体 | `@font-face` と `scripts/setup-fonts.mjs` |
 
 ## 掲載内容の出典と、確認していただきたい点
@@ -83,5 +86,8 @@ recruit-movie/
 - アクセントカラー（`#19C9E8` / `#2E6BFF` / `#7C5CFF`）は公式ブランドカラーが確認できなかったための仮設定です。
 - ロゴは欧文タイプで組んだ簡易表現です。正式ロゴデータがあれば `index.html` の `.logo-mark` を画像に差し替えてください。
 - 書体は Noto Sans JP / Zen Kaku Gothic New（SIL OFL 1.1）を使用しています。
+- BGM は既成曲を使わず `scripts/make-bgm.mjs` でコードから合成したオリジナル（Am–F–C–G / 100BPM）です。
+  そのため権利処理は不要です。指定の楽曲に差し替える場合は `node render.mjs --bgm <file>` で再書き出しできます。
+- ナレーションは未収録です。原稿は `docs/絵コンテ・台本.md` のナレーション案をご利用ください。
 
 上記の公式データ（正式ロゴ・ブランドカラー・確定した数値・募集職種）をいただければ、差し替えて再書き出しできます。

@@ -6,9 +6,10 @@
   "type": "module",
   "scripts": {
     "setup": "node scripts/setup-fonts.mjs",
+    "bgm": "node scripts/make-bgm.mjs",
     "preview": "npx http-server . -p 8080 -c-1",
-    "render": "node render.mjs",
-    "render:draft": "node render.mjs --fps 15 --scale 0.5 --out dist/coretech-recruit-draft.mp4"
+    "render": "node render.mjs --bgm assets/bgm.wav",
+    "render:draft": "node render.mjs --fps 15 --scale 0.5 --bgm assets/bgm.wav --out dist/coretech-recruit-draft.mp4"
   },
   "devDependencies": {
     "@fontsource/noto-sans-jp": "^5.2.5",
