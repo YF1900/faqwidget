@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>CORE TECH ｜ RECRUITING MOVIE</title>
+<style>
+/* ===== Web fonts (assets/fonts に配置。無い場合は端末フォントにフォールバック) ===== */
+/* Noto Sans JP（和文＋欧文サブセット）*/
+@font-face{font-family:'NotoJP';src:url('assets/fonts/noto-sans-jp-latin-400.woff2') format('woff2');font-weight:400;font-display:block;}
+@font-face{font-family:'NotoJP';src:url('assets/fonts/noto-sans-jp-japanese-400.woff2') format('woff2');font-weight:400;font-display:block;}
+@font-face{font-family:'NotoJP';src:url('assets/fonts/noto-sans-jp-latin-700.woff2') format('woff2');font-weight:700;font-display:block;}
+@font-face{font-family:'NotoJP';src:url('assets/fonts/noto-sans-jp-japanese-700.woff2') format('woff2');font-weight:700;font-display:block;}
+@font-face{font-family:'NotoJP';src:url('assets/fonts/noto-sans-jp-latin-900.woff2') format('woff2');font-weight:900;font-display:block;}
+@font-face{font-family:'NotoJP';src:url('assets/fonts/noto-sans-jp-japanese-900.woff2') format('woff2');font-weight:900;font-display:block;}
+/* Zen Kaku Gothic New（和文見出し用）*/
+@font-face{font-family:'ZenKaku';src:url('assets/fonts/zen-kaku-gothic-new-latin-900.woff2') format('woff2');font-weight:900;font-display:block;}
+@font-face{font-family:'ZenKaku';src:url('assets/fonts/zen-kaku-gothic-new-japanese-900.woff2') format('woff2');font-weight:900;font-display:block;}
+
+:root{
+  /* ブランドカラー：公式サイトの実カラーが確定したらここだけ差し替える */
+  --accent:#19C9E8;
+  --accent2:#2E6BFF;
+  --accent3:#7C5CFF;
+  --bg0:#04070F;
+  --ink:#FFFFFF;
+  --muted:#8CA2C0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{background:#04070F;overflow:hidden;}
+body{
+  font-family:'NotoJP','Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic',IPAGothic,sans-serif;
+  color:var(--ink);-webkit-font-smoothing:antialiased;
+}
+#stage{
+  position:relative;width:1920px;height:1080px;overflow:hidden;
+  transform-origin:0 0;background:#04070F;
+}
+canvas#bg{position:absolute;inset:0;width:1920px;height:1080px;}
+.vignette{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 80% at 50% 45%,rgba(0,0,0,0) 40%,rgba(0,0,0,.55) 100%);}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.05;mix-blend-mode:overlay;}
+
+.scene{position:absolute;inset:0;opacity:0;will-change:opacity,transform;}
+.layer{position:absolute;inset:0;}
+
+/* ---- 共通タイポ ---- */
+.eyebrow{
+  font-size:26px;font-weight:700;letter-spacing:.42em;color:var(--accent);
+  display:flex;align-items:center;gap:20px;
+}
+.eyebrow::before{content:'';display:block;width:64px;height:2px;background:var(--accent);}
+.jp-head{font-family:'ZenKaku','NotoJP',sans-serif;font-weight:900;line-height:1.34;letter-spacing:.02em;}
+.mono{font-family:'NotoJP','Helvetica Neue',Arial,sans-serif;font-weight:700;letter-spacing:.08em;}
+.char{display:inline-block;will-change:transform,opacity;}
+.line{display:block;overflow:hidden;}
+
+/* ---- S1 opening ---- */
+#s1 .kicker{position:absolute;left:160px;top:400px;}
+#s1 .copy{position:absolute;left:160px;top:470px;font-size:96px;}
+#s1 .logo{position:absolute;left:160px;top:470px;}
+.logo-mark{display:flex;align-items:center;gap:28px;}
+.logo-core{font-size:104px;font-weight:900;letter-spacing:.06em;}
+.logo-tech{font-size:104px;font-weight:900;letter-spacing:.06em;
+  color:transparent;-webkit-text-stroke:2.5px var(--accent);}
+.logo-sub{margin-top:26px;font-size:28px;letter-spacing:.3em;color:var(--muted);}
+.rule{position:absolute;height:2px;background:linear-gradient(90deg,var(--accent),rgba(25,201,232,0));}
+
+/* ---- 共通セクション見出し ---- */
+.sec-head{position:absolute;left:160px;top:150px;}
+
+/* ---- S2 about ---- */
+#s2 .lead{position:absolute;left:160px;top:330px;font-size:66px;}
+#s2 .body{position:absolute;left:164px;top:640px;font-size:30px;line-height:2.1;color:#C6D5E8;font-weight:400;}
+#s2 .flow{position:absolute;left:164px;top:860px;display:flex;align-items:center;gap:18px;}
+.flow-item{padding:16px 26px;border:1px solid rgba(255,255,255,.18);border-radius:999px;
+  font-size:24px;font-weight:700;background:rgba(255,255,255,.03);white-space:nowrap;}
+.flow-arrow{color:var(--accent);font-size:22px;}
+
+/* ---- S3 numbers ---- */
+#s3 .grid{position:absolute;left:160px;top:340px;width:1600px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:34px;}
+.num-card{position:relative;padding:52px 34px 44px;border:1px solid rgba(255,255,255,.14);
+  border-radius:22px;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.015));
+  overflow:hidden;}
+.num-card::after{content:'';position:absolute;left:0;top:0;width:100%;height:3px;
+  background:linear-gradient(90deg,var(--accent),var(--accent3));}
+.num-val{font-size:92px;font-weight:900;line-height:1.05;letter-spacing:-.01em;white-space:nowrap;}
+.num-unit{font-size:32px;font-weight:900;margin-left:6px;color:var(--accent);}
+.num-label{margin-top:26px;font-size:25px;font-weight:700;color:#C6D5E8;}
+.num-note{margin-top:10px;font-size:18px;color:rgba(140,162,192,.85);line-height:1.6;}
+
+/* ---- S4 value ---- */
+#s4 .vgrid{position:absolute;left:160px;top:330px;width:1600px;display:grid;
+  grid-template-columns:repeat(3,1fr);gap:40px;}
+.v-card{padding:56px 46px 60px;border-radius:26px;
+  border:1px solid rgba(255,255,255,.15);
+  background:linear-gradient(165deg,rgba(255,255,255,.08),rgba(255,255,255,.02));}
+.v-en{font-size:60px;font-weight:900;letter-spacing:.01em;line-height:1.1;}
+.v-en b{color:var(--accent);}
+.v-jp{margin-top:32px;font-size:31px;font-weight:900;font-family:'ZenKaku','NotoJP',sans-serif;}
+.v-desc{margin-top:20px;font-size:22px;line-height:1.85;color:#B9CADF;font-weight:400;}
+#s4 .origin{position:absolute;left:0;right:0;top:900px;text-align:center;font-size:26px;
+  letter-spacing:.18em;color:var(--muted);}
+
+/* ---- S5 business ---- */
+#s5 .bgrid{position:absolute;left:160px;top:360px;width:1600px;display:grid;
+  grid-template-columns:repeat(5,1fr);gap:24px;}
+.b-card{padding:44px 16px;border-radius:20px;text-align:center;
+  border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);}
+.b-no{font-size:20px;letter-spacing:.24em;color:var(--accent);font-weight:700;}
+.b-name{margin-top:26px;font-size:26px;font-weight:900;line-height:1.5;font-family:'ZenKaku','NotoJP',sans-serif;min-height:78px;display:flex;align-items:center;justify-content:center;}
+.b-en{margin-top:18px;font-size:15px;letter-spacing:.12em;color:rgba(140,162,192,.9);line-height:1.6;}
+#s5 .oneline{position:absolute;left:0;right:0;top:790px;text-align:center;font-size:34px;
+  font-weight:700;color:#D5E2F1;}
+
+/* ---- S6 people ---- */
+#s6 .quote{position:absolute;left:160px;top:330px;font-size:76px;line-height:1.5;}
+#s6 .quote em{font-style:normal;color:var(--accent);}
+#s6 .plist{position:absolute;left:164px;top:700px;display:flex;gap:26px;}
+.p-item{padding:30px 38px;border-radius:18px;border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.04);font-size:30px;font-weight:900;
+  font-family:'ZenKaku','NotoJP',sans-serif;display:flex;align-items:center;gap:18px;}
+.p-dot{width:14px;height:14px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 22px var(--accent);}
+#s6 .note{position:absolute;left:164px;top:880px;font-size:26px;color:var(--muted);font-weight:400;}
+
+/* ---- S7 closing ---- */
+#s7 .closing-logo{position:absolute;left:0;right:0;top:230px;text-align:center;}
+#s7 .closing-logo .logo-core,#s7 .closing-logo .logo-tech{font-size:56px;}
+#s7 .closing-logo .logo-tech{margin-left:16px;-webkit-text-stroke-width:2px;}
+#s7 .final{position:absolute;left:0;right:0;top:380px;text-align:center;font-size:104px;}
+#s7 .cta{position:absolute;left:0;right:0;top:640px;text-align:center;}
+.cta-badge{display:inline-block;padding:22px 60px;border-radius:999px;
+  border:2px solid var(--accent);font-size:32px;font-weight:900;letter-spacing:.26em;color:var(--accent);}
+.cta-url{margin-top:44px;font-size:40px;font-weight:700;letter-spacing:.12em;}
+.cta-sub{margin-top:22px;font-size:24px;letter-spacing:.28em;color:var(--muted);}
+
+/* ---- プレビュー用UI（書き出し時は非表示） ---- */
+#ui{position:fixed;left:0;right:0;bottom:0;z-index:99;display:flex;align-items:center;gap:16px;
+  padding:14px 22px;background:rgba(4,7,15,.86);border-top:1px solid rgba(255,255,255,.12);
+  font-family:system-ui,sans-serif;}
+#ui button{background:var(--accent);color:#04070F;border:0;border-radius:8px;
+  padding:10px 20px;font-size:15px;font-weight:700;cursor:pointer;}
+#ui input[type=range]{flex:1;accent-color:var(--accent);}
+#ui .tc{font-variant-numeric:tabular-nums;font-size:14px;color:#C6D5E8;min-width:150px;}
+body.render #ui{display:none;}
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="bg" width="1920" height="1080"></canvas>
+
+  <!-- ============ S1 OPENING ============ -->
+  <section class="scene" id="s1">
+    <div class="rule" data-rule></div>
+    <div class="kicker eyebrow" data-el="s1kick">RECRUITING MOVIE</div>
+    <div class="copy jp-head" data-el="s1copy">
+      <span class="line"><span class="sp" data-split>つくっているのは、</span></span>
+      <span class="line"><span class="sp" data-split>Webサイトの、その先。</span></span>
+    </div>
+    <div class="logo" data-el="s1logo">
+      <div class="logo-mark">
+        <span class="logo-core mono">CORE</span><span class="logo-tech mono">TECH</span>
+      </div>
+      <div class="logo-sub">株式会社コアテック</div>
+    </div>
+  </section>
+
+  <!-- ============ S2 ABOUT ============ -->
+  <section class="scene" id="s2">
+    <div class="sec-head" data-el="s2head">
+      <div class="eyebrow">ABOUT US</div>
+    </div>
+    <div class="lead jp-head" data-el="s2lead">
+      <span class="line"><span class="sp" data-split>戦略から、運用まで。</span></span>
+      <span class="line"><span class="sp" data-split>ワンストップでWebをつくる。</span></span>
+    </div>
+    <div class="body" data-el="s2body">
+      2009年創業。東京・目黒 青葉台を拠点に、<br>
+      ポータルサイトから大手企業のブランドサイトまで、<br>
+      大規模Webの企画・開発・グロースを担っています。
+    </div>
+    <div class="flow" data-el="s2flow">
+      <div class="flow-item">戦略立案</div><div class="flow-arrow">▶</div>
+      <div class="flow-item">デザイン</div><div class="flow-arrow">▶</div>
+      <div class="flow-item">コピー</div><div class="flow-arrow">▶</div>
+      <div class="flow-item">システム開発</div><div class="flow-arrow">▶</div>
+      <div class="flow-item">マーケティング</div><div class="flow-arrow">▶</div>
+      <div class="flow-item">運用・グロース</div>
+    </div>
+  </section>
+
+  <!-- ============ S3 NUMBERS ============ -->
+  <section class="scene" id="s3">
+    <div class="sec-head" data-el="s3head">
+      <div class="eyebrow">NUMBERS</div>
+    </div>
+    <div class="grid" data-el="s3grid">
+      <div class="num-card">
+        <div class="num-val mono"><span data-count="2009" data-dec="0" data-plain="1">2009</span></div>
+        <div class="num-label">創業</div>
+        <div class="num-note">2009年2月設立。Web黎明期から<br>つくり続けてきました。</div>
+      </div>
+      <div class="num-card">
+        <div class="num-val mono"><span data-count="9000">0</span><span class="num-unit">万円</span></div>
+        <div class="num-label">資本金</div>
+        <div class="num-note">腰を据えて長期のプロダクトに<br>向き合える経営基盤。</div>
+      </div>
+      <div class="num-card">
+        <div class="num-val mono"><span data-count="1">0</span><span class="num-unit">億PV+</span></div>
+        <div class="num-label">月間トータルPV</div>
+        <div class="num-note">数千万人が触れるサービスの<br>裏側をつくる仕事です。</div>
+      </div>
+      <div class="num-card">
+        <div class="num-val mono"><span data-count="5">0</span><span class="num-unit">領域</span></div>
+        <div class="num-label">事業ドメイン</div>
+        <div class="num-note">制作・開発・広告・マーケを<br>横断してキャリアを描ける。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ S4 VALUE ============ -->
+  <section class="scene" id="s4">
+    <div class="sec-head" data-el="s4head">
+      <div class="eyebrow">OUR VALUE</div>
+    </div>
+    <div class="vgrid">
+      <div class="v-card" data-el="v1">
+        <div class="v-en mono"><b>CO</b>llaboration</div>
+        <div class="v-jp">ちからを、ひとつにする</div>
+        <div class="v-desc">職種の境界をこえて、ひとつのチームで課題に向き合う。</div>
+      </div>
+      <div class="v-card" data-el="v2">
+        <div class="v-en mono"><b>RE</b>spect</div>
+        <div class="v-jp">互いの仕事を、尊重する</div>
+        <div class="v-desc">デザイン、開発、マーケティング。すべての専門性に敬意を。</div>
+      </div>
+      <div class="v-card" data-el="v3">
+        <div class="v-en mono"><b>TECH</b>nology</div>
+        <div class="v-jp">問題解決の、プロフェッショナル</div>
+        <div class="v-desc">技術は目的ではなく、課題を解くための手段として磨く。</div>
+      </div>
+    </div>
+    <div class="origin mono" data-el="s4origin">CO + RE + TECH ＝ CORETECH</div>
+  </section>
+
+  <!-- ============ S5 BUSINESS ============ -->
+  <section class="scene" id="s5">
+    <div class="sec-head" data-el="s5head">
+      <div class="eyebrow">BUSINESS</div>
+    </div>
+    <div class="bgrid">
+      <div class="b-card" data-el="b1"><div class="b-no mono">01</div><div class="b-name">Web<br>インテグレーション</div><div class="b-en mono">WEB INTEGRATION</div></div>
+      <div class="b-card" data-el="b2"><div class="b-no mono">02</div><div class="b-name">Web<br>マーケティング</div><div class="b-en mono">WEB MARKETING</div></div>
+      <div class="b-card" data-el="b3"><div class="b-no mono">03</div><div class="b-name">デジタル広告</div><div class="b-en mono">DIGITAL ADS</div></div>
+      <div class="b-card" data-el="b4"><div class="b-no mono">04</div><div class="b-name">クロス<br>プラットフォーム</div><div class="b-en mono">CROSS PLATFORM</div></div>
+      <div class="b-card" data-el="b5"><div class="b-no mono">05</div><div class="b-name">クリエイティブ</div><div class="b-en mono">CREATIVE</div></div>
+    </div>
+    <div class="oneline" data-el="s5one">つくって終わり、ではない。育てるところまでが、私たちの仕事。</div>
+  </section>
+
+  <!-- ============ S6 PEOPLE ============ -->
+  <section class="scene" id="s6">
+    <div class="sec-head" data-el="s6head">
+      <div class="eyebrow">WE WANT YOU</div>
+    </div>
+    <div class="quote jp-head" data-el="s6quote">
+      <span class="line"><span class="sp" data-split>スキルと同じくらい、</span></span>
+      <span class="line"><span class="sp" data-split>“ひとがら”を見ています。</span></span>
+    </div>
+    <div class="plist" data-el="s6list">
+      <div class="p-item"><span class="p-dot"></span>チームでつくる</div>
+      <div class="p-item"><span class="p-dot"></span>まっすぐ対話する</div>
+      <div class="p-item"><span class="p-dot"></span>仲間を思いやる</div>
+    </div>
+    <div class="note" data-el="s6note">経験は、入社してからでも伸ばせる。大切なのは、誰と、どうつくるか。</div>
+  </section>
+
+  <!-- ============ S7 CLOSING ============ -->
+  <section class="scene" id="s7">
+    <div class="closing-logo" data-el="s7logo">
+      <span class="logo-core mono">CORE</span><span class="logo-tech mono">TECH</span>
+    </div>
+    <div class="final jp-head" data-el="s7final">
+      <span class="line"><span class="sp" data-split>ちからを、ひとつに。</span></span>
+    </div>
+    <div class="cta" data-el="s7cta">
+      <div class="cta-badge mono">WE ARE HIRING</div>
+      <div class="cta-url mono">core-tech.jp/recruit</div>
+      <div class="cta-sub">株式会社コアテック ｜ 東京都目黒区青葉台</div>
+    </div>
+  </section>
+
+  <div class="vignette"></div>
+</div>
+
+<div id="ui">
+  <button id="play">▶ 再生</button>
+  <input type="range" id="seek" min="0" max="92000" value="0" step="33">
+  <span class="tc" id="tc">00:00.00 / 01:32.00</span>
+</div>
+
+<script>
+/* =========================================================================
+   CORE TECH RECRUITING MOVIE — タイムラインエンジン
+   すべてのアニメーションは「時刻 t(ms) の純関数」として描画する。
+   → window.__seek(t) を呼べば何度でも同じ絵が出るので、
+     Playwright からコマ送りキャプチャして動画に書き出せる。
+   ========================================================================= */
+(() => {
+  'use strict';
+
+  const DURATION = 92000;      // 全体尺 1分32秒
+  const stage = document.getElementById('stage');
+  const isRender = new URLSearchParams(location.search).has('render');
+  if (isRender) document.body.classList.add('render');
+
+  /* ---------- math utils ---------- */
+  const clamp = (v, a = 0, b = 1) => (v < a ? a : v > b ? b : v);
+  const seg = (t, a, b) => clamp((t - a) / (b - a));
+  const easeOut = p => 1 - Math.pow(1 - p, 3);
+  const easeOutQuint = p => 1 - Math.pow(1 - p, 5);
+  const easeInOut = p => (p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
+  const mix = (a, b, p) => a + (b - a) * p;
+
+  /* ---------- 文字分割（縦積みの行アニメ用） ---------- */
+  document.querySelectorAll('[data-split]').forEach(node => {
+    const text = node.textContent;
+    node.textContent = '';
+    [...text].forEach(ch => {
+      const s = document.createElement('span');
+      s.className = 'char';
+      s.textContent = ch === ' ' ? ' ' : ch;
+      node.appendChild(s);
+    });
+  });
+
+  const $ = sel => document.querySelector(sel);
+  const el = name => document.querySelector(`[data-el="${name}"]`);
+
+  /* ---------- 汎用モーション ---------- */
+  // ブロックのフェードイン（下からスライド）
+  function rise(node, p, dist = 46) {
+    if (!node) return;
+    const e = easeOut(clamp(p));
+    node.style.opacity = e;
+    node.style.transform = `translate3d(0,${(1 - e) * dist}px,0)`;
+  }
+  // 1文字ずつ立ち上がる見出し
+  function charsIn(node, p, stagger = 0.035, dur = 0.42) {
+    if (!node) return;
+    const chars = node.querySelectorAll('.char');
+    chars.forEach((c, i) => {
+      const cp = clamp((p - i * stagger) / dur);
+      const e = easeOutQuint(cp);
+      c.style.opacity = e;
+      c.style.transform = `translate3d(0,${(1 - e) * 90}px,0)`;
+    });
+  }
+  // カードのポップイン
+  function cardIn(node, p, delayIndex = 0, stagger = 0.09) {
+    if (!node) return;
+    const cp = clamp((p - delayIndex * stagger) / (1 - delayIndex * stagger || 1));
+    const e = easeOut(cp);
+    node.style.opacity = e;
+    node.style.transform = `translate3d(0,${(1 - e) * 60}px,0) scale(${mix(.955, 1, e)})`;
+  }
+  // 数字カウントアップ
+  function countUp(scope, p) {
+    const e = easeOut(clamp(p));
+    scope.querySelectorAll('[data-count]').forEach(n => {
+      if (n.dataset.plain) return;
+      const target = parseFloat(n.dataset.count);
+      const v = Math.round(target * e);
+      n.textContent = target >= 1000 ? v.toLocaleString('ja-JP') : String(v);
+    });
+  }
+
+  /* =======================================================================
+     背景（キャンバス）
+     ======================================================================= */
+  const cv = document.getElementById('bg');
+  const ctx = cv.getContext('2d');
+  const W = 1920, H = 1080;
+
+  // 決定論的な擬似乱数（毎フレーム同じ粒子配置になる）
+  const rnd = i => {
+    const x = Math.sin(i * 127.1 + 311.7) * 43758.5453;
+    return x - Math.floor(x);
+  };
+  const PARTICLES = Array.from({ length: 110 }, (_, i) => ({
+    x: rnd(i) * W,
+    y: rnd(i + 50) * H,
+    r: .7 + rnd(i + 120) * 2.1,
+    sp: .1 + rnd(i + 200) * .45,
+    ph: rnd(i + 300) * Math.PI * 2
+  }));
+
+  function drawBG(t) {
+    const s = t / 1000;
+    ctx.clearRect(0, 0, W, H);
+
+    // ベースグラデーション
+    const g = ctx.createLinearGradient(0, 0, W, H);
+    g.addColorStop(0, '#04070F');
+    g.addColorStop(.55, '#071324');
+    g.addColorStop(1, '#04070F');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+
+    // 光のオーブ（ゆっくり漂う）
+    const orbs = [
+      { c: '25,201,232', x: 300 + Math.sin(s * .18) * 260, y: 260 + Math.cos(s * .13) * 170, r: 620, a: .30 },
+      { c: '46,107,255', x: 1560 + Math.cos(s * .15) * 240, y: 780 + Math.sin(s * .11) * 190, r: 700, a: .26 },
+      { c: '124,92,255', x: 960 + Math.sin(s * .09 + 2) * 420, y: 560 + Math.cos(s * .17 + 1) * 220, r: 520, a: .16 }
+    ];
+    ctx.globalCompositeOperation = 'lighter';
+    orbs.forEach(o => {
+      const rg = ctx.createRadialGradient(o.x, o.y, 0, o.x, o.y, o.r);
+      rg.addColorStop(0, `rgba(${o.c},${o.a})`);
+      rg.addColorStop(1, `rgba(${o.c},0)`);
+      ctx.fillStyle = rg;
+      ctx.fillRect(0, 0, W, H);
+    });
+    ctx.globalCompositeOperation = 'source-over';
+
+    // グリッド（奥に流れるライン）
+    ctx.strokeStyle = 'rgba(120,180,230,.075)';
+    ctx.lineWidth = 1;
+    const gap = 96, off = (s * 16) % gap;
+    ctx.beginPath();
+    for (let x = -gap + off; x < W + gap; x += gap) { ctx.moveTo(x, 0); ctx.lineTo(x, H); }
+    for (let y = -gap + off; y < H + gap; y += gap) { ctx.moveTo(0, y); ctx.lineTo(W, y); }
+    ctx.stroke();
+
+    // データフロー的な水平ライン
+    ctx.globalCompositeOperation = 'lighter';
+    for (let i = 0; i < 5; i++) {
+      const y = (rnd(i + 700) * H + s * (30 + i * 22)) % (H + 200) - 100;
+      const w = 220 + rnd(i + 800) * 420;
+      const x = ((s * (120 + i * 60) + rnd(i + 900) * W) % (W + 600)) - 300;
+      const lg = ctx.createLinearGradient(x, 0, x + w, 0);
+      lg.addColorStop(0, 'rgba(25,201,232,0)');
+      lg.addColorStop(.5, 'rgba(25,201,232,.34)');
+      lg.addColorStop(1, 'rgba(25,201,232,0)');
+      ctx.fillStyle = lg;
+      ctx.fillRect(x, y, w, 1.4);
+    }
+
+    // 粒子
+    PARTICLES.forEach((p, i) => {
+      const y = (p.y - s * p.sp * 26 + H * 4) % H;
+      const x = p.x + Math.sin(s * .3 + p.ph) * 22;
+      const tw = .28 + .72 * (0.5 + 0.5 * Math.sin(s * 1.6 + p.ph));
+      ctx.fillStyle = `rgba(178,224,255,${.30 * tw})`;
+      ctx.beginPath();
+      ctx.arc(x, y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    ctx.globalCompositeOperation = 'source-over';
+  }
+
+  /* =======================================================================
+     シーン定義
+     ======================================================================= */
+  const SCENES = [
+    { id: 's1', start: 0,     end: 11000 },
+    { id: 's2', start: 11000, end: 24000 },
+    { id: 's3', start: 24000, end: 38000 },
+    { id: 's4', start: 38000, end: 56000 },
+    { id: 's5', start: 56000, end: 71000 },
+    { id: 's6', start: 71000, end: 84000 },
+    { id: 's7', start: 84000, end: 92000 }
+  ];
+  SCENES.forEach(sc => (sc.node = document.getElementById(sc.id)));
+
+  const FADE_IN = 500, FADE_OUT = 600;
+
+  function sceneEnvelope(sc, t) {
+    if (t < sc.start - 60 || t > sc.end + 60) return null;
+    const inP = seg(t, sc.start, sc.start + FADE_IN);
+    const outP = seg(t, sc.end - FADE_OUT, sc.end);
+    return { local: t - sc.start, opacity: easeOut(inP) * (1 - easeInOut(outP)), outP };
+  }
+
+  /* ---------- 各シーンの中身 ---------- */
+  const updaters = {
+    // OPENING：コピー → ロゴ への入れ替え
+    s1(l) {
+      const kick = el('s1kick'), copy = el('s1copy'), logo = el('s1logo');
+      const rule = document.querySelector('[data-rule]');
+
+      rise(kick, seg(l, 300, 1100));
+      if (kick) kick.style.opacity = String(clamp(seg(l, 300, 1100)) * (1 - seg(l, 5600, 6200)));
+
+      // ルール線（アクセントライン）が伸びる
+      const rp = easeOut(seg(l, 200, 1400));
+      if (rule) {
+        rule.style.left = '160px';
+        rule.style.top = '380px';
+        rule.style.width = `${rp * 520}px`;
+        rule.style.opacity = String(1 - seg(l, 5600, 6200));
+      }
+
+      // キャッチコピー（1文字ずつ）→ 6.0s でフェードアウト
+      const cOut = easeInOut(seg(l, 5700, 6400));
+      charsIn(copy, seg(l, 900, 3600));
+      if (copy) {
+        copy.style.opacity = String(1 - cOut);
+        copy.style.transform = `translate3d(0,${-cOut * 60}px,0)`;
+      }
+
+      // ロゴ登場
+      const lp = seg(l, 6300, 7900);
+      if (logo) {
+        const e = easeOutQuint(lp);
+        logo.style.opacity = String(e);
+        logo.style.transform = `translate3d(0,${(1 - e) * 50}px,0)`;
+        const core = logo.querySelector('.logo-core');
+        const tech = logo.querySelector('.logo-tech');
+        core.style.letterSpacing = `${mix(.24, .06, e)}em`;
+        tech.style.letterSpacing = `${mix(.24, .06, e)}em`;
+        tech.style.opacity = String(easeOut(seg(l, 6900, 8600)));
+      }
+    },
+
+    // ABOUT
+    s2(l) {
+      rise(el('s2head'), seg(l, 200, 1000));
+      charsIn(el('s2lead'), seg(l, 600, 3200), .03);
+      rise(el('s2body'), seg(l, 2600, 3800), 34);
+      const flow = el('s2flow');
+      if (flow) {
+        flow.style.opacity = '1';
+        [...flow.children].forEach((c, i) => {
+          const p = easeOut(seg(l, 4200 + i * 220, 4900 + i * 220));
+          c.style.opacity = String(p);
+          c.style.transform = `translate3d(${(1 - p) * -26}px,0,0)`;
+        });
+      }
+    },
+
+    // NUMBERS
+    s3(l) {
+      rise(el('s3head'), seg(l, 200, 1000));
+      const grid = el('s3grid');
+      if (!grid) return;
+      grid.style.opacity = '1';
+      [...grid.children].forEach((c, i) => {
+        const p = easeOut(seg(l, 700 + i * 280, 1600 + i * 280));
+        c.style.opacity = String(p);
+        c.style.transform = `translate3d(0,${(1 - p) * 70}px,0)`;
+      });
+      countUp(grid, seg(l, 900, 3400));
+    },
+
+    // VALUE
+    s4(l) {
+      rise(el('s4head'), seg(l, 200, 1000));
+      ['v1', 'v2', 'v3'].forEach((n, i) => {
+        const node = el(n);
+        const p = easeOutQuint(seg(l, 800 + i * 900, 2000 + i * 900));
+        node.style.opacity = String(p);
+        node.style.transform = `translate3d(0,${(1 - p) * 80}px,0)`;
+        // 強調部（CO / RE / TECH）が遅れて発光
+        const b = node.querySelector('b');
+        const gp = easeOut(seg(l, 1500 + i * 900, 2600 + i * 900));
+        b.style.textShadow = `0 0 ${gp * 34}px rgba(25,201,232,${gp * .9})`;
+      });
+      const origin = el('s4origin');
+      const op = easeOut(seg(l, 4400, 5600));
+      origin.style.opacity = String(op);
+      origin.style.letterSpacing = `${mix(.5, .18, op)}em`;
+    },
+
+    // BUSINESS
+    s5(l) {
+      rise(el('s5head'), seg(l, 200, 1000));
+      ['b1', 'b2', 'b3', 'b4', 'b5'].forEach((n, i) => {
+        const node = el(n);
+        const p = easeOut(seg(l, 700 + i * 320, 1500 + i * 320));
+        node.style.opacity = String(p);
+        node.style.transform = `translate3d(0,${(1 - p) * 64}px,0) scale(${mix(.94, 1, p)})`;
+      });
+      rise(el('s5one'), seg(l, 3400, 4600), 30);
+    },
+
+    // PEOPLE
+    s6(l) {
+      rise(el('s6head'), seg(l, 200, 1000));
+      charsIn(el('s6quote'), seg(l, 600, 3400), .034);
+      const list = el('s6list');
+      list.style.opacity = '1';
+      [...list.children].forEach((c, i) => {
+        const p = easeOut(seg(l, 3200 + i * 380, 4000 + i * 380));
+        c.style.opacity = String(p);
+        c.style.transform = `translate3d(0,${(1 - p) * 40}px,0)`;
+        const dot = c.querySelector('.p-dot');
+        dot.style.transform = `scale(${mix(.2, 1, p)})`;
+      });
+      rise(el('s6note'), seg(l, 5000, 6200), 26);
+    },
+
+    // CLOSING
+    s7(l) {
+      const logo = el('s7logo');
+      const lp = easeOut(seg(l, 200, 1400));
+      logo.style.opacity = String(lp);
+      logo.style.transform = `translate3d(0,${(1 - lp) * 26}px,0)`;
+      charsIn(el('s7final'), seg(l, 700, 3000), .05);
+      const cta = el('s7cta');
+      const p = easeOutQuint(seg(l, 2600, 4000));
+      cta.style.opacity = String(p);
+      cta.style.transform = `translate3d(0,${(1 - p) * 46}px,0)`;
+      const badge = cta.querySelector('.cta-badge');
+      const pulse = .5 + .5 * Math.sin(l / 1000 * 2.2);
+      badge.style.boxShadow = `0 0 ${18 + pulse * 26}px rgba(25,201,232,${.25 + pulse * .35})`;
+    }
+  };
+
+  /* =======================================================================
+     seek：任意の時刻の絵を組み立てる
+     ======================================================================= */
+  function seek(t) {
+    t = clamp(t, 0, DURATION);
+    drawBG(t);
+    SCENES.forEach(sc => {
+      const env = sceneEnvelope(sc, t);
+      if (!env) { sc.node.style.opacity = '0'; sc.node.style.visibility = 'hidden'; return; }
+      sc.node.style.visibility = 'visible';
+      sc.node.style.opacity = String(env.opacity);
+      // アウト時にわずかに引く（奥行き）
+      sc.node.style.transform = `scale(${mix(1, 1.035, easeInOut(env.outP))})`;
+      updaters[sc.id](env.local);
+    });
+    if (!isRender) {
+      const bar = document.getElementById('seek');
+      const tc = document.getElementById('tc');
+      bar.value = String(Math.round(t));
+      tc.textContent = `${fmt(t)} / ${fmt(DURATION)}`;
+    }
+  }
+  const fmt = ms => {
+    const s = ms / 1000;
+    return `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(Math.floor(s % 60)).padStart(2, '0')}.${String(Math.floor((ms % 1000) / 10)).padStart(2, '0')}`;
+  };
+
+  window.__seek = seek;
+  window.__duration = DURATION;
+
+  /* ---------- ステージを画面幅にフィット（プレビュー時のみ） ---------- */
+  function fit() {
+    if (isRender) { stage.style.transform = 'none'; return; }
+    const sc = Math.min(window.innerWidth / 1920, (window.innerHeight - 64) / 1080);
+    stage.style.transform = `scale(${sc})`;
+    document.body.style.height = `${1080 * sc + 64}px`;
+  }
+  window.addEventListener('resize', fit);
+  fit();
+
+  /* ---------- プレビュー再生 ---------- */
+  if (!isRender) {
+    let playing = false, t0 = 0, base = 0, raf = 0;
+    const btn = document.getElementById('play');
+    const bar = document.getElementById('seek');
+    const loop = now => {
+      if (!playing) return;
+      const t = base + (now - t0);
+      if (t >= DURATION) { seek(DURATION); playing = false; btn.textContent = '▶ 再生'; return; }
+      seek(t);
+      raf = requestAnimationFrame(loop);
+    };
+    btn.addEventListener('click', () => {
+      playing = !playing;
+      btn.textContent = playing ? '❚❚ 一時停止' : '▶ 再生';
+      if (playing) {
+        base = Number(bar.value) >= DURATION ? 0 : Number(bar.value);
+        t0 = performance.now();
+        raf = requestAnimationFrame(loop);
+      } else cancelAnimationFrame(raf);
+    });
+    bar.addEventListener('input', () => {
+      base = Number(bar.value); t0 = performance.now(); seek(base);
+    });
+  }
+
+  document.fonts.ready.then(() => { seek(0); window.__ready = true; });
+  seek(0);
+})();
+</script>
+</body>
+</html>
