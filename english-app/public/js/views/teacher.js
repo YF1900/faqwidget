@@ -91,7 +91,7 @@ export async function studentView({ params }) {
     h('section', { class: 'card' }, h('h2', { class: 'card-title' }, '技能別の状況とレベル調整'),
       h('div', { class: 'table-wrap' }, h('table', { class: 'data-table' }, h('thead', null, h('tr', null, h('th', null, '技能'), h('th', null, 'レベル'), h('th', null, '状況'), h('th', null, '算出根拠'))), h('tbody', null, levelRows)))),
     s.diagnostic ? h('section', { class: 'card' }, h('h2', { class: 'card-title' }, `診断（${fmtDate(s.diagnostic.createdAt, false)}）`),
-      h('ul', null, SKILLS.map((k) => { const d = s.diagnostic.skills[k]; return h('li', null, `${SKILL_JA[k]}: ${d.level}（${METHOD_JA[d.method]}${d.method === 'auto' ? ` A2 ${d.correct.A2}/3・B1 ${d.correct.B1}/3・B2 ${d.correct.B2}/3` : ` A2 ${d.canDoCount.A2}/3・B1 ${d.canDoCount.B1}/3・B2 ${d.canDoCount.B2}/3`}${d.scriptOpened ? '・スクリプト使用' : ''}${d.noAudio ? '・音声なし' : ''}）`); })),
+      h('ul', null, SKILLS.map((k) => { const d = s.diagnostic.skills[k]; return h('li', null, `${SKILL_JA[k]}: ${d.level}（${METHOD_JA[d.method]}${d.method === 'auto' ? ` ${['A2', 'B1', 'B2'].map((L) => `${L} ${d.correct[L] || 0}/${d.totals?.[L] ?? 3}`).join('・')}` : ` A2 ${d.canDoCount.A2}/3・B1 ${d.canDoCount.B1}/3・B2 ${d.canDoCount.B2}/3`}${d.scriptOpened ? '・スクリプト使用' : ''}${d.noAudio ? '・音声なし' : ''}）`); })),
       s.diagnostic.writingText ? h('details', null, h('summary', null, '診断で書いた英文'), h('p', { lang: 'en', class: 'submission-text' }, s.diagnostic.writingText)) : null) : null,
     h('section', { class: 'card' }, h('h2', { class: 'card-title' }, '弱点'),
       s.mistakes.focus.length ? h('ul', null, s.mistakes.focus.map((f) => h('li', null, `${f.label}: 正答率 ${pct(f.rate)}（${f.total}回）`))) : h('p', { class: 'muted' }, '特に目立つ苦手な問題の種類はありません（またはデータ不足）。'),

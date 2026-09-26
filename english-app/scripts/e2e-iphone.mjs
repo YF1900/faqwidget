@@ -58,11 +58,11 @@ try {
   check('新規生徒が目標を選び診断に進める', true);
   await noHScroll('診断');
   await clickText('次へ →'); // intro → r-A2
-  for (let pg = 0; pg < 6; pg++) {
+  for (let pg = 0; pg < 18; pg++) {
     const cards = page.locator('.qcard');
     const n = await cards.count();
     for (let i = 0; i < n; i++) await cards.nth(i).locator('.option').first().click();
-    if (pg === 3) {
+    if (pg === 9) {
       // Listening A2: 音声の再生ボタン（ユーザー操作で開始）を確認
       check('Listening に再生ボタンがある（自動再生しない）', await page.getByRole('button', { name: /再生/ }).count() > 0);
       await shot('diagnostic-listening');
@@ -166,7 +166,7 @@ try {
         if (lv === 'a2') check('録音なしで Speaking 練習を記録できる', true);
       }
       await noHScroll(`${lv} step ${act.step}`);
-      if (act.step === 8) await shot(`${lv}-wrapup`);
+      if (act.kind === 'wrapup') await shot(`${lv}-wrapup`);
       // 次へ（完了）
       const next = page.locator('.step-footer .btn').last();
       await next.click();

@@ -1,5 +1,5 @@
 // 単元一覧・単元の概要
-import { h, LEVEL_JA, SKILL_JA, KIND_JA } from '../dom.js';
+import { h, LEVEL_JA, SKILL_JA, kindLabel } from '../dom.js';
 import { api } from '../api.js';
 import { setTitle, isTeacher } from '../main.js';
 import { progressBar, disclaimer } from '../components.js';
@@ -50,7 +50,7 @@ export async function unitOverviewView({ params }) {
         const mismatch = skill && levels[skill].level !== unit.level;
         return h('li', null, h('a', { href: `#/unit/${encodeURIComponent(unit.id)}/step/${a.step}`, class: a.completed ? 'done' : '' },
           h('span', { class: 'step-check', 'aria-label': a.completed ? '完了' : '未完了' }, a.completed ? '✓' : String(a.step)),
-          h('span', { class: 'step-body' }, h('span', { class: 'step-kind' }, KIND_JA[a.kind]), h('span', null, a.title),
+          h('span', { class: 'step-body' }, h('span', { class: 'step-kind' }, kindLabel(unit.activities, a)), h('span', null, a.title),
             h('span', { class: 'small muted' }, `約${a.minutes || 8}分`),
             mismatch ? h('span', { class: 'small hint-level' }, `あなたの${SKILL_JA[skill]}レベルは ${levels[skill].level} です`) : null)));
       }))),

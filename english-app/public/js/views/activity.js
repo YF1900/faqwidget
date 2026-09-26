@@ -1,9 +1,9 @@
 // 単元の学習画面（step 1〜8）
-import { h, replace, uuid, fmtDate, countWords, confirmDialog, toast, KIND_JA, LEVEL_JA, SKILL_JA } from '../dom.js';
+import { h, replace, uuid, fmtDate, countWords, confirmDialog, toast, kindLabel, LEVEL_JA, SKILL_JA } from '../dom.js';
 import { api, submitReliably } from '../api.js';
 import { local, recordings } from '../local.js';
 import { setTitle, onLeave, go, state } from '../main.js';
-import { questionCard, recordAttempt, passageView, scriptView, stimulusView, saveBadge, disclaimer } from '../components.js';
+import { questionCard, recordAttempt, passageView, scriptView, stimulusView, saveBadge, disclaimer, progressBar } from '../components.js';
 import { createPlayer, ttsSupported, speakButton, recorderSupported, startRecording, countdown } from '../media.js';
 
 export default async function activityView({ params }) {
@@ -15,7 +15,7 @@ export default async function activityView({ params }) {
   const prev = unit.activities[idx - 1]; const next = unit.activities[idx + 1];
   const unitHref = `#/unit/${encodeURIComponent(unitId)}`;
   const stepHref = (a) => `${unitHref}/step/${a.step}`;
-  setTitle(`${KIND_JA[act.kind]}（${act.step}/${unit.activities.length}）`, { back: unitHref });
+  setTitle(`${kindLabel(unit.activities, act)}（${act.step}/${unit.activities.length}）`, { back: unitHref });
 
   const answered = new Set(Object.keys(lastAttempts).filter((id) => act.questions.some((q) => q.id === id)));
   const footerStatus = h('span', { class: 'footer-status small', 'aria-live': 'polite' });
@@ -71,8 +71,10 @@ export default async function activityView({ params }) {
     h('p', { class: 'small muted' }, `${unit.titleJa}・${LEVEL_JA[unit.level]}・約${act.minutes || 8}分`),
     h('h2', { class: 'act-title' }, act.title),
     act.instructions ? h('p', { class: 'instructions' }, act.instructions) : null,
-    h('ol', { class: 'step-dots', 'aria-label': 'ステップ' }, unit.activities.map((a) => h('li', { class: `${a.step === act.step ? 'current' : ''} ${a.completed ? 'done' : ''}` },
-      h('a', { href: stepHref(a), 'aria-label': `step ${a.step} ${KIND_JA[a.kind]}${a.completed ? '（完了）' : ''}`, 'aria-current': a.step === act.step ? 'step' : null }, String(a.step))))));
+    // ステップ数が多いため、番号の列ではなく進捗バーで表示する（iPhone の幅に収めるため）
+    h('div', { class: 'step-progress' },
+      progressBar(unit.activities.filter((a) => a.completed).length, unit.activities.length, '単元の進捗'),
+      h('span', { class: 'small muted' }, `step ${act.step} / ${unit.activities.length}・完了 ${unit.activities.filter((a) => a.completed).length}　`, h('a', { href: unitHref }, 'ステップ一覧'))));
 
   let body;
   const ctx = { unit, act, rubrics, makeQuestion, updateFooter, support, supportKey, lastAttempts };
@@ -92,8 +94,9 @@ export default async function activityView({ params }) {
 
 // ---------- step 1: 目標と語彙 ----------
 function introBody({ unit, act, makeQuestion }) {
+  const first = unit.activities.find((a) => a.kind === 'intro')?.id === act.id;
   return h('div', { class: 'stack' },
-    h('section', { class: 'card' }, h('h3', { class: 'sub-title' }, 'この単元でできるようになること'), h('ul', null, unit.objectives.map((o) => h('li', null, o.text)))),
+    first ? h('section', { class: 'card' }, h('h3', { class: 'sub-title' }, 'この単元でできるようになること'), h('ul', null, unit.objectives.map((o) => h('li', null, o.text)))) : null,
     h('section', { class: 'card' }, h('h3', { class: 'sub-title' }, '重要語彙と表現'),
       h('ul', { class: 'vocab-list' }, act.vocabulary.map((v) => h('li', { class: 'vocab' },
         h('div', { class: 'vocab-head' }, h('strong', { lang: 'en' }, v.term), speakButton(v.term)),
@@ -497,7 +500,7 @@ async function wrapupBody({ unit, act, lastAttempts }) {
     const ans = a.questions.filter((q) => lastAttempts[q.id]);
     const ok = ans.filter((q) => lastAttempts[q.id].correct).length;
     const sup = ans.filter((q) => lastAttempts[q.id].support?.scriptOpened || lastAttempts[q.id].support?.noAudio).length;
-    return h('tr', null, h('th', { scope: 'row' }, KIND_JA[a.kind]), h('td', null, `${ok} / ${a.questions.length}`), h('td', { class: 'small' }, ans.length < a.questions.length ? `未解答 ${a.questions.length - ans.length}` : sup ? `スクリプト使用 ${sup}` : ''));
+    return h('tr', null, h('th', { scope: 'row' }, kindLabel(unit.activities, a)), h('td', null, `${ok} / ${a.questions.length}`), h('td', { class: 'small' }, ans.length < a.questions.length ? `未解答 ${a.questions.length - ans.length}` : sup ? `スクリプト使用 ${sup}` : ''));
   });
   const levels = ['A2', 'B1', 'B2'];
   const up = units.find((u) => u.theme === unit.theme && u.order === unit.order && u.level === levels[levels.indexOf(unit.level) + 1]);

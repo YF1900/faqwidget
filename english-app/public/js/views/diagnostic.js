@@ -6,7 +6,6 @@ import { setTitle, onLeave, go, refreshMe, state } from '../main.js';
 import { questionCard, passageView, scriptView, disclaimer, saveBadge } from '../components.js';
 import { createPlayer, ttsSupported } from '../media.js';
 
-const PAGES = ['intro', 'r-A2', 'r-B1', 'r-B2', 'l-A2', 'l-B1', 'l-B2', 'w', 's', 'confirm'];
 const PAGE_LABEL = { intro: 'はじめに', r: 'Reading', l: 'Listening', w: 'Writing', s: 'Speaking', confirm: '確認' };
 
 export default async function diagnosticView({ root }) {
@@ -17,6 +16,14 @@ export default async function diagnosticView({ root }) {
     id: d.id, page: 0, clientId: uuid(), reading: { answers: {} }, listening: { answers: {}, scriptOpened: false, noAudio: false }, writing: { text: '', canDo: [] }, speaking: { canDo: [] },
   };
   const persist = () => local.set('diag-progress', st);
+  // ページ: はじめに → Reading の各セクション → Listening の各セクション → Writing → Speaking → 確認
+  const PAGES = ['intro', ...d.reading.sections.map((_, i) => `r-${i}`), ...d.listening.sections.map((_, i) => `l-${i}`), 'w', 's', 'confirm'];
+  if (st.page >= PAGES.length) st.page = 0;
+  const sectionLabel = (skill, i) => {
+    const secs = d[skill].sections; const L = secs[i].level;
+    const same = secs.filter((x) => x.level === L);
+    return `${L}${same.length > 1 ? ` ${same.indexOf(secs[i]) + 1}/${same.length}` : ''}`;
+  };
   let player = null;
   onLeave(() => { player?.stop(); persist(); });
   const view = h('div', { class: 'stack' });
@@ -25,13 +32,15 @@ export default async function diagnosticView({ root }) {
   function show() {
     player?.stop(); player = null;
     const key = PAGES[st.page];
-    const [kind, level] = key.split('-');
-    const bar = h('div', { class: 'diag-progress' }, h('span', { class: 'small muted' }, `${PAGE_LABEL[kind]}${level ? ` ${level}` : ''}（${st.page + 1} / ${PAGES.length}）`),
+    const [kind, idxStr] = key.split('-');
+    const idx = Number(idxStr);
+    const sub = kind === 'r' ? sectionLabel('reading', idx) : kind === 'l' ? sectionLabel('listening', idx) : '';
+    const bar = h('div', { class: 'diag-progress' }, h('span', { class: 'small muted' }, `${PAGE_LABEL[kind]}${sub ? ` ${sub}` : ''}（${st.page + 1} / ${PAGES.length}）`),
       h('div', { class: 'progress' }, h('span', { style: { width: `${((st.page + 1) / PAGES.length) * 100}%` } })));
     let body;
     if (kind === 'intro') body = introPage();
-    else if (kind === 'r') body = readingPage(level);
-    else if (kind === 'l') body = listeningPage(level);
+    else if (kind === 'r') body = readingPage(idx);
+    else if (kind === 'l') body = listeningPage(idx);
     else if (kind === 'w') body = writingPage();
     else if (kind === 's') body = speakingPage();
     else body = confirmPage();
@@ -43,9 +52,9 @@ export default async function diagnosticView({ root }) {
 
   function introPage() {
     return h('div', { class: 'card' },
-      h('h2', { class: 'card-title' }, '診断のすすめ方（約20分）'),
+      h('h2', { class: 'card-title' }, '診断のすすめ方（約45分・何回かに分けてもOK）'),
       h('ul', null,
-        h('li', null, 'Reading と Listening は A2 → B1 → B2 の順に、各3問ずつ答えます（自動採点）。'),
+        h('li', null, 'Reading と Listening は A2 → B1 → B2 の順に、各レベル3つの短い英文（1つにつき3問、合計9問）に答えます（自動採点）。'),
         h('li', null, 'Writing と Speaking は、短い練習のあと「できること」を自分で選びます（自己評価）。'),
         h('li', null, 'わからない問題は、答えずに次へ進んでもかまいません。'),
         h('li', null, '途中でやめても、この端末に回答が一時保存されます。')),
@@ -62,15 +71,15 @@ export default async function diagnosticView({ root }) {
     });
   }
 
-  function readingPage(level) {
-    const s = d.reading.sections.find((x) => x.level === level);
+  function readingPage(i) {
+    const s = d.reading.sections[i]; const level = s.level;
     return h('div', { class: 'stack' },
       h('div', { class: 'card' }, h('p', { class: 'small muted' }, `Reading ${LEVEL_JA[level]}`), h('p', null, d.reading.instructions), passageView(s.passage)),
       ...qCards(s, 'reading'));
   }
 
-  function listeningPage(level) {
-    const s = d.listening.sections.find((x) => x.level === level);
+  function listeningPage(i) {
+    const s = d.listening.sections[i]; const level = s.level;
     const scriptBox = h('div');
     const showScript = (reason) => {
       if (reason === 'noAudio') st.listening.noAudio = true; else st.listening.scriptOpened = true;
@@ -116,6 +125,7 @@ export default async function diagnosticView({ root }) {
   }
 
   function confirmPage() {
+    const total = (skill) => d[skill].sections.reduce((n, sec) => n + sec.questions.length, 0);
     const answered = (skill, sections) => sections.reduce((n, s) => n + s.questions.filter((q) => st[skill].answers[q.id] != null).length, 0);
     const status = h('div', { 'aria-live': 'polite' });
     const btn = h('button', { type: 'button', class: 'btn btn-primary btn-block', onclick: async () => {
@@ -134,8 +144,8 @@ export default async function diagnosticView({ root }) {
     } }, '回答を送信して結果を見る');
     return h('div', { class: 'card' }, h('h2', { class: 'card-title' }, '回答の確認'),
       h('ul', null,
-        h('li', null, `Reading: ${answered('reading', d.reading.sections)} / 9 問に解答`),
-        h('li', null, `Listening: ${answered('listening', d.listening.sections)} / 9 問に解答${st.listening.scriptOpened ? '（スクリプト使用）' : ''}${st.listening.noAudio ? '（音声なし）' : ''}`),
+        h('li', null, `Reading: ${answered('reading', d.reading.sections)} / ${total('reading')} 問に解答`),
+        h('li', null, `Listening: ${answered('listening', d.listening.sections)} / ${total('listening')} 問に解答${st.listening.scriptOpened ? '（スクリプト使用）' : ''}${st.listening.noAudio ? '（音声なし）' : ''}`),
         h('li', null, `Writing: ${countWords(st.writing.text)} 語、できること ${st.writing.canDo.length} 項目`),
         h('li', null, `Speaking: できること ${st.speaking.canDo.length} 項目`)),
       btn, status);
@@ -150,7 +160,7 @@ export function resultView(r) {
   const skillCard = (skill) => {
     const s = r.skills[skill];
     const detail = s.method === 'auto'
-      ? `正解数: A2 ${s.correct.A2}/3・B1 ${s.correct.B1}/3・B2 ${s.correct.B2}/3${s.scriptOpened ? '（スクリプトを見て解答）' : ''}${s.noAudio ? '（音声なしで解答）' : ''}`
+      ? `正解数: ${['A2', 'B1', 'B2'].map((L) => `${L} ${s.correct[L] || 0}/${s.totals?.[L] ?? 3}`).join('・')}${s.scriptOpened ? '（スクリプトを見て解答）' : ''}${s.noAudio ? '（音声なしで解答）' : ''}`
       : `「できる」を選んだ数: A2 ${s.canDoCount.A2}/3・B1 ${s.canDoCount.B1}/3・B2 ${s.canDoCount.B2}/3`;
     return h('div', { class: 'skill-result' },
       h('p', { class: 'skill-name' }, `${SKILL_ICON[skill]} ${SKILL_JA[skill]}`),
@@ -172,7 +182,7 @@ export function resultView(r) {
       h('button', { type: 'button', class: 'btn btn-primary btn-block', onclick: () => go('#/home') }, 'ダッシュボードへ')),
     h('details', { class: 'card' }, h('summary', null, 'Reading・Listening の解答と解説を見る'),
       (r.review || []).map((it, i) => h('div', { class: `review-item ${it.correct ? 'is-correct' : 'is-wrong'}` },
-        h('p', { class: 'small muted' }, `${SKILL_JA[it.skill]} ${it.level} 問${(i % 3) + 1}`),
+        h('p', { class: 'small muted' }, `${SKILL_JA[it.skill]} ${it.level}`),
         h('p', { lang: 'en' }, it.stem),
         h('p', null, it.correct ? '○ 正解' : `× ${it.response == null ? '未解答' : '不正解'}（正答: ${'ABCD'[it.answer]}. `, it.correct ? null : h('span', { lang: 'en' }, it.options[it.answer]), it.correct ? null : '）'),
         h('p', { class: 'small' }, it.explanation),

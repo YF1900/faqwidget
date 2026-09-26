@@ -1,5 +1,5 @@
 // 初回診断の採点。結果は「教材を選ぶための目安」であり、公式スコアや合否予測ではない。
-// - Reading / Listening: 自動採点（method: 'auto'）。各レベル3問中2問以上正解したレベルのうち、
+// - Reading / Listening: 自動採点（method: 'auto'）。各レベルの問題の3分の2以上に正解したレベルのうち、
 //   下のレベルから連続して到達した最も高いレベルを目安とする。
 // - Writing / Speaking: 初期版では自動評価しないため、can-do 自己評価（method: 'self'）で目安を出す。
 //   各レベル3項目中2項目以上「できる」を選んだレベルのうち、下から連続する最も高いレベル。
@@ -30,24 +30,24 @@ export function scoreDiagnostic(d, input) {
     const answers = input?.[skill]?.answers || {};
     const scriptOpened = !!input?.[skill]?.scriptOpened;
     const noAudio = !!input?.[skill]?.noAudio;
-    const correct = {}; const pass = {};
+    // 同じレベルのセクションが複数ある場合は合算する（例: A2 の3セクション×3問 = 9問）
+    const correct = {}; const totals = {}; const pass = {};
     for (const s of d[skill].sections) {
-      let c = 0;
       for (const q of s.questions) {
         const resp = answers[q.id];
         const ok = Number.isInteger(resp) && resp === q.answer;
-        if (ok) c++;
+        correct[s.level] = (correct[s.level] || 0) + (ok ? 1 : 0);
+        totals[s.level] = (totals[s.level] || 0) + 1;
         items.push({ skill, level: s.level, question: q, response: Number.isInteger(resp) ? resp : null, correct: ok });
       }
-      correct[s.level] = c;
-      pass[s.level] = c >= 2;
     }
+    for (const L of LEVELS) pass[L] = !!totals[L] && correct[L] >= Math.ceil((totals[L] * 2) / 3);
     let level = highestConsecutive(pass);
-    // A2 で連続が途切れても上位レベルで2問以上正解している場合は、1段階下を目安にする
+    // A2 で連続が途切れても上位レベルで3分の2以上正解している場合は、1段階下を目安にする
     if (!level && (pass.B1 || pass.B2)) level = 'A2';
     else if (level === 'A2' && pass.B2 && !pass.B1) level = 'B1';
     skills[skill] = {
-      method: 'auto', level: level || 'A2', foundation: !level, correct, total: 3,
+      method: 'auto', level: level || 'A2', foundation: !level, correct, totals,
       supported: skill === 'listening' && (scriptOpened || noAudio), scriptOpened, noAudio,
     };
   }

@@ -7,14 +7,38 @@
   "order": 1,
   "title": "My School, My Club",
   "titleJa": "私の学校と部活動",
-  "estimatedMinutes": 50,
+  "estimatedMinutes": 135,
   "objectives": [
-    { "id": "a2u1-obj-r", "skill": "reading", "text": "学校生活や部活動を紹介する短いメールを読んで、曜日・時間・場所・理由などの情報を見つけられる。" },
-    { "id": "a2u1-obj-l", "skill": "listening", "text": "部活動についての2人の会話を聞いて、活動日・時間・場所や話し手の気持ちを聞き取れる。" },
-    { "id": "a2u1-obj-w", "skill": "writing", "text": "友達へのメールで、自分の部活動について3つの内容を25語以上で書ける。" },
-    { "id": "a2u1-obj-s", "skill": "speaking", "text": "学校や部活動についての質問に、理由を1つ加えて短く答えられる。" },
-    { "id": "a2u1-obj-v", "skill": "vocabulary", "text": "学校生活・部活動に関する基本語彙（timetable, practise, member など）を理解して使える。" },
-    { "id": "a2u1-obj-g", "skill": "grammar", "text": "現在形・頻度の副詞・can・like + -ing・時の前置詞 at / on / in を正しく使える。" }
+    {
+      "id": "a2u1-obj-r",
+      "skill": "reading",
+      "text": "学校生活や部活動を紹介する短いメールを読んで、曜日・時間・場所・理由などの情報を見つけられる。"
+    },
+    {
+      "id": "a2u1-obj-l",
+      "skill": "listening",
+      "text": "部活動についての2人の会話を聞いて、活動日・時間・場所や話し手の気持ちを聞き取れる。"
+    },
+    {
+      "id": "a2u1-obj-w",
+      "skill": "writing",
+      "text": "友達へのメールで、自分の部活動について3つの内容を25語以上で書ける。"
+    },
+    {
+      "id": "a2u1-obj-s",
+      "skill": "speaking",
+      "text": "学校や部活動についての質問に、理由を1つ加えて短く答えられる。"
+    },
+    {
+      "id": "a2u1-obj-v",
+      "skill": "vocabulary",
+      "text": "学校生活・部活動に関する基本語彙（timetable, practise, member など）を理解して使える。"
+    },
+    {
+      "id": "a2u1-obj-g",
+      "skill": "grammar",
+      "text": "現在形・頻度の副詞・can・like + -ing・時の前置詞 at / on / in を正しく使える。"
+    }
   ],
   "activities": [
     {
@@ -26,26 +50,82 @@
       "instructions": "この単元の目標を確認しましょう。次に、重要な語句と例文を声に出して読み、最後に語彙チェックに答えましょう。",
       "minutes": 6,
       "vocabulary": [
-        { "term": "club activities", "meaning": "部活動", "example": "I have club activities after school." },
-        { "term": "be in the ... club", "meaning": "〜部に入っている", "example": "I'm in the tennis club." },
-        { "term": "practise", "meaning": "練習する（イギリス式のつづり）", "example": "We practise every Tuesday." },
-        { "term": "timetable", "meaning": "時間割", "example": "We have English on Monday on our timetable." },
-        { "term": "subject", "meaning": "教科", "example": "My favourite subject is music." },
-        { "term": "lesson", "meaning": "授業", "example": "We have six lessons every day." },
-        { "term": "after school", "meaning": "放課後に", "example": "I play volleyball after school." },
-        { "term": "member", "meaning": "部員・メンバー", "example": "Our club has twenty members." },
-        { "term": "gym", "meaning": "体育館", "example": "The basketball club practises in the gym." },
-        { "term": "brass band", "meaning": "吹奏楽（部）", "example": "She plays the trumpet in the brass band." },
-        { "term": "be good at ...", "meaning": "〜が得意だ", "example": "Ken is good at drawing." },
-        { "term": "be interested in ...", "meaning": "〜に興味がある", "example": "I'm interested in Japanese calligraphy." },
-        { "term": "school festival", "meaning": "文化祭", "example": "Our school festival is in November." }
+        {
+          "term": "club activities",
+          "meaning": "部活動",
+          "example": "I have club activities after school."
+        },
+        {
+          "term": "be in the ... club",
+          "meaning": "〜部に入っている",
+          "example": "I'm in the tennis club."
+        },
+        {
+          "term": "practise",
+          "meaning": "練習する（イギリス式のつづり）",
+          "example": "We practise every Tuesday."
+        },
+        {
+          "term": "timetable",
+          "meaning": "時間割",
+          "example": "We have English on Monday on our timetable."
+        },
+        {
+          "term": "subject",
+          "meaning": "教科",
+          "example": "My favourite subject is music."
+        },
+        {
+          "term": "lesson",
+          "meaning": "授業",
+          "example": "We have six lessons every day."
+        },
+        {
+          "term": "after school",
+          "meaning": "放課後に",
+          "example": "I play volleyball after school."
+        },
+        {
+          "term": "member",
+          "meaning": "部員・メンバー",
+          "example": "Our club has twenty members."
+        },
+        {
+          "term": "gym",
+          "meaning": "体育館",
+          "example": "The basketball club practises in the gym."
+        },
+        {
+          "term": "brass band",
+          "meaning": "吹奏楽（部）",
+          "example": "She plays the trumpet in the brass band."
+        },
+        {
+          "term": "be good at ...",
+          "meaning": "〜が得意だ",
+          "example": "Ken is good at drawing."
+        },
+        {
+          "term": "be interested in ...",
+          "meaning": "〜に興味がある",
+          "example": "I'm interested in Japanese calligraphy."
+        },
+        {
+          "term": "school festival",
+          "meaning": "文化祭",
+          "example": "Our school festival is in November."
+        }
       ],
       "questions": [
         {
           "id": "a2u1-i1",
           "type": "mcq",
           "stem": "Look at the ______ . We have maths first on Friday.",
-          "options": ["timetable", "member", "gym"],
+          "options": [
+            "timetable",
+            "member",
+            "gym"
+          ],
           "answer": 0,
           "explanation": "「金曜日の1時間目は数学」と分かるのは時間割（timetable）です。member は「部員」、gym は「体育館」なので意味が合いません。",
           "focus": "vocabulary",
@@ -56,7 +136,11 @@
           "id": "a2u1-i2",
           "type": "mcq",
           "stem": "The tennis club has thirty ______ . It's a big club.",
-          "options": ["subjects", "members", "lessons"],
+          "options": [
+            "subjects",
+            "members",
+            "lessons"
+          ],
           "answer": 1,
           "explanation": "部に「30人いる」のは部員（members）です。subjects は「教科」、lessons は「授業」で、クラブの人数には使いません。",
           "focus": "vocabulary",
@@ -67,8 +151,12 @@
           "id": "a2u1-i3",
           "type": "mcq",
           "stem": "Yuki is ______ drawing. Her pictures are really beautiful.",
-          "options": ["good at", "interested to", "belong to"],
-          "answer": 0,
+          "options": [
+            "interested to",
+            "belong to",
+            "good at"
+          ],
+          "answer": 2,
           "explanation": "「絵がとても上手」なので be good at ...（〜が得意だ）が正解です。be interested in が正しい形で interested to は不自然、belong to は「〜に所属する」で be 動詞の後には置けません。",
           "focus": "vocabulary",
           "difficulty": 2,
@@ -78,7 +166,11 @@
           "id": "a2u1-i4",
           "type": "mcq",
           "stem": "The basketball club ______ in the gym on Mondays and Thursdays.",
-          "options": ["practises", "studies", "watches"],
+          "options": [
+            "practises",
+            "studies",
+            "watches"
+          ],
           "answer": 0,
           "explanation": "部活動が体育館で「練習する」のは practise（主語が3人称単数なので practises）です。studies（勉強する）や watches（見る）は部活動の練習の意味になりません。",
           "focus": "vocabulary",
@@ -88,8 +180,274 @@
       ]
     },
     {
+      "id": "school-life-a2-u1-intro-2",
+      "kind": "intro",
+      "skill": "vocabulary",
+      "title": "Vocabulary 2: 運動会（体育祭）のことば",
+      "instructions": "運動会（sports day）に関する語句と例文を声に出して読みましょう。そのあと、語彙チェックに答えましょう。",
+      "minutes": 6,
+      "vocabulary": [
+        {
+          "term": "sports day",
+          "meaning": "運動会・体育祭",
+          "example": "Our sports day is on the first Saturday in October."
+        },
+        {
+          "term": "race",
+          "meaning": "競走・レース",
+          "example": "I ran in the 100-metre race."
+        },
+        {
+          "term": "relay",
+          "meaning": "リレー",
+          "example": "Four students run in each relay team."
+        },
+        {
+          "term": "team",
+          "meaning": "チーム・組",
+          "example": "Our class is on the red team."
+        },
+        {
+          "term": "captain",
+          "meaning": "キャプテン・主将",
+          "example": "Haruto is the captain of the blue team."
+        },
+        {
+          "term": "cheer",
+          "meaning": "応援する・声援を送る",
+          "example": "We cheered for our friends in the race."
+        },
+        {
+          "term": "win",
+          "meaning": "勝つ・優勝する（過去形 won）",
+          "example": "The white team won the tug of war."
+        },
+        {
+          "term": "lose",
+          "meaning": "負ける（過去形 lost）",
+          "example": "We lost the relay, but it was fun."
+        },
+        {
+          "term": "prize",
+          "meaning": "賞・賞品",
+          "example": "The winners got a prize from the head teacher."
+        },
+        {
+          "term": "take part in ...",
+          "meaning": "〜に参加する",
+          "example": "Every student takes part in sports day."
+        },
+        {
+          "term": "sports field",
+          "meaning": "運動場・グラウンド",
+          "example": "The races are on the sports field."
+        },
+        {
+          "term": "tug of war",
+          "meaning": "綱引き",
+          "example": "Tug of war is my favourite event."
+        }
+      ],
+      "questions": [
+        {
+          "id": "a2u1-i2-1",
+          "type": "mcq",
+          "stem": "Our team was very fast. We ______ the relay!",
+          "options": [
+            "lost",
+            "won",
+            "cheered"
+          ],
+          "answer": 1,
+          "explanation": "「チームがとても速かった」ので、リレーに「勝った」won が正解です。lost（負けた）は内容と合いません。cheered（応援した）は the relay を目的語にしても「速かったから」という理由とつながりません。",
+          "focus": "vocabulary",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-v"
+        },
+        {
+          "id": "a2u1-i2-2",
+          "type": "mcq",
+          "stem": "Mika is the ______ of the red team. She talks to the team before every race.",
+          "options": [
+            "prize",
+            "field",
+            "captain"
+          ],
+          "answer": 2,
+          "explanation": "チームをまとめ、レースの前にみんなに話をする人なのでキャプテン（captain）です。prize は「賞」、field は「グラウンド」で、人を表す語ではありません。",
+          "focus": "vocabulary",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-v"
+        },
+        {
+          "id": "a2u1-i2-3",
+          "type": "mcq",
+          "stem": "I can't run fast, so I didn't run. But I ______ for my class all day.",
+          "options": [
+            "cheered",
+            "took part",
+            "won"
+          ],
+          "answer": 0,
+          "explanation": "自分は走らなかったけれど、一日中クラスを「応援した」ので cheered for が正解です。took part は後ろに in が必要で、しかも「走らなかった」と合いません。won（勝った）は for my class とつながりません。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-v"
+        },
+        {
+          "id": "a2u1-i2-4",
+          "type": "mcq",
+          "stem": "All the first-year students ______ sports day. Nobody stays at home.",
+          "options": [
+            "are good at",
+            "take part in",
+            "lose"
+          ],
+          "answer": 1,
+          "explanation": "「誰も家にいない」＝1年生全員が運動会に「参加する」ので take part in が正解です。are good at は「得意だ」で全員の参加の話になりません。lose sports day（運動会に負ける）は不自然です。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-v"
+        }
+      ],
+      "step": 2
+    },
+    {
+      "id": "school-life-a2-u1-intro-3",
+      "kind": "intro",
+      "skill": "vocabulary",
+      "title": "Vocabulary 3: 校則と学校の決まりのことば",
+      "instructions": "制服や校則など、学校の決まりに関する語句と例文を声に出して読みましょう。そのあと、語彙チェックに答えましょう。",
+      "minutes": 6,
+      "vocabulary": [
+        {
+          "term": "uniform",
+          "meaning": "制服",
+          "example": "We wear a uniform from Monday to Friday."
+        },
+        {
+          "term": "rule",
+          "meaning": "規則・決まり",
+          "example": "There are a lot of rules at my school."
+        },
+        {
+          "term": "be late for ...",
+          "meaning": "〜に遅れる・遅刻する",
+          "example": "Don't be late for the first lesson."
+        },
+        {
+          "term": "absent",
+          "meaning": "欠席の・休んでいる",
+          "example": "Taro was absent yesterday because he had a cold."
+        },
+        {
+          "term": "homework",
+          "meaning": "宿題（数えられない名詞）",
+          "example": "We have a lot of homework today."
+        },
+        {
+          "term": "locker",
+          "meaning": "ロッカー",
+          "example": "I keep my textbooks in my locker."
+        },
+        {
+          "term": "textbook",
+          "meaning": "教科書",
+          "example": "Please open your textbook at page 20."
+        },
+        {
+          "term": "head teacher",
+          "meaning": "校長先生",
+          "example": "The head teacher gave a speech in the hall."
+        },
+        {
+          "term": "notice board",
+          "meaning": "掲示板",
+          "example": "Check the notice board for club news."
+        },
+        {
+          "term": "canteen",
+          "meaning": "（学校の）食堂",
+          "example": "Some students have lunch in the canteen."
+        },
+        {
+          "term": "borrow",
+          "meaning": "借りる",
+          "example": "Can I borrow your pen, please?"
+        },
+        {
+          "term": "hand in",
+          "meaning": "提出する",
+          "example": "Hand in your homework on Friday."
+        }
+      ],
+      "questions": [
+        {
+          "id": "a2u1-i3-1",
+          "type": "mcq",
+          "stem": "Look at the ______ in the hall. It has the news about the new art club.",
+          "options": [
+            "locker",
+            "canteen",
+            "notice board"
+          ],
+          "answer": 2,
+          "explanation": "クラブのお知らせが貼ってあるのは掲示板（notice board）です。locker は荷物を入れるロッカー、canteen は食堂で、ニュースを「見る」場所として合いません。",
+          "focus": "vocabulary",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-v"
+        },
+        {
+          "id": "a2u1-i3-2",
+          "type": "mcq",
+          "stem": "I forgot my dictionary. Can I ______ yours, please?",
+          "options": [
+            "borrow",
+            "lend",
+            "hand in"
+          ],
+          "answer": 0,
+          "explanation": "自分が相手の辞書を「借りる」ので borrow が正解です。lend は「貸す」で、Can I lend yours? では意味が逆になります。hand in は「提出する」で合いません。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-v"
+        },
+        {
+          "id": "a2u1-i3-3",
+          "type": "mcq",
+          "stem": "Kenji wasn't at school today. He was ______ because he was ill.",
+          "options": [
+            "late",
+            "absent",
+            "strict"
+          ],
+          "answer": 1,
+          "explanation": "「学校にいなかった」「病気だった」ので欠席（absent）が正解です。late は「遅刻した」で、学校には来ています。strict は「厳しい」で意味が合いません。",
+          "focus": "vocabulary",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-v"
+        },
+        {
+          "id": "a2u1-i3-4",
+          "type": "mcq",
+          "stem": "At our school, everyone wears a ______ : a white shirt and a blue jacket.",
+          "options": [
+            "rule",
+            "textbook",
+            "uniform"
+          ],
+          "answer": 2,
+          "explanation": "白いシャツと青い上着を全員が「着る」のは制服（uniform）です。rule（規則）や textbook（教科書）は wear（着る）の目的語になりません。",
+          "focus": "vocabulary",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-v"
+        }
+      ],
+      "step": 3
+    },
+    {
       "id": "school-life-a2-u1-explain",
-      "step": 2,
+      "step": 4,
       "kind": "explain",
       "skill": "grammar",
       "title": "Explain: 毎日の学校生活を話す文法",
@@ -99,17 +457,29 @@
         {
           "heading": "現在形と頻度の副詞",
           "text": "習慣（いつもすること）は現在形で表します。主語が he / she / 名前1人のときは動詞に -s / -es をつけます（go → goes, practise → practises）。always（いつも）, usually（たいてい）, often（よく）, sometimes（ときどき）, never（決して〜ない）は一般動詞の前、be 動詞の後に置きます。",
-          "examples": ["I usually walk to school.", "Aya often goes to the library.", "Our coach is always kind."]
+          "examples": [
+            "I usually walk to school.",
+            "Aya often goes to the library.",
+            "Our coach is always kind."
+          ]
         },
         {
           "heading": "時の前置詞 at / on / in",
           "text": "at は時刻（at 8:30）、on は曜日・日付（on Monday, on 5 May）、in は月・季節・年・午前午後（in April, in summer, in the morning）に使います。",
-          "examples": ["School starts at 8:30.", "We practise on Wednesdays.", "The school festival is in November."]
+          "examples": [
+            "School starts at 8:30.",
+            "We practise on Wednesdays.",
+            "The school festival is in November."
+          ]
         },
         {
           "heading": "can と like + -ing",
           "text": "can の後ろは動詞の原形です（can plays は×）。「〜するのが好き」は like + 動詞の -ing 形で表せます。be good at の後ろも名詞か -ing 形です。",
-          "examples": ["I can play the flute.", "I like playing volleyball.", "Ken is good at swimming."]
+          "examples": [
+            "I can play the flute.",
+            "I like playing volleyball.",
+            "Ken is good at swimming."
+          ]
         }
       ],
       "questions": [
@@ -117,8 +487,12 @@
           "id": "a2u1-e1",
           "type": "mcq",
           "stem": "Choose the correct sentence.",
-          "options": ["I go usually to school by bike.", "I usually go to school by bike.", "Usually I goes to school by bike."],
-          "answer": 1,
+          "options": [
+            "I usually go to school by bike.",
+            "I go usually to school by bike.",
+            "Usually I goes to school by bike."
+          ],
+          "answer": 0,
           "explanation": "頻度の副詞 usually は一般動詞 go の前に置きます。1つ目は位置が違い、3つ目は主語が I なのに goes になっているので誤りです。",
           "focus": "grammar",
           "difficulty": 1,
@@ -128,7 +502,9 @@
           "id": "a2u1-e2",
           "type": "text",
           "stem": "Complete with at, on or in: We have club activities ______ Saturdays.",
-          "accept": ["on"],
+          "accept": [
+            "on"
+          ],
           "explanation": "曜日の前には on を使います（on Saturdays）。at は時刻、in は月や季節に使います。",
           "focus": "grammar",
           "difficulty": 1,
@@ -138,8 +514,12 @@
           "id": "a2u1-e3",
           "type": "mcq",
           "stem": "My brother can ______ the guitar very well.",
-          "options": ["plays", "playing", "play"],
-          "answer": 2,
+          "options": [
+            "plays",
+            "play",
+            "playing"
+          ],
+          "answer": 1,
           "explanation": "can の後ろは動詞の原形なので play が正解です。plays（3単現）や playing（-ing 形）は can の後には置けません。",
           "focus": "grammar",
           "difficulty": 1,
@@ -148,8 +528,172 @@
       ]
     },
     {
+      "id": "school-life-a2-u1-explain-2",
+      "kind": "explain",
+      "skill": "grammar",
+      "title": "Grammar 2: 学校行事を話す過去形と going to",
+      "instructions": "終わった学校行事は過去形、これからの予定は be going to で表します。解説と例文を読んでから、確認問題に答えましょう。",
+      "minutes": 7,
+      "points": [
+        {
+          "heading": "過去形（規則動詞・不規則動詞）",
+          "text": "終わった出来事は過去形で表します。規則動詞は -ed をつけます（play → played, practise → practised, stop → stopped）。不規則動詞は形が変わるので覚えましょう（go → went, win → won, have → had, make → made）。主語が he / she でも形は同じです。",
+          "examples": [
+            "We practised for sports day every day last week.",
+            "Our class won the relay.",
+            "I went to the school festival with my sister."
+          ]
+        },
+        {
+          "heading": "過去形の否定文と疑問文（did）",
+          "text": "否定文は didn't + 動詞の原形、疑問文は Did + 主語 + 動詞の原形 ...? で作ります。did を使ったら動詞は原形に戻します（didn't went は×）。was / were の文は did を使わず、wasn't / Was ...? とします。",
+          "examples": [
+            "I didn't run in the race.",
+            "Did you enjoy sports day? — Yes, I did.",
+            "The test wasn't difficult."
+          ]
+        },
+        {
+          "heading": "be going to（予定・計画）",
+          "text": "すでに決めている予定は be going to + 動詞の原形で表します。be 動詞は主語に合わせて am / is / are にします。未来を表す語（tomorrow, next week, this weekend など）とよく一緒に使います。",
+          "examples": [
+            "We're going to have a concert next Friday.",
+            "Rina is going to join the art club.",
+            "Are you going to sing at the festival?"
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "a2u1-e2-1",
+          "type": "mcq",
+          "stem": "Choose the correct sentence.",
+          "options": [
+            "I didn't went to school yesterday.",
+            "I don't went to school yesterday.",
+            "I didn't go to school yesterday."
+          ],
+          "answer": 2,
+          "explanation": "過去の否定文は didn't + 動詞の原形なので didn't go が正解です。1つ目は didn't の後が過去形 went のまま、3つ目は don't（現在）と went（過去）が混ざっていて誤りです。",
+          "focus": "grammar",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-g"
+        },
+        {
+          "id": "a2u1-e2-2",
+          "type": "text",
+          "stem": "Complete with the correct form of the word in brackets: Last Saturday, the blue team ______ (win) the tug of war.",
+          "accept": [
+            "won"
+          ],
+          "explanation": "Last Saturday（この前の土曜日）の出来事なので過去形です。win は不規則動詞で、過去形は won です（wined とはしません）。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-g"
+        },
+        {
+          "id": "a2u1-e2-3",
+          "type": "mcq",
+          "stem": "My friends and I ______ going to make a video for the school festival next month.",
+          "options": [
+            "are",
+            "am",
+            "is"
+          ],
+          "answer": 0,
+          "explanation": "主語 My friends and I は複数なので be going to の be 動詞は are です。am は I だけのとき、is は he / she など1人・1つのときに使います。",
+          "focus": "grammar",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-g"
+        }
+      ],
+      "step": 5
+    },
+    {
+      "id": "school-life-a2-u1-explain-3",
+      "kind": "explain",
+      "skill": "grammar",
+      "title": "Grammar 3: 校則を説明する must / have to と比較級",
+      "instructions": "校則を説明するときに使う must / have to と、学校や部活を比べるときの比較の形を学びます。解説と例文を読んでから、確認問題に答えましょう。",
+      "minutes": 8,
+      "points": [
+        {
+          "heading": "must と mustn't（〜しなければならない／〜してはいけない）",
+          "text": "must + 動詞の原形は「〜しなければならない」、mustn't（must not）+ 動詞の原形は「〜してはいけない（禁止）」です。主語が he / she でも must の形は変わらず、後ろの動詞も原形のままです（musts, must wears は×）。",
+          "examples": [
+            "You must wear your uniform at school.",
+            "Students mustn't use their phones in class.",
+            "She must hand in her homework today."
+          ]
+        },
+        {
+          "heading": "have to と don't have to（〜しなければならない／〜しなくてよい）",
+          "text": "have to + 動詞の原形も「〜しなければならない」の意味で、主語が he / she のときは has to になります。否定の don't / doesn't have to は「〜しなくてよい（必要がない）」という意味で、mustn't（〜してはいけない）とは意味が違うので注意しましょう。",
+          "examples": [
+            "We have to be at school by 8:20.",
+            "Ken has to clean the classroom on Thursdays.",
+            "You don't have to bring lunch. There's a canteen."
+          ]
+        },
+        {
+          "heading": "比較級と最上級",
+          "text": "2つを比べるときは「比較級 + than」を使います。短い語は -er（big → bigger, easy → easier）、長い語は more + 形容詞（more interesting）です。3つ以上の中で「いちばん〜」は the + 最上級（the biggest, the most popular）です。good は better / best と不規則に変化します。",
+          "examples": [
+            "Our new gym is bigger than the old one.",
+            "Science is more interesting than history for me.",
+            "Football is the most popular club at our school."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "a2u1-e3-1",
+          "type": "mcq",
+          "stem": "It's a school rule. You ______ run in the corridors. It's dangerous.",
+          "options": [
+            "don't have to",
+            "mustn't",
+            "must"
+          ],
+          "answer": 1,
+          "explanation": "「危険だ」とあるので「走ってはいけない（禁止）」の mustn't が正解です。don't have to は「走らなくてもよい」で禁止の意味になりません。must は「走らなければならない」で内容と逆です。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-g"
+        },
+        {
+          "id": "a2u1-e3-2",
+          "type": "text",
+          "stem": "Complete with one word: The tennis club is ______ popular than the golf club. It has more members.",
+          "accept": [
+            "more"
+          ],
+          "explanation": "popular は長い形容詞なので、比較級は more popular になります（popularer とはしません）。後ろに than があるので比較級の文だと分かります。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-g"
+        },
+        {
+          "id": "a2u1-e3-3",
+          "type": "mcq",
+          "stem": "My sister ______ wear a uniform. Her school has no uniform.",
+          "options": [
+            "mustn't",
+            "has to",
+            "doesn't have to"
+          ],
+          "answer": 2,
+          "explanation": "「学校に制服がない」ので「制服を着なくてよい（必要がない）」の doesn't have to が正解です。mustn't は「着てはいけない」という禁止で意味が強すぎます。has to は「着なければならない」で内容と逆です。",
+          "focus": "grammar",
+          "difficulty": 3,
+          "objectiveId": "a2u1-obj-g"
+        }
+      ],
+      "step": 6
+    },
+    {
       "id": "school-life-a2-u1-reading",
-      "step": 3,
+      "step": 7,
       "kind": "reading",
       "skill": "reading",
       "title": "Reading: 新しい学校についてのメール",
@@ -169,8 +713,12 @@
           "id": "a2u1-r1",
           "type": "mcq",
           "stem": "How does Yui usually go to school?",
-          "options": ["by train", "on foot with a friend", "by bike"],
-          "answer": 1,
+          "options": [
+            "on foot with a friend",
+            "by train",
+            "by bike"
+          ],
+          "answer": 0,
           "explanation": "本文に「友達のアヤといっしょに歩いて行く」とあるので「友達と徒歩で」が正解です。学校は駅の近くですが、電車で行くとは書いていません。自転車についても書かれていません。",
           "evidence": "I usually walk there with my friend Aya.",
           "focus": "specific-info",
@@ -181,7 +729,11 @@
           "id": "a2u1-r2",
           "type": "mcq",
           "stem": "Why does Yui like science?",
-          "options": ["The lessons are easy for her.", "The teacher does interesting experiments.", "Her friend Aya is in the class."],
+          "options": [
+            "The lessons are easy for her.",
+            "The teacher does interesting experiments.",
+            "Her friend Aya is in the class."
+          ],
           "answer": 1,
           "explanation": "because の後に「先生が楽しい実験をしてくれる」とあります。fun experiments を interesting experiments と言いかえています。「簡単」とは書いておらず（難しいのは数学）、アヤが同じクラスだという情報もありません。",
           "evidence": "My favourite subject is science because our teacher does fun experiments.",
@@ -193,8 +745,12 @@
           "id": "a2u1-r3",
           "type": "mcq",
           "stem": "Where does the brass band club usually practise?",
-          "options": ["in the music room", "in the gym", "in a classroom"],
-          "answer": 0,
+          "options": [
+            "in the gym",
+            "in a classroom",
+            "in the music room"
+          ],
+          "answer": 2,
           "explanation": "月・水・金は音楽室で練習すると書かれています。体育館（gym）で練習するのは土曜日に「ときどき（sometimes）」だけなので、「ふだん」の場所ではありません。普通教室についての記述はありません。",
           "evidence": "We practise in the music room on Mondays, Wednesdays and Fridays.",
           "focus": "specific-info",
@@ -205,8 +761,12 @@
           "id": "a2u1-r4",
           "type": "mcq",
           "stem": "What can we say about Yui and the flute?",
-          "options": ["She played it at junior high school.", "She started learning it this school year.", "She can play a lot of songs now."],
-          "answer": 1,
+          "options": [
+            "She started learning it this school year.",
+            "She played it at junior high school.",
+            "She can play a lot of songs now."
+          ],
+          "answer": 0,
           "explanation": "「4月には吹けなかったが、今は3曲吹ける」とあるので、高校に入学した今年度から始めたと推測できます。4月に吹けなかったので中学で吹いていたとは考えにくく、吹けるのは3曲だけなので「たくさんの曲」も誤りです。",
           "evidence": "I couldn't play it in April, but now I can play three songs.",
           "focus": "inference",
@@ -217,8 +777,12 @@
           "id": "a2u1-r5",
           "type": "mcq",
           "stem": "Why is Yui writing to Emma?",
-          "options": ["to tell her about her life at her new school", "to invite her to the school festival", "to ask her for help with maths"],
-          "answer": 0,
+          "options": [
+            "to invite her to the school festival",
+            "to tell her about her life at her new school",
+            "to ask her for help with maths"
+          ],
+          "answer": 1,
           "explanation": "エマが新しい学校について聞いたので、その近況を伝えるメールです。文化祭の話は出ますが、エマを招待してはいません。数学が苦手とは書いていますが、助けを求めてはいません。",
           "evidence": "You asked about my new school, so here is some news.",
           "focus": "main-idea",
@@ -228,8 +792,208 @@
       ]
     },
     {
+      "id": "school-life-a2-u1-reading-2",
+      "kind": "reading",
+      "skill": "reading",
+      "title": "Reading 2: ボランティア部の部員募集",
+      "instructions": "学校のウェブサイトにのっている、ボランティア部の部員募集のお知らせを読みましょう。そのあと、質問に答えてください。曜日・場所・持ち物などの情報に注意し、根拠となる文を本文から探しましょう。",
+      "minutes": 8,
+      "passage": {
+        "title": "Green Hands Volunteer Club - New Members Wanted",
+        "paragraphs": [
+          "Do you want to help people and make new friends? Then come and join the Green Hands Volunteer Club! We are a small club with twelve members from all three years.",
+          "We meet every Thursday after school in Room 2A. Once a month, on a Sunday morning, we clean the beach near Minato Park. We start at nine o'clock and finish before lunch. We also grow vegetables in the school garden and give them to the local children's centre.",
+          "You don't need any special skills. Just bring gloves, a hat and a bottle of water to the beach. Some members are in sports clubs too, because we only meet once a week.",
+          "Do you want to know more? Come to our open meeting on 14 May at 4:00. Or talk to our club leader, Haruto Ito, in Class 3C."
+        ]
+      },
+      "questions": [
+        {
+          "id": "a2u1-r2-1",
+          "type": "mcq",
+          "stem": "Where does the club meet every week?",
+          "options": [
+            "in Room 2A",
+            "at Minato Park",
+            "in the school garden"
+          ],
+          "answer": 0,
+          "explanation": "「毎週木曜日の放課後に2Aの教室で集まる」とあります。Minato Park の近くの海岸へ行くのは月に1回の日曜日だけで、毎週ではありません。学校の畑（school garden）は野菜を育てる場所で、毎週集まる場所としては書かれていません。",
+          "evidence": "We meet every Thursday after school in Room 2A.",
+          "focus": "specific-info",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-r"
+        },
+        {
+          "id": "a2u1-r2-2",
+          "type": "mcq",
+          "stem": "What does the club do with the vegetables from the school garden?",
+          "options": [
+            "They give them to a children's centre.",
+            "They sell them at the school festival.",
+            "They cook them for lunch after the beach clean-up."
+          ],
+          "answer": 0,
+          "explanation": "「野菜を育てて、地域の児童センターにあげている」とあります。文化祭で売るという情報はありません。海岸清掃は「昼食の前に終わる」とありますが、野菜を料理するとは書かれていません。",
+          "evidence": "We also grow vegetables in the school garden and give them to the local children's centre.",
+          "focus": "specific-info",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-r"
+        },
+        {
+          "id": "a2u1-r2-3",
+          "type": "mcq",
+          "stem": "What should members take to the beach?",
+          "options": [
+            "their own lunch",
+            "gloves, a hat and some water",
+            "special cleaning machines"
+          ],
+          "answer": 1,
+          "explanation": "「手袋・帽子・水のボトルを持ってくるだけでよい」とあり、a bottle of water を some water と言いかえています。清掃は昼食前に終わるので弁当は必要ありません。「特別な技術は必要ない」とあり、特別な道具を持ってくるようには書かれていません。",
+          "evidence": "Just bring gloves, a hat and a bottle of water to the beach.",
+          "focus": "specific-info",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-r"
+        },
+        {
+          "id": "a2u1-r2-4",
+          "type": "mcq",
+          "stem": "What can we understand about the Green Hands Volunteer Club?",
+          "options": [
+            "Only third-year students can join it.",
+            "Members must be good at gardening.",
+            "Students can be in another club at the same time."
+          ],
+          "answer": 2,
+          "explanation": "「週に1回しか集まらないので、運動部にも入っている部員がいる」とあることから、ほかの部活と掛け持ちできると分かります。部員は「3学年すべて」から集まっているので3年生だけではありません。「特別な技術は必要ない」ので、園芸が得意である必要もありません。",
+          "evidence": "Some members are in sports clubs too, because we only meet once a week.",
+          "focus": "inference",
+          "difficulty": 3,
+          "objectiveId": "a2u1-obj-r"
+        },
+        {
+          "id": "a2u1-r2-5",
+          "type": "mcq",
+          "stem": "Why did the club write this notice?",
+          "options": [
+            "to find new members",
+            "to invite students to a beach party",
+            "to thank the local children's centre"
+          ],
+          "answer": 0,
+          "explanation": "タイトルが New Members Wanted で、本文でも「ボランティア部に入ろう」と呼びかけているので、新しい部員を集めるためのお知らせです。海岸には清掃に行くのでパーティーではありません。児童センターは野菜をあげる相手として出てきますが、お礼を言う文ではありません。",
+          "evidence": "Then come and join the Green Hands Volunteer Club!",
+          "focus": "main-idea",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-r"
+        }
+      ],
+      "step": 8
+    },
+    {
+      "id": "school-life-a2-u1-reading-3",
+      "kind": "reading",
+      "skill": "reading",
+      "title": "Reading 3: 留学生のブログ「日本の学校で驚いたこと」",
+      "instructions": "イギリスから来た留学生リリーのブログを読みましょう。そのあと、質問に答えてください。First, Second, Third などの言葉に注目すると、内容を整理しやすくなります。",
+      "minutes": 8,
+      "passage": {
+        "title": "Lily's Japan Blog: My First Month",
+        "paragraphs": [
+          "Hello again, everyone! I'm Lily, and I'm from Manchester. I'm spending a year at Aoba High School in Japan. Today I want to tell you about some things that are different here.",
+          "First, students clean the school themselves! Every day after lessons, we have fifteen minutes of cleaning time. My group cleans the stairs. At first I thought it was strange, but now I quite like it. It's a good time to chat with my classmates.",
+          "Second, we eat lunch in our classroom, not in a big dining hall. Most people bring a lunch box from home. My host mother makes mine, and it's always delicious.",
+          "Third, we change our shoes at the entrance and wear indoor shoes inside the school. I forgot mine on my second day, so I borrowed a pair from the office. They were too big! Next time, I'm going to write about my new club."
+        ]
+      },
+      "questions": [
+        {
+          "id": "a2u1-r3-1",
+          "type": "mcq",
+          "stem": "What does Lily clean during cleaning time?",
+          "options": [
+            "her classroom",
+            "the stairs",
+            "the entrance"
+          ],
+          "answer": 1,
+          "explanation": "「私のグループは階段を掃除する」とあります。教室は昼食を食べる場所、玄関（entrance）は靴をはきかえる場所として出てきますが、リリーが掃除する場所ではありません。",
+          "evidence": "My group cleans the stairs.",
+          "focus": "specific-info",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-r"
+        },
+        {
+          "id": "a2u1-r3-2",
+          "type": "mcq",
+          "stem": "How does Lily feel about cleaning time now?",
+          "options": [
+            "She still thinks it is strange.",
+            "She thinks it is too long.",
+            "She quite likes it."
+          ],
+          "answer": 2,
+          "explanation": "「最初は変だと思ったが、今はけっこう気に入っている」とあります。strange と思ったのは At first（最初は）なので、今の気持ちではありません。15分が長すぎるとは書かれていません。",
+          "evidence": "At first I thought it was strange, but now I quite like it.",
+          "focus": "specific-info",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-r"
+        },
+        {
+          "id": "a2u1-r3-3",
+          "type": "mcq",
+          "stem": "Where do the students at Aoba High School have lunch?",
+          "options": [
+            "in their classroom",
+            "in a big dining hall",
+            "at a café near the school"
+          ],
+          "answer": 0,
+          "explanation": "「大きな食堂ではなく、教室で昼食を食べる」とあります。dining hall は not（〜ではなく）と否定されているので誤りです。学校の近くのカフェについては書かれていません。",
+          "evidence": "Second, we eat lunch in our classroom, not in a big dining hall.",
+          "focus": "specific-info",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-r"
+        },
+        {
+          "id": "a2u1-r3-4",
+          "type": "mcq",
+          "stem": "What can we understand about Lily's second day?",
+          "options": [
+            "She lost her lunch box.",
+            "The shoes she borrowed didn't fit her well.",
+            "She was late for school."
+          ],
+          "answer": 1,
+          "explanation": "上ばきを忘れて事務室から借りたところ「大きすぎた」とあるので、借りた靴は足に合っていなかったと分かります。弁当箱をなくした、遅刻したという情報はありません。",
+          "evidence": "They were too big!",
+          "focus": "inference",
+          "difficulty": 3,
+          "objectiveId": "a2u1-obj-r"
+        },
+        {
+          "id": "a2u1-r3-5",
+          "type": "mcq",
+          "stem": "What is this blog post mainly about?",
+          "options": [
+            "how to make a Japanese lunch box",
+            "Lily's new club at school",
+            "things that are different at Lily's school in Japan"
+          ],
+          "answer": 2,
+          "explanation": "冒頭で「ここで違っていることについて話したい」と書き、掃除・昼食・上ばきの3つを紹介しています。弁当はホストマザーが作ると書いてあるだけで作り方の説明はありません。部活動は「次回書く」予定で、今回の内容ではありません。",
+          "evidence": "Today I want to tell you about some things that are different here.",
+          "focus": "main-idea",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-r"
+        }
+      ],
+      "step": 9
+    },
+    {
       "id": "school-life-a2-u1-listening",
-      "step": 4,
+      "step": 10,
       "kind": "listening",
       "skill": "listening",
       "title": "Listening: どの部活に入る？",
@@ -237,24 +1001,68 @@
       "minutes": 6,
       "setting": "オーストラリアから来た留学生のソフィーが、クラスメートの健太に部活動について相談しています。",
       "script": [
-        { "speaker": "Sophie", "voice": "female", "text": "Hi, Kenta. I want to join a club, but I don't know which one. What club are you in?" },
-        { "speaker": "Kenta", "voice": "male", "text": "I'm in the basketball club. We practise every day except Sunday. It's a lot of fun, but it's hard work." },
-        { "speaker": "Sophie", "voice": "female", "text": "Every day? That's a lot! What time do you finish?" },
-        { "speaker": "Kenta", "voice": "male", "text": "We usually finish at six o'clock. On Saturdays, we practise in the morning, from nine to twelve." },
-        { "speaker": "Sophie", "voice": "female", "text": "I like sports, but I'm not very good at basketball. I love drawing, and I can play the guitar a little." },
-        { "speaker": "Kenta", "voice": "male", "text": "Then how about the art club? They meet on Tuesdays and Thursdays in Room 3B. My sister is in it, and she really enjoys it." },
-        { "speaker": "Sophie", "voice": "female", "text": "That sounds good. But I also want to try something Japanese." },
-        { "speaker": "Kenta", "voice": "male", "text": "Oh, there's a calligraphy club too. They practise on Wednesday afternoons in the library." },
-        { "speaker": "Sophie", "voice": "female", "text": "Calligraphy! I'm interested in that. Can I just go and watch first?" },
-        { "speaker": "Kenta", "voice": "male", "text": "Sure. Let's go together next Wednesday. My practice doesn't start until four." }
+        {
+          "speaker": "Sophie",
+          "voice": "female",
+          "text": "Hi, Kenta. I want to join a club, but I don't know which one. What club are you in?"
+        },
+        {
+          "speaker": "Kenta",
+          "voice": "male",
+          "text": "I'm in the basketball club. We practise every day except Sunday. It's a lot of fun, but it's hard work."
+        },
+        {
+          "speaker": "Sophie",
+          "voice": "female",
+          "text": "Every day? That's a lot! What time do you finish?"
+        },
+        {
+          "speaker": "Kenta",
+          "voice": "male",
+          "text": "We usually finish at six o'clock. On Saturdays, we practise in the morning, from nine to twelve."
+        },
+        {
+          "speaker": "Sophie",
+          "voice": "female",
+          "text": "I like sports, but I'm not very good at basketball. I love drawing, and I can play the guitar a little."
+        },
+        {
+          "speaker": "Kenta",
+          "voice": "male",
+          "text": "Then how about the art club? They meet on Tuesdays and Thursdays in Room 3B. My sister is in it, and she really enjoys it."
+        },
+        {
+          "speaker": "Sophie",
+          "voice": "female",
+          "text": "That sounds good. But I also want to try something Japanese."
+        },
+        {
+          "speaker": "Kenta",
+          "voice": "male",
+          "text": "Oh, there's a calligraphy club too. They practise on Wednesday afternoons in the library."
+        },
+        {
+          "speaker": "Sophie",
+          "voice": "female",
+          "text": "Calligraphy! I'm interested in that. Can I just go and watch first?"
+        },
+        {
+          "speaker": "Kenta",
+          "voice": "male",
+          "text": "Sure. Let's go together next Wednesday. My practice doesn't start until four."
+        }
       ],
       "questions": [
         {
           "id": "a2u1-l1",
           "type": "mcq",
           "stem": "When does the basketball club practise?",
-          "options": ["every day", "every day except Sunday", "only on Saturdays"],
-          "answer": 1,
+          "options": [
+            "every day except Sunday",
+            "every day",
+            "only on Saturdays"
+          ],
+          "answer": 0,
           "explanation": "健太は「日曜日以外は毎日」と言っています。ソフィーが Every day? と聞き返しますが、日曜日は休みなので「毎日」ではありません。土曜日は午前中に練習しますが、土曜日だけではありません。",
           "evidence": "We practise every day except Sunday.",
           "focus": "specific-info",
@@ -265,7 +1073,11 @@
           "id": "a2u1-l2",
           "type": "mcq",
           "stem": "What time does basketball practice usually finish?",
-          "options": ["at four o'clock", "at six o'clock", "at twelve o'clock"],
+          "options": [
+            "at four o'clock",
+            "at six o'clock",
+            "at twelve o'clock"
+          ],
           "answer": 1,
           "explanation": "「たいてい6時に終わる」と言っています。12時は土曜日の練習が終わる時刻、4時は水曜日に練習が始まる時刻なので、ふだんの終了時刻ではありません。",
           "evidence": "We usually finish at six o'clock.",
@@ -277,7 +1089,11 @@
           "id": "a2u1-l3",
           "type": "mcq",
           "stem": "Where does the art club meet?",
-          "options": ["in Room 3B", "in the library", "in the gym"],
+          "options": [
+            "in Room 3B",
+            "in the library",
+            "in the gym"
+          ],
           "answer": 0,
           "explanation": "美術部は火曜と木曜に3Bの教室で活動します。図書室（library）で活動するのは書道部です。体育館は話に出てきません。",
           "evidence": "They meet on Tuesdays and Thursdays in Room 3B.",
@@ -289,8 +1105,12 @@
           "id": "a2u1-l4",
           "type": "mcq",
           "stem": "At the end, which club is Sophie most interested in?",
-          "options": ["the basketball club", "the art club", "the calligraphy club"],
-          "answer": 2,
+          "options": [
+            "the calligraphy club",
+            "the basketball club",
+            "the art club"
+          ],
+          "answer": 0,
           "explanation": "書道部の話を聞いて「書道！興味がある」と言い、見学したいと頼んでいます。バスケットボールは得意ではないと言っており、美術部には That sounds good. と言いましたが、そのあと「日本的なこともしてみたい」と続けています。",
           "evidence": "Calligraphy! I'm interested in that.",
           "focus": "attitude",
@@ -301,7 +1121,11 @@
           "id": "a2u1-l5",
           "type": "mcq",
           "stem": "What are Sophie and Kenta going to do next Wednesday?",
-          "options": ["go to basketball practice together", "watch the calligraphy club", "join the art club"],
+          "options": [
+            "go to basketball practice together",
+            "watch the calligraphy club",
+            "join the art club"
+          ],
           "answer": 1,
           "explanation": "ソフィーが書道部を「まず見学できる？」と聞き、健太が「来週の水曜日にいっしょに行こう」と答えています。水曜日は書道部の活動日です。健太の練習は4時からで、ソフィーはバスケ部に行くわけではありません。美術部は火・木の活動です。",
           "evidence": "Let's go together next Wednesday.",
@@ -312,8 +1136,301 @@
       ]
     },
     {
+      "id": "school-life-a2-u1-listening-2",
+      "kind": "listening",
+      "skill": "listening",
+      "title": "Listening 2: テスト前の部活休み",
+      "instructions": "遥と颯太の会話を聞きましょう。まず質問を読んでから音声を再生し、理由・時刻・教科に注意して聞き取ってください。2回まで聞いてかまいません。",
+      "minutes": 6,
+      "setting": "定期テストの前で部活動が休みになる週に、クラスメートの遥と颯太が放課後の予定について話しています。",
+      "script": [
+        {
+          "speaker": "Haruka",
+          "voice": "female",
+          "text": "Sota, do you have football practice today?"
+        },
+        {
+          "speaker": "Sota",
+          "voice": "male",
+          "text": "No. Tests start next Monday, so there are no club activities this week. What about you?"
+        },
+        {
+          "speaker": "Haruka",
+          "voice": "female",
+          "text": "The same. The tennis club stops for a week too. I'm glad, because I'm really worried about the maths test."
+        },
+        {
+          "speaker": "Sota",
+          "voice": "male",
+          "text": "Maths is OK for me. It's history I find difficult. There are so many dates to remember!"
+        },
+        {
+          "speaker": "Haruka",
+          "voice": "female",
+          "text": "I love history! Why don't we study together? The library is open until six o'clock this week."
+        },
+        {
+          "speaker": "Sota",
+          "voice": "male",
+          "text": "Good idea. But I can't go today. I have to go to the dentist at half past four."
+        },
+        {
+          "speaker": "Haruka",
+          "voice": "female",
+          "text": "That's OK. What about tomorrow after school?"
+        },
+        {
+          "speaker": "Sota",
+          "voice": "male",
+          "text": "Tomorrow's perfect. I can help you with maths, and you can help me with history."
+        },
+        {
+          "speaker": "Haruka",
+          "voice": "female",
+          "text": "Great. Let's meet at the library entrance at quarter to four."
+        },
+        {
+          "speaker": "Sota",
+          "voice": "male",
+          "text": "OK. But after the tests, I can't wait to play football again!"
+        }
+      ],
+      "questions": [
+        {
+          "id": "a2u1-l2-1",
+          "type": "mcq",
+          "stem": "Why are there no club activities this week?",
+          "options": [
+            "because the coach is ill",
+            "because of the school festival",
+            "because the tests start next week"
+          ],
+          "answer": 2,
+          "explanation": "颯太が「来週の月曜日からテストなので、今週は部活がない」と言っています。コーチの病気や文化祭の話は出てきません。",
+          "evidence": "Tests start next Monday, so there are no club activities this week.",
+          "focus": "specific-info",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-l"
+        },
+        {
+          "id": "a2u1-l2-2",
+          "type": "mcq",
+          "stem": "Which subject is difficult for Sota?",
+          "options": [
+            "history",
+            "maths",
+            "English"
+          ],
+          "answer": 0,
+          "explanation": "颯太は「難しいのは歴史だ。覚える年号が多すぎる」と言っています。数学は「ぼくは大丈夫」と言っており、心配しているのは遥のほうです。英語は話に出てきません。",
+          "evidence": "It's history I find difficult.",
+          "focus": "specific-info",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-l"
+        },
+        {
+          "id": "a2u1-l2-3",
+          "type": "mcq",
+          "stem": "Why can't Sota go to the library today?",
+          "options": [
+            "He has football practice.",
+            "He has to see the dentist.",
+            "The library is closed today."
+          ],
+          "answer": 1,
+          "explanation": "「4時半に歯医者に行かなければならない」と言っています。今週は部活が休みなのでサッカーの練習はありません。図書室は今週6時まで開いているので、閉まっているわけでもありません。",
+          "evidence": "I have to go to the dentist at half past four.",
+          "focus": "specific-info",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-l"
+        },
+        {
+          "id": "a2u1-l2-4",
+          "type": "mcq",
+          "stem": "What time are Haruka and Sota going to meet tomorrow?",
+          "options": [
+            "at 4:30",
+            "at 6:00",
+            "at 3:45"
+          ],
+          "answer": 2,
+          "explanation": "遥が「図書室の入り口で4時15分前（quarter to four = 3時45分）に会おう」と言っています。4時半は今日の歯医者の時刻、6時は図書室が閉まる時刻です。",
+          "evidence": "Let's meet at the library entrance at quarter to four.",
+          "focus": "specific-info",
+          "difficulty": 3,
+          "objectiveId": "a2u1-obj-l"
+        },
+        {
+          "id": "a2u1-l2-5",
+          "type": "mcq",
+          "stem": "How does Haruka feel about the week without club activities?",
+          "options": [
+            "She is happy because she can study for her tests.",
+            "She is sad because she can't play tennis.",
+            "She is angry because the library closes early."
+          ],
+          "answer": 0,
+          "explanation": "遥は「うれしい。数学のテストがとても心配だから」と言っているので、テスト勉強の時間ができて喜んでいると考えられます。テニスができなくて悲しいとは言っていません（練習を楽しみにしているのは颯太のサッカーです）。図書室について怒ってもいません。",
+          "evidence": "I'm glad, because I'm really worried about the maths test.",
+          "focus": "inference",
+          "difficulty": 3,
+          "objectiveId": "a2u1-obj-l"
+        }
+      ],
+      "step": 11
+    },
+    {
+      "id": "school-life-a2-u1-listening-3",
+      "kind": "listening",
+      "skill": "listening",
+      "title": "Listening 3: 校外学習の持ち物と集合場所",
+      "instructions": "葵と亮の会話を聞きましょう。まず質問を読んでから音声を再生し、集合場所・服装・持ち物に注意して聞き取ってください。2回まで聞いてかまいません。",
+      "minutes": 6,
+      "setting": "来週の金曜日に科学館へ校外学習に行く前に、クラスメートの葵と亮が集合場所や持ち物を確認しています。",
+      "script": [
+        {
+          "speaker": "Ryo",
+          "voice": "male",
+          "text": "Aoi, did you read the letter about the school trip to the science museum?"
+        },
+        {
+          "speaker": "Aoi",
+          "voice": "female",
+          "text": "Yes, but I left it at home. Where do we meet on Friday?"
+        },
+        {
+          "speaker": "Ryo",
+          "voice": "male",
+          "text": "At eight o'clock at Kita Station, not at school. The train leaves at quarter past eight."
+        },
+        {
+          "speaker": "Aoi",
+          "voice": "female",
+          "text": "OK. Can we wear our own clothes?"
+        },
+        {
+          "speaker": "Ryo",
+          "voice": "male",
+          "text": "No, we have to wear our uniform. And we need comfortable shoes, because we're going to walk a lot."
+        },
+        {
+          "speaker": "Aoi",
+          "voice": "female",
+          "text": "What about lunch? Can we buy something at the museum?"
+        },
+        {
+          "speaker": "Ryo",
+          "voice": "male",
+          "text": "No, there's no café there. We have to bring a packed lunch and a drink."
+        },
+        {
+          "speaker": "Aoi",
+          "voice": "female",
+          "text": "I see. How much money do we need for the museum?"
+        },
+        {
+          "speaker": "Ryo",
+          "voice": "male",
+          "text": "Nothing. The school pays for the tickets. But bring some money for the train. It's about five hundred yen."
+        },
+        {
+          "speaker": "Aoi",
+          "voice": "female",
+          "text": "Thanks, Ryo. I'm really looking forward to it. I love science, and they have a great space room there."
+        },
+        {
+          "speaker": "Ryo",
+          "voice": "male",
+          "text": "Me too. But don't be late! Mr Kato says the train won't wait for anyone."
+        }
+      ],
+      "questions": [
+        {
+          "id": "a2u1-l3-1",
+          "type": "mcq",
+          "stem": "Where will the students meet on Friday?",
+          "options": [
+            "at school",
+            "at Kita Station",
+            "at the science museum"
+          ],
+          "answer": 1,
+          "explanation": "亮が「学校ではなく、北駅に8時」と言っています。school は not で否定されています。科学館は行き先で、集合場所ではありません。",
+          "evidence": "At eight o'clock at Kita Station, not at school.",
+          "focus": "specific-info",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-l"
+        },
+        {
+          "id": "a2u1-l3-2",
+          "type": "mcq",
+          "stem": "What do the students have to wear?",
+          "options": [
+            "their own clothes",
+            "sports clothes",
+            "their school uniform"
+          ],
+          "answer": 2,
+          "explanation": "葵が「私服でいい？」と聞き、亮が「いいえ、制服を着なければならない」と答えています。私服は否定されています。「歩きやすい靴」は必要ですが、運動着を着るとは言っていません。",
+          "evidence": "No, we have to wear our uniform.",
+          "focus": "specific-info",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-l"
+        },
+        {
+          "id": "a2u1-l3-3",
+          "type": "mcq",
+          "stem": "Why do the students need to bring lunch?",
+          "options": [
+            "There is no café at the museum.",
+            "The food at the museum is expensive.",
+            "They are going to eat on the train."
+          ],
+          "answer": 0,
+          "explanation": "「科学館にはカフェがないので、お弁当と飲み物を持ってくる」と言っています。食べ物が高いとは言っておらず、電車で食べるという話もありません。",
+          "evidence": "No, there's no café there.",
+          "focus": "specific-info",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-l"
+        },
+        {
+          "id": "a2u1-l3-4",
+          "type": "mcq",
+          "stem": "What do the students need to bring money for?",
+          "options": [
+            "the museum tickets",
+            "the train",
+            "their lunch"
+          ],
+          "answer": 1,
+          "explanation": "「チケットは学校が払うが、電車代は持ってきて」と言っています。チケット代は必要ありません。昼食はお弁当を持っていくので、昼食代も必要ありません。",
+          "evidence": "But bring some money for the train.",
+          "focus": "specific-info",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-l"
+        },
+        {
+          "id": "a2u1-l3-5",
+          "type": "mcq",
+          "stem": "How does Aoi feel about the trip?",
+          "options": [
+            "She is worried about being late.",
+            "She is not interested in science.",
+            "She is excited about it."
+          ],
+          "answer": 2,
+          "explanation": "葵は「本当に楽しみ。理科が大好き」と言っているので、わくわくしていると分かります。looking forward to は「楽しみにしている」という意味です。「遅れないで」と言っているのは亮で、葵が心配しているわけではありません。理科が大好きなので3つ目も誤りです。",
+          "evidence": "I'm really looking forward to it.",
+          "focus": "inference",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-l"
+        }
+      ],
+      "step": 12
+    },
+    {
       "id": "school-life-a2-u1-writing",
-      "step": 5,
+      "step": 13,
       "kind": "writing",
       "skill": "writing",
       "title": "Writing: 部活動を紹介するメール",
@@ -323,7 +1440,11 @@
       "task": {
         "promptEn": "Your English friend Ben wants to know about your club at school. Write an email to Ben. In your email: say which club you are in; tell Ben when and where you practise; say why you like your club. Write 25 words or more.",
         "promptJa": "イギリスの友達ベンが、あなたの学校の部活動について知りたがっています。ベンにメールを書きましょう。①何部に入っているか ②いつ・どこで練習するか ③その部活が好きな理由 を書いてください。25語以上で書きます。",
-        "points": ["何部に入っているか", "いつ・どこで練習するか（曜日・時間・場所）", "その部活が好きな理由（because を使う）"],
+        "points": [
+          "何部に入っているか",
+          "いつ・どこで練習するか（曜日・時間・場所）",
+          "その部活が好きな理由（because を使う）"
+        ],
         "minWords": 25,
         "maxWords": 45,
         "usefulLanguage": [
@@ -348,8 +1469,84 @@
       }
     },
     {
+      "id": "school-life-a2-u1-writing-2",
+      "kind": "writing",
+      "skill": "writing",
+      "title": "Writing 2: 部活を休む連絡メッセージ",
+      "instructions": "同じ部活の友達に、明日の練習を休むことを伝える短いメッセージを書きましょう。3つの内容をすべて入れ、25〜45語で書いてください。",
+      "minutes": 7,
+      "rubricId": "writing-a2",
+      "task": {
+        "promptEn": "You can't go to club practice tomorrow. Write a message to your friend Mia. She is in the same club. In your message: say why you can't come to practice; ask Mia to tell your teacher or coach; ask what the club is going to practise tomorrow. Write 25 words or more.",
+        "promptJa": "あなたは明日、部活の練習に行けません。同じ部活の友達ミアにメッセージを書きましょう。①練習に行けない理由 ②先生（コーチ）に伝えてほしいというお願い ③明日の練習内容を教えてほしいというお願い を書いてください。25語以上で書きます。",
+        "points": [
+          "練習に行けない理由（I have to ... など）",
+          "先生・コーチに伝えてほしいとお願いする（Can you ...?）",
+          "明日何を練習するのかたずねる"
+        ],
+        "minWords": 25,
+        "maxWords": 45,
+        "usefulLanguage": [
+          "Hi Mia,",
+          "I'm sorry, but I can't come to practice tomorrow.",
+          "I have to ... (go to the doctor / help my family).",
+          "Can you tell Mr / Ms ..., please?",
+          "What are we going to practise tomorrow?",
+          "Thanks! / See you on ...,"
+        ],
+        "modelAnswer": "Hi Mia,\nI'm sorry, but I can't come to dance practice tomorrow. I have to go to the hospital with my grandmother. Can you tell Ms Mori, please? What are we going to practise?\nThanks,\nYuka",
+        "selfCheck": [
+          "3つの内容（行けない理由・先生への伝言・練習内容の質問）をすべて書いた",
+          "25語以上45語以内で書いた",
+          "理由を I have to ... や because を使って書いた",
+          "Can you ..., please? を使ってていねいにお願いした",
+          "質問の文の最後に ? をつけた",
+          "あいさつ（Hi Mia,）と最後の名前を書いた"
+        ]
+      },
+      "step": 14
+    },
+    {
+      "id": "school-life-a2-u1-writing-3",
+      "kind": "writing",
+      "skill": "writing",
+      "title": "Writing 3: 留学生への歓迎メール",
+      "instructions": "来月あなたの学校に来る留学生に、学校生活について教えるメールを書きましょう。3つの内容をすべて入れ、25〜45語で書いてください。",
+      "minutes": 7,
+      "rubricId": "writing-a2",
+      "task": {
+        "promptEn": "Tom, a student from Canada, is coming to your school next month. Write an email to Tom. In your email: tell Tom where students eat lunch at your school; tell him what he needs to bring to school; suggest a club he can visit with you. Write 25 words or more.",
+        "promptJa": "カナダの生徒トムが、来月あなたの学校に来ます。トムにメールを書きましょう。①学校で生徒がどこで昼食を食べるか ②学校に持ってくる必要があるもの ③一緒に見学できる部活の提案 を書いてください。25語以上で書きます。",
+        "points": [
+          "生徒がどこで昼食を食べるか",
+          "学校に持ってくる必要があるもの（You need ... / Please bring ...）",
+          "一緒に見学できる部活を提案する（Why don't we ...? / Let's ...）"
+        ],
+        "minWords": 25,
+        "maxWords": 45,
+        "usefulLanguage": [
+          "Hi Tom,",
+          "Welcome to our school!",
+          "We eat lunch in ...",
+          "Please bring ... / You need ...",
+          "Why don't we visit the ... club together?",
+          "See you soon, / Best wishes,"
+        ],
+        "modelAnswer": "Hi Tom,\nWelcome to our school! We eat lunch in our classroom, so please bring a lunch box. You also need indoor shoes. You like music, so why don't we visit the brass band club together?\nSee you soon,\nKen",
+        "selfCheck": [
+          "3つの内容（昼食の場所・持ち物・部活の提案）をすべて書いた",
+          "25語以上45語以内で書いた",
+          "Please bring ... や You need ... で持ち物を分かりやすく伝えた",
+          "Why don't we ...? や Let's ... を使って提案した",
+          "場所の前置詞（in our classroom など）を正しく使った",
+          "あいさつ（Hi Tom,）と最後の名前を書いた"
+        ]
+      },
+      "step": 15
+    },
+    {
       "id": "school-life-a2-u1-speaking",
-      "step": 6,
+      "step": 16,
       "kind": "speaking",
       "skill": "speaking",
       "title": "Speaking: 学校生活について答える",
@@ -364,28 +1561,41 @@
             "questionJa": "毎日どうやって学校に来ますか。",
             "prepSeconds": 15,
             "answerSeconds": 30,
-            "hints": ["I usually go to school by ... (train / bus / bike).", "I walk to school. It takes about ... minutes."]
+            "hints": [
+              "I usually go to school by ... (train / bus / bike).",
+              "I walk to school. It takes about ... minutes."
+            ]
           },
           {
             "question": "What's your favourite school subject? Why?",
             "questionJa": "好きな教科は何ですか。なぜですか。",
             "prepSeconds": 15,
             "answerSeconds": 30,
-            "hints": ["My favourite subject is ... because ...", "I like ... because the teacher is ... / it's interesting."]
+            "hints": [
+              "My favourite subject is ... because ...",
+              "I like ... because the teacher is ... / it's interesting."
+            ]
           },
           {
             "question": "Tell me about your club.",
             "questionJa": "あなたの部活動について話してください。",
             "prepSeconds": 15,
             "answerSeconds": 30,
-            "hints": ["I'm in the ... club.", "We practise on ... in the ...", "I'm not in a club, but I like ... after school."]
+            "hints": [
+              "I'm in the ... club.",
+              "We practise on ... in the ...",
+              "I'm not in a club, but I like ... after school."
+            ]
           },
           {
             "question": "What do you like doing after school?",
             "questionJa": "放課後に何をするのが好きですか。",
             "prepSeconds": 15,
             "answerSeconds": 30,
-            "hints": ["I like playing / reading / watching ...", "I sometimes go to ... with my friends."]
+            "hints": [
+              "I like playing / reading / watching ...",
+              "I sometimes go to ... with my friends."
+            ]
           }
         ],
         "usefulLanguage": [
@@ -408,7 +1618,7 @@
     },
     {
       "id": "school-life-a2-u1-check",
-      "step": 7,
+      "step": 17,
       "kind": "check",
       "skill": "mixed",
       "title": "Check: 試験形式の確認問題",
@@ -426,8 +1636,12 @@
           "type": "mcq",
           "stimulus": "notice1",
           "stem": "What does the notice say?",
-          "options": ["Students must bring their own racket.", "New students can visit the club on Friday.", "The club meets in the gym."],
-          "answer": 1,
+          "options": [
+            "New students can visit the club on Friday.",
+            "Students must bring their own racket.",
+            "The club meets in the gym."
+          ],
+          "answer": 0,
           "explanation": "「新しい部員歓迎。金曜4時15分にテニスコートへ」とあるので、新入生は金曜日に参加できます。ラケットは「自分のものは必要ない」とあるので1つ目は誤り。場所は体育館ではなくテニスコートです。",
           "evidence": "Come to the tennis courts on Friday at 4:15.",
           "focus": "specific-info",
@@ -439,8 +1653,12 @@
           "type": "mcq",
           "stimulus": "message1",
           "stem": "Why is Rina writing to Mika?",
-          "options": ["to tell her the drama club is at a different time", "to ask her to help Mr Sato", "to invite her to have lunch together"],
-          "answer": 0,
+          "options": [
+            "to ask her to help Mr Sato",
+            "to tell her the drama club is at a different time",
+            "to invite her to have lunch together"
+          ],
+          "answer": 1,
           "explanation": "今日の部活は中止で、代わりに明日の昼休みに練習すると伝えています。つまり「練習の時間が変わった」という連絡です。佐藤先生を手伝うようには頼んでおらず、lunchtime は練習の時間で、昼食に誘っているわけではありません。",
           "evidence": "We're going to practise tomorrow at lunchtime instead.",
           "focus": "main-idea",
@@ -452,8 +1670,12 @@
           "type": "mcq",
           "stimulus": "notice2",
           "stem": "What can students do?",
-          "options": ["have lunch in the library", "borrow a book for two weeks", "use the library on Saturday"],
-          "answer": 1,
+          "options": [
+            "have lunch in the library",
+            "use the library on Saturday",
+            "borrow a book for two weeks"
+          ],
+          "answer": 2,
           "explanation": "「本を2週間借りておける」とあります。図書室では飲食禁止なので昼食は食べられません。開館は月曜から金曜なので土曜日は使えません。",
           "evidence": "You can keep books for two weeks.",
           "focus": "specific-info",
@@ -464,8 +1686,12 @@
           "id": "a2u1-c4",
           "type": "mcq",
           "stem": "Our school festival is ______ October.",
-          "options": ["at", "on", "in"],
-          "answer": 2,
+          "options": [
+            "in",
+            "at",
+            "on"
+          ],
+          "answer": 0,
           "explanation": "月の前には in を使います（in October）。at は時刻、on は曜日や日付に使います。",
           "focus": "grammar",
           "difficulty": 1,
@@ -475,7 +1701,9 @@
           "id": "a2u1-c5",
           "type": "text",
           "stem": "Complete with the correct form of the word in brackets: Aya ______ (go) to the dance club every Tuesday.",
-          "accept": ["goes"],
+          "accept": [
+            "goes"
+          ],
           "explanation": "主語 Aya は3人称単数で、毎週の習慣なので現在形 goes になります。go は -es をつける動詞です（goes）。",
           "focus": "grammar",
           "difficulty": 1,
@@ -485,7 +1713,9 @@
           "id": "a2u1-c6",
           "type": "text",
           "stem": "Complete with the correct form of the word in brackets: I'm good at ______ (swim), so I joined the swimming club.",
-          "accept": ["swimming"],
+          "accept": [
+            "swimming"
+          ],
           "explanation": "be good at の後ろは名詞か動詞の -ing 形です。swim は最後の m を重ねて swimming になります。",
           "focus": "grammar",
           "difficulty": 2,
@@ -494,8 +1724,233 @@
       ]
     },
     {
+      "id": "school-life-a2-u1-check-2",
+      "kind": "check",
+      "skill": "mixed",
+      "title": "Check 2: 運動会と遠足のお知らせ",
+      "instructions": "運動会や校外学習についての掲示・メッセージを読んで答える問題と、短いメールの穴うめ問題です。時間を計って解きましょう。",
+      "minutes": 8,
+      "examNote": "A2 Key for Schools の Reading Part 1（お知らせ・短いメッセージ）と Part 5（短い文章の穴うめ）の形式を参考にした独自問題です。",
+      "stimuli": {
+        "notice1": "SPORTS DAY - Saturday 4 October, 9:00 to 15:00, on the sports field. Wear your PE clothes and a team cap. If it rains, sports day will be on Monday.",
+        "message1": "Hi Daichi, I left my water bottle on the bus after the school trip. It's green with my name on it. Can you ask Ms Ito about it tomorrow? I'm not at school because I'm going to the dentist. Sota",
+        "email1": "Hi Emma, We had our school trip to the science museum yesterday. We went there (1) ______ train. We saw robots and I tried a flight game. It was great! Next month, we (2) ______ going to visit a farm. Bye, Yui"
+      },
+      "questions": [
+        {
+          "id": "a2u1-c2-1",
+          "type": "mcq",
+          "stimulus": "notice1",
+          "stem": "What does the notice say?",
+          "options": [
+            "Sports day is in the gym if it rains.",
+            "Students must bring a team cap.",
+            "Sports day finishes in the morning."
+          ],
+          "answer": 1,
+          "explanation": "「体操服とチームの帽子を身につけてくること」とあるので、チームの帽子は必要です。雨の場合は体育館ではなく「月曜日に行う」とあり、時間は 9:00〜15:00 なので午前中には終わりません。",
+          "evidence": "Wear your PE clothes and a team cap.",
+          "focus": "specific-info",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-r"
+        },
+        {
+          "id": "a2u1-c2-2",
+          "type": "mcq",
+          "stimulus": "notice1",
+          "stem": "What happens if it rains on 4 October?",
+          "options": [
+            "Students have lessons in the classroom.",
+            "Sports day starts at 15:00.",
+            "Sports day moves to another day."
+          ],
+          "answer": 2,
+          "explanation": "「雨の場合、運動会は月曜日に行う」とあるので、別の日に移ります。教室で授業をするとは書いておらず、15:00 は終了時刻で開始時刻ではありません。",
+          "evidence": "If it rains, sports day will be on Monday.",
+          "focus": "specific-info",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-r"
+        },
+        {
+          "id": "a2u1-c2-3",
+          "type": "mcq",
+          "stimulus": "message1",
+          "stem": "Why is Sota writing to Daichi?",
+          "options": [
+            "to ask him to help find a lost thing",
+            "to ask him to buy a new water bottle",
+            "to tell him about a trip to the dentist"
+          ],
+          "answer": 0,
+          "explanation": "バスに忘れた水筒について、伊藤先生に聞いてほしいと頼んでいるので「なくし物を探す手伝い」が目的です。新しい水筒を買うようには頼んでいません。歯医者の話は学校に行けない理由で、メッセージの目的ではありません。",
+          "evidence": "Can you ask Ms Ito about it tomorrow?",
+          "focus": "main-idea",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-r"
+        },
+        {
+          "id": "a2u1-c2-4",
+          "type": "mcq",
+          "stimulus": "message1",
+          "stem": "What do we know about Sota?",
+          "options": [
+            "He found Daichi's water bottle.",
+            "He is going to be absent tomorrow.",
+            "He is going on a school trip tomorrow."
+          ],
+          "answer": 1,
+          "explanation": "「歯医者に行くので学校にいない」とあるので、明日は欠席します。水筒をなくしたのは Sota 自身で、Daichi の水筒を見つけたのではありません。校外学習はすでに終わった出来事です。",
+          "evidence": "I'm not at school because I'm going to the dentist.",
+          "focus": "inference",
+          "difficulty": 3,
+          "objectiveId": "a2u1-obj-r"
+        },
+        {
+          "id": "a2u1-c2-5",
+          "type": "text",
+          "stimulus": "email1",
+          "stem": "Read Yui's email. Write ONE word for gap (1).",
+          "accept": [
+            "by"
+          ],
+          "explanation": "交通手段は by + 乗り物（冠詞なし）で表します（by train, by bus）。on や in を使う場合は on the train のように冠詞が必要です。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-g"
+        },
+        {
+          "id": "a2u1-c2-6",
+          "type": "text",
+          "stimulus": "email1",
+          "stem": "Read Yui's email. Write ONE word for gap (2).",
+          "accept": [
+            "are"
+          ],
+          "explanation": "Next month（来月）の予定なので be going to を使います。主語が we なので be 動詞は are です。is や am は主語 we には使えません。",
+          "focus": "grammar",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-g"
+        }
+      ],
+      "step": 18
+    },
+    {
+      "id": "school-life-a2-u1-check-3",
+      "kind": "check",
+      "skill": "mixed",
+      "title": "Check 3: 校則とボランティア部のお知らせ",
+      "instructions": "校則やボランティア部についての掲示・メールを読んで答える問題と、短いメッセージの穴うめ問題です。時間を計って解きましょう。",
+      "minutes": 8,
+      "examNote": "A2 Key for Schools の Reading Part 1（お知らせ・短いメッセージ）と Part 5（短い文章の穴うめ）の形式を参考にした独自問題です。",
+      "stimuli": {
+        "notice1": "SCHOOL CANTEEN - Open 12:30 to 13:15. You must put your tray back after lunch. You don't have to pay in cash - you can use your student card.",
+        "email1": "Dear students, The volunteer club is going to clean the beach near the station on Sunday 12 October. We are meeting at the station at 8:30. Please bring gloves. We will give you a bag. Mr Kondo",
+        "message1": "Hi Aoi, I (1) ______ late for school this morning because my train stopped. My teacher wasn't angry. The train company gave me a paper for the school. Now I'm in the library. Where (2) ______ you? Hana"
+      },
+      "questions": [
+        {
+          "id": "a2u1-c3-1",
+          "type": "mcq",
+          "stimulus": "notice1",
+          "stem": "What does the notice say?",
+          "options": [
+            "Students have to pay with money.",
+            "The canteen is open all afternoon.",
+            "Students must take their tray back."
+          ],
+          "answer": 2,
+          "explanation": "「昼食の後はトレーを戻さなければならない」とあります。支払いは現金でなくてもよく学生証が使えるので1つ目は誤りです。営業は 12:30〜13:15 なので午後ずっと開いているわけではありません。",
+          "evidence": "You must put your tray back after lunch.",
+          "focus": "specific-info",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-r"
+        },
+        {
+          "id": "a2u1-c3-2",
+          "type": "mcq",
+          "stimulus": "notice1",
+          "stem": "How can students pay in the canteen?",
+          "options": [
+            "with their student card",
+            "only in cash",
+            "at the end of the month"
+          ],
+          "answer": 0,
+          "explanation": "「現金で払う必要はなく、学生証を使える」とあるので学生証で払えます。don't have to は「〜しなくてよい」なので「現金のみ」は誤りです。月末払いについては書かれていません。",
+          "evidence": "you can use your student card.",
+          "focus": "specific-info",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-r"
+        },
+        {
+          "id": "a2u1-c3-3",
+          "type": "mcq",
+          "stimulus": "email1",
+          "stem": "What must students take with them on Sunday?",
+          "options": [
+            "a bag",
+            "gloves",
+            "a train ticket"
+          ],
+          "answer": 1,
+          "explanation": "「手袋を持ってきてください」とあるので gloves が正解です。袋（bag）は先生が「渡す」ので持っていく必要はありません。集合場所は駅ですが、電車の切符が必要とは書いていません。",
+          "evidence": "Please bring gloves.",
+          "focus": "specific-info",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-r"
+        },
+        {
+          "id": "a2u1-c3-4",
+          "type": "mcq",
+          "stimulus": "email1",
+          "stem": "Why did Mr Kondo write this email?",
+          "options": [
+            "to say the beach is closed",
+            "to ask students to meet at school",
+            "to tell students about a club plan"
+          ],
+          "answer": 2,
+          "explanation": "ボランティア部が日曜日に海岸の清掃をする予定と集合時間・持ち物を知らせているので「部の計画を伝えるため」です。海岸が閉鎖されたとは書いておらず、集合場所は学校ではなく駅です。",
+          "evidence": "The volunteer club is going to clean the beach near the station on Sunday 12 October.",
+          "focus": "main-idea",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-r"
+        },
+        {
+          "id": "a2u1-c3-5",
+          "type": "text",
+          "stimulus": "message1",
+          "stem": "Read Hana's message. Write ONE word for gap (1).",
+          "accept": [
+            "was"
+          ],
+          "explanation": "this morning（今朝）の出来事で、後ろの stopped も過去形なので be 動詞の過去形を使います。主語が I なので was です（be late for ...＝〜に遅れる）。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "a2u1-obj-g"
+        },
+        {
+          "id": "a2u1-c3-6",
+          "type": "mcq",
+          "stimulus": "message1",
+          "stem": "Read Hana's message. Which word goes in gap (2)?",
+          "options": [
+            "are",
+            "is",
+            "do"
+          ],
+          "answer": 0,
+          "explanation": "「今どこにいるの？」と相手の居場所を聞いているので、主語 you に合う be 動詞 are を使います（Where are you?）。is は主語 you には使えず、do は後ろに一般動詞が必要です。",
+          "focus": "grammar",
+          "difficulty": 1,
+          "objectiveId": "a2u1-obj-g"
+        }
+      ],
+      "step": 19
+    },
+    {
       "id": "school-life-a2-u1-wrapup",
-      "step": 8,
+      "step": 20,
       "kind": "wrapup",
       "skill": "mixed",
       "title": "Wrap-up: ふり返り",
@@ -509,10 +1964,26 @@
         "Reading・Listening では、選択肢の言いかえ（fun → interesting など）に注意し、根拠の文を必ず確認する。"
       ],
       "commonMistakes": [
-        { "wrong": "I am belong to the tennis club.", "right": "I'm in the tennis club. / I belong to the tennis club.", "note": "belong は一般動詞なので am と一緒に使いません。会話では I'm in the ... club. が自然です。" },
-        { "wrong": "We practise in Monday.", "right": "We practise on Mondays.", "note": "曜日の前は on です。「毎週月曜日」は on Mondays と複数形にすると分かりやすくなります。" },
-        { "wrong": "She can plays the piano.", "right": "She can play the piano.", "note": "can の後ろは必ず動詞の原形です。主語が she でも -s はつけません。" },
-        { "wrong": "I go always to school by bus.", "right": "I always go to school by bus.", "note": "頻度の副詞は一般動詞の前に置きます。日本語の語順に引きずられないよう注意しましょう。" }
+        {
+          "wrong": "I am belong to the tennis club.",
+          "right": "I'm in the tennis club. / I belong to the tennis club.",
+          "note": "belong は一般動詞なので am と一緒に使いません。会話では I'm in the ... club. が自然です。"
+        },
+        {
+          "wrong": "We practise in Monday.",
+          "right": "We practise on Mondays.",
+          "note": "曜日の前は on です。「毎週月曜日」は on Mondays と複数形にすると分かりやすくなります。"
+        },
+        {
+          "wrong": "She can plays the piano.",
+          "right": "She can play the piano.",
+          "note": "can の後ろは必ず動詞の原形です。主語が she でも -s はつけません。"
+        },
+        {
+          "wrong": "I go always to school by bus.",
+          "right": "I always go to school by bus.",
+          "note": "頻度の副詞は一般動詞の前に置きます。日本語の語順に引きずられないよう注意しましょう。"
+        }
       ],
       "next": {
         "text": "Writing で書いたメールを声に出して読み、Speaking の質問に何も見ずに答えられるか練習しましょう。次の単元では、過去形を使って学校行事について話します。",

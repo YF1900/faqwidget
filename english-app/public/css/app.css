@@ -350,3 +350,4 @@ body:has(.wide) .main { max-width: 1200px; }
 @media (min-width: 600px) { .skill-grid { grid-template-columns: repeat(4, 1fr); } }
 @media (max-width: 380px) { .target-card { grid-template-columns: 1fr 1fr; } .target-card > a { grid-column: 1 / -1; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+.step-progress { margin-top: 8px; }

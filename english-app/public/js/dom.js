@@ -51,6 +51,12 @@ export const SKILL_ICON = { reading: '📖', listening: '🎧', writing: '✏️
 export const SOURCE_JA = { default: '初期値', diagnostic: '診断の目安', student: '自分で調整', teacher: '先生が調整' };
 export const KIND_JA = { intro: '目標と語彙', explain: '解説', reading: 'Reading', listening: 'Listening', writing: 'Writing', speaking: 'Speaking', check: '試験形式の確認', wrapup: 'ふり返り' };
 
+/** 同じ種類の活動が複数ある単元では「Reading 2」のように番号を付ける */
+export function kindLabel(activities, a) {
+  const same = activities.filter((x) => x.kind === a.kind);
+  return same.length > 1 ? `${KIND_JA[a.kind]} ${same.indexOf(same.find((x) => x.id === a.id)) + 1}` : KIND_JA[a.kind];
+}
+
 export function fmtDate(iso, withTime = true) {
   if (!iso) return '';
   const d = new Date(iso);

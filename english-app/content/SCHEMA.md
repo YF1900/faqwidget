@@ -23,7 +23,7 @@
     { "id": "a2u1-obj-r", "skill": "reading", "text": "部活動を紹介する短いメールを読んで、曜日・時間・場所などの情報を見つけられる。" }
     // skill: "reading" | "listening" | "writing" | "speaking" | "vocabulary" | "grammar"
   ],
-  "activities": [ /* 下の 8 種を step 1〜8 の順で必ず 1 つずつ */ ]
+  "activities": [ /* 下の 8 種を表の順に並べる。同じ種類は複数置ける（例: Reading 1〜3）。step は 1 から連番 */ ]
 }
 ```
 
@@ -34,11 +34,13 @@
   "title": "Reading: クラブ紹介のメール", "instructions": "（日本語の指示文）", "minutes": 8 }
 ```
 
-`kind` と `step` の対応（全ユニット共通・必須）:
+`kind` の順序（全ユニット共通）。各種類を1つ以上含め、`wrapup` は最後に1つだけ置きます。
+初期教材では Speaking と wrapup 以外を各3つ（例: intro 1〜3 → explain 1〜3 → reading 1〜3 → …）、合計20ステップにしています。
+2つ目以降の活動の id は `<unitId>-<kind>-2` のように番号を付けます。
 
-| step | kind      | skill       | 内容 |
+| 順序 | kind      | skill       | 内容 |
 |------|-----------|-------------|------|
-| 1    | intro     | vocabulary  | 目標（objectives を表示）・重要語彙と表現・語彙チェック |
+| 1    | intro     | vocabulary  | 重要語彙と表現・語彙チェック（最初の intro で目標 objectives も表示） |
 | 2    | explain   | grammar     | 短い解説と例・確認 |
 | 3    | reading   | reading     | Reading 課題 |
 | 4    | listening | listening   | Listening 課題（スクリプトから音声読み上げ） |

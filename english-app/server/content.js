@@ -52,11 +52,15 @@ export function validateUnit(u) {
   const objIds = new Set((u.objectives || []).map((o) => o.id));
   (u.objectives || []).forEach((o, i) => { if (!ID_RE.test(o.id || '') || !isStr(o.text)) e.push(`objectives[${i}] が不正です`); });
   const acts = u.activities || [];
-  if (acts.length !== STEP_KINDS.length) e.push(`activities は ${STEP_KINDS.length} 個（step 1〜8）必要です`);
+  // 同じ種類の活動は複数置ける（例: Reading 1〜3）。種類の順序は STEP_KINDS に従い、各種類を1つ以上含み、wrapup は最後に1つだけ
+  for (const k of STEP_KINDS) if (!acts.some((a) => a.kind === k)) e.push(`活動の種類 ${k} がありません`);
+  if (acts.filter((a) => a.kind === 'wrapup').length !== 1 || acts[acts.length - 1]?.kind !== 'wrapup') e.push('wrapup は最後に1つだけ置いてください');
   const ids = new Set();
   acts.forEach((a, i) => {
     const w = `step ${i + 1}`;
-    if (a.step !== i + 1 || a.kind !== STEP_KINDS[i]) e.push(`${w}: kind は ${STEP_KINDS[i]} である必要があります`);
+    if (a.step !== i + 1) e.push(`${w}: step は 1 から順番に付けてください`);
+    if (!STEP_KINDS.includes(a.kind)) e.push(`${w}: kind が不正です`);
+    else if (i > 0 && STEP_KINDS.indexOf(a.kind) < STEP_KINDS.indexOf(acts[i - 1].kind)) e.push(`${w}: 活動の順序は ${STEP_KINDS.join(' → ')} にしてください`);
     if (!ID_RE.test(a.id || '')) e.push(`${w}: id が不正です`);
     if (ids.has(a.id)) e.push(`${w}: id が重複しています`);
     ids.add(a.id);

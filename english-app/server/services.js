@@ -75,7 +75,7 @@ export function overallLevel(target, levels) {
 export function recommend(db, userId, { target, skills, levels, dueCount, hasDiagnostic, units }) {
   const recs = [];
   if (!target) return [{ type: 'onboarding', title: '目標試験を設定する', reason: 'まず目標とする試験と受験予定時期を決めましょう（未定でもかまいません）。', minutes: 2 }];
-  if (!hasDiagnostic) recs.push({ type: 'diagnostic', title: '4技能の診断を受ける', reason: '今の力に合った教材を選ぶため、Reading・Listening・Writing・Speaking の目安を確認します。', minutes: 20 });
+  if (!hasDiagnostic) recs.push({ type: 'diagnostic', title: '4技能の診断を受ける', reason: '今の力に合った教材を選ぶため、Reading・Listening・Writing・Speaking の目安を確認します。途中でやめても続きから再開できます。', minutes: 45 });
   if (dueCount > 0) recs.push({ type: 'review', title: `復習（${dueCount}問）`, reason: `復習の予定日になった問題が${dueCount}問あります。間違えた問題を日をあけて解き直すと定着しやすくなります。`, minutes: Math.min(10, 2 + dueCount) });
   const kindOf = { reading: 'reading', listening: 'listening', writing: 'writing', speaking: 'speaking' };
   const ordered = SKILLS.slice().sort((a, b) => (STATUS_PRIORITY[skills[a].status] - STATUS_PRIORITY[skills[b].status]) || ((skills[a].score ?? 0) - (skills[b].score ?? 0)));

@@ -7,14 +7,38 @@
   "order": 1,
   "title": "Should Club Activities Be Compulsory?",
   "titleJa": "部活動は全員参加にすべきか？",
-  "estimatedMinutes": 75,
+  "estimatedMinutes": 187,
   "objectives": [
-    { "id": "b2u1-obj-r", "skill": "reading", "text": "部活動についての意見記事を読んで、筆者の主張・段落の目的・態度・指示語の内容を正確に理解できる。" },
-    { "id": "b2u1-obj-l", "skill": "listening", "text": "意見の異なる二人の議論を聞いて、それぞれの意見、同意・反対している点、言外の意味を聞き取れる。" },
-    { "id": "b2u1-obj-w", "skill": "writing", "text": "2つのメモと自分の考えを使い、賛否両論をふまえた140〜190語の論理的なエッセイを書ける。" },
-    { "id": "b2u1-obj-s", "skill": "speaking", "text": "部活動について比較・議論し、理由と具体例を挙げて意見を述べ、相手の意見に応答できる。" },
-    { "id": "b2u1-obj-v", "skill": "vocabulary", "text": "議論でよく使うコロケーション・談話標識・語形成（名詞⇔形容詞など）を正しく使える。" },
-    { "id": "b2u1-obj-g", "skill": "grammar", "text": "譲歩（although / while / despite）、ヘッジ（断定を避ける表現）、対比・追加の表現を使って主張を組み立てられる。" }
+    {
+      "id": "b2u1-obj-r",
+      "skill": "reading",
+      "text": "部活動についての意見記事を読んで、筆者の主張・段落の目的・態度・指示語の内容を正確に理解できる。"
+    },
+    {
+      "id": "b2u1-obj-l",
+      "skill": "listening",
+      "text": "意見の異なる二人の議論を聞いて、それぞれの意見、同意・反対している点、言外の意味を聞き取れる。"
+    },
+    {
+      "id": "b2u1-obj-w",
+      "skill": "writing",
+      "text": "2つのメモと自分の考えを使い、賛否両論をふまえた140〜190語の論理的なエッセイを書ける。"
+    },
+    {
+      "id": "b2u1-obj-s",
+      "skill": "speaking",
+      "text": "部活動について比較・議論し、理由と具体例を挙げて意見を述べ、相手の意見に応答できる。"
+    },
+    {
+      "id": "b2u1-obj-v",
+      "skill": "vocabulary",
+      "text": "議論でよく使うコロケーション・談話標識・語形成（名詞⇔形容詞など）を正しく使える。"
+    },
+    {
+      "id": "b2u1-obj-g",
+      "skill": "grammar",
+      "text": "譲歩（although / while / despite）、ヘッジ（断定を避ける表現）、対比・追加の表現を使って主張を組み立てられる。"
+    }
   ],
   "activities": [
     {
@@ -26,28 +50,89 @@
       "instructions": "この単元の目標を確認し、部活動について議論するときに役立つコロケーションや談話標識を例文と一緒に覚えましょう。そのあと語彙チェックに答えてください。",
       "minutes": 8,
       "vocabulary": [
-        { "term": "compulsory", "meaning": "義務的な、強制の（⇔ voluntary 自由参加の）", "example": "In some schools, club membership is compulsory for all first-year students." },
-        { "term": "voluntary", "meaning": "自発的な、任意の", "example": "Joining the volunteer group is voluntary, but most students take part." },
-        { "term": "make a (strong) case for ~", "meaning": "〜を支持する（説得力のある）主張をする", "example": "Supporters of longer holidays make a strong case for more rest." },
-        { "term": "go through the motions", "meaning": "（やる気がなく）形だけこなす", "example": "If you are just going through the motions, you won't improve much." },
-        { "term": "cope with ~", "meaning": "〜にうまく対処する", "example": "Clubs can teach students how to cope with defeat." },
-        { "term": "far from ~", "meaning": "決して〜ではない、〜にはほど遠い", "example": "The results were far from perfect, but we learnt a lot." },
-        { "term": "commit to ~", "meaning": "〜に打ち込む、〜を約束して続ける", "example": "It is hard to commit to daily practice when you have a part-time job." },
-        { "term": "wear someone out", "meaning": "〜をへとへとに疲れさせる", "example": "The early morning training sessions are wearing me out." },
-        { "term": "miss out (on ~)", "meaning": "（〜の）機会を逃す、損をする", "example": "Students who never join a club may miss out on new friendships." },
-        { "term": "have the final say", "meaning": "最終決定権を持つ", "example": "I think students, not teachers, should have the final say about their free time." },
-        { "term": "on the contrary", "meaning": "それどころか（前の内容を強く否定して逆を述べる）", "example": "The rule didn't reduce stress. On the contrary, it made things worse." },
-        { "term": "whereas", "meaning": "〜である一方で（2つを対比する接続詞）", "example": "Sports clubs can be very competitive, whereas hobby groups are usually more relaxed." },
-        { "term": "wellbeing", "meaning": "心身の健康、幸福", "example": "Schools should pay more attention to students' wellbeing." },
-        { "term": "put forward (an idea)", "meaning": "（考え・案を）提案する、出す", "example": "She put forward an interesting idea at the student council meeting." }
+        {
+          "term": "compulsory",
+          "meaning": "義務的な、強制の（⇔ voluntary 自由参加の）",
+          "example": "In some schools, club membership is compulsory for all first-year students."
+        },
+        {
+          "term": "voluntary",
+          "meaning": "自発的な、任意の",
+          "example": "Joining the volunteer group is voluntary, but most students take part."
+        },
+        {
+          "term": "make a (strong) case for ~",
+          "meaning": "〜を支持する（説得力のある）主張をする",
+          "example": "Supporters of longer holidays make a strong case for more rest."
+        },
+        {
+          "term": "go through the motions",
+          "meaning": "（やる気がなく）形だけこなす",
+          "example": "If you are just going through the motions, you won't improve much."
+        },
+        {
+          "term": "cope with ~",
+          "meaning": "〜にうまく対処する",
+          "example": "Clubs can teach students how to cope with defeat."
+        },
+        {
+          "term": "far from ~",
+          "meaning": "決して〜ではない、〜にはほど遠い",
+          "example": "The results were far from perfect, but we learnt a lot."
+        },
+        {
+          "term": "commit to ~",
+          "meaning": "〜に打ち込む、〜を約束して続ける",
+          "example": "It is hard to commit to daily practice when you have a part-time job."
+        },
+        {
+          "term": "wear someone out",
+          "meaning": "〜をへとへとに疲れさせる",
+          "example": "The early morning training sessions are wearing me out."
+        },
+        {
+          "term": "miss out (on ~)",
+          "meaning": "（〜の）機会を逃す、損をする",
+          "example": "Students who never join a club may miss out on new friendships."
+        },
+        {
+          "term": "have the final say",
+          "meaning": "最終決定権を持つ",
+          "example": "I think students, not teachers, should have the final say about their free time."
+        },
+        {
+          "term": "on the contrary",
+          "meaning": "それどころか（前の内容を強く否定して逆を述べる）",
+          "example": "The rule didn't reduce stress. On the contrary, it made things worse."
+        },
+        {
+          "term": "whereas",
+          "meaning": "〜である一方で（2つを対比する接続詞）",
+          "example": "Sports clubs can be very competitive, whereas hobby groups are usually more relaxed."
+        },
+        {
+          "term": "wellbeing",
+          "meaning": "心身の健康、幸福",
+          "example": "Schools should pay more attention to students' wellbeing."
+        },
+        {
+          "term": "put forward (an idea)",
+          "meaning": "（考え・案を）提案する、出す",
+          "example": "She put forward an interesting idea at the student council meeting."
+        }
       ],
       "questions": [
         {
           "id": "b2u1-i1",
           "type": "mcq",
           "stem": "Membership of the photography club is ______: you can join if you want to, but nobody will force you.",
-          "options": ["compulsory", "voluntary", "essential", "permanent"],
-          "answer": 1,
+          "options": [
+            "compulsory",
+            "essential",
+            "permanent",
+            "voluntary"
+          ],
+          "answer": 3,
           "explanation": "コロンの後で「入りたければ入れるが、誰も強制しない」と説明しているので「任意の」を表す voluntary が正解です。compulsory は「義務の」で正反対、essential は「不可欠な」、permanent は「永久的な」で文脈に合いません。",
           "focus": "vocabulary",
           "difficulty": 1,
@@ -57,8 +142,13 @@
           "id": "b2u1-i2",
           "type": "mcq",
           "stem": "Kaito didn't really care about practice any more; he was just going through the ______.",
-          "options": ["motions", "moves", "actions", "steps"],
-          "answer": 0,
+          "options": [
+            "moves",
+            "actions",
+            "motions",
+            "steps"
+          ],
+          "answer": 2,
           "explanation": "go through the motions で「形だけこなす、気持ちが入っていない」という決まった表現（コロケーション）です。moves / actions / steps はいずれもこの形では使いません。前半の didn't really care（もう気にかけていなかった）とも意味がつながります。",
           "focus": "vocabulary",
           "difficulty": 2,
@@ -68,7 +158,12 @@
           "id": "b2u1-i3",
           "type": "mcq",
           "stem": "Many people feel that students who never join a club ______ out on valuable experiences.",
-          "options": ["lose", "miss", "fall", "drop"],
+          "options": [
+            "lose",
+            "miss",
+            "fall",
+            "drop"
+          ],
           "answer": 1,
           "explanation": "miss out on ~ で「〜の機会を逃す」という句動詞です。lose out on も存在しますが「（競争で）損をする」の意味で、ここでは miss out が自然です。fall out は「仲たがいする」、drop out は「中退する・脱退する」で on valuable experiences とつながりません。",
           "focus": "vocabulary",
@@ -79,7 +174,12 @@
           "id": "b2u1-i4",
           "type": "mcq",
           "stem": "Online lessons did not make studying easier. ______, many students found it harder to concentrate at home.",
-          "options": ["On the contrary", "In addition", "As a result", "For instance"],
+          "options": [
+            "On the contrary",
+            "In addition",
+            "As a result",
+            "For instance"
+          ],
           "answer": 0,
           "explanation": "前の文で「楽にはならなかった」と否定し、次に「それどころか集中しにくくなった」と逆の内容を強調しているので On the contrary が正解です。In addition（さらに）は同じ方向の追加、As a result（その結果）は因果、For instance（例えば）は例示で、否定の後に反対の事実を強める働きはありません。",
           "focus": "vocabulary",
@@ -89,8 +189,302 @@
       ]
     },
     {
+      "id": "school-life-b2-u1-intro-2",
+      "kind": "intro",
+      "skill": "vocabulary",
+      "title": "Vocabulary 2: 文化祭の準備で使う表現",
+      "instructions": "文化祭の準備・運営について話すときに役立つ句動詞やコロケーションを例文と一緒に覚えましょう。そのあと語彙チェックに答えてください。",
+      "minutes": 8,
+      "vocabulary": [
+        {
+          "term": "in the run-up to ~",
+          "meaning": "〜の直前の時期に、〜に向けた準備期間に",
+          "example": "In the run-up to the school festival, our classroom was full of paint and cardboard."
+        },
+        {
+          "term": "come up with ~",
+          "meaning": "（案・アイデアなど）を思いつく、考え出す",
+          "example": "Our class came up with the idea of running a haunted house."
+        },
+        {
+          "term": "draw up (a plan / a list)",
+          "meaning": "（計画・リストなど）を作成する",
+          "example": "The festival committee drew up a timetable for the two-day event."
+        },
+        {
+          "term": "take charge of ~",
+          "meaning": "〜を担当する、〜の責任を引き受ける",
+          "example": "Yui took charge of the decorations for the entrance gate."
+        },
+        {
+          "term": "run a stall",
+          "meaning": "屋台・模擬店を運営する",
+          "example": "The tennis club ran a stall selling fried noodles."
+        },
+        {
+          "term": "raise money (for ~)",
+          "meaning": "（〜のために）お金を集める、募金する",
+          "example": "We raised money for a local animal shelter by selling cakes."
+        },
+        {
+          "term": "fall behind schedule",
+          "meaning": "予定より遅れる",
+          "example": "The stage set fell behind schedule because some materials arrived late."
+        },
+        {
+          "term": "pull together",
+          "meaning": "（困難な時に）力を合わせる、団結する",
+          "example": "When the stage lights broke, the whole class pulled together to fix them."
+        },
+        {
+          "term": "iron out (problems)",
+          "meaning": "（細かい問題・不具合）を解決する、取り除く",
+          "example": "We held a rehearsal to iron out any problems with the sound system."
+        },
+        {
+          "term": "live up to (expectations)",
+          "meaning": "（期待・評判）に応える、見合う",
+          "example": "The drama club's play easily lived up to everyone's expectations."
+        },
+        {
+          "term": "turn out (to be) ~",
+          "meaning": "結局〜だとわかる、〜という結果になる",
+          "example": "The rainy weather turned out to be good for our indoor café."
+        },
+        {
+          "term": "get the go-ahead",
+          "meaning": "（計画などの）許可・ゴーサインをもらう",
+          "example": "We finally got the go-ahead from the head teacher to use the gym."
+        },
+        {
+          "term": "last-minute",
+          "meaning": "直前の、土壇場の（名詞の前で使う形容詞）",
+          "example": "There were a few last-minute changes to the programme."
+        },
+        {
+          "term": "all in all",
+          "meaning": "全体として、総合的に見て（まとめの談話標識）",
+          "example": "All in all, it was the best festival we have ever had."
+        }
+      ],
+      "questions": [
+        {
+          "id": "b2u1-i2-1",
+          "type": "mcq",
+          "stem": "Our class had to stay late every day because we had fallen ______ schedule.",
+          "options": [
+            "under",
+            "below",
+            "after",
+            "behind"
+          ],
+          "answer": 3,
+          "explanation": "fall behind schedule で「予定より遅れる」という決まった表現です。遅れているから毎日遅くまで残ったという因果関係にも合います。under / below / after は schedule と組み合わせてこの意味にはなりません（on schedule は「予定通り」、ahead of schedule は「予定より早く」）。",
+          "focus": "vocabulary",
+          "difficulty": 1,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-i2-2",
+          "type": "mcq",
+          "stem": "Everyone had praised the play so much beforehand that I was worried it wouldn't live ______ to their expectations.",
+          "options": [
+            "on",
+            "out",
+            "up",
+            "through"
+          ],
+          "answer": 2,
+          "explanation": "live up to ~ で「（期待）に応える」という句動詞です。事前にほめられすぎて「期待に応えられないのでは」と心配した、という流れに合います。live on は「生き続ける・〜を食べて生きる」、live out は「（夢などを）実現する・（人生を）過ごす」、live through は「（困難）を切り抜ける」で、to their expectations とはつながりません。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-i2-3",
+          "type": "mcq",
+          "stem": "Until the teachers gave us the ______, we weren't allowed to buy any materials for our stall.",
+          "options": [
+            "run-up",
+            "go-ahead",
+            "take-off",
+            "set-up"
+          ],
+          "answer": 1,
+          "explanation": "give/get the go-ahead で「許可・ゴーサイン（を与える／得る）」です。許可が出るまで材料を買えなかった、という意味になります。run-up は「直前の時期」、take-off は「離陸」、set-up は「準備・配置」で、give us the ~ として「許可」の意味にはなりません。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-i2-4",
+          "type": "mcq",
+          "stem": "Nobody could decide what to sell until Riku ______ the idea of homemade lemonade.",
+          "options": [
+            "came up with",
+            "came down with",
+            "came in for",
+            "came across as"
+          ],
+          "answer": 0,
+          "explanation": "come up with ~ で「（案）を思いつく」。誰も決められなかったところにリクがアイデアを出した、という流れに合います。come down with は「（病気）にかかる」、come in for は「（批判など）を受ける」、come across as は「〜という印象を与える」で、the idea を目的語にして文意が通りません。",
+          "focus": "vocabulary",
+          "difficulty": 3,
+          "objectiveId": "b2u1-obj-v"
+        }
+      ],
+      "step": 2
+    },
+    {
+      "id": "school-life-b2-u1-intro-3",
+      "kind": "intro",
+      "skill": "vocabulary",
+      "title": "Vocabulary 3: 勉強と部活動の両立",
+      "instructions": "勉強と部活動のバランスについて議論するときに使えるコロケーション・句動詞・談話標識を例文と一緒に覚えましょう。そのあと語彙チェックに答えてください。",
+      "minutes": 8,
+      "vocabulary": [
+        {
+          "term": "strike a balance (between A and B)",
+          "meaning": "（AとBの）バランスをうまくとる",
+          "example": "It isn't easy to strike a balance between club practice and revision."
+        },
+        {
+          "term": "juggle (A and B)",
+          "meaning": "（複数のこと）を同時にやりくりする",
+          "example": "Many students juggle club activities, homework and cram school."
+        },
+        {
+          "term": "keep up with ~",
+          "meaning": "〜に遅れずについていく",
+          "example": "It's hard to keep up with homework during the tournament season."
+        },
+        {
+          "term": "catch up on ~",
+          "meaning": "（遅れた勉強・不足した睡眠など）を取り戻す",
+          "example": "I spent the whole of Sunday catching up on sleep."
+        },
+        {
+          "term": "burn out",
+          "meaning": "（働きすぎて）燃え尽きる、疲れ果てる",
+          "example": "If you train every day without a rest, you might burn out."
+        },
+        {
+          "term": "cut down on ~",
+          "meaning": "〜（の量・回数）を減らす",
+          "example": "I've cut down on video games so that I have more time to study."
+        },
+        {
+          "term": "put off ~",
+          "meaning": "〜を先延ばしにする",
+          "example": "I kept putting off my essay until the night before it was due."
+        },
+        {
+          "term": "time-consuming",
+          "meaning": "時間のかかる、手間のかかる",
+          "example": "Preparing for a brass band concert is extremely time-consuming."
+        },
+        {
+          "term": "prioritise ~",
+          "meaning": "〜を優先する",
+          "example": "During exam week, I prioritise revision over practice."
+        },
+        {
+          "term": "in the long run",
+          "meaning": "長い目で見れば、最終的には",
+          "example": "Good study habits will help you in the long run."
+        },
+        {
+          "term": "make the most of ~",
+          "meaning": "〜を最大限に活用する",
+          "example": "Make the most of your free periods by reviewing your notes."
+        },
+        {
+          "term": "take a toll on ~",
+          "meaning": "〜に悪影響を与える、負担となる",
+          "example": "Late-night practice can take a toll on your health."
+        },
+        {
+          "term": "as far as ~ is concerned",
+          "meaning": "〜に関して言えば",
+          "example": "As far as I'm concerned, sleep is more important than extra practice."
+        },
+        {
+          "term": "having said that",
+          "meaning": "とは言うものの（前の内容を認めつつ反対の側面を述べる）",
+          "example": "Club life is tiring. Having said that, I wouldn't give it up."
+        }
+      ],
+      "questions": [
+        {
+          "id": "b2u1-i3-1",
+          "type": "mcq",
+          "stem": "Mei finds it difficult to strike a ______ between her kendo training and her maths homework.",
+          "options": [
+            "balance",
+            "deal",
+            "point",
+            "line"
+          ],
+          "answer": 0,
+          "explanation": "strike a balance (between A and B) で「AとBのバランスをとる」というコロケーションです。strike a deal は「取引をまとめる」で between 以下の2つの活動とは合いません。point / line は strike と組み合わせてこの意味にはなりません。",
+          "focus": "vocabulary",
+          "difficulty": 1,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-i3-2",
+          "type": "mcq",
+          "stem": "I had so much homework that I kept ______ my science report until the very last moment.",
+          "options": [
+            "putting up",
+            "putting away",
+            "putting off",
+            "putting down"
+          ],
+          "answer": 2,
+          "explanation": "until the very last moment（ぎりぎりまで）とあるので、put off（先延ばしにする）が正解です。put up は「掲示する・泊める」、put away は「片付ける」、put down は「下に置く・書き留める」で、「最後までやらなかった」という意味になりません。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-i3-3",
+          "type": "mcq",
+          "stem": "Training every morning and evening began to take a ______ on Sota's health, so he decided to rest for a week.",
+          "options": [
+            "cost",
+            "toll",
+            "price",
+            "charge"
+          ],
+          "answer": 1,
+          "explanation": "take a toll on ~ で「〜に悪影響を与える」という決まった表現です。1週間休むことにしたという結果にも合います。cost / price / charge はいずれも「料金・代償」に関係する語ですが、take a ___ on の形では使いません（at a cost「犠牲を払って」などとは別の表現です）。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-i3-4",
+          "type": "mcq",
+          "stem": "Being in the orchestra is very demanding. ______, it has taught me how to manage my time.",
+          "options": [
+            "Having said that",
+            "In other words",
+            "For this reason",
+            "As a consequence"
+          ],
+          "answer": 0,
+          "explanation": "前の文で「大変だ」というマイナス面を述べ、後ろで「時間管理を学べた」というプラス面を述べているので、「とは言うものの」と逆の側面を導く Having said that が正解です。In other words は言い換え、For this reason と As a consequence は因果関係（大変だから学んだ）を表し、対比の流れに合いません。",
+          "focus": "function",
+          "difficulty": 3,
+          "objectiveId": "b2u1-obj-v"
+        }
+      ],
+      "step": 3
+    },
+    {
       "id": "school-life-b2-u1-explain",
-      "step": 2,
+      "step": 4,
       "kind": "explain",
       "skill": "grammar",
       "title": "Explain: 説得力のある主張の組み立て方",
@@ -140,8 +534,13 @@
           "id": "b2u1-e1",
           "type": "mcq",
           "stem": "______ the long training hours, many students say that their club is the best part of school life.",
-          "options": ["Although", "Despite", "However", "Whereas"],
-          "answer": 1,
+          "options": [
+            "Although",
+            "However",
+            "Whereas",
+            "Despite"
+          ],
+          "answer": 3,
           "explanation": "空所の後が the long training hours という名詞句（動詞がない）なので、前置詞の Despite が正解です。Although と Whereas は接続詞なので後ろに「主語＋動詞」が必要です。However は副詞で、この位置で名詞を直接つなぐことはできません。",
           "focus": "grammar",
           "difficulty": 2,
@@ -151,8 +550,13 @@
           "id": "b2u1-e2",
           "type": "mcq",
           "stem": "Not only ______ teamwork, but they also learn how to manage their time.",
-          "options": ["students learn", "do students learn", "students do learn", "learn students"],
-          "answer": 1,
+          "options": [
+            "students learn",
+            "students do learn",
+            "do students learn",
+            "learn students"
+          ],
+          "answer": 2,
           "explanation": "否定の語句 Not only が文頭に来ると、後ろは疑問文と同じ語順（倒置）になるため do students learn が正解です。students learn / students do learn は倒置になっておらず、learn students は語順が誤りです。",
           "focus": "grammar",
           "difficulty": 3,
@@ -162,7 +566,9 @@
           "id": "b2u1-e3",
           "type": "text",
           "stem": "Use the word in capitals to form a word that fits the gap: 'In my view, club membership should be ______, not compulsory.' (VOLUNTEER)",
-          "accept": ["voluntary"],
+          "accept": [
+            "voluntary"
+          ],
           "explanation": "be 動詞の後で compulsory（形容詞）と対比されているので、形容詞の voluntary（任意の）が入ります。volunteer は名詞・動詞「ボランティア（をする）」、voluntarily は副詞なので、ここでは使えません。",
           "focus": "vocabulary",
           "difficulty": 2,
@@ -171,8 +577,174 @@
       ]
     },
     {
+      "id": "school-life-b2-u1-explain-2",
+      "kind": "explain",
+      "skill": "grammar",
+      "title": "Grammar 2: 過去をふり返る—仮定法過去完了・混合仮定法・後悔の表現",
+      "instructions": "試合や行事をふり返るときに使う「仮定法過去完了」「混合仮定法」「wish / if only と助動詞の完了形」を確認し、確認問題に答えましょう。",
+      "minutes": 10,
+      "points": [
+        {
+          "heading": "仮定法過去完了（第3条件文）",
+          "text": "過去の事実と反対のことを仮定し、「（あのとき）〜していたら、…していただろう」と述べる形です。If 節は had + 過去分詞、主節は would / could / might have + 過去分詞になります。If 節に would を入れる誤り（× If we would have practised）に注意しましょう。",
+          "examples": [
+            "If we had practised more, we would have won the final.",
+            "If I hadn't joined the drama club, I might never have met my best friend."
+          ]
+        },
+        {
+          "heading": "混合仮定法（過去の仮定＋現在の結果）",
+          "text": "「（過去に）〜していたら、（今）…だろうに」と、過去の出来事が現在に影響している場合は、If 節を had + 過去分詞、主節を would + 動詞の原形にします。now や today などの現在を表す語が手がかりになります。",
+          "examples": [
+            "If I had chosen the art club, I would be much happier now.",
+            "If she hadn't broken her leg last month, she would be playing in today's match."
+          ]
+        },
+        {
+          "heading": "wish / if only と助動詞の完了形",
+          "text": "過去への後悔は I wish / If only + 過去完了で表します。また should have + 過去分詞は「〜すべきだったのに（しなかった）」、must have + 過去分詞は「〜したに違いない」、can't have + 過去分詞は「〜したはずがない」という過去への判断を表します。",
+          "examples": [
+            "I wish I had signed up for the school trip.",
+            "If only we hadn't lost the tickets!",
+            "We should have booked the gym earlier.",
+            "Kenji must have forgotten about the meeting."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "b2u1-e2-1",
+          "type": "mcq",
+          "stem": "If our team ______ harder during the summer, we would have reached the final.",
+          "options": [
+            "trained",
+            "had trained",
+            "would train",
+            "has trained"
+          ],
+          "answer": 1,
+          "explanation": "主節が would have reached（〜しただろう）なので、過去の事実に反する仮定を表す仮定法過去完了です。If 節は had + 過去分詞の had trained になります。trained は現在の仮定（仮定法過去）の形、would train は If 節には通常使わず、has trained は現在完了で仮定の意味になりません。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-g"
+        },
+        {
+          "id": "b2u1-e2-2",
+          "type": "mcq",
+          "stem": "If I hadn't stayed up so late last night, I ______ so tired now.",
+          "options": [
+            "wouldn't feel",
+            "wouldn't have felt",
+            "won't feel",
+            "didn't feel"
+          ],
+          "answer": 0,
+          "explanation": "If 節は last night（過去）の仮定ですが、主節には now があり「今こんなに疲れていないだろうに」という現在の結果を表すので、混合仮定法の wouldn't feel が正解です。wouldn't have felt は過去の結果を表すため now と合いません。won't feel は未来、didn't feel は単なる過去形で、仮定の意味になりません。",
+          "focus": "grammar",
+          "difficulty": 3,
+          "objectiveId": "b2u1-obj-g"
+        },
+        {
+          "id": "b2u1-e2-3",
+          "type": "text",
+          "stem": "Complete the second sentence with ONE word so that it means the same as the first. 'I'm sure the caretaker has gone home, because the hall is locked.' → 'The hall is locked, so the caretaker ______ have gone home.'",
+          "accept": [
+            "must"
+          ],
+          "explanation": "I'm sure（きっと〜だ）という過去への強い確信は must have + 過去分詞で表します。should have gone は「行くべきだったのに」、can't have gone は「行ったはずがない」、might have gone は「行ったかもしれない」で、確信の強さや意味が元の文と異なります。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-g"
+        }
+      ],
+      "step": 5
+    },
+    {
+      "id": "school-life-b2-u1-explain-3",
+      "kind": "explain",
+      "skill": "grammar",
+      "title": "Grammar 3: 客観的に伝える—受動態の伝達表現・強調構文・分詞構文",
+      "instructions": "記事やエッセイで情報を客観的・効果的に伝えるための「受動態の伝達表現」「強調構文（分裂文）」「分詞構文」を確認し、確認問題に答えましょう。",
+      "minutes": 10,
+      "points": [
+        {
+          "heading": "受動態の伝達表現：It is said that ~ / S is said to ~",
+          "text": "「〜と言われている・考えられている」と、情報源をはっきりさせずに客観的に伝える形です。It is said / believed / thought that + 節、または 主語 + is said / believed / thought + to 不定詞の2通りがあります。過去のことについて述べるときは to have + 過去分詞を使います。",
+          "examples": [
+            "It is said that the school festival is the highlight of the year.",
+            "The new gym is believed to cost more than planned.",
+            "The old uniform is thought to have been designed by a former student."
+          ]
+        },
+        {
+          "heading": "強調構文（分裂文）：It is ... that ~ / What ... is ~",
+          "text": "文の一部を強調したいときは、It is / was + 強調したい語句 + that ~ の形にします。また What + 主語 + 動詞 + is ~ は「〜なのは…だ」と、話の焦点を文の後半に置く表現です。エッセイで主張をはっきり示すのに役立ちます。",
+          "examples": [
+            "It was the student council that suggested the new rule.",
+            "What I enjoy most about club life is the friendship."
+          ]
+        },
+        {
+          "heading": "分詞構文：-ing / Having + 過去分詞 / 過去分詞",
+          "text": "接続詞と主語を省き、分詞で文をつなぐ書き言葉らしい表現です。同時に起きていることは -ing、主節より前に完了したことは Having + 過去分詞、受け身の意味は過去分詞で表します。分詞の意味上の主語は主節の主語と同じでなければならない点に注意しましょう。",
+          "examples": [
+            "Feeling nervous, Aoi walked onto the stage.",
+            "Having finished the rehearsal, we went out for dinner.",
+            "Built many years ago, the old clubhouse badly needs repairs."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "b2u1-e3-1",
+          "type": "mcq",
+          "stem": "The school trip to Kyoto ______ to be the most popular event of the year.",
+          "options": [
+            "says",
+            "is saying",
+            "said",
+            "is said"
+          ],
+          "answer": 3,
+          "explanation": "修学旅行が「〜だと言われている」という意味なので、主語 + is said + to 不定詞の受動態の伝達表現が正解です。says / is saying / said は能動態で、「旅行が（何かを）言う」という不自然な意味になり、後ろの to be ともつながりません。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-g"
+        },
+        {
+          "id": "b2u1-e3-2",
+          "type": "mcq",
+          "stem": "______ all her homework, Rina went to the club room to practise.",
+          "options": [
+            "Finished",
+            "Being finished",
+            "Having finished",
+            "To have finished"
+          ],
+          "answer": 2,
+          "explanation": "宿題を終えたのは部室へ行くより前のことで、終えたのはリナ自身（能動）なので、完了を表す分詞構文 Having finished が正解です。Finished と Being finished は受け身の意味（宿題によって終えられた）になり、主語のリナと合いません。To have finished は目的や結果を表す不定詞で、ここでは文が成り立ちません。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-g"
+        },
+        {
+          "id": "b2u1-e3-3",
+          "type": "text",
+          "stem": "Complete the sentence with ONE word to focus on the most important point: '______ I like most about our school is the long lunch break.'",
+          "accept": [
+            "what"
+          ],
+          "explanation": "What I like most（私がいちばん好きなこと）が主語になり、is の後で「長い昼休み」を強調する分裂文です。「〜なこと」を表す関係代名詞 What が入ります。That や Which では「〜なこと」という名詞のまとまりを作れず、文の主語になりません。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-g"
+        }
+      ],
+      "step": 6
+    },
+    {
       "id": "school-life-b2-u1-reading",
-      "step": 3,
+      "step": 7,
       "kind": "reading",
       "skill": "reading",
       "title": "Reading: 意見記事「部活動は全員参加にすべきか」",
@@ -295,8 +867,255 @@
       ]
     },
     {
+      "id": "school-life-b2-u1-reading-2",
+      "kind": "reading",
+      "skill": "reading",
+      "title": "Reading 2: 意見記事「文化祭はストレスに見合うのか」",
+      "instructions": "文化祭の準備のあり方について書かれた意見記事を読み、設問に答えましょう（B2 First Reading Part 5 の形式を参考にした独自問題）。筆者が利点を認めたうえで何を問題にしているのか、段落ごとの役割に注意して読みましょう。",
+      "minutes": 10,
+      "passage": {
+        "title": "Is the School Festival Worth the Stress?",
+        "paragraphs": [
+          "Every autumn, the corridors of my school are transformed. Classrooms become haunted houses, cafés and escape rooms, and the gym is filled with the sound of rehearsals that seem to go on forever. The cultural festival is, for many students, the highlight of the year. Yet each year I hear more classmates quietly asking whether it has become too much of a good thing.",
+          "Nobody could deny that the festival brings real benefits. Preparing a class project forces thirty people who may barely speak to each other to plan, argue and eventually agree. Students who rarely shine in lessons often turn out to be brilliant at design, organisation or persuading visitors to come inside. For a few days, the school feels less like an institution and more like a community.",
+          "The trouble begins when preparation starts to swallow everything else. In the final weeks, it is common for groups to stay late almost every evening, and some students feel they cannot say no without letting their class down. Those with club commitments, part-time jobs or long journeys home are placed in an impossible position. What should be a celebration turns, for them, into a test of endurance.",
+          "There is also a quieter problem. Because the festival is judged by visitors and, in many schools, by prizes, a handful of enthusiastic students often end up making every important decision. Everyone else is left painting backgrounds and carrying boxes. They are present, but hardly involved, and it is hard to see what they are supposed to be learning.",
+          "I am not suggesting that we abandon the tradition. Rather, schools could set a firm limit on preparation time and scrap the competition for prizes, which only encourages groups to aim for ever bigger and more complicated projects. A smaller event in which everyone has a genuine role would, I suspect, be remembered more fondly than a spectacular one produced by exhausted students.",
+          "The festival exists to bring people together. If it ends up pushing some of them to the edges, it may be time to ask not how impressive it looks to visitors, but how it feels to those who make it happen."
+        ]
+      },
+      "questions": [
+        {
+          "id": "b2u1-r2-1",
+          "type": "mcq",
+          "stem": "What is the writer's main argument in the article?",
+          "options": [
+            "The cultural festival should be cancelled because it causes too much stress.",
+            "The festival should continue, but in a simpler form that includes everyone.",
+            "Students with part-time jobs should not have to help with the festival.",
+            "Prizes are necessary to make students take the festival seriously."
+          ],
+          "answer": 1,
+          "explanation": "第5段落で筆者は「伝統をやめるべきだと言っているのではない」と述べ、準備時間の制限や賞の廃止によって「全員が本当の役割を持つ小さな行事」にすべきだと主張しています。したがって B が正解です。A は I am not suggesting that we abandon the tradition と矛盾します。C は第3段落で問題の例として挙げられているだけで、筆者の結論ではありません。D は逆で、筆者は賞の廃止を提案しています。",
+          "evidence": "A smaller event in which everyone has a genuine role would, I suspect, be remembered more fondly than a spectacular one produced by exhausted students.",
+          "focus": "main-idea",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-r"
+        },
+        {
+          "id": "b2u1-r2-2",
+          "type": "mcq",
+          "stem": "What is the writer's purpose in the second paragraph?",
+          "options": [
+            "to explain why the festival is more important than lessons",
+            "to admit the advantages of the festival before criticising it",
+            "to describe the writer's own class project in detail",
+            "to suggest ways of making the festival more popular with visitors"
+          ],
+          "answer": 1,
+          "explanation": "第2段落は Nobody could deny that the festival brings real benefits.（文化祭に本当の利点があることは誰も否定できない）で始まり、協力する経験や、授業では目立たない生徒が活躍できる点を挙げています。第3段落の The trouble begins ... から批判に移るので、「批判の前にまず利点を認める」B が正解です。A の「授業より大切」とは述べていません。C の筆者自身のクラスの企画の詳細は書かれていません。D の来場者を増やす方法は話題になっていません。",
+          "evidence": "Nobody could deny that the festival brings real benefits.",
+          "focus": "function",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-r"
+        },
+        {
+          "id": "b2u1-r2-3",
+          "type": "mcq",
+          "stem": "In the third paragraph, what does 'them' refer to in 'turns, for them, into a test of endurance'?",
+          "options": [
+            "the groups that stay late every evening",
+            "the students who have other commitments or long journeys",
+            "the classmates who are asking questions about the festival",
+            "the visitors who come to the festival"
+          ],
+          "answer": 1,
+          "explanation": "them は直前の文の主語 Those with club commitments, part-time jobs or long journeys home（部活・アルバイト・長い通学時間がある生徒）を指します。こうした生徒にとって、お祝いであるはずの行事が「耐久テスト」になってしまう、という流れです。A の毎晩残るグループ全体ではなく、特に「難しい立場」に置かれた生徒を指しています。C は第1段落、D は第4段落以降に出てくる語で、この文とは関係ありません。",
+          "evidence": "What should be a celebration turns, for them, into a test of endurance.",
+          "focus": "reference",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-r"
+        },
+        {
+          "id": "b2u1-r2-4",
+          "type": "mcq",
+          "stem": "What does the writer suggest about students who have clubs, jobs or long journeys home?",
+          "options": [
+            "They usually refuse to help with the class project.",
+            "They feel forced to choose between their class and their other responsibilities.",
+            "They are given easier jobs because they have less time.",
+            "They enjoy the festival more than other students do."
+          ],
+          "answer": 1,
+          "explanation": "筆者は「断るとクラスに迷惑をかけると感じる生徒がいる」と述べた直後に、部活・アルバイト・長い通学がある生徒は「不可能な立場（impossible position）に置かれる」と書いています。つまり、クラスへの協力と他の責任の板ばさみになっていると推測できるので B が正解です。A の「たいてい断る」は、断れないと感じるという内容と逆です。C の楽な仕事を任される話はなく、D は「耐久テストになる」という記述と矛盾します。",
+          "evidence": "Those with club commitments, part-time jobs or long journeys home are placed in an impossible position.",
+          "focus": "inference",
+          "difficulty": 3,
+          "objectiveId": "b2u1-obj-r"
+        },
+        {
+          "id": "b2u1-r2-5",
+          "type": "mcq",
+          "stem": "How does the writer seem to feel about a smaller festival without prizes?",
+          "options": [
+            "fairly confident that people would value it more",
+            "worried that visitors would find it boring",
+            "certain that every student would prefer it",
+            "unsure whether teachers would ever allow it"
+          ],
+          "answer": 0,
+          "explanation": "筆者は I suspect（〜ではないかと思う）というヘッジを使いながら、「全員が役割を持つ小さな行事の方が、疲れ切った生徒が作る派手な行事よりも良い思い出になるだろう」と述べています。控えめながら自信を持っているので A が正解です。B の来場者の反応についての心配は書かれていません。C の certain（確信している）は I suspect という控えめな表現より強すぎます。D の先生が許可するかどうかは話題になっていません。",
+          "evidence": "A smaller event in which everyone has a genuine role would, I suspect, be remembered more fondly than a spectacular one produced by exhausted students.",
+          "focus": "attitude",
+          "difficulty": 3,
+          "objectiveId": "b2u1-obj-r"
+        },
+        {
+          "id": "b2u1-r2-6",
+          "type": "mcq",
+          "stem": "In the third paragraph, what does 'swallow everything else' mean?",
+          "options": [
+            "take up all the time and energy students have",
+            "make students forget what they learnt in class",
+            "force students to eat quickly during breaks",
+            "become more popular than any other school event"
+          ],
+          "answer": 0,
+          "explanation": "swallow は本来「飲み込む」ですが、ここでは比喩的に「準備が他のすべてを飲み込む＝時間や力を奪ってしまう」という意味です。直後に「最後の数週間はほぼ毎晩遅くまで残る」と具体例が続くことからも分かるので A が正解です。B の「授業内容を忘れる」、C の「急いで食べる」は文字どおりの意味に引きずられた誤りで、D の人気の比較もこの文脈とは関係ありません。",
+          "evidence": "The trouble begins when preparation starts to swallow everything else.",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-r"
+        }
+      ],
+      "step": 8
+    },
+    {
+      "id": "school-life-b2-u1-reading-3",
+      "kind": "reading",
+      "skill": "reading",
+      "title": "Reading 3: 小説の一節「昼休みの声」",
+      "instructions": "転校してきたばかりの生徒が放送部に関わるようになる物語の一節を読み、設問に答えましょう（B2 First Reading Part 5 の形式を参考にした独自問題）。登場人物の気持ちや、はっきり書かれていない意味を、表現や行動から読み取りましょう。",
+      "minutes": 10,
+      "passage": {
+        "title": "The Voice at Lunchtime",
+        "paragraphs": [
+          "On her third day at Minami High, Hana still ate lunch alone. She had moved from Osaka in the middle of June, when friendships had already set like concrete, and she had learnt to fill the silence with her phone. So when the speakers above the blackboard crackled and a cheerful voice announced that the broadcasting club was 'desperately short of people who can actually speak', she almost laughed out loud.",
+          "It was Mr Ueda, her homeroom teacher, who pushed her through the door of the tiny studio the following afternoon. Inside, three second-years were arguing about a cable. None of them looked up. 'She's new,' Mr Ueda said, and left, as if that explained everything. Hana stood there, clutching her bag, and wondered how quickly she could leave without seeming rude.",
+          "Then the tallest of the three, a boy called Riku, handed her a sheet of paper. 'Read this,' he said. 'Tomorrow's menu. Pretend you're excited about it.' The menu was curry, again. Hana took a breath and read it the way her grandmother used to read the weather forecast aloud at home, with exaggerated seriousness, as if the fate of the nation depended on the rice. When she finished, nobody said anything for a moment. Then Riku grinned. 'Okay,' he said. 'You're on tomorrow.'",
+          "That night she barely slept. What if her accent sounded strange? What if the whole school laughed at her rather than with her? She practised the script in the bathroom until her younger brother banged on the door and told her that nobody cared that much about curry. By the time she sat down in front of the microphone the next day, her hands were shaking so badly that she had to hold the script flat against the desk.",
+          "Afterwards she walked back to her classroom expecting silence, or worse. Instead, a girl she had never spoken to turned round and asked, 'Was that you? The curry thing?' Hana nodded, ready to apologise. 'It was the funniest thing I've heard all term,' the girl said, and moved her chair to make room. For the first time since June, Hana left her phone in her bag for the whole of lunch."
+        ]
+      },
+      "questions": [
+        {
+          "id": "b2u1-r3-1",
+          "type": "mcq",
+          "stem": "What is the extract mainly about?",
+          "options": [
+            "a student who is forced by a teacher to give up her free time",
+            "how an unexpected chance in a club helps a new student begin to fit in",
+            "the problems a broadcasting club has with its equipment",
+            "a girl who decides to become a professional radio presenter"
+          ],
+          "answer": 1,
+          "explanation": "物語は「昼食をひとりで食べていた転校生」が、放送部で給食の献立を読んだことをきっかけにクラスの子に話しかけられ、初めてスマホを出さずに昼休みを過ごす、という流れです。放送部での思いがけない機会が溶け込むきっかけになったので B が正解です。A は先生が部室に連れて行きますが、自由時間を奪う話ではありません。C のケーブルの口論は場面の一部にすぎません。D のプロを目指す決心は書かれていません。",
+          "evidence": "For the first time since June, Hana left her phone in her bag for the whole of lunch.",
+          "focus": "main-idea",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-r"
+        },
+        {
+          "id": "b2u1-r3-2",
+          "type": "mcq",
+          "stem": "Why does the writer say that friendships 'had already set like concrete'?",
+          "options": [
+            "to show that it was hard for a newcomer to join existing groups",
+            "to suggest that the students at Minami High were unfriendly",
+            "to explain why Hana did not want to make new friends",
+            "to show that Hana had many close friends in Osaka"
+          ],
+          "answer": 0,
+          "explanation": "コンクリートは一度固まると形を変えられません。6月の途中で転校してきた時点では、友人グループがすでに「固まって」いて、新しく入り込むのが難しかったことをたとえています。A が正解です。B の「不親切だった」とは書かれておらず、最後にはクラスの子が席を空けてくれます。C のように友達を作りたくなかったわけではなく、沈黙をスマホで埋めていたのは寂しさの表れです。D の大阪の友人については触れていません。",
+          "evidence": "She had moved from Osaka in the middle of June, when friendships had already set like concrete",
+          "focus": "function",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-r"
+        },
+        {
+          "id": "b2u1-r3-3",
+          "type": "mcq",
+          "stem": "What does 'it' refer to in 'Pretend you're excited about it'?",
+          "options": [
+            "the broadcasting studio",
+            "the cable the students were arguing about",
+            "the next day's lunch menu",
+            "the weather forecast"
+          ],
+          "answer": 2,
+          "explanation": "Riku は紙を渡して Tomorrow's menu.（明日の献立だ）と言った直後に Pretend you're excited about it.（それにわくわくしているふりをして）と続けているので、it は「明日の昼食の献立」を指します。C が正解です。A のスタジオや B のケーブルは前の段落の内容で、読む対象ではありません。D の天気予報は、ハナが読み方の手本にした祖母の話に出てくるだけです。",
+          "evidence": "Pretend you're excited about it.",
+          "focus": "reference",
+          "difficulty": 1,
+          "objectiveId": "b2u1-obj-r"
+        },
+        {
+          "id": "b2u1-r3-4",
+          "type": "mcq",
+          "stem": "What can we infer from Riku's reaction after Hana reads the menu?",
+          "options": [
+            "He thinks she needs a lot more practice before she can broadcast.",
+            "He is annoyed because she did not take the task seriously.",
+            "He is impressed enough to give her a place on the next day's broadcast.",
+            "He only agrees because Mr Ueda told him to."
+          ],
+          "answer": 2,
+          "explanation": "Riku はにやりと笑い、「よし。明日は君の出番だ」と言っています。読み終えてすぐに翌日の放送を任せたことから、ハナの読み方を気に入ったと推測できるので C が正解です。A の「もっと練習が必要」なら翌日に任せないはずです。B の grinned（にやりと笑った）は怒りとは合いません。D の先生の指示については、先生はすでに部屋を出ており、何も頼んでいません。",
+          "evidence": "'You're on tomorrow.'",
+          "focus": "inference",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-r"
+        },
+        {
+          "id": "b2u1-r3-5",
+          "type": "mcq",
+          "stem": "How did Hana feel on the night before her first broadcast?",
+          "options": [
+            "anxious about how other students would react to her",
+            "confident because she had read the menu so well",
+            "annoyed with her brother for interrupting her",
+            "disappointed that she had to read about curry again"
+          ],
+          "answer": 0,
+          "explanation": "その夜ハナはほとんど眠れず、「なまりが変に聞こえたら？」「学校中が一緒に笑うのではなく、自分を笑いものにしたら？」と心配しています。laugh at（あざ笑う）と laugh with（一緒に笑う）の対比に注目しましょう。A が正解です。B の「自信」は眠れないほどの不安と矛盾します。C の弟はドアをたたきますが、ハナが腹を立てたとは書かれていません。D のカレーへの失望も書かれていません。",
+          "evidence": "What if the whole school laughed at her rather than with her?",
+          "focus": "attitude",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-r"
+        },
+        {
+          "id": "b2u1-r3-6",
+          "type": "mcq",
+          "stem": "In the second paragraph, what does 'clutching' suggest about Hana?",
+          "options": [
+            "She was holding her bag tightly because she felt nervous.",
+            "She was looking for something inside her bag.",
+            "She was about to put her bag down and sit.",
+            "She was carrying a bag that was very heavy."
+          ],
+          "answer": 0,
+          "explanation": "clutch は「（不安や緊張から）ぎゅっとつかむ」という意味です。誰も顔を上げてくれない部屋で、「失礼にならずにどれだけ早く出て行けるか」と考えている場面なので、緊張してかばんを握りしめていた A が正解です。B の「中を探す」、C の「置いて座ろうとする」は、すぐに出て行きたいという気持ちと合いません。D の重さについては何も書かれていません。",
+          "evidence": "Hana stood there, clutching her bag, and wondered how quickly she could leave without seeming rude.",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-r"
+        }
+      ],
+      "step": 9
+    },
+    {
       "id": "school-life-b2-u1-listening",
-      "step": 4,
+      "step": 10,
       "kind": "listening",
       "skill": "listening",
       "title": "Listening: 部活動の任意化についての議論",
@@ -304,17 +1123,61 @@
       "minutes": 10,
       "setting": "放課後の教室で、学校新聞の担当をしている Mia と Kenji が、来年度から部活動を任意参加にするという学校の案について話し合っている。",
       "script": [
-        { "speaker": "Mia", "voice": "female", "text": "Kenji, have you heard that the school is thinking of making clubs optional from next year? I have to say, I think it's a great idea." },
-        { "speaker": "Kenji", "voice": "male", "text": "Really? I'm not so sure. If clubs become optional, I suspect a lot of first-years won't join anything at all, and they'll miss out." },
-        { "speaker": "Mia", "voice": "female", "text": "Maybe, but is that really a problem? Some people would rather spend that time studying or helping out at home. Why should the school decide for them?" },
-        { "speaker": "Kenji", "voice": "male", "text": "Because at fifteen, you don't always know what's good for you. I only joined the brass band because I had to, and now it's the best part of my week." },
-        { "speaker": "Mia", "voice": "female", "text": "That's fair enough, and I'm glad it worked out for you. But for every person like you, there's probably someone who feels trapped. My cousin gave up basketball in the end because the Saturday practices were wearing her out." },
-        { "speaker": "Kenji", "voice": "male", "text": "I see your point about the weekends. To be honest, I think the length of practices is the real issue, not whether clubs are compulsory. If sessions were shorter, far fewer people would complain." },
-        { "speaker": "Mia", "voice": "female", "text": "I'd go along with that, actually. Even so, I still think students should have the final say. What if someone wants to do something the school doesn't offer, like coding or volunteering?" },
-        { "speaker": "Kenji", "voice": "male", "text": "Hmm. Couldn't the school just count activities outside school as well? That way everyone still does something, but they get to choose what." },
-        { "speaker": "Mia", "voice": "female", "text": "Now that's an interesting compromise. It keeps the idea of taking part without forcing everyone into the same box." },
-        { "speaker": "Kenji", "voice": "male", "text": "Exactly. Shall we put it forward in our article for the school newspaper? We could present both sides first and then suggest that idea at the end." },
-        { "speaker": "Mia", "voice": "female", "text": "Good plan. I'll write the section on wellbeing, and you can do the one about skills and friendships." }
+        {
+          "speaker": "Mia",
+          "voice": "female",
+          "text": "Kenji, have you heard that the school is thinking of making clubs optional from next year? I have to say, I think it's a great idea."
+        },
+        {
+          "speaker": "Kenji",
+          "voice": "male",
+          "text": "Really? I'm not so sure. If clubs become optional, I suspect a lot of first-years won't join anything at all, and they'll miss out."
+        },
+        {
+          "speaker": "Mia",
+          "voice": "female",
+          "text": "Maybe, but is that really a problem? Some people would rather spend that time studying or helping out at home. Why should the school decide for them?"
+        },
+        {
+          "speaker": "Kenji",
+          "voice": "male",
+          "text": "Because at fifteen, you don't always know what's good for you. I only joined the brass band because I had to, and now it's the best part of my week."
+        },
+        {
+          "speaker": "Mia",
+          "voice": "female",
+          "text": "That's fair enough, and I'm glad it worked out for you. But for every person like you, there's probably someone who feels trapped. My cousin gave up basketball in the end because the Saturday practices were wearing her out."
+        },
+        {
+          "speaker": "Kenji",
+          "voice": "male",
+          "text": "I see your point about the weekends. To be honest, I think the length of practices is the real issue, not whether clubs are compulsory. If sessions were shorter, far fewer people would complain."
+        },
+        {
+          "speaker": "Mia",
+          "voice": "female",
+          "text": "I'd go along with that, actually. Even so, I still think students should have the final say. What if someone wants to do something the school doesn't offer, like coding or volunteering?"
+        },
+        {
+          "speaker": "Kenji",
+          "voice": "male",
+          "text": "Hmm. Couldn't the school just count activities outside school as well? That way everyone still does something, but they get to choose what."
+        },
+        {
+          "speaker": "Mia",
+          "voice": "female",
+          "text": "Now that's an interesting compromise. It keeps the idea of taking part without forcing everyone into the same box."
+        },
+        {
+          "speaker": "Kenji",
+          "voice": "male",
+          "text": "Exactly. Shall we put it forward in our article for the school newspaper? We could present both sides first and then suggest that idea at the end."
+        },
+        {
+          "speaker": "Mia",
+          "voice": "female",
+          "text": "Good plan. I'll write the section on wellbeing, and you can do the one about skills and friendships."
+        }
       ],
       "questions": [
         {
@@ -405,8 +1268,326 @@
       ]
     },
     {
+      "id": "school-life-b2-u1-listening-2",
+      "kind": "listening",
+      "skill": "listening",
+      "title": "Listening 2: 昼休みのスマホ解禁案についての議論",
+      "instructions": "2人の高校生が、生徒会が出した「昼休みのスマートフォン使用を認める」という案について話し合っています。会話を聞いて設問に答えましょう（B2 First Listening の形式を参考にした独自問題）。それぞれの意見と、同意している点・反対している点に注目しましょう。",
+      "minutes": 8,
+      "setting": "昼休みの教室で、同じクラスの Yui と Sota が、生徒会が提出した「昼休みにスマートフォンを使えるようにする」という校則変更の案について話している。",
+      "script": [
+        {
+          "speaker": "Yui",
+          "voice": "female",
+          "text": "Sota, did you see the student council's proposal? They want to let us use our phones at lunchtime. I'm surprised the teachers are even considering it."
+        },
+        {
+          "speaker": "Sota",
+          "voice": "male",
+          "text": "I did. Honestly, I think it's long overdue. We use tablets in lessons all day, so banning phones for forty minutes seems a bit pointless."
+        },
+        {
+          "speaker": "Yui",
+          "voice": "female",
+          "text": "Maybe, but lessons are different. At the moment, lunch is the one time people actually talk to each other. I'm worried everyone will just sit there staring at their screens."
+        },
+        {
+          "speaker": "Sota",
+          "voice": "male",
+          "text": "That's a bit pessimistic, isn't it? Plenty of people would still chat. And some students need to check messages from home, like whether they're being picked up after club."
+        },
+        {
+          "speaker": "Yui",
+          "voice": "female",
+          "text": "They can already do that at the office, though. The teachers let you use the phone there if it's urgent."
+        },
+        {
+          "speaker": "Sota",
+          "voice": "male",
+          "text": "True, but hardly anyone bothers because it's such a hassle. Anyway, the real issue for me is trust. If the school expects us to act like adults, it should treat us like adults."
+        },
+        {
+          "speaker": "Yui",
+          "voice": "female",
+          "text": "I'm with you on that, actually. Rules that nobody believes in tend to get broken anyway. I just don't want lunch to turn silent."
+        },
+        {
+          "speaker": "Sota",
+          "voice": "male",
+          "text": "So what if there were phone-free tables in the canteen? Anyone who wanted a proper conversation could sit there."
+        },
+        {
+          "speaker": "Yui",
+          "voice": "female",
+          "text": "Hmm, I can't see that working. The people who most need a break from their phones would be the last ones to choose those tables."
+        },
+        {
+          "speaker": "Sota",
+          "voice": "male",
+          "text": "Fair point. What about trying it for one term and then asking everyone how it went?"
+        },
+        {
+          "speaker": "Yui",
+          "voice": "female",
+          "text": "A trial would definitely be better than changing the rule for good straight away. I'd vote for that."
+        },
+        {
+          "speaker": "Sota",
+          "voice": "male",
+          "text": "Great. Let's tell our class rep before the meeting on Friday."
+        }
+      ],
+      "questions": [
+        {
+          "id": "b2u1-l2-1",
+          "type": "mcq",
+          "stem": "What does Sota think about the current rule on phones?",
+          "options": [
+            "It makes little sense because students use tablets in lessons anyway.",
+            "It is necessary to stop students from using their phones in class.",
+            "It should only be changed for students in clubs.",
+            "It was introduced too recently to judge fairly."
+          ],
+          "answer": 0,
+          "explanation": "Sota は「授業では一日中タブレットを使っているのに、40分間だけスマホを禁止するのはちょっと無意味に思える」と言っています。pointless（無意味な）＝ makes little sense なので A が正解です。B は規則を支持する意見で、Sota の立場と逆です。C の部活の生徒だけという話はしていません。D の long overdue は「とっくに変えるべきだった」という意味で、「最近できた規則」ではありません。",
+          "evidence": "We use tablets in lessons all day, so banning phones for forty minutes seems a bit pointless.",
+          "focus": "attitude",
+          "difficulty": 1,
+          "objectiveId": "b2u1-obj-l"
+        },
+        {
+          "id": "b2u1-l2-2",
+          "type": "mcq",
+          "stem": "What is Yui's main concern about the proposal?",
+          "options": [
+            "Students might use their phones during lessons as well.",
+            "Students might stop talking to each other at lunchtime.",
+            "The teachers might not agree to the change.",
+            "Students might miss important messages from home."
+          ],
+          "answer": 1,
+          "explanation": "Yui は「今は昼休みが、みんなが実際に話をする唯一の時間。みんなが座って画面を見つめるだけになるのが心配」と言っています。B が正解です。A の授業中の使用は話題になっていません。C について Yui は「先生が検討していることに驚いた」と言っただけで、それを心配しているわけではありません。D の家からの連絡は Sota が挙げた賛成の理由で、Yui は「事務室で電話できる」と答えています。",
+          "evidence": "I'm worried everyone will just sit there staring at their screens.",
+          "focus": "specific-info",
+          "difficulty": 1,
+          "objectiveId": "b2u1-obj-l"
+        },
+        {
+          "id": "b2u1-l2-3",
+          "type": "mcq",
+          "stem": "On which point do Yui and Sota agree?",
+          "options": [
+            "The office phone is the best way to contact home.",
+            "Phone-free tables would solve the problem.",
+            "Rules only work if students accept them and feel trusted.",
+            "Lunchtime is too short at their school."
+          ],
+          "answer": 2,
+          "explanation": "Sota が「本当の問題は信頼だ。大人のように振る舞うことを求めるなら、大人として扱うべきだ」と言うと、Yui は I'm with you on that, actually.（実はそれには賛成）と応じ、「誰も納得していない規則はどうせ破られる」と付け加えています。C が正解です。A の事務室の電話は Sota が「面倒だから誰も使わない」と否定しています。B の電話禁止テーブルは Yui が反対しています。D の昼休みの長さは話題になっていません。",
+          "evidence": "I'm with you on that, actually.",
+          "focus": "attitude",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-l"
+        },
+        {
+          "id": "b2u1-l2-4",
+          "type": "mcq",
+          "stem": "Why does Yui think the phone-free tables would not work?",
+          "options": [
+            "The canteen is not big enough for extra tables.",
+            "Teachers would have to check the tables all the time.",
+            "Students who use their phones most would not choose to sit there.",
+            "Nobody wants to have conversations at lunchtime."
+          ],
+          "answer": 2,
+          "explanation": "Yui は「スマホから一番離れる必要がある人たちこそ、そのテーブルを選ばないだろう」と言っています。つまり、本当に効果が必要な生徒には届かないという意味なので C が正解です。A の食堂の広さ、B の先生の見回りについては話していません。D は Yui が「昼休みが静かになってほしくない」と会話を大切にしていることと矛盾します。",
+          "evidence": "The people who most need a break from their phones would be the last ones to choose those tables.",
+          "focus": "inference",
+          "difficulty": 3,
+          "objectiveId": "b2u1-obj-l"
+        },
+        {
+          "id": "b2u1-l2-5",
+          "type": "mcq",
+          "stem": "What do Yui and Sota finally decide to support?",
+          "options": [
+            "keeping the current rule for another year",
+            "a one-term trial followed by asking students for their views",
+            "a permanent change to the rule from next week",
+            "letting each class make its own rule"
+          ],
+          "answer": 1,
+          "explanation": "Sota が「1学期だけ試してみて、どうだったかみんなに聞くのはどう？」と提案し、Yui が「試行の方が、いきなりずっと規則を変えるよりずっといい。それに賛成する」と答えています。B が正解です。A の現状維持には2人とも賛成していません。C は for good straight away（すぐに永久に）変えるより試行がいいと言っているので誤りです。D のクラスごとの規則は話題になっていません。",
+          "evidence": "What about trying it for one term and then asking everyone how it went?",
+          "focus": "specific-info",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-l"
+        }
+      ],
+      "step": 11
+    },
+    {
+      "id": "school-life-b2-u1-listening-3",
+      "kind": "listening",
+      "skill": "listening",
+      "title": "Listening 3: 修学旅行の自由行動日をどう過ごすか",
+      "instructions": "修学旅行の委員の2人が、自由行動日のプランをどちらにするか話し合っています。会話を聞いて設問に答えましょう（B2 First Listening の形式を参考にした独自問題）。意見が変わるきっかけや、はっきり言わずに伝えている気持ちに注目しましょう。",
+      "minutes": 8,
+      "setting": "放課後、クラスの修学旅行委員の Nanami と Haruto が、自由行動日のプラン（京都の寺院めぐりのガイドツアーか、山村での農業体験か）について話し合っている。",
+      "script": [
+        {
+          "speaker": "Haruto",
+          "voice": "male",
+          "text": "Nanami, we have to tell Ms Kato which option our class wants for the free day on the school trip. Have you made up your mind?"
+        },
+        {
+          "speaker": "Nanami",
+          "voice": "female",
+          "text": "I'm leaning towards the farm stay. Most of us have already seen the temples in Kyoto with our families, so it wouldn't be anything new."
+        },
+        {
+          "speaker": "Haruto",
+          "voice": "male",
+          "text": "That's not really true, though. I've never been, and I bet quite a few others haven't either. Besides, a guided tour would actually teach us something about history."
+        },
+        {
+          "speaker": "Nanami",
+          "voice": "female",
+          "text": "Fair enough, I shouldn't assume. But you'd learn plenty on a farm too. We'd be helping with the harvest and cooking with local families. It's the kind of thing you can't just do at the weekend."
+        },
+        {
+          "speaker": "Haruto",
+          "voice": "male",
+          "text": "I'm sure it'd be memorable. My only worry is the weather. If it pours with rain, we'll spend the whole day stuck in a barn."
+        },
+        {
+          "speaker": "Nanami",
+          "voice": "female",
+          "text": "Ms Kato said there's an indoor programme if it rains. Making soba noodles, I think. So that's covered."
+        },
+        {
+          "speaker": "Haruto",
+          "voice": "male",
+          "text": "Oh, I didn't realise that. Well, that makes it a lot more appealing. What about the cost, though? Isn't the farm stay more expensive?"
+        },
+        {
+          "speaker": "Nanami",
+          "voice": "female",
+          "text": "Slightly, yes, but the school's paying the difference because it counts as a community project."
+        },
+        {
+          "speaker": "Haruto",
+          "voice": "male",
+          "text": "Really? Then I've run out of objections, to be honest. Although I still think some people will be disappointed about missing the temples."
+        },
+        {
+          "speaker": "Nanami",
+          "voice": "female",
+          "text": "Maybe we could ask whether there's time to visit one temple on the last morning. That way nobody misses out completely."
+        },
+        {
+          "speaker": "Haruto",
+          "voice": "male",
+          "text": "That sounds reasonable. Shall we do a quick class vote tomorrow before we tell Ms Kato anything?"
+        },
+        {
+          "speaker": "Nanami",
+          "voice": "female",
+          "text": "Definitely. It isn't really our decision to make alone, and people will be happier if they've had a say."
+        }
+      ],
+      "questions": [
+        {
+          "id": "b2u1-l3-1",
+          "type": "mcq",
+          "stem": "Why does Nanami prefer the farm stay at the beginning?",
+          "options": [
+            "She thinks many classmates have already visited the temples.",
+            "She is not interested in history at all.",
+            "She believes the farm stay is cheaper.",
+            "Ms Kato has recommended it to the class."
+          ],
+          "answer": 0,
+          "explanation": "Nanami は「私たちの多くは家族と京都の寺院をもう見ているから、新鮮味がない」と言っています。A が正解です。B の「歴史に全く興味がない」とは言っていません。C は逆で、後で「農業体験の方が少し高い」と認めています。D の先生の推薦については話していません（先生は雨の日のプログラムについて説明しただけです）。",
+          "evidence": "Most of us have already seen the temples in Kyoto with our families, so it wouldn't be anything new.",
+          "focus": "specific-info",
+          "difficulty": 1,
+          "objectiveId": "b2u1-obj-l"
+        },
+        {
+          "id": "b2u1-l3-2",
+          "type": "mcq",
+          "stem": "How does Haruto respond to Nanami's first reason?",
+          "options": [
+            "He agrees that the temples would be boring.",
+            "He disagrees, pointing out that he and others have never been.",
+            "He says he has visited the temples several times.",
+            "He suggests asking their families for advice."
+          ],
+          "answer": 1,
+          "explanation": "Haruto は That's not really true, though.（それはちょっと違うんじゃないかな）と反対し、「僕は行ったことがないし、行ったことのない人もかなりいるはず」と理由を述べています。B が正解です。A は反対しているので誤り。C は I've never been と逆です。D の家族に相談する話は出てきません。Nanami も I shouldn't assume（決めつけるべきじゃなかった）と認めています。",
+          "evidence": "That's not really true, though.",
+          "focus": "attitude",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-l"
+        },
+        {
+          "id": "b2u1-l3-3",
+          "type": "mcq",
+          "stem": "What information makes Haruto feel more positive about the farm stay?",
+          "options": [
+            "The farm is close to the temples in Kyoto.",
+            "There is a plan for activities indoors if the weather is bad.",
+            "Students will be able to take the soba noodles home.",
+            "The weather forecast for the trip is good."
+          ],
+          "answer": 1,
+          "explanation": "Haruto が天気を心配すると、Nanami が「雨の場合は屋内のプログラム（そば打ち）があると先生が言っていた」と答え、Haruto は「それならずっと魅力的だ」と反応しています。B が正解です。A の寺院との距離、C のそばを持ち帰ること、D の天気予報については何も言っていません。",
+          "evidence": "Ms Kato said there's an indoor programme if it rains.",
+          "focus": "specific-info",
+          "difficulty": 1,
+          "objectiveId": "b2u1-obj-l"
+        },
+        {
+          "id": "b2u1-l3-4",
+          "type": "mcq",
+          "stem": "What does Haruto mean when he says he has 'run out of objections'?",
+          "options": [
+            "He is too tired to continue the discussion.",
+            "He now accepts that the farm stay is a good choice.",
+            "He thinks the school should pay for the temple tour instead.",
+            "He wants Nanami to make the decision without him."
+          ],
+          "answer": 1,
+          "explanation": "run out of ~ は「〜を使い果たす」なので、「反対する理由がもうなくなった」、つまり農業体験に賛成するようになったという意味です。天気と費用という心配がどちらも解決された直後の発言であることもヒントになります。B が正解です。A の「疲れた」という意味ではありません。C の寺院ツアーの費用の話はしていません。D は、この後2人でクラス投票をしようと決めていることと矛盾します。",
+          "evidence": "Then I've run out of objections, to be honest.",
+          "focus": "inference",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-l"
+        },
+        {
+          "id": "b2u1-l3-5",
+          "type": "mcq",
+          "stem": "What do Haruto and Nanami agree to do next?",
+          "options": [
+            "tell Ms Kato their choice immediately",
+            "cancel the visit to the temples completely",
+            "let the whole class vote before telling the teacher",
+            "ask the local families about the cost"
+          ],
+          "answer": 2,
+          "explanation": "Haruto が「先生に何か伝える前に、明日クラスで簡単な投票をしよう」と提案し、Nanami が「もちろん。私たち2人だけで決めることじゃない」と同意しています。C が正解です。A は「先生に伝える前に」投票するので誤り。B は逆で、最終日の朝に寺院を1つ訪ねる案を出しています。D の費用は学校が差額を払うと分かっており、農家に聞く話はしていません。",
+          "evidence": "Shall we do a quick class vote tomorrow before we tell Ms Kato anything?",
+          "focus": "specific-info",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-l"
+        }
+      ],
+      "step": 12
+    },
+    {
       "id": "school-life-b2-u1-writing",
-      "step": 5,
+      "step": 13,
       "kind": "writing",
       "skill": "writing",
       "title": "Writing: エッセイ「全員が部活動に参加すべきか」",
@@ -448,8 +1629,92 @@
       }
     },
     {
+      "id": "school-life-b2-u1-writing-2",
+      "kind": "writing",
+      "skill": "writing",
+      "title": "Writing 2: 記事「昼休みをもっと良くするには」",
+      "instructions": "B2 First Writing Part 2（記事）の形式を参考にした課題です。学校の英語ウェブサイトに載せる記事を140〜190語で書きましょう。読み手を引きつけるタイトルや書き出し、読者への問いかけなど、記事らしい書き方を意識してください。",
+      "minutes": 10,
+      "rubricId": "writing-b2",
+      "task": {
+        "promptEn": "You see this announcement on your school's English-language website.\n\nArticles wanted!\nLunchtime at our school: how could it be better?\nWhat do students usually do at lunchtime at the moment? What one change would make lunchtime more enjoyable or useful, and why?\nThe best articles will be published on the website.\n\nWrite your article.",
+        "promptJa": "学校の英語ウェブサイトで「昼休みをもっと良くするには？」という記事の募集を見ました。①今、生徒が昼休みにふだん何をしているか、②昼休みをもっと楽しく・有意義にするための変化を1つ提案し、③その理由を説明する記事を書いてください。優れた記事はウェブサイトに掲載されます。",
+        "points": [
+          "読み手の興味を引くタイトルと書き出し（問いかけなど）を工夫する",
+          "今の昼休みの過ごし方を具体的に描写する",
+          "昼休みを良くするための変化を1つ、具体的に提案する",
+          "その提案が良いと考える理由を2つ程度挙げる",
+          "最後に読み手に語りかけるような印象的な一文でしめくくる"
+        ],
+        "minWords": 140,
+        "maxWords": 190,
+        "usefulLanguage": [
+          "Have you ever wondered why ...?",
+          "At the moment, most students ...",
+          "It's relaxing, but it's hardly ...",
+          "So what could change? In my view, ...",
+          "Imagine being able to ...",
+          "The great thing about this idea is that ...",
+          "Not only would ..., but ... would also ...",
+          "Surely it's worth ...?"
+        ],
+        "modelAnswer": "Forty Minutes That Could Be So Much More\n\nHave you ever looked around the classroom at lunchtime and wondered where everyone's energy has gone? At our school, most students eat at their desks, chat to the same two or three friends and then spend the rest of the break scrolling through their phones. It's relaxing, but it's hardly inspiring.\n\nSo what could change? In my view, the answer is simple: lunchtime clubs. These wouldn't be serious clubs with competitions and long practices. Instead, they could be short, relaxed sessions run by students themselves, such as a board game corner in the library, a music room where anyone can try an instrument, or an English conversation table.\n\nThe great thing about this idea is that it would cost almost nothing. Not only would busy students finally have a chance to try something new, but people from different classes would also get to know each other.\n\nLunchtime is only forty minutes long, but it happens every single day. Surely it's worth making the most of it?",
+        "selfCheck": [
+          "読み手の興味を引くタイトルと書き出しを書いた",
+          "今の昼休みの様子を具体的に描写した",
+          "変化を1つ提案し、その理由を2つ程度説明した",
+          "問いかけや話しかける口調（you など）を使い、記事らしい文体で書いた",
+          "Not only would ... / The great thing about ... など、B2 らしい表現を使った",
+          "140〜190語の範囲に収まり、印象的な一文でしめくくった"
+        ]
+      },
+      "step": 14
+    },
+    {
+      "id": "school-life-b2-u1-writing-3",
+      "kind": "writing",
+      "skill": "writing",
+      "title": "Writing 3: 報告書「留学生を迎えるための提案」",
+      "instructions": "B2 First Writing Part 2（報告書）の形式を参考にした課題です。校長先生に提出する報告書を140〜190語で書きましょう。見出しで内容を整理し、フォーマルな文体で、問題点と具体的な提案をはっきり示してください。",
+      "minutes": 12,
+      "rubricId": "writing-b2",
+      "task": {
+        "promptEn": "A group of exchange students from abroad will spend two weeks at your school next term. Your head teacher has asked you to write a report. In your report, you should explain what the exchange students might find difficult about school life here, and recommend how students at your school could help them feel welcome.\n\nWrite your report.",
+        "promptJa": "来学期、海外からの留学生のグループが2週間あなたの学校で過ごします。校長先生から報告書を書くよう頼まれました。①留学生がこの学校の生活で難しいと感じそうなこと、②この学校の生徒が留学生を歓迎されていると感じさせるためにできることの提案、を含めてください。",
+        "points": [
+          "Introduction で報告書の目的を述べる",
+          "留学生が難しいと感じそうな点を2つ程度、理由とともに説明する",
+          "生徒ができることを具体的に2〜3個提案する（I would recommend ... など）",
+          "Conclusion で提案の効果をまとめる",
+          "見出しをつけ、短縮形を避けたフォーマルな文体で書く"
+        ],
+        "minWords": 140,
+        "maxWords": 190,
+        "usefulLanguage": [
+          "The aim of this report is to ...",
+          "Firstly, ... / Secondly, ...",
+          "Visitors may find ... confusing.",
+          "Things we take for granted, such as ..., ...",
+          "I would recommend that ...",
+          "It would also be a good idea to ...",
+          "Finally, ...",
+          "If these suggestions are adopted, ..."
+        ],
+        "modelAnswer": "Welcoming exchange students\n\nIntroduction\nThe aim of this report is to identify the difficulties exchange students might face during their visit and to suggest how our students could help them feel at home.\n\nPossible difficulties\nFirstly, visitors may find our daily routines confusing. Things we take for granted, such as changing into indoor shoes or cleaning the classroom ourselves, are not common in every country. Secondly, many students here are shy about speaking English, so the visitors could feel left out, particularly at lunchtime.\n\nRecommendations\nI would recommend that each exchange student is paired with a buddy from their class who can explain routines and introduce them to friends. It would also be a good idea to invite the visitors to try several clubs, as this is an easy way to join in without perfect language skills. Finally, a short welcome guide written by students could answer common questions in advance.\n\nConclusion\nIf these suggestions are adopted, I am confident that the visitors will leave with positive memories and that our own students will gain valuable experience of using English.",
+        "selfCheck": [
+          "見出し（Introduction / Recommendations など）で内容を整理した",
+          "Introduction で報告書の目的をはっきり述べた",
+          "留学生が難しいと感じそうな点を具体的に説明した",
+          "I would recommend that ... / It would also be a good idea to ... などで具体的な提案をした",
+          "短縮形やくだけた表現を避け、フォーマルな文体で書いた",
+          "140〜190語の範囲に収まり、Conclusion で提案の効果をまとめた"
+        ]
+      },
+      "step": 15
+    },
+    {
       "id": "school-life-b2-u1-speaking",
-      "step": 6,
+      "step": 16,
       "kind": "speaking",
       "skill": "speaking",
       "title": "Speaking: 部活動について比較・議論する",
@@ -517,7 +1782,7 @@
     },
     {
       "id": "school-life-b2-u1-check",
-      "step": 7,
+      "step": 17,
       "kind": "check",
       "skill": "mixed",
       "title": "Check: 試験形式の確認問題",
@@ -534,7 +1799,12 @@
           "type": "mcq",
           "stimulus": "cloze1",
           "stem": "Choose the word that best fits gap (1).",
-          "options": ["introduce", "bring", "set", "put"],
+          "options": [
+            "introduce",
+            "bring",
+            "set",
+            "put"
+          ],
           "answer": 0,
           "explanation": "introduce a new system で「新しい制度を導入する」という自然なコロケーションです。bring は bring in（導入する）なら可能ですが in がなく不可。set / put も a new system を目的語にして「導入する」の意味にはなりません。",
           "focus": "vocabulary",
@@ -546,8 +1816,13 @@
           "type": "mcq",
           "stimulus": "cloze1",
           "stem": "Choose the word that best fits gap (2).",
-          "options": ["let", "make", "encourage", "insist"],
-          "answer": 2,
+          "options": [
+            "let",
+            "make",
+            "insist",
+            "encourage"
+          ],
+          "answer": 3,
           "explanation": "空所の後が students to choose という「人 + to 不定詞」の形なので、encourage 人 to do（人に〜するよう勧める）が正解です。let と make は「人 + 動詞の原形」をとる（let students choose）ので to があると誤り。insist は insist on / insist that の形で使い、insist 人 to do とは言いません。",
           "focus": "grammar",
           "difficulty": 2,
@@ -558,8 +1833,13 @@
           "type": "mcq",
           "stimulus": "cloze1",
           "stem": "Choose the word that best fits gap (3).",
-          "options": ["place", "part", "role", "share"],
-          "answer": 1,
+          "options": [
+            "place",
+            "role",
+            "part",
+            "share"
+          ],
+          "answer": 2,
           "explanation": "take part in ~ で「〜に参加する」。take place は「（行事などが）行われる」で人が主語の文には合いません。role と share は take a role / take a share のように冠詞が必要で、in after-school activities とのつながりも不自然です。",
           "focus": "vocabulary",
           "difficulty": 1,
@@ -570,8 +1850,13 @@
           "type": "mcq",
           "stimulus": "cloze1",
           "stem": "Choose the word or phrase that best fits gap (4).",
-          "options": ["Therefore", "Moreover", "In fact", "As a result"],
-          "answer": 2,
+          "options": [
+            "Therefore",
+            "In fact",
+            "Moreover",
+            "As a result"
+          ],
+          "answer": 1,
           "explanation": "直前の「参加者が減るのではと心配した」に対して、「実際には少し増えた」と予想と異なる事実を述べているので In fact（実際には）が正解です。Therefore と As a result は「だから」という因果関係、Moreover は同じ方向の追加で、心配と反対の結果をつなぐことはできません。",
           "evidence": "the number of members actually rose slightly",
           "focus": "function",
@@ -583,7 +1868,9 @@
           "type": "text",
           "stimulus": "wf1",
           "stem": "Gap (5): Use the word in capitals (FREE) to form a word that fits the gap.",
-          "accept": ["freedom"],
+          "accept": [
+            "freedom"
+          ],
           "explanation": "the の後で、後ろに to choose ... が続く主語の位置なので名詞が必要です。free の名詞形 freedom（自由）が正解です。freely は副詞なので不可です。",
           "focus": "vocabulary",
           "difficulty": 2,
@@ -594,7 +1881,9 @@
           "type": "text",
           "stimulus": "wf1",
           "stem": "Gap (6): Use the word in capitals (ENTHUSIASM) to form a word that fits the gap.",
-          "accept": ["enthusiastic"],
+          "accept": [
+            "enthusiastic"
+          ],
           "explanation": "made them more ______ about ... は「make + 人 + 形容詞」の形で、more の後なので形容詞が入ります。enthusiasm（熱意：名詞）の形容詞形 enthusiastic（熱心な）が正解です。つづり（-astic）に注意しましょう。",
           "focus": "vocabulary",
           "difficulty": 3,
@@ -619,8 +1908,261 @@
       ]
     },
     {
+      "id": "school-life-b2-u1-check-2",
+      "kind": "check",
+      "skill": "mixed",
+      "title": "Check 2: 修学旅行についての記事（多肢選択・オープンクローズ）",
+      "instructions": "B2 First Reading and Use of English の Part 1（4択の語彙穴埋め）、Part 2（オープンクローズ）、Part 4（書き換え）の形式を参考にした独自問題です。修学旅行についての英文を読んで、空所に入るものを選ぶか、適切な1語を入力しましょう。",
+      "minutes": 9,
+      "examNote": "B2 First for Schools の Reading and Use of English Part 1（多肢選択式の穴埋め）、Part 2（オープンクローズ：1語を補う）、Part 4（同じ意味の文への書き換え）の形式を参考にした独自問題です。",
+      "stimuli": {
+        "cloze2": "Every year, second-year students at our school go on a three-day trip, and this year the choice of destination was (1) ______ to a student vote rather than being made by the teachers. Although many people had (2) ______ their hearts on Okinawa, the majority chose Hiroshima, mainly because of its history. The trip was carefully planned, but a sudden typhoon (3) ______ the organisers to change the schedule on the second day. In the (4) ______, the students visited a local museum instead of going to the island, and many said it was the most memorable part of the trip.",
+        "open2": "The trip, (5) ______ had been planned for months, turned out quite differently from what we expected. Looking back, I wish we had spent (6) ______ time in the museum and less time sitting on the bus."
+      },
+      "questions": [
+        {
+          "id": "b2u1-c2-1",
+          "type": "mcq",
+          "stimulus": "cloze2",
+          "stem": "Choose the word that best fits gap (1).",
+          "options": [
+            "given",
+            "placed",
+            "set",
+            "put"
+          ],
+          "answer": 3,
+          "explanation": "put ~ to a vote で「〜を投票にかける」というコロケーションです。rather than being made by the teachers（先生が決めるのではなく）とも合います。given / placed / set はいずれも to a vote と組み合わせて「投票にかける」の意味にはなりません。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-c2-2",
+          "type": "mcq",
+          "stimulus": "cloze2",
+          "stem": "Choose the word that best fits gap (2).",
+          "options": [
+            "put",
+            "fixed",
+            "set",
+            "placed"
+          ],
+          "answer": 2,
+          "explanation": "set one's heart on ~ で「〜を強く望む、〜に心を決める」という決まった表現です。沖縄を強く望んでいた人が多かったが、多数派は広島を選んだ、という対比になります。put one's heart into ~ は「〜に打ち込む」で on とは使わず、fixed / placed も heart on の形では使いません。",
+          "focus": "vocabulary",
+          "difficulty": 3,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-c2-3",
+          "type": "mcq",
+          "stimulus": "cloze2",
+          "stem": "Choose the word that best fits gap (3).",
+          "options": [
+            "made",
+            "forced",
+            "let",
+            "insisted"
+          ],
+          "answer": 1,
+          "explanation": "空所の後が the organisers to change という「人 + to 不定詞」の形なので、force 人 to do（人に〜せざるを得なくさせる）が正解です。make と let は「人 + 動詞の原形」をとるので to があると誤り。insist は insist on / insist that の形で使い、insist 人 to do とは言いません。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-g"
+        },
+        {
+          "id": "b2u1-c2-4",
+          "type": "mcq",
+          "stimulus": "cloze2",
+          "stem": "Choose the word that best fits gap (4).",
+          "options": [
+            "end",
+            "finish",
+            "last",
+            "final"
+          ],
+          "answer": 0,
+          "explanation": "In the end で「結局、最終的には」という談話標識です。台風で予定を変えた結果、最終的に博物館を訪れた、という流れに合います。at last（ついに）は at を使い、in the last / in the final / in the finish はこの意味の表現として成り立ちません。",
+          "focus": "vocabulary",
+          "difficulty": 1,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-c2-5",
+          "type": "text",
+          "stimulus": "open2",
+          "stem": "Gap (5): Write ONE word that fits the gap.",
+          "accept": [
+            "which"
+          ],
+          "explanation": "カンマで挟まれた非制限用法の関係詞節で、先行詞 The trip（物）を受けて had been planned の主語になるので which が入ります。非制限用法（カンマつき）では that は使えない点に注意しましょう。who は人にしか使えません。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-g"
+        },
+        {
+          "id": "b2u1-c2-6",
+          "type": "text",
+          "stimulus": "open2",
+          "stem": "Gap (6): Write ONE word that fits the gap.",
+          "accept": [
+            "more"
+          ],
+          "explanation": "後半の and less time sitting on the bus（バスに座っている時間はもっと少なく）と対になっているので、比較級の more（もっと多くの）が入ります。I wish we had spent more time ... は「もっと時間を過ごせばよかった」という過去への後悔です。",
+          "evidence": "and less time sitting on the bus",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-g"
+        },
+        {
+          "id": "b2u1-c2-7",
+          "type": "mcq",
+          "stem": "Choose the sentence that is closest in meaning to: 'We didn't take enough warm clothes, so we were cold on the ferry.'",
+          "options": [
+            "If we had taken enough warm clothes, we wouldn't have been cold on the ferry.",
+            "If we took enough warm clothes, we wouldn't be cold on the ferry.",
+            "If we hadn't taken enough warm clothes, we would have been cold on the ferry.",
+            "Unless we had taken warm clothes, we wouldn't have been cold on the ferry."
+          ],
+          "answer": 0,
+          "explanation": "元の文は「暖かい服を持っていかなかったので寒かった」という過去の事実です。過去の事実と反対を仮定する仮定法過去完了で「持っていっていたら寒くなかっただろう」と言い換えた A が正解です。B は現在・未来の仮定、C は持っていかなかった事実と仮定が同じ向きで意味が逆、D は Unless（〜しない限り）を使っているため「持っていかなければ寒くなかった」という不自然な意味になります。",
+          "focus": "grammar",
+          "difficulty": 3,
+          "objectiveId": "b2u1-obj-g"
+        }
+      ],
+      "step": 18
+    },
+    {
+      "id": "school-life-b2-u1-check-3",
+      "kind": "check",
+      "skill": "mixed",
+      "title": "Check 3: 交換留学生の受け入れ（多肢選択・語形成）",
+      "instructions": "B2 First Reading and Use of English の Part 1（4択の語彙穴埋め）、Part 3（語形成）、Part 4（書き換え）の形式を参考にした独自問題です。交換留学生の受け入れについての英文を読んで、空所に入るものを選ぶか、大文字の語を適切な形に変えて入力しましょう。",
+      "minutes": 9,
+      "examNote": "B2 First for Schools の Reading and Use of English Part 1（多肢選択式の穴埋め）、Part 3（語形成）、Part 4（同じ意味の文への書き換え）の形式を参考にした独自問題です。",
+      "stimuli": {
+        "cloze3": "Last spring, our school (1) ______ host to six students from a partner school in New Zealand. Each visitor stayed with a local family and (2) ______ the same classes as their hosts. At first, some of the Japanese students were too shy to speak, but the visitors soon (3) ______ friends with almost everyone in the class. By the end of the two weeks, the atmosphere in the classroom had changed completely, and several students said the experience had (4) ______ them to study abroad in the future.",
+        "wf3": "Looking after a visitor for two weeks is a big (5) ______ (RESPONSIBLE), but most host families said they found the experience extremely (6) ______ (REWARD)."
+      },
+      "questions": [
+        {
+          "id": "b2u1-c3-1",
+          "type": "mcq",
+          "stimulus": "cloze3",
+          "stem": "Choose the word that best fits gap (1).",
+          "options": [
+            "made",
+            "acted",
+            "played",
+            "took"
+          ],
+          "answer": 2,
+          "explanation": "play host to ~ で「〜を（客として）迎える、〜の受け入れ先になる」というコロケーションです。made / acted / took はいずれも host to と組み合わせてこの意味にはなりません（act as a host なら「ホスト役を務める」ですが as が必要です）。",
+          "focus": "vocabulary",
+          "difficulty": 3,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-c3-2",
+          "type": "mcq",
+          "stimulus": "cloze3",
+          "stem": "Choose the word that best fits gap (2).",
+          "options": [
+            "went",
+            "attended",
+            "participated",
+            "entered"
+          ],
+          "answer": 1,
+          "explanation": "attend classes で「授業に出席する」。attend は他動詞なので前置詞なしで the same classes を目的語にとれます。went は went to、participated は participated in のように前置詞が必要です。entered は「（部屋などに）入る」で、授業に継続して出る意味にはなりません。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-c3-3",
+          "type": "mcq",
+          "stimulus": "cloze3",
+          "stem": "Choose the word that best fits gap (3).",
+          "options": [
+            "made",
+            "got",
+            "took",
+            "held"
+          ],
+          "answer": 0,
+          "explanation": "make friends with ~ で「〜と友達になる」という基本のコロケーションです。直前の「最初は恥ずかしがって話せなかった」に対して but で「すぐに友達になった」とつながります。got / took / held は friends with と組み合わせてこの意味になりません。",
+          "focus": "vocabulary",
+          "difficulty": 1,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-c3-4",
+          "type": "mcq",
+          "stimulus": "cloze3",
+          "stem": "Choose the word that best fits gap (4).",
+          "options": [
+            "provoked",
+            "attracted",
+            "interested",
+            "inspired"
+          ],
+          "answer": 3,
+          "explanation": "inspire 人 to do で「（人）を〜する気にさせる、〜するよう刺激する」。交流の経験がきっかけで留学したいと思うようになった、という前向きな内容に合います。provoke は「（怒りなど）を引き起こす・挑発する」で否定的な響きがあり、attract / interest は「人 + to 不定詞」の形をとりません（interest 人 in ~ の形）。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-c3-5",
+          "type": "text",
+          "stimulus": "wf3",
+          "stem": "Gap (5): Use the word in capitals (RESPONSIBLE) to form a word that fits the gap.",
+          "accept": [
+            "responsibility"
+          ],
+          "explanation": "a big ______ と、冠詞 a と形容詞 big の後なので名詞が必要です。responsible（責任がある：形容詞）の名詞形 responsibility（責任）が正解です。responsibly は副詞なので不可です。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-c3-6",
+          "type": "text",
+          "stimulus": "wf3",
+          "stem": "Gap (6): Use the word in capitals (REWARD) to form a word that fits the gap.",
+          "accept": [
+            "rewarding"
+          ],
+          "explanation": "found the experience extremely ______ は「find + 目的語 + 形容詞（〜が…だとわかる）」の形で、extremely の後なので形容詞が入ります。「やりがいのある、得るものが多い」という意味の rewarding が正解です。rewarded は「報われた」と人の気持ちを表し、the experience を説明するには不自然です。",
+          "focus": "vocabulary",
+          "difficulty": 3,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-c3-7",
+          "type": "mcq",
+          "stem": "Choose the sentence that is closest in meaning to: 'People say that the exchange programme is the best thing about our school.'",
+          "options": [
+            "The exchange programme is said to be the best thing about our school.",
+            "The exchange programme is said being the best thing about our school.",
+            "The exchange programme says to be the best thing about our school.",
+            "It says that the exchange programme is the best thing about our school."
+          ],
+          "answer": 0,
+          "explanation": "People say that ~ は、受動態の伝達表現で 主語 + is said + to 不定詞 と言い換えられるので A が正解です。B は to 不定詞ではなく -ing 形なので誤り。C は能動態で「プログラムが言う」という意味になり、D の It says は「（掲示などに）〜と書いてある」の意味で、元の「人々が言っている」とは異なります（正しくは It is said that ~）。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-g"
+        }
+      ],
+      "step": 19
+    },
+    {
       "id": "school-life-b2-u1-wrapup",
-      "step": 8,
+      "step": 20,
       "kind": "wrapup",
       "skill": "mixed",
       "title": "Wrap-up: ふり返りと次の学習",
