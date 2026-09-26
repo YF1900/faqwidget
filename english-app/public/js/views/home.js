@@ -3,6 +3,7 @@ import { h, EXAM_JA, LEVEL_JA, SKILL_JA, SKILL_ICON, SOURCE_JA, fmtDate, pct } f
 import { api } from '../api.js';
 import { state, setTitle, go } from '../main.js';
 import { card, progressBar, disclaimer, emptyState } from '../components.js';
+import { titleBadge } from './stamps.js';
 
 function recHref(r) {
   if (r.type === 'onboarding') return '#/onboarding';
@@ -22,7 +23,7 @@ export default async function homeView() {
   setTitle('ホーム');
   if (state.me.needsPrivacyAgreement) { go('#/privacy'); return null; }
   if (!state.me.target) { go('#/onboarding'); return null; }
-  const d = await api.get('/api/dashboard');
+  const [d, st] = await Promise.all([api.get('/api/dashboard'), api.get('/api/stamps').catch(() => null)]);
   const [first, ...rest] = d.today;
 
   const today = h('section', { class: 'card today', 'aria-labelledby': 'today-title' },
@@ -75,5 +76,15 @@ export default async function homeView() {
     d.history.length ? h('ul', { class: 'timeline' }, d.history.map((e) => h('li', null, h('time', { datetime: e.at }, fmtDate(e.at)), ' ', e.text))) : emptyState('まだ学習履歴はありません。'),
     d.diagnostic ? h('p', { class: 'small muted' }, `最後の診断: ${fmtDate(d.diagnostic.createdAt, false)}　`, h('a', { href: '#/diagnostic' }, 'もう一度診断する')) : null);
 
-  return h('div', { class: 'stack' }, today, target, skills, review, units, history, disclaimer());
+  // スタンプ帳のまとめ（自分の学習レベルと、スタンプを集め始めたレベル）
+  const myLevels = new Set(Object.values(d.skills).map((x) => x.level));
+  const stampCard = st ? h('a', { class: 'card stamp-summary', href: '#/stamps' },
+    h('h2', { class: 'card-title' }, `⭐ スタンプ ${st.total}個`),
+    st.levels.filter((L) => myLevels.has(L.level) || L.count).map((L) => h('div', { class: 'stamp-sum-row' },
+      h('span', { class: 'stamp-sum-level' }, L.level), titleBadge(L.title),
+      h('span', { class: 'small' }, `${L.count}/${L.total}`),
+      progressBar(L.count, L.total, `${L.level} のスタンプ`),
+      h('span', { class: 'small muted block' }, L.next ? `「${L.next.name}」まであと${L.remainingToNext}個` : 'マスター達成！'))),
+    h('span', { class: 'small' }, 'スタンプ帳を見る →')) : null;
+  return h('div', { class: 'stack' }, today, stampCard, target, skills, review, units, history, disclaimer());
 }

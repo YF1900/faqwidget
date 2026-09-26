@@ -102,14 +102,19 @@ function introBody({ unit, act, makeQuestion }) {
         h('div', { class: 'vocab-head' }, h('strong', { lang: 'en' }, v.term), speakButton(v.term)),
         h('p', { class: 'vocab-meaning' }, v.meaning),
         v.example ? h('p', { class: 'vocab-example', lang: 'en' }, v.example) : null)))),
+    h('a', { class: 'btn btn-secondary btn-block', href: `#/cards/${encodeURIComponent(unit.id)}` }, '🔤 この単元の単語帳で覚える・小テスト'),
     h('section', { class: 'stack' }, h('h3', { class: 'sub-title' }, '語彙チェック'), act.questions.map((q, i) => makeQuestion(q, i))));
 }
 
 // ---------- step 2: 解説 ----------
-function explainBody({ act, makeQuestion }) {
+function explainBody({ unit, act, makeQuestion }) {
   return h('div', { class: 'stack' },
     act.points.map((p) => h('section', { class: 'card' }, h('h3', { class: 'sub-title' }, p.heading), h('p', null, p.text),
-      p.examples?.length ? h('ul', { class: 'examples' }, p.examples.map((e) => h('li', { lang: 'en' }, e))) : null)),
+      p.examples?.length ? h('ul', { class: 'examples' }, p.examples.map((e) => h('li', { lang: 'en' }, e))) : null,
+      p.patterns?.length ? h('div', { class: 'patterns' }, h('p', { class: 'small muted' }, '覚えたい構文'),
+        p.patterns.map((pt) => h('div', { class: 'pattern' }, h('p', { class: 'pattern-en', lang: 'en' }, pt.pattern), h('p', { class: 'small' }, pt.meaning),
+          pt.example ? h('p', { class: 'small', lang: 'en' }, pt.example) : null))) : null)),
+    h('a', { class: 'btn btn-secondary btn-block', href: `#/cards/${encodeURIComponent(unit.id)}` }, '🔤 この単元の単語帳で覚える・小テスト'),
     h('section', { class: 'stack' }, h('h3', { class: 'sub-title' }, '確認'), act.questions.map((q, i) => makeQuestion(q, i))));
 }
 

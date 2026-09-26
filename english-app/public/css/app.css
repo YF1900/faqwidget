@@ -351,3 +351,52 @@ body:has(.wide) .main { max-width: 1200px; }
 @media (max-width: 380px) { .target-card { grid-template-columns: 1fr 1fr; } .target-card > a { grid-column: 1 / -1; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 .step-progress { margin-top: 8px; }
+
+/* ---- 上部バーの設定リンク ---- */
+.settings-link { min-width: 44px; min-height: 44px; display: grid; place-items: center; font-size: 22px; text-decoration: none; }
+
+/* ---- スタンプ ---- */
+.stamp-line { display: flex; align-items: center; gap: 8px; font-size: 15px; margin: 6px 0; color: var(--muted); }
+.stamp-line.stamp-have { color: var(--warn); font-weight: 600; }
+.stamp-line.stamp-new { color: var(--warn); font-weight: 800; font-size: 17px; }
+.stamp-icon { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #f2b705; color: #fff; font-size: 17px; flex: none; }
+.stamp-new .stamp-icon { animation: stamp-pop .6s ease-out; }
+@keyframes stamp-pop { 0% { transform: scale(2.2) rotate(-25deg); opacity: 0; } 60% { transform: scale(.9) rotate(5deg); opacity: 1; } 100% { transform: scale(1) rotate(0); } }
+.stamp-dots { display: inline-flex; gap: 4px; flex: none; }
+.stamp-dots span { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #f2b705; }
+.stamp-dots span.on { background: #f2b705; }
+.stamp-mini { color: #f2b705; font-size: 20px; margin-left: auto; }
+.title-badge { display: inline-block; font-size: 14px; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); white-space: nowrap; }
+.tb-bronze { background: #f4e1d2; color: #7a4a22; border-color: #d9a57b; }
+.tb-silver { background: #eceff1; color: #455a64; border-color: #b0bec5; }
+.tb-gold { background: #fff3c4; color: #7a5b00; border-color: #f2b705; }
+.tb-platinum { background: #e3f2fd; color: #0d47a1; border-color: #90caf9; }
+.tb-master { background: #f3e5f5; color: #6a1b9a; border-color: #ce93d8; }
+.stamp-book-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.stamp-book-head .card-title { margin: 0; }
+.stamp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(18px, 1fr)); gap: 4px; margin: 10px 0; }
+.stamp-grid span { aspect-ratio: 1; border-radius: 50%; border: 2px dashed var(--line); }
+.stamp-grid span.on { border: 0; background: radial-gradient(circle at 35% 35%, #ffd54f, #f2b705); }
+.stamp-summary { display: block; text-decoration: none; color: inherit; }
+.stamp-sum-row { display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: 4px 8px; margin: 8px 0; }
+.stamp-sum-row .progress, .stamp-sum-row .block { grid-column: 1 / -1; margin: 0; }
+.stamp-sum-level { font-weight: 800; color: var(--primary); }
+.stamp-challenge { border-color: #f2b705; }
+
+/* ---- 単語帳 ---- */
+.seg-tabs.static { position: static; margin: 0 0 8px; padding: 0; background: transparent; flex-wrap: wrap; }
+.seg-tabs.static .seg { min-width: 0; font-size: 15px; }
+.flashcard { text-align: center; min-height: 260px; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+.flashcard.has-stamp { border-color: #f2b705; }
+.flash-meta { display: flex; align-items: center; gap: 8px; }
+.flash-front { font-size: 24px; font-weight: 700; margin: 8px 0; line-height: 1.4; }
+.flash-meaning { font-size: 20px; font-weight: 700; color: var(--primary); margin: 4px 0; }
+.flash-example { color: var(--muted); }
+.flash-nav .btn { flex: 1; }
+.center-row { justify-content: center; }
+.quiz-score { font-size: 28px; font-weight: 800; margin: 8px 0; }
+.patterns { border-top: 1px dashed var(--line); margin-top: 10px; padding-top: 6px; }
+.pattern { background: var(--bg); border-radius: 10px; padding: 8px 10px; margin: 6px 0; }
+.pattern p { margin: 2px 0; }
+.pattern-en { font-weight: 700; }
+@media (prefers-reduced-motion: reduce) { .stamp-new .stamp-icon { animation: none; } }

@@ -1,5 +1,5 @@
 // 画面部品（設問カード・本文表示・保存状態表示など）
-import { h, replace, highlight, uuid } from './dom.js';
+import { h, replace, highlight, uuid, toast } from './dom.js';
 import { submitReliably } from './api.js';
 
 export function normalizeText(s) {
@@ -85,10 +85,10 @@ export function questionCard(q, opts = {}) {
       return;
     }
     const correct = r.status === 'saved' ? r.data.correct : localCorrect;
-    showFeedback(correct, response, r.status);
+    showFeedback(correct, response, r.status, r.status === 'saved' ? r.data.stamp : null);
   }
 
-  function showFeedback(correct, response, status) {
+  function showFeedback(correct, response, status, stamp) {
     card.classList.toggle('is-correct', correct); card.classList.toggle('is-wrong', !correct);
     inputs.forEach((inp, i) => {
       inp.disabled = true;
@@ -102,6 +102,7 @@ export function questionCard(q, opts = {}) {
     replace(feedback,
       h('p', { class: `result ${correct ? 'result-ok' : 'result-ng'}` }, correct ? '○ 正解' : '× 不正解', correct ? '' : h('span', { class: 'result-answer', lang: 'en' }, `　正答: ${answerText}`)),
       status ? saveBadge(status) : null,
+      stamp ? stampLine(stamp) : null,
       h('div', { class: 'explanation' }, h('h4', null, '解説'), h('p', null, q.explanation)),
       q.evidence ? h('div', { class: 'evidence-box' }, h('h4', null, '根拠'), h('blockquote', { lang: 'en' }, q.evidence),
         opts.onEvidence ? h('button', { type: 'button', class: 'btn btn-small btn-secondary', onclick: () => opts.onEvidence(q.evidence) }, opts.evidenceLabel || '本文で確認する') : null) : null,
@@ -128,6 +129,21 @@ export function questionCard(q, opts = {}) {
 export function recordAttempt({ q, context, response, support }) {
   const body = { clientId: uuid(), questionId: q.id, context, response, support: support || {} };
   return submitReliably('POST', '/api/attempts', body, `解答（${q.id}）`);
+}
+
+/** スタンプの進み具合（問題・カード共通） */
+export function stampLine(stamp) {
+  if (stamp.newlyEarned) {
+    toast('🎉 スタンプを獲得しました！', 'success');
+    return h('p', { class: 'stamp-line stamp-new', role: 'status' }, h('span', { class: 'stamp-icon', 'aria-hidden': 'true' }, '★'), 'スタンプ獲得！ この問題は理解できています');
+  }
+  if (stamp.earned) return h('p', { class: 'stamp-line stamp-have' }, h('span', { class: 'stamp-icon', 'aria-hidden': 'true' }, '★'), 'スタンプ獲得済み');
+  const dots = h('span', { class: 'stamp-dots', 'aria-hidden': 'true' }, [0, 1, 2].map((i) => h('span', { class: i < Math.min(stamp.streak, 3) ? 'on' : '' })));
+  let text;
+  if (!stamp.streak) text = 'スタンプまで: 3回続けて正解（1回は別の日に）';
+  else if (stamp.needsNewDay && stamp.remaining <= 1) text = `連続正解 ${stamp.streak}回。明日以降にもう一度正解するとスタンプ`;
+  else text = `連続正解 ${stamp.streak}回。スタンプまであと${stamp.remaining}回${stamp.needsNewDay ? '（1回以上は明日以降に）' : ''}`;
+  return h('p', { class: 'stamp-line' }, dots, text);
 }
 
 export function progressBar(value, max, label) {

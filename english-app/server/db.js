@@ -201,6 +201,31 @@ CREATE TABLE IF NOT EXISTS activity_completions (
   PRIMARY KEY (user_id, activity_id)
 );
 
+-- 単語・熟語・構文カードの小テストの解答
+CREATE TABLE IF NOT EXISTS card_attempts (
+  id TEXT PRIMARY KEY,
+  client_id TEXT NOT NULL UNIQUE,
+  user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  card_id TEXT NOT NULL,
+  unit_id TEXT NOT NULL,
+  response TEXT NOT NULL,
+  correct INTEGER NOT NULL,
+  created_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_card_attempts_user ON card_attempts(user_id, card_id, created_at);
+
+-- スタンプ（理解の証）。問題またはカードごとに1つ。一度もらうと消えない
+CREATE TABLE IF NOT EXISTS stamps (
+  user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  item_type TEXT NOT NULL CHECK (item_type IN ('question','card')),
+  item_id TEXT NOT NULL,
+  unit_id TEXT NOT NULL,
+  level TEXT NOT NULL,
+  category TEXT NOT NULL,
+  earned_at TEXT NOT NULL,
+  PRIMARY KEY (user_id, item_type, item_id)
+);
+
 -- ReviewSchedule（間隔反復による復習予定）
 CREATE TABLE IF NOT EXISTS review_items (
   user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,

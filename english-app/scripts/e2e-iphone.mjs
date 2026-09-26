@@ -269,8 +269,38 @@ try {
   await page.waitForTimeout(500);
   check('キーボードだけで選択・解答できる', await page.locator('.qcard').first().locator('.result').count() > 0);
 
+  // ---- 6b. 単語帳・スタンプ ----
+  await go('#/cards/school-life-a2-u1');
+  await page.waitForSelector('.flashcard');
+  check('単語帳でカードを表示できる', await page.locator('.flash-front').isVisible());
+  await page.getByRole('button', { name: '意味を見る' }).click();
+  check('カードの意味と例文を表示できる', await page.locator('.flash-meaning').isVisible());
+  await shot('cards-learn');
+  await noHScroll('単語帳');
+  await page.getByRole('tab', { name: /小テスト/ }).click();
+  await page.locator('.qcard .option').first().click();
+  await page.getByRole('button', { name: '解答する' }).click();
+  await page.locator('.qcard .result').waitFor();
+  check('単語帳の小テストでスタンプの進み具合を表示', await page.locator('.qcard .stamp-line').count() > 0);
+  await shot('cards-quiz');
+  await go('#/unit/school-life-b2-u1/step/1');
+  await page.waitForSelector('.qcard .result');
+  await page.locator('.qcard').first().getByRole('button', { name: 'もう一度解く' }).click();
+  await page.locator('.qcard').first().locator('.option').first().click();
+  await page.locator('.qcard').first().getByRole('button', { name: '解答する' }).click();
+  await page.locator('.qcard').first().locator('.result').waitFor();
+  check('単元の問題でもスタンプの進み具合を表示', await page.locator('.qcard').first().locator('.stamp-line').count() > 0);
+  await go('#/stamps');
+  await page.waitForSelector('.stamp-book');
+  check('スタンプ帳にレベル別の称号と進み具合を表示', await page.locator('.stamp-book').count() === 3 && await page.locator('.stamp-grid span').count() > 100);
+  await shot('stamps');
+  await noHScroll('スタンプ帳');
+  check('タブは5つ以内（単語帳・スタンプを含む）', await page.locator('#tabbar .tab').count() === 5 && await page.locator('#settings-link').isVisible());
+  await go('#/home');
+  check('ホームにスタンプのまとめを表示', await page.locator('.stamp-summary').isVisible());
+
   // ---- 7. セーフエリア: 下部バーが env(safe-area-inset-bottom) を考慮 ----
-  const pad = await page.evaluate(() => getComputedStyle(document.querySelector('.step-footer')).paddingBottom);
+  const pad = await page.evaluate(() => getComputedStyle(document.querySelector('.tabbar')).paddingBottom);
   check('下部バーの余白にセーフエリアを加算（CSS）', fs.readFileSync(path.join(root, 'public/css/app.css'), 'utf8').includes('env(safe-area-inset-bottom'), `現在の padding-bottom ${pad}`);
   const fontOk = await page.evaluate(() => [...document.querySelectorAll('input, textarea, select')].every((e) => parseFloat(getComputedStyle(e).fontSize) >= 16 || e.type === 'radio' || e.type === 'checkbox'));
   check('入力欄の文字サイズが16px以上（Safari の自動拡大を防ぐ）', fontOk);

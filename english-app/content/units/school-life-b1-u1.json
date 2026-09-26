@@ -488,6 +488,13 @@
           "examples": [
             "I joined the drama club last April.",
             "We performed a play at the school festival last month."
+          ],
+          "patterns": [
+            {
+              "pattern": "過去形 + ~ ago / last + 名詞",
+              "meaning": "〜前に／この前の〜に…した",
+              "example": "We went on a school trip to Kyoto two years ago."
+            }
           ]
         },
         {
@@ -497,6 +504,18 @@
             "I've been in the club since April.",
             "I've never performed on stage before.",
             "Have you ever thought about quitting?"
+          ],
+          "patterns": [
+            {
+              "pattern": "have been + ~ing + for/since ...",
+              "meaning": "〜からずっと…し続けている",
+              "example": "I've been learning the piano for five years."
+            },
+            {
+              "pattern": "Have you ever + 過去分詞?",
+              "meaning": "今までに〜したことがある？",
+              "example": "Have you ever eaten lunch in the school garden?"
+            }
           ]
         },
         {
@@ -506,6 +525,18 @@
             "I joined the band because I love music.",
             "Practice finishes at six, so I do my homework before dinner.",
             "The members are really kind. That's why I never gave up."
+          ],
+          "patterns": [
+            {
+              "pattern": "~ because + 主語 + 動詞",
+              "meaning": "…なのは〜という理由からだ",
+              "example": "I stay late on Wednesdays because we have extra practice."
+            },
+            {
+              "pattern": "~. That's why + 主語 + 動詞",
+              "meaning": "それが〜している理由だ",
+              "example": "Our coach is very strict. That's why our team is so strong."
+            }
           ]
         },
         {
@@ -514,6 +545,18 @@
           "examples": [
             "In my opinion, clubs are a great way to make friends.",
             "I don't really agree, because some students need more time to study."
+          ],
+          "patterns": [
+            {
+              "pattern": "In my opinion, + 主語 + 動詞",
+              "meaning": "私の意見では〜だ",
+              "example": "In my opinion, school uniforms help students feel equal."
+            },
+            {
+              "pattern": "I don't really agree, because ~",
+              "meaning": "あまり賛成できない、なぜなら〜",
+              "example": "I don't really agree, because homework helps us remember what we learn."
+            }
           ]
         }
       ],
@@ -576,6 +619,13 @@
           "examples": [
             "If it rains on Saturday, sports day will be moved to Monday.",
             "If you join the volunteer club, you'll meet students from other years."
+          ],
+          "patterns": [
+            {
+              "pattern": "If + 現在形, will + 動詞の原形",
+              "meaning": "（実際に）〜なら…するだろう",
+              "example": "If we finish early, we'll go to the café near the station."
+            }
           ]
         },
         {
@@ -584,6 +634,18 @@
           "examples": [
             "If I had more free time, I would join a second club.",
             "If I were you, I'd talk to the club leader before you decide."
+          ],
+          "patterns": [
+            {
+              "pattern": "If + 過去形, would + 動詞の原形",
+              "meaning": "（現実と違うが）もし〜なら…するのに",
+              "example": "If our school had a swimming pool, I would swim every day."
+            },
+            {
+              "pattern": "If I were you, I'd + 動詞の原形",
+              "meaning": "私があなたなら〜する",
+              "example": "If I were you, I'd apologise to her today."
+            }
           ]
         },
         {
@@ -593,6 +655,18 @@
             "Why don't you visit the club on Friday?",
             "How about asking your homeroom teacher?",
             "You should decide before the deadline."
+          ],
+          "patterns": [
+            {
+              "pattern": "Why don't you + 動詞の原形?",
+              "meaning": "〜してみたらどう？（提案）",
+              "example": "Why don't you try the badminton club?"
+            },
+            {
+              "pattern": "You should + 動詞の原形",
+              "meaning": "〜したほうがいい（助言）",
+              "example": "You should revise for the test this weekend."
+            }
           ]
         }
       ],
@@ -660,6 +734,18 @@
             "Mobile phones must be switched off during lessons.",
             "Bikes can't be left in front of the school gate.",
             "First-year students are not allowed to use the rooftop."
+          ],
+          "patterns": [
+            {
+              "pattern": "must be + 過去分詞",
+              "meaning": "〜されなければならない",
+              "example": "All homework must be handed in by Friday."
+            },
+            {
+              "pattern": "be (not) allowed to + 動詞の原形",
+              "meaning": "〜することが許されている（いない）",
+              "example": "Students are allowed to use the computer room at lunchtime."
+            }
           ]
         },
         {
@@ -669,6 +755,18 @@
             "I used to walk to school, but now I cycle.",
             "Our school didn't use to have a dance club.",
             "I'm used to getting up early for morning practice."
+          ],
+          "patterns": [
+            {
+              "pattern": "used to + 動詞の原形",
+              "meaning": "以前は〜していた（今は違う）",
+              "example": "My brother used to play baseball when he was at primary school."
+            },
+            {
+              "pattern": "be used to + ~ing",
+              "meaning": "〜することに慣れている",
+              "example": "I'm used to wearing a school uniform now."
+            }
           ]
         },
         {
@@ -679,6 +777,18 @@
             "We decided to start a new photography club.",
             "Remember to bring your PE kit tomorrow.",
             "I remember feeling nervous on my first day."
+          ],
+          "patterns": [
+            {
+              "pattern": "remember to + 動詞の原形",
+              "meaning": "（これから）忘れずに〜する",
+              "example": "Please remember to lock the classroom door."
+            },
+            {
+              "pattern": "remember + ~ing",
+              "meaning": "（過去に）〜したことを覚えている",
+              "example": "I remember meeting you at the entrance ceremony."
+            }
           ]
         }
       ],

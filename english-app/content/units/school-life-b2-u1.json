@@ -498,6 +498,18 @@
             "In my opinion, clubs are valuable, but membership should be a choice.",
             "One important point to consider is students' wellbeing.",
             "To sum up, schools should encourage, not force, participation."
+          ],
+          "patterns": [
+            {
+              "pattern": "In my opinion, + 節",
+              "meaning": "私の意見では〜",
+              "example": "In my opinion, homework should be optional at weekends."
+            },
+            {
+              "pattern": "To sum up, + 節",
+              "meaning": "まとめると〜",
+              "example": "To sum up, a shorter school day would benefit everyone."
+            }
           ]
         },
         {
@@ -508,6 +520,13 @@
             "While some students enjoy competition, others prefer a relaxed atmosphere.",
             "Despite the long hours, many members love their club.",
             "Despite being busy, she never missed a practice."
+          ],
+          "patterns": [
+            {
+              "pattern": "Despite + 名詞 / ~ing, + 節",
+              "meaning": "〜にもかかわらず",
+              "example": "Despite the heavy rain, the sports day went ahead."
+            }
           ]
         },
         {
@@ -517,6 +536,18 @@
             "It could be argued that long practices may harm students' health.",
             "Students who choose their own club tend to be more motivated.",
             "This is arguably the most important benefit of clubs."
+          ],
+          "patterns": [
+            {
+              "pattern": "It could be argued that + 節",
+              "meaning": "〜と主張することもできる",
+              "example": "It could be argued that school uniforms reduce peer pressure."
+            },
+            {
+              "pattern": "S + tend to + 動詞の原形",
+              "meaning": "〜する傾向がある",
+              "example": "Teenagers tend to stay up later at weekends."
+            }
           ]
         },
         {
@@ -526,6 +557,18 @@
             "However, the benefits are not guaranteed.",
             "Some clubs meet every day, whereas others meet once a week.",
             "Not only do students develop skills, but they also make friends."
+          ],
+          "patterns": [
+            {
+              "pattern": "Not only + 倒置 ..., but S also ~",
+              "meaning": "〜だけでなく…も",
+              "example": "Not only did the team win, but they also broke the school record."
+            },
+            {
+              "pattern": "節, whereas + 節",
+              "meaning": "〜である一方で…",
+              "example": "My sister loves maths, whereas I prefer history."
+            }
           ]
         }
       ],
@@ -590,6 +633,13 @@
           "examples": [
             "If we had practised more, we would have won the final.",
             "If I hadn't joined the drama club, I might never have met my best friend."
+          ],
+          "patterns": [
+            {
+              "pattern": "If S had + 過去分詞, S would have + 過去分詞",
+              "meaning": "あの時〜していたら…しただろう",
+              "example": "If she had left earlier, she would have caught the bus."
+            }
           ]
         },
         {
@@ -598,6 +648,13 @@
           "examples": [
             "If I had chosen the art club, I would be much happier now.",
             "If she hadn't broken her leg last month, she would be playing in today's match."
+          ],
+          "patterns": [
+            {
+              "pattern": "If S had + 過去分詞, S would + 動詞の原形 (now)",
+              "meaning": "過去に〜していたら今は…だろう",
+              "example": "If I had studied harder last year, I would be in the top class now."
+            }
           ]
         },
         {
@@ -608,6 +665,18 @@
             "If only we hadn't lost the tickets!",
             "We should have booked the gym earlier.",
             "Kenji must have forgotten about the meeting."
+          ],
+          "patterns": [
+            {
+              "pattern": "I wish / If only + S had + 過去分詞",
+              "meaning": "〜していればよかったのに",
+              "example": "I wish I had brought my umbrella today."
+            },
+            {
+              "pattern": "S + must have + 過去分詞",
+              "meaning": "〜したに違いない",
+              "example": "The hall is empty, so the concert must have finished."
+            }
           ]
         }
       ],
@@ -674,6 +743,13 @@
             "It is said that the school festival is the highlight of the year.",
             "The new gym is believed to cost more than planned.",
             "The old uniform is thought to have been designed by a former student."
+          ],
+          "patterns": [
+            {
+              "pattern": "It is said that + 節",
+              "meaning": "〜と言われている",
+              "example": "It is said that the library is the quietest place in the school."
+            }
           ]
         },
         {
@@ -682,6 +758,13 @@
           "examples": [
             "It was the student council that suggested the new rule.",
             "What I enjoy most about club life is the friendship."
+          ],
+          "patterns": [
+            {
+              "pattern": "It is / was + 強調語句 + that ~",
+              "meaning": "〜したのは他でもない…だ",
+              "example": "It was our coach that encouraged me to keep going."
+            }
           ]
         },
         {
@@ -691,6 +774,18 @@
             "Feeling nervous, Aoi walked onto the stage.",
             "Having finished the rehearsal, we went out for dinner.",
             "Built many years ago, the old clubhouse badly needs repairs."
+          ],
+          "patterns": [
+            {
+              "pattern": "Having + 過去分詞, + 主節",
+              "meaning": "〜し終えてから…",
+              "example": "Having completed the exam, the students handed in their papers."
+            },
+            {
+              "pattern": "~ing ..., + 主節",
+              "meaning": "〜しながら…",
+              "example": "Smiling at the audience, the captain accepted the trophy."
+            }
           ]
         }
       ],

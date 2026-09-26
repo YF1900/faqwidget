@@ -51,13 +51,15 @@
 
 ### step 1: intro
 ```jsonc
-"vocabulary": [ { "term": "club activity", "meaning": "部活動", "example": "I have club activities after school." } ],  // 10〜14語
+"vocabulary": [ { "term": "club activity", "meaning": "部活動", "example": "I have club activities after school." } ],  // 10〜14語。単語帳の「単語」（空白を含む語句は「熟語・表現」）カードになります
 "questions": [ /* 語彙チェック 3〜4問（Question） */ ]
 ```
 
 ### step 2: explain
 ```jsonc
-"points": [ { "heading": "頻度を表す副詞", "text": "（日本語の短い解説）", "examples": ["I usually practise on Mondays."] } ], // 2〜4個
+"points": [ { "heading": "頻度を表す副詞", "text": "（日本語の短い解説）", "examples": ["I usually practise on Mondays."],
+              "patterns": [ { "pattern": "I usually + 動詞の原形", "meaning": "たいてい〜する", "example": "I usually walk to school." } ] } ], // 2〜4個
+// patterns は単語帳の「構文カード」になります（meaning は小テストの選択肢になるため、単元内で重複しない短い日本語に）
 "questions": [ /* 確認 2〜3問 */ ]
 ```
 

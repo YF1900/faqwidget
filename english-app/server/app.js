@@ -11,6 +11,8 @@ import {
 } from './content.js';
 import { publicDiagnostic, scoreDiagnostic } from './diagnostic.js';
 import { nextReviewState } from './review.js';
+import { cardsForUnit, findCard, syncStamp, recordCardAttempt, questionAttemptsFor, cardAttemptsFor, CARD_TYPES } from './cards.js';
+import { evaluateStamp, titleFor, TITLES, STAMP_STREAK } from './stamps.js';
 import {
   dashboardFor, unitsWithProgress, getLevels, getTarget, progressFor, completionsFor, historyFor, latestDiagnostic, dueReviewCount, frequentMistakes,
 } from './services.js';
@@ -212,6 +214,8 @@ export function createApp(db, opts = {}) {
       drafts: all('SELECT activity_id, text, updated_at FROM drafts WHERE user_id = ?'),
       completions: all('SELECT activity_id, activity_version, completed_at FROM activity_completions WHERE user_id = ?'),
       reviewSchedule: all('SELECT question_id, box, due_at, reason FROM review_items WHERE user_id = ?'),
+      cardAttempts: all('SELECT card_id, response, correct, created_at FROM card_attempts WHERE user_id = ?'),
+      stamps: all('SELECT item_type, item_id, level, category, earned_at FROM stamps WHERE user_id = ?'),
     };
   });
 
@@ -301,9 +305,11 @@ export function createApp(db, opts = {}) {
     const prev = db.prepare('SELECT * FROM attempts WHERE client_id = ?').get(clientId);
     const q = getQuestion(db, str(body.questionId, 100));
     if (!q || (q.status !== 'published' && !isTeacher(user))) fail(404, '問題が見つかりません');
-    const result = (row) => ({ id: row.id, correct: !!row.correct, attemptNo: row.attempt_no, questionVersion: row.question_version, duplicate: !!prev,
-      answer: q.answer, accept: q.accept, explanation: q.explanation, evidence: q.evidence });
-    if (prev) { if (prev.user_id !== user.id) fail(409, '重複した送信です'); return result(prev); }
+    const unitId = db.prepare('SELECT unit_id FROM activities WHERE id = ?').get(q.activityId)?.unit_id;
+    const stampOf = () => syncStamp(db, user.id, { type: 'question', itemId: q.id, unitId, level: q.level, category: q.skill });
+    const result = (row, stamp) => ({ id: row.id, correct: !!row.correct, attemptNo: row.attempt_no, questionVersion: row.question_version, duplicate: !!prev,
+      answer: q.answer, accept: q.accept, explanation: q.explanation, evidence: q.evidence, stamp });
+    if (prev) { if (prev.user_id !== user.id) fail(409, '重複した送信です'); return result(prev, { ...stampOf(), newlyEarned: false }); }
     const response = q.type === 'mcq' ? (Number.isInteger(body.response) ? body.response : fail(400, '選択肢を選んでください')) : str(body.response, 200);
     const support = { scriptOpened: !!body.support?.scriptOpened, noAudio: !!body.support?.noAudio };
     const correct = gradeQuestion(q, response);
@@ -318,9 +324,10 @@ export function createApp(db, opts = {}) {
       else db.prepare(`INSERT INTO review_items (user_id, question_id, box, due_at, reason, updated_at) VALUES (?,?,?,?,?,?)
         ON CONFLICT(user_id, question_id) DO UPDATE SET box=excluded.box, due_at=excluded.due_at, reason=excluded.reason, updated_at=excluded.updated_at`)
         .run(user.id, q.id, next.box, next.due_at, next.reason, now());
+      r.stamp = stampOf();
       return r;
     });
-    return result(row);
+    return result(row, row.stamp);
   });
 
   route('POST', '/api/activities/:id/complete', ({ user, params }) => {
@@ -382,21 +389,99 @@ export function createApp(db, opts = {}) {
     return { submissions: rows.map(submissionOut) };
   });
 
+  const reviewItem = (questionId, extra) => {
+    const q = getQuestion(db, questionId);
+    const act = db.prepare('SELECT a.kind, a.data, u.title_ja, u.level FROM activities a JOIN units u ON u.id = a.unit_id WHERE a.id = ?').get(q.activityId);
+    const ad = J(act.data, {});
+    const context = act.kind === 'reading' ? { type: 'passage', passage: ad.passage } : act.kind === 'listening' ? { type: 'script', script: ad.script }
+      : q.stimulus && ad.stimuli?.[q.stimulus] ? { type: 'stimulus', text: ad.stimuli[q.stimulus] } : null;
+    return { ...extra, question_id: questionId, question: q, unitTitle: act.title_ja, level: act.level, activityTitle: ad.title, kind: act.kind, context };
+  };
+
   route('GET', '/api/review', ({ user }) => {
     const t = now();
     const rows = db.prepare(`SELECT r.question_id, r.box, r.due_at, r.reason FROM review_items r JOIN questions q ON q.id = r.question_id AND q.status = 'published'
       WHERE r.user_id = ? ORDER BY r.due_at`).all(user.id);
     const due = rows.filter((r) => r.due_at <= t).slice(0, 15);
-    const items = due.map((r) => {
-      const q = getQuestion(db, r.question_id);
-      const act = db.prepare('SELECT a.kind, a.data, u.title_ja, u.level FROM activities a JOIN units u ON u.id = a.unit_id WHERE a.id = ?').get(q.activityId);
-      const ad = J(act.data, {});
-      const context = act.kind === 'reading' ? { type: 'passage', passage: ad.passage } : act.kind === 'listening' ? { type: 'script', script: ad.script }
-        : q.stimulus && ad.stimuli?.[q.stimulus] ? { type: 'stimulus', text: ad.stimuli[q.stimulus] } : null;
-      return { ...r, question: q, unitTitle: act.title_ja, level: act.level, activityTitle: ad.title, kind: act.kind, context };
-    });
+    const items = due.map((r) => reviewItem(r.question_id, r));
+    // スタンプ挑戦: 連続正解の途中で、今日はまだ解いていない問題（日をあけて解くとスタンプに近づく）
+    const dueIds = new Set(due.map((r) => r.question_id));
+    const stamped = new Set(db.prepare("SELECT item_id FROM stamps WHERE user_id = ? AND item_type = 'question'").all(user.id).map((r) => r.item_id));
+    const candidates = db.prepare(`SELECT DISTINCT a.question_id FROM attempts a JOIN questions q ON q.id = a.question_id AND q.status = 'published'
+      WHERE a.user_id = ? AND a.context IN ('unit','review')`).all(user.id).map((r) => r.question_id).filter((id) => !dueIds.has(id) && !stamped.has(id));
+    const challenges = [];
+    for (const id of candidates) {
+      const ev = evaluateStamp(questionAttemptsFor(db, user.id, id), t);
+      if (!ev.earned && ev.streak > 0 && !ev.answeredToday) challenges.push({ id, ev });
+    }
+    challenges.sort((a, b) => b.ev.streak - a.ev.streak);
+    const stampChallenges = challenges.slice(0, 10).map((c) => reviewItem(c.id, { reason: 'stamp', streak: c.ev.streak, remaining: c.ev.remaining }));
     const upcoming = rows.filter((r) => r.due_at > t).map((r) => r.due_at);
-    return { items, dueCount: rows.filter((r) => r.due_at <= t).length, upcoming: upcoming.slice(0, 50) };
+    return { items, dueCount: rows.filter((r) => r.due_at <= t).length, upcoming: upcoming.slice(0, 50), stampChallenges, stampChallengeCount: challenges.length };
+  });
+
+  // ---------- 単語・熟語・構文カード ----------
+  const cardOut = (userId, c, stampedSet) => {
+    const ev = evaluateStamp(cardAttemptsFor(db, userId, c.id));
+    const earned = stampedSet.has(c.id);
+    return { ...c, stamp: { earned, streak: ev.streak, remaining: earned ? 0 : ev.remaining, needsNewDay: earned ? false : ev.needsNewDay, answeredToday: ev.answeredToday } };
+  };
+  route('GET', '/api/cards', ({ user, query }) => {
+    const unitId = query.get('unitId');
+    const units = db.prepare("SELECT id, title_ja AS titleJa, level, order_no AS \"order\" FROM units WHERE status = 'published' ORDER BY theme, order_no, level").all();
+    const unit = unitId ? units.find((u) => u.id === unitId) : null;
+    if (unitId && !unit) fail(404, '単元が見つかりません');
+    const stampedSet = new Set(db.prepare("SELECT item_id FROM stamps WHERE user_id = ? AND item_type = 'card'").all(user.id).map((r) => r.item_id));
+    const cards = unit ? cardsForUnit(db, unit.id).map((c) => cardOut(user.id, c, stampedSet)) : [];
+    return { units, unit, types: CARD_TYPES, cards };
+  });
+  route('POST', '/api/cards/attempts', ({ user, body }) => {
+    const clientId = str(body.clientId, 64);
+    if (!clientId) fail(400, 'clientId が必要です');
+    const card = findCard(db, str(body.cardId, 200));
+    if (!card) fail(404, 'カードが見つかりません');
+    const r = recordCardAttempt(db, user.id, { clientId, card, response: str(body.response, 200) });
+    if (r.duplicate) {
+      if (r.userId !== user.id) fail(409, '重複した送信です');
+      return { correct: r.correct, answer: card.meaning, duplicate: true, stamp: syncStamp(db, user.id, { type: 'card', itemId: card.id, unitId: card.unitId, level: card.level, category: card.type }) };
+    }
+    return { correct: r.correct, answer: card.meaning, stamp: r.stamp };
+  });
+
+  // ---------- スタンプ帳 ----------
+  const CATEGORY_JA = { vocabulary: '語彙問題', grammar: '文法問題', reading: 'Reading', listening: 'Listening', word: '単語カード', phrase: '熟語・表現カード', structure: '構文カード' };
+  route('GET', '/api/stamps', ({ user }) => {
+    const stamps = db.prepare('SELECT item_type, item_id, unit_id, level, category, earned_at FROM stamps WHERE user_id = ? ORDER BY earned_at DESC').all(user.id);
+    const units = db.prepare("SELECT id, title_ja, level FROM units WHERE status = 'published' ORDER BY theme, order_no").all();
+    const levels = LEVELS.map((L) => {
+      const items = [];
+      for (const u of units.filter((x) => x.level === L)) {
+        for (const q of db.prepare(`SELECT q.id, q.skill FROM questions q JOIN activities a ON a.id = q.activity_id AND a.status = 'published'
+          WHERE a.unit_id = ? AND q.status = 'published' ORDER BY a.step, q.position`).all(u.id)) items.push({ type: 'question', id: q.id, category: q.skill, unitId: u.id });
+        for (const c of cardsForUnit(db, u.id)) items.push({ type: 'card', id: c.id, category: c.type, unitId: u.id });
+      }
+      const got = new Set(stamps.filter((s) => s.level === L).map((s) => `${s.item_type}:${s.item_id}`));
+      const has = (it) => got.has(`${it.type}:${it.id}`);
+      const count = items.filter(has).length;
+      const t = titleFor(count, items.length);
+      const categories = Object.keys(CATEGORY_JA).map((k) => {
+        const list = items.filter((it) => it.category === k);
+        return { key: k, label: CATEGORY_JA[k], total: list.length, count: list.filter(has).length };
+      }).filter((c) => c.total);
+      const unitRows = units.filter((x) => x.level === L).map((u) => {
+        const list = items.filter((it) => it.unitId === u.id);
+        return { id: u.id, titleJa: u.title_ja, total: list.length, count: list.filter(has).length };
+      });
+      return { level: L, count, total: items.length, title: t.title, next: t.next, remainingToNext: t.remainingToNext, categories, units: unitRows, grid: items.map(has) };
+    });
+    const recent = stamps.slice(0, 8).map((s) => {
+      let label = s.item_id;
+      if (s.item_type === 'question') label = getQuestion(db, s.item_id)?.stem || label;
+      else label = findCard(db, s.item_id)?.front || label;
+      return { type: s.item_type, category: CATEGORY_JA[s.category] || s.category, level: s.level, label, earnedAt: s.earned_at };
+    });
+    return { rule: { streak: STAMP_STREAK, text: `スクリプトなどの支援を使わずに${STAMP_STREAK}回続けて正解し、そのうち少なくとも1回が別の日なら、理解できた証としてスタンプがもらえます。` },
+      titles: TITLES, levels, recent, total: stamps.length };
   });
 
   route('GET', '/api/rubrics', () => ({ rubrics: getRubrics(db) }));

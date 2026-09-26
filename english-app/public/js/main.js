@@ -66,7 +66,9 @@ function updateTabs(path) {
   const tabs = document.getElementById('tabbar');
   const items = isTeacher()
     ? [['#/t', '教員', '🏫'], ['#/t/content', '教材', '🛠️'], ['#/units', '学習', '📚'], ['#/settings', '設定', '⚙️']]
-    : [['#/home', 'ホーム', '🏠'], ['#/units', '単元', '📚'], ['#/review', '復習', '🔁'], ['#/settings', '設定', '⚙️']];
+    : [['#/home', 'ホーム', '🏠'], ['#/units', '単元', '📚'], ['#/cards', '単語帳', '🔤'], ['#/review', '復習', '🔁'], ['#/stamps', 'スタンプ', '⭐']];
+  // 生徒の「設定」は上部バーの歯車から開く（タブは5つまでにして押しやすくする）
+  document.getElementById('settings-link').hidden = !state.me || isTeacher();
   replace(tabs, state.me ? items.map(([href, label, icon]) => {
     const active = ('#' + path === href) || ('#' + path).startsWith(href + '/') && !(href === '#/t' && path.startsWith('/t/content'));
     return h('a', { href, class: `tab${active ? ' active' : ''}`, 'aria-current': active ? 'page' : null }, h('span', { class: 'tab-icon', 'aria-hidden': 'true' }, icon), h('span', null, label));
@@ -121,6 +123,9 @@ route('/unit/:id', () => import('./views/units.js').then((m) => ({ default: m.un
 route('/unit/:id/step/:step', () => import('./views/activity.js'), { mode: 'focus' });
 route('/review', () => import('./views/review.js'));
 route('/settings', () => import('./views/settings.js'));
+route('/cards', () => import('./views/cards.js'));
+route('/cards/:unitId', () => import('./views/cards.js'));
+route('/stamps', () => import('./views/stamps.js'));
 route('/t', () => import('./views/teacher.js').then((m) => ({ default: m.teacherHomeView })), { teacher: true });
 route('/t/class/:id', () => import('./views/teacher.js').then((m) => ({ default: m.classView })), { teacher: true });
 route('/t/class/:id/items', () => import('./views/teacher.js').then((m) => ({ default: m.itemStatsView })), { teacher: true });

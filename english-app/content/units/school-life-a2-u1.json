@@ -461,6 +461,18 @@
             "I usually walk to school.",
             "Aya often goes to the library.",
             "Our coach is always kind."
+          ],
+          "patterns": [
+            {
+              "pattern": "I usually + 動詞の原形 ...",
+              "meaning": "たいてい〜する",
+              "example": "I usually have lunch with my friends in the classroom."
+            },
+            {
+              "pattern": "never + 動詞",
+              "meaning": "決して〜しない",
+              "example": "My brother never forgets his PE kit."
+            }
           ]
         },
         {
@@ -470,6 +482,18 @@
             "School starts at 8:30.",
             "We practise on Wednesdays.",
             "The school festival is in November."
+          ],
+          "patterns": [
+            {
+              "pattern": "at + 時刻",
+              "meaning": "〜時に",
+              "example": "Our club meeting finishes at 5:45."
+            },
+            {
+              "pattern": "in + 月・季節",
+              "meaning": "〜月に・〜の季節に",
+              "example": "We have our sports day in October."
+            }
           ]
         },
         {
@@ -479,6 +503,18 @@
             "I can play the flute.",
             "I like playing volleyball.",
             "Ken is good at swimming."
+          ],
+          "patterns": [
+            {
+              "pattern": "like + ~ing",
+              "meaning": "〜するのが好きだ",
+              "example": "My friends like watching films after school."
+            },
+            {
+              "pattern": "be good at + ~ing / 名詞",
+              "meaning": "〜するのが得意だ",
+              "example": "Mika is good at drawing pictures."
+            }
           ]
         }
       ],
@@ -542,6 +578,13 @@
             "We practised for sports day every day last week.",
             "Our class won the relay.",
             "I went to the school festival with my sister."
+          ],
+          "patterns": [
+            {
+              "pattern": "主語 + 動詞の過去形 ... yesterday / last ~",
+              "meaning": "（過去に）〜した",
+              "example": "I made a poster for the art club yesterday."
+            }
           ]
         },
         {
@@ -551,6 +594,18 @@
             "I didn't run in the race.",
             "Did you enjoy sports day? — Yes, I did.",
             "The test wasn't difficult."
+          ],
+          "patterns": [
+            {
+              "pattern": "didn't + 動詞の原形",
+              "meaning": "〜しなかった",
+              "example": "We didn't have any homework last weekend."
+            },
+            {
+              "pattern": "Did + 主語 + 動詞の原形 ...?",
+              "meaning": "〜しましたか",
+              "example": "Did your team win the match on Saturday?"
+            }
           ]
         },
         {
@@ -560,6 +615,13 @@
             "We're going to have a concert next Friday.",
             "Rina is going to join the art club.",
             "Are you going to sing at the festival?"
+          ],
+          "patterns": [
+            {
+              "pattern": "be going to + 動詞の原形",
+              "meaning": "〜する予定だ",
+              "example": "I'm going to visit my grandparents this weekend."
+            }
           ]
         }
       ],
@@ -624,6 +686,18 @@
             "You must wear your uniform at school.",
             "Students mustn't use their phones in class.",
             "She must hand in her homework today."
+          ],
+          "patterns": [
+            {
+              "pattern": "must + 動詞の原形",
+              "meaning": "〜しなければならない",
+              "example": "We must be quiet in the library."
+            },
+            {
+              "pattern": "mustn't + 動詞の原形",
+              "meaning": "〜してはいけない",
+              "example": "You mustn't run in the corridor."
+            }
           ]
         },
         {
@@ -633,6 +707,13 @@
             "We have to be at school by 8:20.",
             "Ken has to clean the classroom on Thursdays.",
             "You don't have to bring lunch. There's a canteen."
+          ],
+          "patterns": [
+            {
+              "pattern": "don't have to + 動詞の原形",
+              "meaning": "〜する必要はない",
+              "example": "We don't have to wear our uniform on Saturdays."
+            }
           ]
         },
         {
@@ -642,6 +723,18 @@
             "Our new gym is bigger than the old one.",
             "Science is more interesting than history for me.",
             "Football is the most popular club at our school."
+          ],
+          "patterns": [
+            {
+              "pattern": "比較級 + than ~",
+              "meaning": "〜よりも…だ",
+              "example": "My new bag is lighter than my old one."
+            },
+            {
+              "pattern": "the + 最上級 + in / of ~",
+              "meaning": "〜の中でいちばん…だ",
+              "example": "Emi is the fastest runner in our class."
+            }
           ]
         }
       ],
