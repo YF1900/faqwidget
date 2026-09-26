@@ -1,0 +1,322 @@
+{
+  "id": "diagnostic-v1",
+  "_note": "この診断テストは、Reading・Listening・Writing・Speaking の現在の力を大まかにつかみ、学習する教材のレベル（A2 / B1 / B2）を選ぶための目安です。Cambridge English の公式スコアや合否を予測するものではありません。本文・音声スクリプト・設問はすべてこのアプリのために独自に作成したものです。",
+  "reading": {
+    "instructions": "A2・B1・B2 の3つの短い英文を読み、それぞれ3つの質問に答えましょう。辞書は使わずに、分かるところまでで大丈夫です。難しいと感じたら、最後まで無理に解かなくてもかまいません。",
+    "sections": [
+      {
+        "level": "A2",
+        "passage": {
+          "title": "The Garden Club",
+          "paragraphs": [
+            "Hi! My name is Yui and I am in the garden club at my school. We meet every Tuesday and Friday after school. We grow tomatoes, cucumbers and flowers behind the gym. In summer, we give our vegetables to the school cafeteria. Last month we planted sunflowers, and now they are taller than me! New members are welcome. You don't need any experience, but please bring a hat and some gloves."
+          ]
+        },
+        "questions": [
+          {
+            "id": "dg-r-a2-1",
+            "type": "mcq",
+            "stem": "When does the garden club meet?",
+            "options": ["Every Tuesday and Friday", "Every Monday and Thursday", "Only on Fridays"],
+            "answer": 0,
+            "explanation": "本文に「We meet every Tuesday and Friday after school.（毎週火曜日と金曜日の放課後に集まる）」とあります。月曜・木曜は出てきません。金曜日だけではなく火曜日にも集まるので「Only on Fridays」も誤りです。",
+            "evidence": "We meet every Tuesday and Friday after school.",
+            "focus": "specific-info",
+            "difficulty": 1
+          },
+          {
+            "id": "dg-r-a2-2",
+            "type": "mcq",
+            "stem": "What happens to the vegetables in summer?",
+            "options": ["The members take them home.", "They go to the school cafeteria.", "The club sells them at a festival."],
+            "answer": 1,
+            "explanation": "「In summer, we give our vegetables to the school cafeteria.（夏には野菜を学校の食堂にあげる）」とあります。部員が家に持ち帰る、お祭りで売る、という内容は本文にありません。",
+            "evidence": "In summer, we give our vegetables to the school cafeteria.",
+            "focus": "specific-info",
+            "difficulty": 1
+          },
+          {
+            "id": "dg-r-a2-3",
+            "type": "mcq",
+            "stem": "What should new members bring?",
+            "options": ["Some gardening experience", "A hat and some gloves", "Their own vegetables"],
+            "answer": 1,
+            "explanation": "「You don't need any experience, but please bring a hat and some gloves.」とあり、持ってくるのは帽子と手袋です。経験は「必要ない（don't need）」と書かれているので誤り。自分の野菜を持ってくるという記述はありません。",
+            "evidence": "please bring a hat and some gloves",
+            "focus": "specific-info",
+            "difficulty": 2
+          }
+        ]
+      },
+      {
+        "level": "B1",
+        "passage": {
+          "title": "Our Phone-Free Weekend",
+          "paragraphs": [
+            "Last month, our class tried an experiment called 'Phone-Free Weekend'. The rules were simple: from Friday evening to Sunday evening, we had to leave our smartphones in a drawer at home. We could only use them to call our families in an emergency.",
+            "At first, many of us were worried. Haruto said he would be bored, and Mika thought she would miss messages from her friends. However, most students found the weekend easier than they had expected. Haruto went cycling along the river, and Mika finally finished a novel she had started months ago.",
+            "Not everyone enjoyed it, though. Sota admitted that he opened the drawer several times on Saturday just to look at his phone, although he never turned it on. Our teacher now wants to try the experiment again next term, but this time for a whole week."
+          ]
+        },
+        "questions": [
+          {
+            "id": "dg-r-b1-1",
+            "type": "mcq",
+            "stem": "During the experiment, students were allowed to use their phones to",
+            "options": ["send messages to friends.", "call their families in an emergency.", "check the weather.", "take photos when they went out."],
+            "answer": 1,
+            "explanation": "「We could only use them to call our families in an emergency.」とあり、使ってよいのは緊急時に家族へ電話するときだけです。友達へのメッセージ、天気の確認、写真撮影は許されていません。only（〜だけ）がポイントです。",
+            "evidence": "We could only use them to call our families in an emergency.",
+            "focus": "specific-info",
+            "difficulty": 1
+          },
+          {
+            "id": "dg-r-b1-2",
+            "type": "mcq",
+            "stem": "How did most students feel about the weekend in the end?",
+            "options": ["It was more difficult than they had thought.", "It was easier than they had thought.", "It was boring for everyone.", "It was much too short."],
+            "answer": 1,
+            "explanation": "「However, most students found the weekend easier than they had expected.（思っていたより簡単だった）」とあります。最初は心配していた（worried）が、However で結果が逆だったと示しています。「退屈だった」は Haruto が事前に心配していたことで、実際はサイクリングを楽しんでいます。短すぎたという記述はありません。",
+            "evidence": "most students found the weekend easier than they had expected",
+            "focus": "main-idea",
+            "difficulty": 2
+          },
+          {
+            "id": "dg-r-b1-3",
+            "type": "mcq",
+            "stem": "What does the writer suggest about Sota?",
+            "options": ["He broke the rules and used his phone.", "He found it hard to stop thinking about his phone.", "He enjoyed the weekend more than anyone else.", "He asked the teacher to try it for a whole week."],
+            "answer": 1,
+            "explanation": "Sota は土曜日に何度も引き出しを開けてスマホを見たが、電源は一度も入れなかったとあります。つまりルールは破っていないものの、スマホのことが頭から離れなかったと読み取れます。「Not everyone enjoyed it」で始まる段落なので、一番楽しんだわけではありません。1週間に延ばしたいのは先生です。",
+            "evidence": "Sota admitted that he opened the drawer several times on Saturday just to look at his phone, although he never turned it on.",
+            "focus": "inference",
+            "difficulty": 3
+          }
+        ]
+      },
+      {
+        "level": "B2",
+        "passage": {
+          "title": "Is Our Town Ready for Tourists?",
+          "paragraphs": [
+            "When a famous film was shot in my small hometown two years ago, nobody expected what would happen next. Almost overnight, the quiet streets near the station filled with visitors taking photos of the places they had seen on screen. Local cafés, which had struggled for years, suddenly had queues outside.",
+            "Many residents welcomed the boost to the economy, and I understand why. My uncle, who runs a small guesthouse, says business has never been better. Yet I can't help feeling that something has been lost. The bench where my grandfather used to sit and chat with neighbours is now almost always occupied by tourists waiting for the perfect selfie.",
+            "I am not suggesting that we should close our doors to visitors. Rather, I believe the town council needs to think more carefully about how tourism is managed. Limiting the number of tour buses at weekends, for instance, would be a sensible first step. After all, if the town loses the very character that attracted people in the first place, the visitors will eventually stop coming too."
+          ]
+        },
+        "questions": [
+          {
+            "id": "dg-r-b2-1",
+            "type": "mcq",
+            "stem": "What is the writer's overall attitude towards tourism in the town?",
+            "options": ["It should be stopped completely.", "It brings benefits, but it needs to be better controlled.", "It has had little real effect on the town.", "The council is already managing it very well."],
+            "answer": 1,
+            "explanation": "筆者は経済効果を認めつつ（I understand why）、「観光客を締め出すつもりはない」と述べたうえで、Rather（むしろ）以下で「観光のあり方をもっと慎重に考えるべき」と主張しています。完全にやめるべきとは言っておらず、町への影響は大きく、議会がうまく管理しているとも言っていません。",
+            "evidence": "Rather, I believe the town council needs to think more carefully about how tourism is managed.",
+            "focus": "attitude",
+            "difficulty": 2
+          },
+          {
+            "id": "dg-r-b2-2",
+            "type": "mcq",
+            "stem": "Why does the writer mention the bench?",
+            "options": ["To show that the town needs more places to sit", "To give an example of how everyday local life has changed", "To explain why the writer's grandfather moved away", "To recommend a popular spot for taking photos"],
+            "answer": 1,
+            "explanation": "直前の「something has been lost（何かが失われた）」の具体例として、祖父が近所の人と話していたベンチが今は観光客に占められていることを挙げています。ベンチの数や写真スポットの紹介が目的ではなく、祖父が引っ越したという記述もありません。",
+            "evidence": "The bench where my grandfather used to sit and chat with neighbours is now almost always occupied by tourists waiting for the perfect selfie.",
+            "focus": "inference",
+            "difficulty": 3
+          },
+          {
+            "id": "dg-r-b2-3",
+            "type": "mcq",
+            "stem": "What does the writer imply in the final sentence?",
+            "options": ["Tourists will always come because of the film.", "Protecting the town's character is also important for tourism itself.", "The town should look for a new film to attract visitors.", "Visitors have already started to lose interest in the town."],
+            "answer": 1,
+            "explanation": "「人々を引きつけた町らしさ（character）を失えば、観光客もいずれ来なくなる」という条件の文です。つまり町の個性を守ることが観光のためにも必要だ、という含みがあります。観光客が「すでに」減っているとは書かれておらず（eventually は将来の話）、新しい映画の話も出てきません。",
+            "evidence": "if the town loses the very character that attracted people in the first place, the visitors will eventually stop coming too",
+            "focus": "inference",
+            "difficulty": 3
+          }
+        ]
+      }
+    ]
+  },
+  "listening": {
+    "instructions": "A2・B1・B2 の3つの短い会話を聞き、それぞれ3つの質問に答えましょう。音声は2回まで再生できます。スクリプトは答え合わせのあとで確認しましょう。",
+    "sections": [
+      {
+        "level": "A2",
+        "setting": "Amy と Ken が、週末に一緒に買い物に行く約束をしています。",
+        "script": [
+          { "speaker": "Amy", "voice": "female", "text": "Hi Ken. Do you want to go to the new sports shop with me on Saturday?" },
+          { "speaker": "Ken", "voice": "male", "text": "Sure! But I have football practice in the morning. Can we go in the afternoon?" },
+          { "speaker": "Amy", "voice": "female", "text": "OK. Let's meet at two o'clock at the station." },
+          { "speaker": "Ken", "voice": "male", "text": "Great. I need new running shoes. My old ones are too small." },
+          { "speaker": "Amy", "voice": "female", "text": "And I want to buy a bag for my tennis racket." }
+        ],
+        "questions": [
+          {
+            "id": "dg-l-a2-1",
+            "type": "mcq",
+            "stem": "When will they go to the sports shop?",
+            "options": ["On Saturday morning", "On Saturday afternoon", "On Sunday afternoon"],
+            "answer": 1,
+            "explanation": "Amy は土曜日（on Saturday）に誘い、Ken は午前中にサッカーの練習があるので「Can we go in the afternoon?」と午後を提案し、Amy も OK と答えています。土曜日の午前は練習、日曜日の話は出てきません。",
+            "evidence": "But I have football practice in the morning. Can we go in the afternoon?",
+            "focus": "specific-info",
+            "difficulty": 2
+          },
+          {
+            "id": "dg-l-a2-2",
+            "type": "mcq",
+            "stem": "Where will they meet?",
+            "options": ["At the station", "At the sports shop", "At the football ground"],
+            "answer": 0,
+            "explanation": "「Let's meet at two o'clock at the station.」とあり、待ち合わせは駅です。スポーツ店は行き先、サッカー場は Ken の練習の話から連想させる誤りの選択肢です。",
+            "evidence": "Let's meet at two o'clock at the station.",
+            "focus": "specific-info",
+            "difficulty": 1
+          },
+          {
+            "id": "dg-l-a2-3",
+            "type": "mcq",
+            "stem": "What does Ken want to buy?",
+            "options": ["A bag for a tennis racket", "Running shoes", "A football"],
+            "answer": 1,
+            "explanation": "Ken は「I need new running shoes.（新しいランニングシューズが必要）」と言っています。テニスラケット用のバッグを買いたいのは Amy です。サッカーボールの話はありません。",
+            "evidence": "Great. I need new running shoes. My old ones are too small.",
+            "focus": "specific-info",
+            "difficulty": 1
+          }
+        ]
+      },
+      {
+        "level": "B1",
+        "setting": "Emma と Daiki が、地域の夏祭りでのボランティアについて話しています。",
+        "script": [
+          { "speaker": "Emma", "voice": "female", "text": "Daiki, are you going to volunteer at the summer festival this year?" },
+          { "speaker": "Daiki", "voice": "male", "text": "I'm thinking about it. Last year I helped at the drinks stall, but it was so hot that I nearly fainted. This year I'd prefer something indoors." },
+          { "speaker": "Emma", "voice": "female", "text": "Then you should join the information desk at the community centre. It has air conditioning, and you can practise your English with visitors from abroad." },
+          { "speaker": "Daiki", "voice": "male", "text": "That sounds good. Do I need to apply?" },
+          { "speaker": "Emma", "voice": "female", "text": "Yes, the deadline is this Friday. You just fill in a form online. I've already signed up for the Saturday shift." },
+          { "speaker": "Daiki", "voice": "male", "text": "Then I'll choose Saturday too. It'll be more fun if we work together." }
+        ],
+        "questions": [
+          {
+            "id": "dg-l-b1-1",
+            "type": "mcq",
+            "stem": "Why doesn't Daiki want to work at the drinks stall again?",
+            "options": ["It was too busy.", "It was too hot.", "He didn't like the drinks.", "He worked there alone."],
+            "answer": 1,
+            "explanation": "Daiki は「it was so hot that I nearly fainted（暑くて倒れそうだった）」と言い、今年は屋内の仕事がいいと話しています。忙しさ、飲み物の好み、一人で働いたことには触れていません。",
+            "evidence": "Last year I helped at the drinks stall, but it was so hot that I nearly fainted.",
+            "focus": "specific-info",
+            "difficulty": 1
+          },
+          {
+            "id": "dg-l-b1-2",
+            "type": "mcq",
+            "stem": "According to Emma, what is one good thing about the information desk?",
+            "options": ["It is near the station.", "Volunteers get free food.", "Daiki can speak English with visitors from other countries.", "The shifts are shorter than at the stalls."],
+            "answer": 2,
+            "explanation": "Emma は案内所の良い点として「エアコンがある」「海外からの訪問者と英語を練習できる」の2つを挙げています。駅に近い、無料の食事、シフトが短いという話は出てきません。",
+            "evidence": "It has air conditioning, and you can practise your English with visitors from abroad.",
+            "focus": "specific-info",
+            "difficulty": 2
+          },
+          {
+            "id": "dg-l-b1-3",
+            "type": "mcq",
+            "stem": "What will Daiki probably do?",
+            "options": ["Apply after the deadline", "Work on the Saturday shift with Emma", "Help at the drinks stall on Sunday", "Ask a teacher for a paper form"],
+            "answer": 1,
+            "explanation": "Emma が土曜日のシフトに申し込んだと聞いて、Daiki は「Then I'll choose Saturday too.（じゃあ僕も土曜日にする）」と答えています。締め切りは金曜日で、申し込みはオンラインのフォームです。飲み物の屋台は今年は避けたいと言っていました。",
+            "evidence": "Then I'll choose Saturday too. It'll be more fun if we work together.",
+            "focus": "inference",
+            "difficulty": 2
+          }
+        ]
+      },
+      {
+        "level": "B2",
+        "setting": "Sophie と Ryo が、学校で宿題に AI ツールを使えるようになることについて意見を交わしています。",
+        "script": [
+          { "speaker": "Sophie", "voice": "female", "text": "Ryo, did you hear that the school is going to let us use AI tools for some homework next term?" },
+          { "speaker": "Ryo", "voice": "male", "text": "I did. Honestly, I'm not sure it's such a great idea. Half the class will just copy whatever the chatbot says." },
+          { "speaker": "Sophie", "voice": "female", "text": "Maybe, but they're going to use it anyway, whether the school allows it or not. At least this way the teachers can show us how to use it properly." },
+          { "speaker": "Ryo", "voice": "male", "text": "I suppose that's true. But what worries me is that we'll stop thinking for ourselves. When I wrote my history essay last week, the hardest part was organising my ideas, and that's exactly what taught me the most." },
+          { "speaker": "Sophie", "voice": "female", "text": "That's a fair point. Still, I found it really useful for checking my grammar in English. It explained my mistakes more clearly than the textbook does." },
+          { "speaker": "Ryo", "voice": "male", "text": "Well, if it's used for feedback rather than writing the whole thing, I could probably live with that." }
+        ],
+        "questions": [
+          {
+            "id": "dg-l-b2-1",
+            "type": "mcq",
+            "stem": "How does Ryo react when he first hears the news?",
+            "options": ["He is excited about it.", "He has doubts about it.", "He is not interested in it.", "He thinks the teachers will cancel it."],
+            "answer": 1,
+            "explanation": "「I'm not sure it's such a great idea.（あまり良い考えとは思えない）」と言い、クラスの半分は AI の答えを写すだけだろうと心配しています。喜んでいるわけでも無関心なわけでもありません。先生が取りやめるとも言っていません。",
+            "evidence": "Honestly, I'm not sure it's such a great idea.",
+            "focus": "attitude",
+            "difficulty": 1
+          },
+          {
+            "id": "dg-l-b2-2",
+            "type": "mcq",
+            "stem": "Why does Sophie think the school's decision makes sense?",
+            "options": ["AI tools never make mistakes.", "Students will use AI anyway, so it is better to learn to use it well.", "Teachers do not have enough time to mark homework.", "It will make homework much shorter."],
+            "answer": 1,
+            "explanation": "Sophie は「学校が許可してもしなくても、みんなどうせ使う」と言い、「At least this way（少なくともこの方法なら）」先生が正しい使い方を教えられる、と理由を述べています。AI が間違えない、先生が忙しい、宿題が短くなるという話はしていません。",
+            "evidence": "At least this way the teachers can show us how to use it properly.",
+            "focus": "inference",
+            "difficulty": 2
+          },
+          {
+            "id": "dg-l-b2-3",
+            "type": "mcq",
+            "stem": "How does Ryo feel at the end of the conversation?",
+            "options": ["He is still completely against the idea.", "He would accept it under certain conditions.", "He has changed his mind and is now enthusiastic.", "He wants Sophie to check his history essay."],
+            "answer": 1,
+            "explanation": "「if it's used for feedback rather than writing the whole thing（全部書かせるのではなく、フィードバックに使うなら）」という条件つきで「I could probably live with that（まあ受け入れられる）」と言っています。完全反対のままでも、熱心な賛成に変わったわけでもありません。live with は「（不満があっても）受け入れる」という意味です。",
+            "evidence": "Well, if it's used for feedback rather than writing the whole thing, I could probably live with that.",
+            "focus": "attitude",
+            "difficulty": 3
+          }
+        ]
+      }
+    ]
+  },
+  "writing": {
+    "instructions": "次の英語の課題文を読んで、約8分で英文を書きましょう。辞書は使わず、今の自分の力で書いてください。書き終わったら、下の can-do リストを読み、自分に当てはまるものにチェックを入れましょう（採点はしません）。",
+    "promptEn": "Write about your school life. What do you do after school? What do you enjoy, and what is difficult for you? Why?",
+    "promptJa": "あなたの学校生活について英語で書きましょう。放課後に何をしていますか。何が楽しく、何が大変ですか。それはなぜですか。",
+    "suggestedMinutes": 8,
+    "canDo": [
+      { "id": "dg-w-a2-1", "level": "A2", "text": "自分の学校生活や放課後の活動について、簡単な文をいくつか書ける。" },
+      { "id": "dg-w-a2-2", "level": "A2", "text": "and・but・because などを使って、短い文をつなげられる。" },
+      { "id": "dg-w-a2-3", "level": "A2", "text": "好きなことや楽しいことを、簡単な理由とともに書ける。" },
+      { "id": "dg-w-b1-1", "level": "B1", "text": "学校生活について、楽しいことと大変なことをまとまった文章で書ける。" },
+      { "id": "dg-w-b1-2", "level": "B1", "text": "自分の気持ちや意見を、具体例や経験を挙げて説明できる。" },
+      { "id": "dg-w-b1-3", "level": "B1", "text": "過去・現在・未来の時制を使い分けて、出来事の流れが伝わるように書ける。" },
+      { "id": "dg-w-b2-1", "level": "B2", "text": "however・although・as a result などを使って、論理的につながった段落を書ける。" },
+      { "id": "dg-w-b2-2", "level": "B2", "text": "物事の良い面と難しい面を比べ、自分の考えを理由とともに明確に述べられる。" },
+      { "id": "dg-w-b2-3", "level": "B2", "text": "同じ語をくり返さず、幅広い語彙や文の形を使い分けて書ける。" }
+    ]
+  },
+  "speaking": {
+    "instructions": "次の質問に英語で答えてみましょう。15秒ほど考えてから、30〜60秒で話します（録音できる場合は録音して聞き直しましょう）。話し終わったら、下の can-do リストを読み、自分に当てはまるものにチェックを入れましょう（採点はしません）。",
+    "practiceQuestion": "Tell me about a club or activity you enjoy. Why do you like it?",
+    "canDo": [
+      { "id": "dg-s-a2-1", "level": "A2", "text": "名前・学校・趣味など、自分についての簡単な質問に短く答えられる。" },
+      { "id": "dg-s-a2-2", "level": "A2", "text": "好きな部活動や活動について、簡単な語句や文で話せる。" },
+      { "id": "dg-s-a2-3", "level": "A2", "text": "相手の言ったことが分からないとき、「Sorry, can you say that again?」などと聞き返せる。" },
+      { "id": "dg-s-b1-1", "level": "B1", "text": "自分の経験や好きなことについて、理由を添えて30秒以上話し続けられる。" },
+      { "id": "dg-s-b1-2", "level": "B1", "text": "身近な話題について、相手に質問したり意見を返したりして会話を続けられる。" },
+      { "id": "dg-s-b1-3", "level": "B1", "text": "言いたい単語が出てこないとき、別の言い方で説明して伝えられる。" },
+      { "id": "dg-s-b2-1", "level": "B2", "text": "身近な話題や社会的な話題について、賛成・反対の理由を挙げて自分の意見を述べられる。" },
+      { "id": "dg-s-b2-2", "level": "B2", "text": "相手の意見に同意したり、丁寧に反論したりしながら、話し合いを進められる。" },
+      { "id": "dg-s-b2-3", "level": "B2", "text": "大きく止まることなく、自然な速さで1分程度まとまった話ができる。" }
+    ]
+  }
+}

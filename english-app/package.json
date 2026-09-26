@@ -1,0 +1,18 @@
+{
+  "name": "english-steps",
+  "version": "0.1.0",
+  "private": true,
+  "description": "高校生向け レベル別英語学習アプリ（ケンブリッジ英語検定対応の自主教材）",
+  "type": "module",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server/index.js",
+    "dev": "NODE_ENV=development node --disable-warning=ExperimentalWarning server/index.js",
+    "create-user": "node --disable-warning=ExperimentalWarning scripts/create-user.js",
+    "seed-demo": "node --disable-warning=ExperimentalWarning scripts/seed-demo.js",
+    "purge-inactive": "node --disable-warning=ExperimentalWarning scripts/purge-inactive.js",
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.js",
+    "e2e": "node --disable-warning=ExperimentalWarning scripts/e2e-iphone.mjs",
+    "lint": "node scripts/lint.js"
+  }
+}

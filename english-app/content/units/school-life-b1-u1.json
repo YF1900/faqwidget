@@ -1,0 +1,640 @@
+{
+  "id": "school-life-b1-u1",
+  "theme": "school-life",
+  "themeLabel": "学校生活・部活動",
+  "level": "B1",
+  "exam": "B1 Preliminary for Schools",
+  "order": 1,
+  "title": "Finding Your Place: Joining a Club",
+  "titleJa": "自分の居場所を見つける：部活動に入る",
+  "estimatedMinutes": 60,
+  "objectives": [
+    { "id": "b1u1-obj-r", "skill": "reading", "text": "部活動の体験を書いたブログ記事を読んで、全体の主旨・詳細・書き手の意見や気持ちを読み取れる。" },
+    { "id": "b1u1-obj-l", "skill": "listening", "text": "部活動についてのインタビューを聞いて、具体的な情報や話し手の意見・理由を聞き取れる。" },
+    { "id": "b1u1-obj-w", "skill": "writing", "text": "学校の英語雑誌に、自分の部活動や活動について経験・学んだこと・おすすめの理由を含む記事（約100語）を書ける。" },
+    { "id": "b1u1-obj-s", "skill": "speaking", "text": "自分の部活動について説明し、部活動と勉強の両立などについて理由を挙げて意見を述べ合える。" },
+    { "id": "b1u1-obj-v", "skill": "vocabulary", "text": "join / get on with / be worth it / give up など、部活動の経験を語るための語彙・表現を使える。" },
+    { "id": "b1u1-obj-g", "skill": "grammar", "text": "経験を語るときに現在完了と過去形を使い分け、because / so / that's why で理由や結果を説明できる。" }
+  ],
+  "activities": [
+    {
+      "id": "school-life-b1-u1-intro",
+      "step": 1,
+      "kind": "intro",
+      "skill": "vocabulary",
+      "title": "Intro: 部活動の経験を語る語彙",
+      "instructions": "この単元の目標を確認しましょう。次に、部活動の経験や意見を話すときに役立つ語彙と表現を例文と一緒に覚え、最後に語彙チェックに答えましょう。",
+      "minutes": 7,
+      "vocabulary": [
+        { "term": "join a club", "meaning": "部活動に入る（入部する）", "example": "I joined the drama club in May." },
+        { "term": "belong to ~", "meaning": "〜に所属している", "example": "Mio belongs to the basketball team." },
+        { "term": "member", "meaning": "部員・メンバー", "example": "Our club has twenty members." },
+        { "term": "rehearsal", "meaning": "（劇・演奏などの）リハーサル・通し稽古", "example": "We have a rehearsal every Friday before the concert." },
+        { "term": "practise", "meaning": "練習する（イギリス英語の動詞の綴り）", "example": "We practise three times a week." },
+        { "term": "application form", "meaning": "申込書・入部届", "example": "Please fill in the application form and give it to your teacher." },
+        { "term": "get on (well) with ~", "meaning": "〜と仲良くやっていく", "example": "I get on well with the older members." },
+        { "term": "give up", "meaning": "（途中で）やめる・あきらめる", "example": "Don't give up just because it's difficult at first." },
+        { "term": "confidence", "meaning": "自信", "example": "Speaking on stage gave me more confidence." },
+        { "term": "organised", "meaning": "（計画的に）きちんとした・整理された", "example": "You need to be organised if you want to do club activities and study." },
+        { "term": "balance A and B", "meaning": "AとBを両立させる", "example": "It isn't easy to balance club activities and homework." },
+        { "term": "be worth it", "meaning": "（苦労などに）見合う価値がある", "example": "The practice was hard, but it was worth it." },
+        { "term": "audience", "meaning": "観客・聴衆", "example": "The audience clapped at the end of the play." },
+        { "term": "encourage", "meaning": "励ます・（〜するよう）勧める", "example": "My brother encouraged me to try something new." }
+      ],
+      "questions": [
+        {
+          "id": "b1u1-i1",
+          "type": "mcq",
+          "stem": "I want to ______ the drama club. Where can I get an application form?",
+          "options": ["join", "belong", "enter"],
+          "answer": 0,
+          "explanation": "「部活動に入る」は join a club が自然です。belong は「所属している」という状態を表し、belong to ~ の形で使うので want to belong the club は誤りです。enter は「（建物・部屋に）入る」の意味で、「入部する」の意味では普通使いません。",
+          "focus": "vocabulary",
+          "difficulty": 1,
+          "objectiveId": "b1u1-obj-v"
+        },
+        {
+          "id": "b1u1-i2",
+          "type": "mcq",
+          "stem": "Playing in the band takes a lot of time, but it's ______ it.",
+          "options": ["worth", "worthy", "value"],
+          "answer": 0,
+          "explanation": "be worth it で「それだけの価値がある」という決まった表現です。worthy は worthy of ~ の形で使い、it を直接続けられません。value は名詞・動詞で、it's value it とは言えません。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b1u1-obj-v"
+        },
+        {
+          "id": "b1u1-i3",
+          "type": "mcq",
+          "stem": "Kenji is popular because he ______ well with everyone in the club.",
+          "options": ["gets on", "goes on", "takes on"],
+          "answer": 0,
+          "explanation": "get on (well) with ~ で「〜と仲良くやっていく」という意味です。go on は「続く・続ける」、take on は「（仕事などを）引き受ける」で、with everyone とつながって「仲が良い」の意味にはなりません。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b1u1-obj-v"
+        },
+        {
+          "id": "b1u1-i4",
+          "type": "mcq",
+          "stem": "She had to ______ swimming because she hurt her knee.",
+          "options": ["give up", "give out", "give away"],
+          "answer": 0,
+          "explanation": "give up は「（続けていたことを）やめる」という意味で、けがで水泳をやめた、という文脈に合います。give out は「配る」、give away は「（無料で）あげる・手放す」の意味なので合いません。",
+          "focus": "vocabulary",
+          "difficulty": 1,
+          "objectiveId": "b1u1-obj-v"
+        }
+      ]
+    },
+    {
+      "id": "school-life-b1-u1-explain",
+      "step": 2,
+      "kind": "explain",
+      "skill": "grammar",
+      "title": "Explain: 経験の語り方と理由の述べ方",
+      "instructions": "部活動の経験を話すときに大切な「現在完了と過去形の使い分け」と「理由・結果・意見の表し方」を確認し、確認問題に答えましょう。",
+      "minutes": 8,
+      "points": [
+        {
+          "heading": "過去形：いつのことかがはっきりしている出来事",
+          "text": "last April / two years ago / in May / when I was in junior high など、過去の特定の時を表す語句があるときは過去形を使います。これらの語句と現在完了（have + 過去分詞）を一緒に使うことはできません。",
+          "examples": ["I joined the drama club last April.", "We performed a play at the school festival last month."]
+        },
+        {
+          "heading": "現在完了：今につながる経験・継続・結果",
+          "text": "「今までに〜したことがある（経験）」「〜からずっと〜している（継続）」「〜したので今〜だ（結果）」を表すときは現在完了を使います。継続では since + 起点（since April）、for + 期間（for two years）を使い分けましょう。",
+          "examples": ["I've been in the club since April.", "I've never performed on stage before.", "Have you ever thought about quitting?"]
+        },
+        {
+          "heading": "理由と結果：because / so / that's why",
+          "text": "because の後ろには「理由」、so の後ろには「結果」がきます。that's why は前の文を受けて「だから〜なのです」と結果を述べます。Because I like music. のように because の節だけで1文にするのは書き言葉では避けましょう。",
+          "examples": ["I joined the band because I love music.", "Practice finishes at six, so I do my homework before dinner.", "The members are really kind. That's why I never gave up."]
+        },
+        {
+          "heading": "意見を述べる表現",
+          "text": "意見を言うときは I think ... / In my opinion, ... / I'm not sure that ... などで始め、必ず理由を続けましょう。相手に賛成・反対するときは I agree / I don't really agree + because ... が便利です。",
+          "examples": ["In my opinion, clubs are a great way to make friends.", "I don't really agree, because some students need more time to study."]
+        }
+      ],
+      "questions": [
+        {
+          "id": "b1u1-e1",
+          "type": "mcq",
+          "stem": "I ______ the tennis club two years ago.",
+          "options": ["joined", "have joined", "have been joining"],
+          "answer": 0,
+          "explanation": "two years ago は過去の特定の時を表すので過去形 joined を使います。have joined / have been joining は現在完了で、ago のような過去の時点を表す語句と一緒には使えません。",
+          "focus": "grammar",
+          "difficulty": 1,
+          "objectiveId": "b1u1-obj-g"
+        },
+        {
+          "id": "b1u1-e2",
+          "type": "text",
+          "stem": "Fill in the gap with ONE word: I have been a member of the brass band ______ last April.",
+          "accept": ["since"],
+          "explanation": "last April は「始まった時点（起点）」なので since を使います。for は for two years のように「期間の長さ」に使います。現在完了の継続用法では since と for の使い分けに注意しましょう。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "b1u1-obj-g"
+        },
+        {
+          "id": "b1u1-e3",
+          "type": "mcq",
+          "stem": "I was very tired after practice, ______ I went to bed early.",
+          "options": ["so", "because", "but"],
+          "answer": 0,
+          "explanation": "「疲れていた」→「だから早く寝た」という結果を表すので so が正解です。because を入れると「早く寝たので疲れていた」と因果が逆になります。but は対立を表すので、疲れていた→早く寝た、という自然な流れに合いません。",
+          "focus": "grammar",
+          "difficulty": 1,
+          "objectiveId": "b1u1-obj-g"
+        }
+      ]
+    },
+    {
+      "id": "school-life-b1-u1-reading",
+      "step": 3,
+      "kind": "reading",
+      "skill": "reading",
+      "title": "Reading: 演劇部に入った高校生のブログ",
+      "instructions": "高校1年生の Haruka が書いたブログ記事を読み、質問に答えましょう。B1 Preliminary の Reading Part 3（長めの文章と4択問題）の形式を参考にした独自問題です。書き手の気持ちや意見を表す部分にも注意して読みましょう。",
+      "minutes": 10,
+      "passage": {
+        "title": "Why I Almost Quit the Drama Club – a blog post by Haruka",
+        "paragraphs": [
+          "When I started high school last April, I didn't plan to join any club. I had always been shy, and I thought I should spend my free time studying. My older brother told me that high school was the best time to try something new, but I didn't listen to him at first.",
+          "Then one day in May, my friend Mio asked me to come and watch a drama club rehearsal. I only went because she said there would be free snacks! However, when I saw the members laughing and working together on stage, I felt a little jealous. The next week, I filled in an application form.",
+          "The first two months were hard. We practised three times a week until six o'clock, and I often got home too tired to do my homework. My marks in maths went down, and I seriously thought about giving up. I talked to our club leader, Kenji, and he gave me some useful advice. He told me to review vocabulary on the train and to do my homework before dinner, not after it.",
+          "Since then, I've learnt how to plan my time much better. I've also made friends with students from other classes and years, which I had never done before. Last month we performed a short play at the school festival. I only had a small part, but I didn't forget a single line, and the audience clapped for a long time. It was the best moment of my life.",
+          "So, should you join a club? I think you should, but choose one that you really enjoy, not just one that your friends have chosen. Clubs take a lot of time, so you need to be organised. But what you get back – confidence, friends and great memories – is definitely worth it."
+        ]
+      },
+      "questions": [
+        {
+          "id": "b1u1-r1",
+          "type": "mcq",
+          "stem": "What is the blog post mainly about?",
+          "options": [
+            "how the writer became the best actor in the drama club",
+            "how joining a club changed the writer, even though it was difficult at first",
+            "why first-year students should not join clubs",
+            "how to prepare for university entrance exams"
+          ],
+          "answer": 1,
+          "explanation": "記事全体は「入部をためらった→入部して大変だった→時間の使い方や友人を得た→おすすめする」という流れで、入部による変化を述べています。根拠の文のように「それ以来、時間の計画の立て方を学んだ」と変化が書かれています。A は small part（小さな役）だったとあるので誤り。C は最後の段落で I think you should（入るべき）と逆のことを言っています。D の受験勉強は主な話題ではありません。",
+          "evidence": "Since then, I've learnt how to plan my time much better.",
+          "focus": "main-idea",
+          "difficulty": 1,
+          "objectiveId": "b1u1-obj-r"
+        },
+        {
+          "id": "b1u1-r2",
+          "type": "mcq",
+          "stem": "Why did Haruka first go to watch the drama club rehearsal?",
+          "options": [
+            "Her brother told her to join the drama club.",
+            "She had always wanted to be an actor.",
+            "Her friend invited her and said there would be free snacks.",
+            "A teacher asked her to help the club."
+          ],
+          "answer": 2,
+          "explanation": "第2段落で友人の Mio に誘われ、「無料のお菓子があると言われたから行っただけ」と書かれているので C が正解です。A の兄は「何か新しいことに挑戦して」と言っただけで、演劇部を勧めたわけではなく、しかも最初は聞かなかったとあります。B は第1段落で内気だったとあり、俳優志望の記述はありません。D の先生は登場しません。",
+          "evidence": "I only went because she said there would be free snacks!",
+          "focus": "specific-info",
+          "difficulty": 1,
+          "objectiveId": "b1u1-obj-r"
+        },
+        {
+          "id": "b1u1-r3",
+          "type": "mcq",
+          "stem": "What can we understand about Haruka's problem in her first two months in the club?",
+          "options": [
+            "She was not good at remembering her lines.",
+            "Club practice left her without enough energy for studying.",
+            "She did not get on well with Kenji.",
+            "Her journey to school was too long."
+          ],
+          "answer": 1,
+          "explanation": "第3段落に「疲れすぎて宿題ができないことがよくあった」「数学の成績が下がった」とあり、部活で勉強する体力が残らなかったことが推測できるので B が正解です。A は第4段落で「一つもせりふを忘れなかった」とあり逆です。C の Kenji は役に立つアドバイスをくれた人で、仲が悪いとは書かれていません。D の電車は単語を復習する場所として出てくるだけで、通学時間が問題だとは書かれていません。",
+          "evidence": "I often got home too tired to do my homework",
+          "focus": "inference",
+          "difficulty": 2,
+          "objectiveId": "b1u1-obj-r"
+        },
+        {
+          "id": "b1u1-r4",
+          "type": "mcq",
+          "stem": "In paragraph 2, what does 'jealous' mean?",
+          "options": [
+            "wanting to have what other people have",
+            "frightened of doing something new",
+            "bored with something",
+            "proud of something you have done"
+          ],
+          "answer": 0,
+          "explanation": "部員たちが舞台で笑いながら協力しているのを見て「少し jealous に感じた」→その翌週に入部届を出しています。つまり「自分もあの仲間に入りたい（うらやましい）」という気持ちなので A が正解です。B「怖い」なら入部しないはずで流れに合いません。C「退屈」、D「誇らしい」も、他人の楽しそうな様子を見た直後の気持ちとして文脈に合いません。",
+          "evidence": "I felt a little jealous",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b1u1-obj-r"
+        },
+        {
+          "id": "b1u1-r5",
+          "type": "mcq",
+          "stem": "In paragraph 4, what does 'which' refer to in 'which I had never done before'?",
+          "options": [
+            "planning her time better",
+            "making friends with students from other classes and years",
+            "performing a play at the school festival",
+            "remembering all her lines"
+          ],
+          "answer": 1,
+          "explanation": "関係代名詞 which（コンマ付き）は直前の内容を受けます。ここでは直前の「他のクラスや学年の生徒と友だちになったこと」を指し、「それは以前には一度もしたことがなかった」という意味なので B が正解です。A は前の文の内容、C・D は後の文の内容で、which の位置からは指せません。",
+          "evidence": "I've also made friends with students from other classes and years, which I had never done before.",
+          "focus": "reference",
+          "difficulty": 2,
+          "objectiveId": "b1u1-obj-r"
+        },
+        {
+          "id": "b1u1-r6",
+          "type": "mcq",
+          "stem": "What is Haruka's opinion about joining a club?",
+          "options": [
+            "It is only useful for students who want to become actors.",
+            "It is best to join the same club as your friends.",
+            "It takes a lot of time, but the good things you get from it make it worthwhile.",
+            "It is impossible to do well in both club activities and studying."
+          ],
+          "answer": 2,
+          "explanation": "最終段落で「部活は時間がかかるので計画的に」と言いつつ、「得られるもの（自信・友人・思い出）は間違いなくその価値がある」と述べているので C が正解です。A は演劇部に限った話ではありません。B は「友だちが選んだからではなく、本当に楽しめる部を選んで」と逆のことを言っています。D は Haruka 自身がアドバイスを受けて時間の使い方を学んだので、「不可能」とは考えていません。",
+          "evidence": "But what you get back – confidence, friends and great memories – is definitely worth it.",
+          "focus": "attitude",
+          "difficulty": 3,
+          "objectiveId": "b1u1-obj-r"
+        }
+      ]
+    },
+    {
+      "id": "school-life-b1-u1-listening",
+      "step": 4,
+      "kind": "listening",
+      "skill": "listening",
+      "title": "Listening: 学校ポッドキャスト「Clubs Corner」",
+      "instructions": "学校のポッドキャスト番組で、司会の Lucy が園芸部に入った1年生の Daniel にインタビューしています。音声を聞いて質問に答えましょう。B1 Preliminary の Listening Part 4（インタビューと選択問題）の形式を参考にした独自問題です。まず質問に目を通してから聞きましょう。",
+      "minutes": 8,
+      "setting": "学校のポッドキャスト番組「Clubs Corner」。司会の生徒 Lucy が、9月から園芸部（garden club）に入っている1年生 Daniel に、部を選んだ理由や活動の様子を聞いています。",
+      "script": [
+        { "speaker": "Lucy", "voice": "female", "text": "Welcome back to Clubs Corner, our school podcast. Today I'm talking to Daniel, a first-year student who has been in the garden club since September. Hi, Daniel!" },
+        { "speaker": "Daniel", "voice": "male", "text": "Hi, Lucy. Thanks for inviting me." },
+        { "speaker": "Lucy", "voice": "female", "text": "So, why did you choose the garden club? Most first-years join a sports club." },
+        { "speaker": "Daniel", "voice": "male", "text": "Well, I played football for six years at junior high school, and to be honest, I was a bit tired of it. I wanted to try something quieter. Also, my grandmother grows vegetables, so I already knew a little about plants." },
+        { "speaker": "Lucy", "voice": "female", "text": "And has it been what you expected?" },
+        { "speaker": "Daniel", "voice": "male", "text": "Not exactly. I thought it would be easy, but it's actually hard work. In summer we have to water everything before morning lessons, even during the holidays." },
+        { "speaker": "Lucy", "voice": "female", "text": "That sounds tiring! So what's the best thing about the club?" },
+        { "speaker": "Daniel", "voice": "male", "text": "Definitely the people. There are only eight members, so everyone helps each other. Last month the older students showed me how to grow tomatoes from seeds, and we sold them at the school festival." },
+        { "speaker": "Lucy", "voice": "female", "text": "Did you sell many?" },
+        { "speaker": "Daniel", "voice": "male", "text": "We sold out in two hours! We gave all the money to a local children's hospital." },
+        { "speaker": "Lucy", "voice": "female", "text": "Brilliant. Finally, what would you say to students who can't decide which club to join?" },
+        { "speaker": "Daniel", "voice": "male", "text": "Don't worry too much about which clubs are popular. Visit a few clubs, talk to the members, and pick the one where you feel comfortable. I nearly joined the tennis club because all my friends did, and I'm really glad I didn't!" }
+      ],
+      "questions": [
+        {
+          "id": "b1u1-l1",
+          "type": "mcq",
+          "stem": "Why didn't Daniel continue playing football?",
+          "options": [
+            "He hurt his leg at junior high school.",
+            "He wanted to do a quieter activity.",
+            "His grandmother asked him to help with her vegetables.",
+            "The football club already had too many members."
+          ],
+          "answer": 1,
+          "explanation": "Daniel は「サッカーに少し疲れていて、もっと静かなことをやってみたかった」と言っているので B が正解です。A のけがの話は出てきません。C の祖母は野菜を育てていて植物について少し知っていた理由として出てくるだけで、手伝いを頼まれたわけではありません。D の部員数の話はサッカー部については出てきません（8人というのは園芸部の人数です）。",
+          "evidence": "I wanted to try something quieter.",
+          "focus": "specific-info",
+          "difficulty": 1,
+          "objectiveId": "b1u1-obj-l"
+        },
+        {
+          "id": "b1u1-l2",
+          "type": "mcq",
+          "stem": "What does Daniel say about the work in the garden club?",
+          "options": [
+            "It is harder than he expected.",
+            "It is easier than playing football.",
+            "They only work during the summer holidays.",
+            "He usually does it alone."
+          ],
+          "answer": 0,
+          "explanation": "「簡単だと思っていたが、実は大変な仕事だ」と言っているので A が正解です。B は「簡単だと思っていた」のは入部前の予想で、実際は逆です。C は「休み中でさえ」水やりがあると言っているだけで、夏休みだけ活動するわけではありません。D は「みんなで助け合う」と言っているので一人で作業しているわけではありません。",
+          "evidence": "I thought it would be easy, but it's actually hard work.",
+          "focus": "attitude",
+          "difficulty": 2,
+          "objectiveId": "b1u1-obj-l"
+        },
+        {
+          "id": "b1u1-l3",
+          "type": "mcq",
+          "stem": "What does Daniel like most about the garden club?",
+          "options": [
+            "selling vegetables at the school festival",
+            "learning to grow tomatoes",
+            "the members and the way they support each other",
+            "having a small number of activities"
+          ],
+          "answer": 2,
+          "explanation": "「一番良いこと」を聞かれて Definitely the people.（間違いなく人です）と答え、少人数でみんなが助け合うと説明しているので C が正解です。A・B のトマト作りや販売は、先輩が教えてくれた具体例として出てきますが「一番好きなこと」ではありません。D の「少ない」のは部員数で、活動の数ではありません。",
+          "evidence": "Definitely the people.",
+          "focus": "attitude",
+          "difficulty": 2,
+          "objectiveId": "b1u1-obj-l"
+        },
+        {
+          "id": "b1u1-l4",
+          "type": "mcq",
+          "stem": "What can we understand about the tomatoes the club sold?",
+          "options": [
+            "A lot of people wanted to buy them.",
+            "The club used the money to buy more seeds.",
+            "They were sold at a children's hospital.",
+            "Only students were allowed to buy them."
+          ],
+          "answer": 0,
+          "explanation": "「2時間で売り切れた」ことから、多くの人が買いたがった（人気があった）と推測できるので A が正解です。B はお金は全額地元の子ども病院に寄付したと言っているので誤りです。C の病院はお金の寄付先で、販売場所は学園祭です。D の「生徒だけが買えた」という情報はありません。",
+          "evidence": "We sold out in two hours!",
+          "focus": "inference",
+          "difficulty": 2,
+          "objectiveId": "b1u1-obj-l"
+        },
+        {
+          "id": "b1u1-l5",
+          "type": "mcq",
+          "stem": "What advice does Daniel give to students who can't decide which club to join?",
+          "options": [
+            "Join the club that most students choose.",
+            "Join the same club as your friends.",
+            "Try a sports club first and change later.",
+            "Visit several clubs and choose one where you feel comfortable."
+          ],
+          "answer": 3,
+          "explanation": "「いくつかの部を見学し、部員と話し、居心地が良いと感じる部を選んで」と助言しているので D が正解です。A は「どの部が人気かをあまり気にしないで」と逆のことを言っています。B は「友だちが入ったからテニス部に入りかけたが、入らなくて本当に良かった」と言っているので、友だちと同じ部を勧めてはいません。C のような助言はしていません。",
+          "evidence": "Visit a few clubs, talk to the members, and pick the one where you feel comfortable.",
+          "focus": "specific-info",
+          "difficulty": 1,
+          "objectiveId": "b1u1-obj-l"
+        }
+      ]
+    },
+    {
+      "id": "school-life-b1-u1-writing",
+      "step": 5,
+      "kind": "writing",
+      "skill": "writing",
+      "title": "Writing: 学校英語雑誌への記事",
+      "instructions": "B1 Preliminary の Writing Part 2（記事）の形式を参考にした課題です。学校の英語雑誌の募集を読み、質問すべてに答える記事を 80〜110 語で書きましょう。経験は過去形と現在完了を使い分け、理由を because / so などで説明しましょう。",
+      "minutes": 10,
+      "rubricId": "writing-b1",
+      "task": {
+        "promptEn": "You see this announcement in your school's English magazine.\n\nARTICLES WANTED: A club or activity that changed me!\nWhat club or activity do you do, and how long have you done it? What have you learnt from it? Would you recommend it to other students? Why or why not?\nThe best articles will appear in next month's magazine.\n\nWrite your article in about 100 words.",
+        "promptJa": "学校の英語雑誌に「私を変えた部活動・活動」という記事の募集が出ています。どんな部活動・活動をしているか（どのくらい続けているか）、そこから何を学んだか、他の生徒に勧めるかどうかとその理由、の3点すべてに答える記事を書きましょう。読み手（同じ学校の生徒）が興味を持つようなタイトルをつけてもかまいません。",
+        "points": [
+          "どんな部活動・活動をしていて、どのくらい続けているか（現在完了 since / for を使う）",
+          "その活動から学んだこと・変わったこと（具体的な経験を過去形で1つ入れる）",
+          "他の生徒に勧めるかどうかと、その理由（because / so / that's why などを使う）"
+        ],
+        "minWords": 80,
+        "maxWords": 110,
+        "usefulLanguage": [
+          "I've been a member of the ... since ... / for ...",
+          "Before I joined, I had never ...",
+          "At first it was difficult because ...",
+          "I've learnt that ... / I've learnt how to ...",
+          "One of the best moments was when ...",
+          "I would definitely recommend it because ...",
+          "It takes a lot of time, but it's worth it."
+        ],
+        "modelAnswer": "Why I Love the Brass Band\n\nI've been a member of the brass band since April, and I play the trumpet. Before I joined, I had never played an instrument, so the first few weeks were really difficult. However, the older members helped me. I've learnt that practising a little every day is better than practising for hours once a week. I've also learnt how to work in a team, because a band only sounds good when everyone listens to each other. I would definitely recommend the brass band to other students. It takes time, but playing at the school festival was amazing. It was worth all the hard work!",
+        "selfCheck": [
+          "募集の3つの質問（何をしているか・学んだこと・おすすめするか）すべてに答えた",
+          "80〜110語の範囲で書けた",
+          "since / for を使った現在完了と、last month などを使った過去形を正しく使い分けた",
+          "because / so / that's why などで理由をはっきり説明した",
+          "I think / I would recommend など、自分の意見を示す表現を使った",
+          "however / also などのつなぎ言葉で、読みやすい流れにした"
+        ]
+      }
+    },
+    {
+      "id": "school-life-b1-u1-speaking",
+      "step": 6,
+      "kind": "speaking",
+      "skill": "speaking",
+      "title": "Speaking: 部活動について話そう",
+      "instructions": "B1 Preliminary の Speaking Part 1（自分について答える）と Part 4（話題についての意見交換）の形式を参考にした課題です。30秒準備して、60秒で答えましょう。理由や例を必ず加えましょう。",
+      "minutes": 9,
+      "rubricId": "speaking-b1",
+      "task": {
+        "introJa": "最初の質問では自分の部活動や放課後の活動について話します。2つ目と3つ目では、部活動についての意見を理由と例を挙げて述べます。試験官や相手に話しかけるつもりで、短く答えて終わらせず「意見→理由→例」の順で話を広げましょう。部活動に入っていない人は、放課後や休日にしている活動について話してかまいません。",
+        "parts": [
+          {
+            "question": "Tell me about a club or activity you do after school. How long have you done it, and why did you choose it?",
+            "questionJa": "放課後にしている部活動や活動について教えてください。どのくらい続けていますか？なぜそれを選びましたか？",
+            "prepSeconds": 30,
+            "answerSeconds": 60,
+            "hints": [
+              "I'm in the ... club. I've been a member since ... / for ...",
+              "I chose it because ...",
+              "We practise ... times a week.",
+              "The best thing about it is ..."
+            ]
+          },
+          {
+            "question": "Some people say high-school students should spend more time studying and less time on club activities. What do you think?",
+            "questionJa": "高校生は部活動の時間を減らして、もっと勉強に時間を使うべきだと言う人もいます。あなたはどう思いますか？",
+            "prepSeconds": 30,
+            "answerSeconds": 60,
+            "hints": [
+              "In my opinion, ... because ...",
+              "I agree that studying is important, but ...",
+              "For example, ...",
+              "That's why I think students should balance ..."
+            ]
+          },
+          {
+            "question": "Is it better to join the same club as your friends or a different one? Why?",
+            "questionJa": "友だちと同じ部活動に入るのと、違う部活動に入るのとでは、どちらが良いと思いますか？それはなぜですか？",
+            "prepSeconds": 30,
+            "answerSeconds": 60,
+            "hints": [
+              "I think it's better to ... because ...",
+              "On the other hand, ...",
+              "If you join a different club, you can ...",
+              "What about you? / Do you agree?"
+            ]
+          }
+        ],
+        "usefulLanguage": [
+          "In my opinion, ... / I think ... because ...",
+          "I agree with that to some extent, but ...",
+          "For example, ... / For instance, ...",
+          "On the other hand, ...",
+          "That's why ...",
+          "Sorry, could you say that again, please?",
+          "What do you think?"
+        ],
+        "modelAnswer": "(Part 1) I'm in the basketball club. I've been a member since April, so it's about six months now. I chose it because I played basketball at junior high school and I wanted to keep fit. We practise four times a week, and the best thing about it is that everyone works as a team.\n(Part 2) I don't really agree with that. Of course, studying is important, but club activities teach us things we can't learn in class, like teamwork and how to manage our time. For example, since I joined my club, I've started doing my homework on the train. That's why I think students should balance both, not stop club activities.\n(Part 3) I think it's better to join a different club from your friends. If you join a new club, you can meet people from other classes, and you have to speak to new people, so you become more confident. On the other hand, it can be scary at first. But you can still see your old friends at lunchtime. What do you think?",
+        "selfCheck": [
+          "内容：3つの質問すべてに、質問から外れずに答えられた",
+          "内容：意見だけでなく、理由と具体例（自分の経験など）を加えられた",
+          "応答：60秒間、沈黙を長く作らずに話し続けられた（つなぎ言葉 Well, ... / Let me think. を使えた）",
+          "応答：I agree ..., but ... / What do you think? など、相手とやりとりする表現を使えた",
+          "文法・語彙：現在完了（since / for）と過去形を使い分け、because / so / that's why を使えた",
+          "明瞭さ：聞き手に伝わる速さと声の大きさで、区切りを意識して話せた"
+        ]
+      }
+    },
+    {
+      "id": "school-life-b1-u1-check",
+      "step": 7,
+      "kind": "check",
+      "skill": "mixed",
+      "title": "Check: 試験形式で確認",
+      "instructions": "部活動のお知らせと、友だちへのメールを読んで問題に答えましょう。メールの空所には、選択肢から選ぶか、1語を入力します。",
+      "minutes": 6,
+      "examNote": "B1 Preliminary for Schools の Reading Part 1（お知らせ・短いメッセージ）と Part 5・Part 6（空所補充）の形式を参考にした独自問題です。",
+      "stimuli": {
+        "notice1": "ENGLISH CONVERSATION CLUB\nNew members welcome! We meet every Tuesday and Thursday from 4:00 to 5:30 in Room 204. No tests, no homework – just friendly conversation and games. Please bring your own snacks.\nNot sure yet? Come to a free trial session this Friday. Sign up with Ms Ito by Wednesday.",
+        "cloze1": "Hi Sam,\nGuess what? I (1) ______ the school orchestra last month! I had never played the violin before, so it was difficult at first. But the other members are really kind, (2) ______ I feel relaxed now. I (3) ______ made lots of new friends since then. We're performing at the city hall next Saturday. Would you like to come? Tickets are cheap, and I think it'll be (4) ______ it!\nYuki"
+      },
+      "questions": [
+        {
+          "id": "b1u1-c1",
+          "type": "mcq",
+          "stimulus": "notice1",
+          "stem": "What does the notice say?",
+          "options": [
+            "Students must pass an English test before they can join.",
+            "The club meets three times a week.",
+            "Students who want to try the club should tell Ms Ito by Wednesday.",
+            "The club gives members free snacks."
+          ],
+          "answer": 2,
+          "explanation": "「金曜日の無料体験に参加したい人は水曜日までに Ms Ito に申し込む」とあるので C が正解です。A は No tests（テストなし）とあり誤り。B は火曜と木曜の週2回です。D は「お菓子は各自持参」とあり、クラブが配るわけではありません。",
+          "evidence": "Sign up with Ms Ito by Wednesday.",
+          "focus": "specific-info",
+          "difficulty": 1,
+          "objectiveId": "b1u1-obj-r"
+        },
+        {
+          "id": "b1u1-c2",
+          "type": "mcq",
+          "stimulus": "notice1",
+          "stem": "Who is this notice mainly for?",
+          "options": [
+            "students who are thinking about joining the club",
+            "members who missed the last meeting",
+            "teachers who want to help with the club",
+            "students who need help with their English homework"
+          ],
+          "answer": 0,
+          "explanation": "冒頭の New members welcome!（新入部員歓迎）や「まだ迷っている人は体験へ」という内容から、入部を考えている生徒向けだと分かるので A が正解です。B の欠席した部員への連絡、C の先生向けの内容はありません。D は No homework とあり、宿題の手伝いをするクラブではありません。",
+          "evidence": "New members welcome!",
+          "focus": "main-idea",
+          "difficulty": 1,
+          "objectiveId": "b1u1-obj-r"
+        },
+        {
+          "id": "b1u1-c3",
+          "type": "mcq",
+          "stimulus": "cloze1",
+          "stem": "Choose the best answer for gap (1).",
+          "options": ["joined", "have joined", "was joining", "join"],
+          "answer": 0,
+          "explanation": "last month（先月）という過去の特定の時があるので過去形 joined が正解です。have joined は現在完了なので last month と一緒に使えません。was joining は「入部しようとしていた最中」という進行の意味になり不自然、join は現在形で時制が合いません。",
+          "focus": "grammar",
+          "difficulty": 1,
+          "objectiveId": "b1u1-obj-g"
+        },
+        {
+          "id": "b1u1-c4",
+          "type": "mcq",
+          "stimulus": "cloze1",
+          "stem": "Choose the best answer for gap (2).",
+          "options": ["because", "so", "although", "but"],
+          "answer": 1,
+          "explanation": "「部員がとても親切だ」→「だから今はリラックスしている」という結果を表すので so が正解です。because だと「リラックスしているから親切だ」と因果が逆になります。although・but は対立・逆接を表し、前後の内容が対立していないので合いません。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "b1u1-obj-g"
+        },
+        {
+          "id": "b1u1-c5",
+          "type": "text",
+          "stimulus": "cloze1",
+          "stem": "Write ONE word for gap (3).",
+          "accept": ["have", "'ve"],
+          "explanation": "後ろに made（過去分詞）と since then（それ以来）があるので、「それ以来ずっと〜してきた」という現在完了 have made にします。had だと過去完了になり、since then と今につながる内容に合いません。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "b1u1-obj-g"
+        },
+        {
+          "id": "b1u1-c6",
+          "type": "text",
+          "stimulus": "cloze1",
+          "stem": "Write ONE word for gap (4).",
+          "accept": ["worth"],
+          "explanation": "be worth it で「それだけの価値がある」という表現です。「チケットは安いし、行く価値があると思う」という意味になります。worthy は worthy of ~ の形になるので、ここでは使えません。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b1u1-obj-v"
+        }
+      ]
+    },
+    {
+      "id": "school-life-b1-u1-wrapup",
+      "step": 8,
+      "kind": "wrapup",
+      "skill": "mixed",
+      "title": "Wrap-up: ふり返りと次の学習",
+      "instructions": "この単元で学んだポイントとよくある間違いを確認し、目標が達成できたかふり返りましょう。",
+      "minutes": 5,
+      "summary": [
+        "過去の特定の時（last April / two years ago）には過去形、今につながる経験・継続（since / for / ever / never）には現在完了を使う。",
+        "because の後ろは「理由」、so の後ろは「結果」。that's why で前の文を受けて結論を言える。",
+        "長文では、書き手の意見は最終段落や I think / definitely などの表現に表れやすい。which や it などの指示語は直前の内容を確認する。",
+        "リスニングでは、I thought ... but actually ... のように「予想と実際」が対比される部分に答えのヒントが多い。",
+        "意見を言うときは「意見→理由→例」の順で話を広げると、B1 の Speaking・Writing で評価されやすい。"
+      ],
+      "commonMistakes": [
+        {
+          "wrong": "I have joined the tennis club last year.",
+          "right": "I joined the tennis club last year.",
+          "note": "last year のような過去の特定の時を表す語句がある場合は、現在完了ではなく過去形を使います。"
+        },
+        {
+          "wrong": "I have been in the club since two years.",
+          "right": "I have been in the club for two years.",
+          "note": "two years は「期間の長さ」なので for を使います。since は since April のように「起点」に使います。"
+        },
+        {
+          "wrong": "I entered the drama club in May.",
+          "right": "I joined the drama club in May.",
+          "note": "「入部する」は日本語の「入る」につられて enter としがちですが、英語では join を使います。"
+        },
+        {
+          "wrong": "Club activities are hard. But it is very worth.",
+          "right": "Club activities are hard, but they are really worth it.",
+          "note": "worth は「〜の価値がある」という意味で後ろに名詞（it など）が必要です。very worth とは言いません。また But で文を始めるより、コンマでつなぐと自然です。"
+        }
+      ],
+      "next": {
+        "text": "次の単元では、学校行事や学校のルールについて、賛成・反対の意見を比べながら述べる練習をします。今回学んだ現在完了と理由の表現を、自分の日記や部活動の記録を英語で書くときにも使ってみましょう。",
+        "challenge": "余裕がある人は、Writing の記事を 150 語程度に広げ、部活動のデメリットとその解決策（例：時間の使い方）も書き加えてみましょう。B2 レベルで求められる「両面から論じる」練習になります。",
+        "support": "難しかった人は、Intro の語彙と Explain の例文を音読し、Reading の本文から現在完了と過去形の文を探して線を引いてみましょう。Listening はスクリプトを見ながらもう一度聞くと効果的です。"
+      }
+    }
+  ]
+}

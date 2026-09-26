@@ -1,0 +1,665 @@
+{
+  "id": "school-life-b2-u1",
+  "theme": "school-life",
+  "themeLabel": "学校生活・部活動",
+  "level": "B2",
+  "exam": "B2 First for Schools",
+  "order": 1,
+  "title": "Should Club Activities Be Compulsory?",
+  "titleJa": "部活動は全員参加にすべきか？",
+  "estimatedMinutes": 75,
+  "objectives": [
+    { "id": "b2u1-obj-r", "skill": "reading", "text": "部活動についての意見記事を読んで、筆者の主張・段落の目的・態度・指示語の内容を正確に理解できる。" },
+    { "id": "b2u1-obj-l", "skill": "listening", "text": "意見の異なる二人の議論を聞いて、それぞれの意見、同意・反対している点、言外の意味を聞き取れる。" },
+    { "id": "b2u1-obj-w", "skill": "writing", "text": "2つのメモと自分の考えを使い、賛否両論をふまえた140〜190語の論理的なエッセイを書ける。" },
+    { "id": "b2u1-obj-s", "skill": "speaking", "text": "部活動について比較・議論し、理由と具体例を挙げて意見を述べ、相手の意見に応答できる。" },
+    { "id": "b2u1-obj-v", "skill": "vocabulary", "text": "議論でよく使うコロケーション・談話標識・語形成（名詞⇔形容詞など）を正しく使える。" },
+    { "id": "b2u1-obj-g", "skill": "grammar", "text": "譲歩（although / while / despite）、ヘッジ（断定を避ける表現）、対比・追加の表現を使って主張を組み立てられる。" }
+  ],
+  "activities": [
+    {
+      "id": "school-life-b2-u1-intro",
+      "step": 1,
+      "kind": "intro",
+      "skill": "vocabulary",
+      "title": "Intro: 議論のための語彙と表現",
+      "instructions": "この単元の目標を確認し、部活動について議論するときに役立つコロケーションや談話標識を例文と一緒に覚えましょう。そのあと語彙チェックに答えてください。",
+      "minutes": 8,
+      "vocabulary": [
+        { "term": "compulsory", "meaning": "義務的な、強制の（⇔ voluntary 自由参加の）", "example": "In some schools, club membership is compulsory for all first-year students." },
+        { "term": "voluntary", "meaning": "自発的な、任意の", "example": "Joining the volunteer group is voluntary, but most students take part." },
+        { "term": "make a (strong) case for ~", "meaning": "〜を支持する（説得力のある）主張をする", "example": "Supporters of longer holidays make a strong case for more rest." },
+        { "term": "go through the motions", "meaning": "（やる気がなく）形だけこなす", "example": "If you are just going through the motions, you won't improve much." },
+        { "term": "cope with ~", "meaning": "〜にうまく対処する", "example": "Clubs can teach students how to cope with defeat." },
+        { "term": "far from ~", "meaning": "決して〜ではない、〜にはほど遠い", "example": "The results were far from perfect, but we learnt a lot." },
+        { "term": "commit to ~", "meaning": "〜に打ち込む、〜を約束して続ける", "example": "It is hard to commit to daily practice when you have a part-time job." },
+        { "term": "wear someone out", "meaning": "〜をへとへとに疲れさせる", "example": "The early morning training sessions are wearing me out." },
+        { "term": "miss out (on ~)", "meaning": "（〜の）機会を逃す、損をする", "example": "Students who never join a club may miss out on new friendships." },
+        { "term": "have the final say", "meaning": "最終決定権を持つ", "example": "I think students, not teachers, should have the final say about their free time." },
+        { "term": "on the contrary", "meaning": "それどころか（前の内容を強く否定して逆を述べる）", "example": "The rule didn't reduce stress. On the contrary, it made things worse." },
+        { "term": "whereas", "meaning": "〜である一方で（2つを対比する接続詞）", "example": "Sports clubs can be very competitive, whereas hobby groups are usually more relaxed." },
+        { "term": "wellbeing", "meaning": "心身の健康、幸福", "example": "Schools should pay more attention to students' wellbeing." },
+        { "term": "put forward (an idea)", "meaning": "（考え・案を）提案する、出す", "example": "She put forward an interesting idea at the student council meeting." }
+      ],
+      "questions": [
+        {
+          "id": "b2u1-i1",
+          "type": "mcq",
+          "stem": "Membership of the photography club is ______: you can join if you want to, but nobody will force you.",
+          "options": ["compulsory", "voluntary", "essential", "permanent"],
+          "answer": 1,
+          "explanation": "コロンの後で「入りたければ入れるが、誰も強制しない」と説明しているので「任意の」を表す voluntary が正解です。compulsory は「義務の」で正反対、essential は「不可欠な」、permanent は「永久的な」で文脈に合いません。",
+          "focus": "vocabulary",
+          "difficulty": 1,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-i2",
+          "type": "mcq",
+          "stem": "Kaito didn't really care about practice any more; he was just going through the ______.",
+          "options": ["motions", "moves", "actions", "steps"],
+          "answer": 0,
+          "explanation": "go through the motions で「形だけこなす、気持ちが入っていない」という決まった表現（コロケーション）です。moves / actions / steps はいずれもこの形では使いません。前半の didn't really care（もう気にかけていなかった）とも意味がつながります。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-i3",
+          "type": "mcq",
+          "stem": "Many people feel that students who never join a club ______ out on valuable experiences.",
+          "options": ["lose", "miss", "fall", "drop"],
+          "answer": 1,
+          "explanation": "miss out on ~ で「〜の機会を逃す」という句動詞です。lose out on も存在しますが「（競争で）損をする」の意味で、ここでは miss out が自然です。fall out は「仲たがいする」、drop out は「中退する・脱退する」で on valuable experiences とつながりません。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-i4",
+          "type": "mcq",
+          "stem": "Online lessons did not make studying easier. ______, many students found it harder to concentrate at home.",
+          "options": ["On the contrary", "In addition", "As a result", "For instance"],
+          "answer": 0,
+          "explanation": "前の文で「楽にはならなかった」と否定し、次に「それどころか集中しにくくなった」と逆の内容を強調しているので On the contrary が正解です。In addition（さらに）は同じ方向の追加、As a result（その結果）は因果、For instance（例えば）は例示で、否定の後に反対の事実を強める働きはありません。",
+          "focus": "vocabulary",
+          "difficulty": 3,
+          "objectiveId": "b2u1-obj-v"
+        }
+      ]
+    },
+    {
+      "id": "school-life-b2-u1-explain",
+      "step": 2,
+      "kind": "explain",
+      "skill": "grammar",
+      "title": "Explain: 説得力のある主張の組み立て方",
+      "instructions": "エッセイや議論で使う「主張の組み立て方」「譲歩」「ヘッジ（断定を避ける表現）」「対比・追加の表現」を確認し、確認問題に答えましょう。",
+      "minutes": 10,
+      "points": [
+        {
+          "heading": "エッセイの基本構成",
+          "text": "B2 レベルの意見エッセイは「導入（問題提起と自分の立場）→ 論点1 → 論点2 → 論点3（自分の考え）→ 結論」が基本です。各段落の最初にトピックセンテンス（その段落で言いたいこと）を置き、理由・具体例で支えます。反対意見にも触れてから反論すると、説得力が増します。",
+          "examples": [
+            "In my opinion, clubs are valuable, but membership should be a choice.",
+            "One important point to consider is students' wellbeing.",
+            "To sum up, schools should encourage, not force, participation."
+          ]
+        },
+        {
+          "heading": "譲歩：although / while / despite",
+          "text": "「〜だけれども」と相手の意見を一度認めてから自分の主張を述べる表現です。although と while の後には「主語＋動詞」の節が続きます。despite / in spite of の後には名詞か動名詞（-ing）が続き、節は置けません（× despite students are busy）。",
+          "examples": [
+            "Although club activities are tiring, they teach useful skills.",
+            "While some students enjoy competition, others prefer a relaxed atmosphere.",
+            "Despite the long hours, many members love their club.",
+            "Despite being busy, she never missed a practice."
+          ]
+        },
+        {
+          "heading": "ヘッジ：断定を避けて客観的に書く",
+          "text": "議論では「すべての生徒が〜だ」と断定すると反論されやすくなります。may / might / tend to / It could be argued that ... / arguably / it seems that などを使い、主張をやわらげると、より大人らしく説得力のある文になります。",
+          "examples": [
+            "It could be argued that long practices may harm students' health.",
+            "Students who choose their own club tend to be more motivated.",
+            "This is arguably the most important benefit of clubs."
+          ]
+        },
+        {
+          "heading": "対比・追加の表現",
+          "text": "however（しかし：文頭でカンマと共に）、whereas（〜である一方：1文の中で2つを対比）、on the other hand（他方では：2つの側面を比べる）、not only A but also B（AだけでなくBも）。Not only を文頭に置くと、疑問文と同じ語順（倒置）になる点に注意しましょう。",
+          "examples": [
+            "However, the benefits are not guaranteed.",
+            "Some clubs meet every day, whereas others meet once a week.",
+            "Not only do students develop skills, but they also make friends."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "b2u1-e1",
+          "type": "mcq",
+          "stem": "______ the long training hours, many students say that their club is the best part of school life.",
+          "options": ["Although", "Despite", "However", "Whereas"],
+          "answer": 1,
+          "explanation": "空所の後が the long training hours という名詞句（動詞がない）なので、前置詞の Despite が正解です。Although と Whereas は接続詞なので後ろに「主語＋動詞」が必要です。However は副詞で、この位置で名詞を直接つなぐことはできません。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-g"
+        },
+        {
+          "id": "b2u1-e2",
+          "type": "mcq",
+          "stem": "Not only ______ teamwork, but they also learn how to manage their time.",
+          "options": ["students learn", "do students learn", "students do learn", "learn students"],
+          "answer": 1,
+          "explanation": "否定の語句 Not only が文頭に来ると、後ろは疑問文と同じ語順（倒置）になるため do students learn が正解です。students learn / students do learn は倒置になっておらず、learn students は語順が誤りです。",
+          "focus": "grammar",
+          "difficulty": 3,
+          "objectiveId": "b2u1-obj-g"
+        },
+        {
+          "id": "b2u1-e3",
+          "type": "text",
+          "stem": "Use the word in capitals to form a word that fits the gap: 'In my view, club membership should be ______, not compulsory.' (VOLUNTEER)",
+          "accept": ["voluntary"],
+          "explanation": "be 動詞の後で compulsory（形容詞）と対比されているので、形容詞の voluntary（任意の）が入ります。volunteer は名詞・動詞「ボランティア（をする）」、voluntarily は副詞なので、ここでは使えません。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-v"
+        }
+      ]
+    },
+    {
+      "id": "school-life-b2-u1-reading",
+      "step": 3,
+      "kind": "reading",
+      "skill": "reading",
+      "title": "Reading: 意見記事「部活動は全員参加にすべきか」",
+      "instructions": "部活動の全員参加について書かれた意見記事を読み、設問に答えましょう（B2 First Reading Part 5 の形式を参考にした独自問題）。筆者の主張、段落の目的、態度、指示語に注意して読みましょう。",
+      "minutes": 12,
+      "passage": {
+        "title": "Clubs for All? Why Choice Matters More Than Rules",
+        "paragraphs": [
+          "In many Japanese secondary schools, joining a club has long been treated as a natural part of student life. For decades, afternoons, weekends and even holidays have been filled with training sessions, rehearsals and matches. Recently, however, some schools and local authorities have begun to question this tradition, and a number of them have made membership optional or moved certain activities into the local community. This raises a question that every school eventually has to answer: should club activities be compulsory?",
+          "Supporters of compulsory membership make a strong case. Clubs, they argue, teach lessons that no textbook can: how to work in a team, how to cope with defeat and how to keep going when progress is slow. Not only do students develop practical skills, but they also form friendships across different year groups. Many adults look back on their club days as one of the most valuable parts of their education, and it is easy to see why.",
+          "However, the benefits are far from guaranteed. When membership is forced rather than chosen, some students simply go through the motions, counting the minutes until practice ends. Others find that long training hours leave them exhausted, with little energy for homework, family or rest. It could be argued that a system designed to build character may, in some cases, be damaging the very wellbeing it claims to protect.",
+          "There is also the question of fairness. Clubs often require expensive equipment, travel and uniforms, which some families struggle to afford. Moreover, students who look after younger brothers and sisters or have other responsibilities at home may be unable to commit to daily practice. Requiring everyone to join ignores these differences, whereas a voluntary system at least allows students to make decisions that reflect their own circumstances.",
+          "None of this means that clubs should disappear. On the contrary, I believe they are worth protecting, which is precisely why they should not be imposed. A club that students have actively chosen is likely to have more committed members and, arguably, a more positive atmosphere. Schools could encourage participation by offering a wider range of activities, including shorter or less competitive options, rather than relying on rules.",
+          "In the end, the goal should be to give every student the opportunity to take part, not the obligation. If schools can achieve that balance, clubs may become what they were always meant to be: a place where young people grow because they want to, not because they have to."
+        ]
+      },
+      "questions": [
+        {
+          "id": "b2u1-r1",
+          "type": "mcq",
+          "stem": "What is the writer's main argument in the article?",
+          "options": [
+            "Club activities do more harm than good and should gradually be removed from schools.",
+            "Clubs are valuable, but students should be free to decide whether to join them.",
+            "Clubs should remain compulsory because they build character in a way lessons cannot.",
+            "Local communities, rather than schools, should be responsible for all club activities."
+          ],
+          "answer": 1,
+          "explanation": "第5段落で筆者は「クラブは守る価値があると信じている。だからこそ強制すべきではない」と述べており、「価値はあるが参加は自由にすべき」という B が主張です。A は None of this means that clubs should disappear（クラブがなくなるべきという意味ではない）と矛盾します。C は第2段落で紹介される「支持者の意見」であり筆者自身の結論ではありません。D の地域への移行は第1段落で最近の動きとして触れられているだけです。",
+          "evidence": "I believe they are worth protecting, which is precisely why they should not be imposed",
+          "focus": "main-idea",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-r"
+        },
+        {
+          "id": "b2u1-r2",
+          "type": "mcq",
+          "stem": "What does 'This' refer to in the first paragraph ('This raises a question ...')?",
+          "options": [
+            "the long history of clubs in Japanese secondary schools",
+            "the fact that club activities take place at weekends and in holidays",
+            "the recent changes some schools have made to club membership",
+            "the question of whether club activities should be compulsory"
+          ],
+          "answer": 2,
+          "explanation": "This は直前の文の内容、つまり「一部の学校や自治体がこの伝統を疑問視し始め、参加を任意にしたり活動を地域に移したりした」という最近の変化を指しています。その変化が「部活動は義務にすべきか」という問いを生んだ、という流れです。A・B は伝統そのものの説明で、問いを「生む」原因としては弱いです。D は This が生み出す「問い」そのものなので、指す対象ではありません。",
+          "evidence": "This raises a question that every school eventually has to answer",
+          "focus": "reference",
+          "difficulty": 3,
+          "objectiveId": "b2u1-obj-r"
+        },
+        {
+          "id": "b2u1-r3",
+          "type": "mcq",
+          "stem": "What is the writer's purpose in the second paragraph?",
+          "options": [
+            "to describe personal memories of belonging to a school club",
+            "to show that most adults regret the time they spent in clubs",
+            "to present the arguments of people who hold a different view",
+            "to prove that club activities are more useful than lessons"
+          ],
+          "answer": 2,
+          "explanation": "第2段落は Supporters of compulsory membership make a strong case.（全員参加の支持者は説得力のある主張をしている）で始まり、they argue と支持者の意見を紹介しています。筆者自身は参加を任意にすべきという立場なので、これは「異なる意見を公平に紹介する」段落です。A の筆者自身の思い出は書かれていません。B は Many adults look back on their club days as one of the most valuable parts と逆です。D は支持者の主張の紹介であり、筆者が「証明」しようとしているわけではありません。",
+          "evidence": "Supporters of compulsory membership make a strong case.",
+          "focus": "function",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-r"
+        },
+        {
+          "id": "b2u1-r4",
+          "type": "mcq",
+          "stem": "What does the writer suggest about some students who are forced to join a club?",
+          "options": [
+            "They gain little from the experience because they are not really involved.",
+            "They usually become the most skilled members of the team.",
+            "They tend to leave the club within a few weeks of joining.",
+            "They prefer to spend their time on homework instead."
+          ],
+          "answer": 0,
+          "explanation": "「形だけこなし、練習が終わるまで時間を数えている」という描写から、気持ちが入っておらず得るものが少ないと推測できるので A が正解です。B のように上達するとは書かれていません。C の「数週間でやめる」という記述はありません。D の宿題については、別のグループ（Others）が疲れて宿題にエネルギーが残らないと書かれているだけで、宿題の方を好むとは述べていません。",
+          "evidence": "some students simply go through the motions, counting the minutes until practice ends",
+          "focus": "inference",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-r"
+        },
+        {
+          "id": "b2u1-r5",
+          "type": "mcq",
+          "stem": "How does the writer seem to feel about the claim that compulsory clubs build character?",
+          "options": [
+            "completely convinced that it is true for every student",
+            "doubtful that the system always achieves what it intends",
+            "angry that schools have used it to control students",
+            "uninterested, because character is not important at school"
+          ],
+          "answer": 1,
+          "explanation": "筆者は It could be argued that ... may, in some cases ... とヘッジ表現を使い、「人格を育てるための制度が、場合によっては守るはずの心身の健康を損なっているかもしれない」と控えめに疑問を示しています。したがって「いつも目的を果たすとは限らないと疑っている」B が正解です。A は疑問を示している点と矛盾し、C の「怒り」ほど強い感情は表現されていません（may, in some cases と慎重です）。D のように無関心ではなく、この問題を真剣に論じています。",
+          "evidence": "It could be argued that a system designed to build character may, in some cases, be damaging the very wellbeing it claims to protect.",
+          "focus": "attitude",
+          "difficulty": 3,
+          "objectiveId": "b2u1-obj-r"
+        },
+        {
+          "id": "b2u1-r6",
+          "type": "mcq",
+          "stem": "In the third paragraph, what does 'far from guaranteed' mean?",
+          "options": [
+            "certain to happen eventually",
+            "not at all certain",
+            "only available in some schools",
+            "difficult to measure accurately"
+          ],
+          "answer": 1,
+          "explanation": "far from ~ は「〜にはほど遠い、決して〜ではない」という意味なので、far from guaranteed は「保証されているとはとても言えない＝確実ではない」です。直後で「形だけこなす生徒」「疲れ切る生徒」という、利点が得られない例が続くことからも分かります。A は正反対、C の「一部の学校だけ」、D の「測定しにくい」は語句の意味と関係がありません。",
+          "evidence": "However, the benefits are far from guaranteed.",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-r"
+        }
+      ]
+    },
+    {
+      "id": "school-life-b2-u1-listening",
+      "step": 4,
+      "kind": "listening",
+      "skill": "listening",
+      "title": "Listening: 部活動の任意化についての議論",
+      "instructions": "2人の高校生が、学校が検討している「部活動の任意化」について話し合っています。会話を聞いて設問に答えましょう（B2 First Listening Part 4 の形式を参考にした独自問題）。それぞれの意見の違いと、最終的にどこで一致したかに注目しましょう。",
+      "minutes": 10,
+      "setting": "放課後の教室で、学校新聞の担当をしている Mia と Kenji が、来年度から部活動を任意参加にするという学校の案について話し合っている。",
+      "script": [
+        { "speaker": "Mia", "voice": "female", "text": "Kenji, have you heard that the school is thinking of making clubs optional from next year? I have to say, I think it's a great idea." },
+        { "speaker": "Kenji", "voice": "male", "text": "Really? I'm not so sure. If clubs become optional, I suspect a lot of first-years won't join anything at all, and they'll miss out." },
+        { "speaker": "Mia", "voice": "female", "text": "Maybe, but is that really a problem? Some people would rather spend that time studying or helping out at home. Why should the school decide for them?" },
+        { "speaker": "Kenji", "voice": "male", "text": "Because at fifteen, you don't always know what's good for you. I only joined the brass band because I had to, and now it's the best part of my week." },
+        { "speaker": "Mia", "voice": "female", "text": "That's fair enough, and I'm glad it worked out for you. But for every person like you, there's probably someone who feels trapped. My cousin gave up basketball in the end because the Saturday practices were wearing her out." },
+        { "speaker": "Kenji", "voice": "male", "text": "I see your point about the weekends. To be honest, I think the length of practices is the real issue, not whether clubs are compulsory. If sessions were shorter, far fewer people would complain." },
+        { "speaker": "Mia", "voice": "female", "text": "I'd go along with that, actually. Even so, I still think students should have the final say. What if someone wants to do something the school doesn't offer, like coding or volunteering?" },
+        { "speaker": "Kenji", "voice": "male", "text": "Hmm. Couldn't the school just count activities outside school as well? That way everyone still does something, but they get to choose what." },
+        { "speaker": "Mia", "voice": "female", "text": "Now that's an interesting compromise. It keeps the idea of taking part without forcing everyone into the same box." },
+        { "speaker": "Kenji", "voice": "male", "text": "Exactly. Shall we put it forward in our article for the school newspaper? We could present both sides first and then suggest that idea at the end." },
+        { "speaker": "Mia", "voice": "female", "text": "Good plan. I'll write the section on wellbeing, and you can do the one about skills and friendships." }
+      ],
+      "questions": [
+        {
+          "id": "b2u1-l1",
+          "type": "mcq",
+          "stem": "What is Mia's opinion at the start of the conversation?",
+          "options": [
+            "She is in favour of making clubs optional.",
+            "She thinks the school should wait another year.",
+            "She is worried that first-years will miss out.",
+            "She has not decided what she thinks yet."
+          ],
+          "answer": 0,
+          "explanation": "Mia は最初に「素晴らしい考えだと思う」と、部活動を任意にする案に賛成しています。B の「もう1年待つべき」とは言っていません（from next year は案の開始時期）。C の「1年生が機会を逃す」という心配は Kenji の意見です。D は I have to say, I think it's a great idea とはっきり意見を述べているので誤りです。",
+          "evidence": "I have to say, I think it's a great idea.",
+          "focus": "attitude",
+          "difficulty": 1,
+          "objectiveId": "b2u1-obj-l"
+        },
+        {
+          "id": "b2u1-l2",
+          "type": "mcq",
+          "stem": "What does Kenji mean when he talks about being fifteen?",
+          "options": [
+            "Students of that age are too young to take part in competitions.",
+            "Young students may not see the value of an activity until they try it.",
+            "Teachers should always decide which club each student joins.",
+            "Fifteen-year-olds are usually too busy to join a club."
+          ],
+          "answer": 1,
+          "explanation": "Kenji は「15歳では何が自分のためになるか分からないこともある」と言い、続けて「義務だから吹奏楽部に入ったが、今では1週間で一番楽しい時間だ」と自分の経験を挙げています。つまり「やってみるまで価値に気づかないことがある」という B の意味です。A の大会参加の話はしていません。C の「先生がどのクラブかを決める」とまでは言っていません。D の「忙しすぎる」は Mia 側の論点に近く、Kenji の発言とは関係ありません。",
+          "evidence": "Because at fifteen, you don't always know what's good for you.",
+          "focus": "inference",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-l"
+        },
+        {
+          "id": "b2u1-l3",
+          "type": "mcq",
+          "stem": "Why did Mia's cousin stop playing basketball?",
+          "options": [
+            "She wanted more time to help her family.",
+            "She did not get on with the other players.",
+            "The weekend training made her too tired.",
+            "Her school stopped offering the club."
+          ],
+          "answer": 2,
+          "explanation": "Mia は「土曜日の練習でへとへとになったから、いとこは最終的にバスケをやめた」と言っています。wear someone out は「〜を疲れ果てさせる」なので C が正解です。A の家族の手伝いは Mia が一般論として挙げた例で、いとこの理由ではありません。B の人間関係、D のクラブ廃止については述べられていません。",
+          "evidence": "My cousin gave up basketball in the end because the Saturday practices were wearing her out.",
+          "focus": "specific-info",
+          "difficulty": 1,
+          "objectiveId": "b2u1-obj-l"
+        },
+        {
+          "id": "b2u1-l4",
+          "type": "mcq",
+          "stem": "On which point do Mia and Kenji agree?",
+          "options": [
+            "Clubs should definitely remain compulsory.",
+            "Students should have the final say about everything.",
+            "Long practice sessions are a real problem.",
+            "Coding and volunteering are better than sports."
+          ],
+          "answer": 2,
+          "explanation": "Kenji が「本当の問題は練習の長さだ。短ければ不満はずっと減る」と言い、Mia が I'd go along with that, actually.（実はそれには賛成）と応じています。go along with は「〜に同意する」なので C が正解です。A は Mia が反対しています。B の「最終決定権」は Mia の意見で、Kenji は同意していません（その後 Even so と Mia が自分の意見に戻っています）。D の比較はしていません。",
+          "evidence": "I'd go along with that, actually.",
+          "focus": "attitude",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-l"
+        },
+        {
+          "id": "b2u1-l5",
+          "type": "mcq",
+          "stem": "What do the two students finally decide to suggest in their article?",
+          "options": [
+            "that activities outside school should also count as taking part",
+            "that clubs should be cancelled on Saturdays",
+            "that only first-years should be required to join a club",
+            "that the school should start a coding club"
+          ],
+          "answer": 0,
+          "explanation": "Kenji が「学校外の活動もカウントすればいいのでは？」と提案し、Mia が「面白い妥協案だ」と評価、記事の最後でその案を提案しようと決めています。A が正解です。B の土曜日の中止、C の1年生だけの義務化は提案されていません。D の coding は「学校にない活動」の例として挙げられただけで、新しいクラブを作る話ではありません。",
+          "evidence": "Couldn't the school just count activities outside school as well?",
+          "focus": "specific-info",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-l"
+        }
+      ]
+    },
+    {
+      "id": "school-life-b2-u1-writing",
+      "step": 5,
+      "kind": "writing",
+      "skill": "writing",
+      "title": "Writing: エッセイ「全員が部活動に参加すべきか」",
+      "instructions": "B2 First Writing Part 1（エッセイ）の形式を参考にした課題です。2つのメモと自分の考え（3つ目の論点）をすべて含め、140〜190語で書きましょう。導入・本論・結論の構成と、譲歩・対比の表現を意識してください。",
+      "minutes": 12,
+      "rubricId": "writing-b2",
+      "task": {
+        "promptEn": "In your English class you have been talking about school clubs. Now your English teacher has asked you to write an essay.\n\nWrite an essay using all the notes and giving reasons for your point of view.\n\nShould all students be required to join a school club?\n\nNotes\nWrite about:\n1. skills and friendships\n2. time and wellbeing\n3. ........ (your own idea)",
+        "promptJa": "英語の授業で部活動について話し合ってきました。先生から「すべての生徒が部活動に参加するよう義務づけるべきか」というテーマのエッセイを書くよう言われました。メモの1（技能と友人関係）、2（時間と心身の健康）、3（自分で考えた論点：例えば公平さ・費用、選択肢の多さ、地域の活動など）をすべて含め、理由を挙げて自分の意見を述べてください。",
+        "points": [
+          "導入で問題を提示し、自分の立場（賛成・反対・条件付き）をはっきり示す",
+          "メモ1「技能と友人関係」について理由や例を挙げて書く",
+          "メモ2「時間と心身の健康」について理由や例を挙げて書く",
+          "メモ3として自分の考えた論点（公平さ、費用、学校外の活動など）を1つ加える",
+          "結論で自分の意見をまとめ直す"
+        ],
+        "minWords": 140,
+        "maxWords": 190,
+        "usefulLanguage": [
+          "Many people believe that ..., but is this really the case?",
+          "In my opinion, ... should be a choice rather than a rule.",
+          "On the one hand, ... On the other hand, ...",
+          "Not only do students ..., but they also ...",
+          "Although ..., it is also true that ...",
+          "It could be argued that ...",
+          "Another point to consider is ...",
+          "..., whereas ...",
+          "To sum up, / In conclusion, I believe that ..."
+        ],
+        "modelAnswer": "Many Japanese schools expect every student to join a club, but is this really the best approach? In my opinion, clubs are valuable, yet membership should be a choice rather than a rule.\n\nOn the one hand, clubs help young people develop skills that are difficult to learn in the classroom. Not only do members learn to work as a team, but they also make friends in other year groups. It could be argued that some students would never discover these benefits if they were not required to try.\n\nOn the other hand, long practices can leave students exhausted. Although hard work is important, teenagers also need time for study, family and rest, and their wellbeing should come first.\n\nAnother point to consider is fairness. Some families cannot afford expensive equipment, and some students have responsibilities at home. A compulsory system ignores these differences, whereas a voluntary one allows students to decide for themselves.\n\nTo sum up, I believe schools should encourage students to join clubs by offering a wide range of activities, but they should not force anyone to take part.",
+        "selfCheck": [
+          "導入で自分の立場をはっきり述べた",
+          "メモ1・メモ2・自分の考え（メモ3）の3つの論点をすべて書いた",
+          "反対意見に触れ、譲歩（although / while / despite）を使ってから自分の主張を述べた",
+          "however / whereas / on the other hand などの表現で段落や文を論理的につないだ",
+          "断定しすぎず、may / tend to / It could be argued that などのヘッジを使った",
+          "140〜190語の範囲に収まり、結論で意見をまとめ直した"
+        ]
+      }
+    },
+    {
+      "id": "school-life-b2-u1-speaking",
+      "step": 6,
+      "kind": "speaking",
+      "skill": "speaking",
+      "title": "Speaking: 部活動について比較・議論する",
+      "instructions": "B2 First Speaking Part 2〜4 の形式を参考にした独自課題です。準備時間に考えを整理し、理由と具体例を挙げて話しましょう。相手がいる場合は、意見を述べたあと相手に質問を返し、相手の意見に反応する練習もしましょう。",
+      "minutes": 10,
+      "rubricId": "speaking-b2",
+      "task": {
+        "introJa": "Part 1 は写真の代わりに文章で示された2つの過ごし方を比較する「ロングターン」です。Part 2・3 は試験の Part 4 のような議論型の質問です。「意見 → 理由 → 具体例 → まとめ」の順で話し、反対の見方にも一言触れるとB2らしい答えになります。",
+        "parts": [
+          {
+            "question": "Imagine two ways of spending time after school: training every day with a competitive sports team, or joining a relaxed hobby group, such as a cooking or reading club, that meets twice a week. Compare the two options. What are the advantages and disadvantages of each, and which do you think would suit most students better?",
+            "questionJa": "放課後の過ごし方として「毎日練習する競技志向の運動部」と「週2回活動するゆったりした趣味のクラブ（料理部・読書部など）」を比べてください。それぞれの長所・短所と、多くの生徒にはどちらが合うと思うかを話しましょう。",
+            "prepSeconds": 60,
+            "answerSeconds": 90,
+            "hints": [
+              "A competitive team can ..., whereas a hobby group ...",
+              "One advantage of ... is that ...",
+              "On the other hand, ... might ...",
+              "Overall, I'd say ... would suit most students better because ..."
+            ]
+          },
+          {
+            "question": "Some people say that club activities teach more important lessons than classroom lessons. How far do you agree?",
+            "questionJa": "「部活動は授業よりも大切なことを教えてくれる」という意見があります。どの程度賛成しますか。",
+            "prepSeconds": 60,
+            "answerSeconds": 90,
+            "hints": [
+              "I agree up to a point. While clubs teach ..., lessons ...",
+              "For example, in my club I learnt how to ...",
+              "It depends on what we mean by 'important'."
+            ]
+          },
+          {
+            "question": "Should clubs be run by teachers, or by people from the local community? Why?",
+            "questionJa": "部活動は教員が指導すべきでしょうか、それとも地域の人々が担うべきでしょうか。理由も述べてください。",
+            "prepSeconds": 60,
+            "answerSeconds": 60,
+            "hints": [
+              "Teachers know their students well, but ...",
+              "Local coaches might have more specialist knowledge ...",
+              "Perhaps a mix of both would be the best solution."
+            ]
+          }
+        ],
+        "usefulLanguage": [
+          "Both options have their benefits, but ...",
+          "The main difference is that ...",
+          "I agree up to a point, but ...",
+          "That's a good point, but have you considered ...?",
+          "What do you think about ...?",
+          "It could be argued that ...",
+          "To put it another way, ...",
+          "Overall, I'd say that ..."
+        ],
+        "modelAnswer": "(Part 1) Both options have clear benefits, but they suit different kinds of students. A competitive sports team can push you to improve quickly, and not only do you get fitter, but you also learn to handle pressure and defeat. However, training every day takes up a lot of time, and it could leave some students exhausted. A relaxed hobby group, on the other hand, meets less often, so members still have time for homework and rest. It may not be as exciting as a big match, but it's probably less stressful, and it's a good way to meet people with similar interests. Personally, I'd say the hobby group would suit most students better, because it's easier to balance with everything else. Having said that, for students who really love a sport, the competitive team might be worth the effort.",
+        "selfCheck": [
+          "質問にきちんと答え、自分の意見をはっきり述べた（内容）",
+          "理由と具体例（自分の経験など）を挙げて説明した（内容）",
+          "2つの選択肢を whereas / on the other hand などを使って比較できた（説明の明確さ）",
+          "意見 → 理由 → 例 → まとめ の順で、聞き手が分かりやすいように話した（説明の明確さ）",
+          "反対の見方にも触れ、相手の意見に反応したり質問を返したりできた（やり取り・応答）",
+          "長い沈黙をつくらず、指定時間いっぱい話し続けられた（流暢さ）"
+        ]
+      }
+    },
+    {
+      "id": "school-life-b2-u1-check",
+      "step": 7,
+      "kind": "check",
+      "skill": "mixed",
+      "title": "Check: 試験形式の確認問題",
+      "instructions": "B2 First Reading and Use of English の Part 1（4択の語彙穴埋め）と Part 3（語形成）の形式を参考にした独自問題です。まず英文を読み、空所に入るものを選ぶか、大文字の語を適切な形に変えて入力しましょう。",
+      "minutes": 8,
+      "examNote": "B2 First for Schools の Reading and Use of English Part 1（多肢選択式の穴埋め）と Part 3（語形成）の形式を参考にした独自問題です。",
+      "stimuli": {
+        "cloze1": "Last year our school decided to (1) ______ a new system for club activities. Instead of requiring every student to join, teachers now (2) ______ students to choose freely. At first, some teachers were worried that fewer students would take (3) ______ in after-school activities. (4) ______, the number of members actually rose slightly, as new clubs such as film-making and gardening attracted students who had never felt comfortable in sports teams.",
+        "wf1": "Many students say that the (5) ______ (FREE) to choose their own activity has made them more (6) ______ (ENTHUSIASM) about school life. Some teachers, however, would like to see more students joining the traditional clubs."
+      },
+      "questions": [
+        {
+          "id": "b2u1-c1",
+          "type": "mcq",
+          "stimulus": "cloze1",
+          "stem": "Choose the word that best fits gap (1).",
+          "options": ["introduce", "bring", "set", "put"],
+          "answer": 0,
+          "explanation": "introduce a new system で「新しい制度を導入する」という自然なコロケーションです。bring は bring in（導入する）なら可能ですが in がなく不可。set / put も a new system を目的語にして「導入する」の意味にはなりません。",
+          "focus": "vocabulary",
+          "difficulty": 1,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-c2",
+          "type": "mcq",
+          "stimulus": "cloze1",
+          "stem": "Choose the word that best fits gap (2).",
+          "options": ["let", "make", "encourage", "insist"],
+          "answer": 2,
+          "explanation": "空所の後が students to choose という「人 + to 不定詞」の形なので、encourage 人 to do（人に〜するよう勧める）が正解です。let と make は「人 + 動詞の原形」をとる（let students choose）ので to があると誤り。insist は insist on / insist that の形で使い、insist 人 to do とは言いません。",
+          "focus": "grammar",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-g"
+        },
+        {
+          "id": "b2u1-c3",
+          "type": "mcq",
+          "stimulus": "cloze1",
+          "stem": "Choose the word that best fits gap (3).",
+          "options": ["place", "part", "role", "share"],
+          "answer": 1,
+          "explanation": "take part in ~ で「〜に参加する」。take place は「（行事などが）行われる」で人が主語の文には合いません。role と share は take a role / take a share のように冠詞が必要で、in after-school activities とのつながりも不自然です。",
+          "focus": "vocabulary",
+          "difficulty": 1,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-c4",
+          "type": "mcq",
+          "stimulus": "cloze1",
+          "stem": "Choose the word or phrase that best fits gap (4).",
+          "options": ["Therefore", "Moreover", "In fact", "As a result"],
+          "answer": 2,
+          "explanation": "直前の「参加者が減るのではと心配した」に対して、「実際には少し増えた」と予想と異なる事実を述べているので In fact（実際には）が正解です。Therefore と As a result は「だから」という因果関係、Moreover は同じ方向の追加で、心配と反対の結果をつなぐことはできません。",
+          "evidence": "the number of members actually rose slightly",
+          "focus": "function",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-g"
+        },
+        {
+          "id": "b2u1-c5",
+          "type": "text",
+          "stimulus": "wf1",
+          "stem": "Gap (5): Use the word in capitals (FREE) to form a word that fits the gap.",
+          "accept": ["freedom"],
+          "explanation": "the の後で、後ろに to choose ... が続く主語の位置なので名詞が必要です。free の名詞形 freedom（自由）が正解です。freely は副詞なので不可です。",
+          "focus": "vocabulary",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-c6",
+          "type": "text",
+          "stimulus": "wf1",
+          "stem": "Gap (6): Use the word in capitals (ENTHUSIASM) to form a word that fits the gap.",
+          "accept": ["enthusiastic"],
+          "explanation": "made them more ______ about ... は「make + 人 + 形容詞」の形で、more の後なので形容詞が入ります。enthusiasm（熱意：名詞）の形容詞形 enthusiastic（熱心な）が正解です。つづり（-astic）に注意しましょう。",
+          "focus": "vocabulary",
+          "difficulty": 3,
+          "objectiveId": "b2u1-obj-v"
+        },
+        {
+          "id": "b2u1-c7",
+          "type": "mcq",
+          "stem": "Which sentence is the most appropriate way to introduce an opposing view in a B2 essay?",
+          "options": [
+            "Everyone knows that clubs are a waste of time.",
+            "It could be argued that clubs help students develop useful skills.",
+            "Clubs are good. But clubs are bad.",
+            "I think clubs are bad and that is all."
+          ],
+          "answer": 1,
+          "explanation": "It could be argued that ... はヘッジを使って「〜という意見もあるだろう」と反対意見を客観的に紹介する表現で、エッセイに最適です。A の Everyone knows は根拠のない断定、C は短い文を並べただけで論理のつながりがなく、D は反対意見に触れずに議論を打ち切っています。",
+          "focus": "function",
+          "difficulty": 2,
+          "objectiveId": "b2u1-obj-w"
+        }
+      ]
+    },
+    {
+      "id": "school-life-b2-u1-wrapup",
+      "step": 8,
+      "kind": "wrapup",
+      "skill": "mixed",
+      "title": "Wrap-up: ふり返りと次の学習",
+      "instructions": "この単元のポイントとよくある間違いを確認し、自分の弱点をふり返りましょう。",
+      "minutes": 5,
+      "summary": [
+        "意見記事では、筆者自身の主張と「紹介されているだけの他者の意見（Supporters argue ...）」を区別して読むことが大切。",
+        "譲歩の although / while の後は「主語＋動詞」、despite / in spite of の後は名詞か -ing 形。",
+        "It could be argued that / may / tend to / arguably などのヘッジで、断定を避けた説得力のある主張ができる。",
+        "however / whereas / on the other hand / not only ... but also で論理の流れを示す。Not only が文頭なら倒置（Not only do students ...）。",
+        "語形成では空所の前後から品詞を判断する（the + 名詞 → freedom、more + 形容詞 → enthusiastic）。"
+      ],
+      "commonMistakes": [
+        {
+          "wrong": "Despite students are busy, they enjoy their clubs.",
+          "right": "Although students are busy, they enjoy their clubs. / Despite being busy, students enjoy their clubs.",
+          "note": "despite は前置詞なので後ろに「主語＋動詞」を置けません。節を続けたいときは although、despite の後は名詞か -ing 形にします。"
+        },
+        {
+          "wrong": "Not only students learn teamwork, but also they make friends.",
+          "right": "Not only do students learn teamwork, but they also make friends.",
+          "note": "Not only を文頭に置くと、後ろは疑問文と同じ語順（倒置）になります。also の位置は they also make のように一般動詞の前が自然です。"
+        },
+        {
+          "wrong": "Club activities make students to feel tired.",
+          "right": "Club activities make students feel tired.",
+          "note": "使役の make / let は「人 + 動詞の原形」。to を入れるのは encourage / allow / force など（encourage students to join）です。"
+        },
+        {
+          "wrong": "All students hate compulsory clubs.",
+          "right": "Many students seem to find compulsory clubs stressful.",
+          "note": "日本語の感覚で断定的に書くと、B2 のエッセイでは根拠のない一般化と見なされます。many / some / seem to / may などで主張をやわらげましょう。"
+        }
+      ],
+      "next": {
+        "text": "次は同じテーマの別の単元で、学校生活についての記事やスピーチに取り組みましょう。この単元のエッセイを見直し、譲歩・ヘッジ・対比の表現が少なくとも1つずつ使えているか確認してから書き直すと効果的です。",
+        "challenge": "余裕がある人は、反対の立場（部活動は全員参加にすべき）でもう1本エッセイを書いてみましょう。自分と違う意見で論じる練習は、Speaking Part 4 の議論にも役立ちます。",
+        "support": "難しかった人は、Explain の4つのポイントを例文ごと音読し、Reading 本文の第2・第3段落だけをもう一度読んで、However の前後で意見がどう変わるかを確認しましょう。"
+      }
+    }
+  ]
+}
